@@ -5,30 +5,30 @@ using UnityEngine;
 
 namespace ArcadeAnarchy
 {
-    public class RSIControls : PlayerScript
+    public class RSIControls : MonoBehaviour
     {
-        protected override void MoveRight()
-        {
-            Debug.Log("Right!");
-            Vector3 temp = new Vector2(-1f, 0);
-        }
-        protected override void MoveLeft()
-        {
-            Debug.Log("Left!");
+        public float moveSpeed = 5f;
+        public Rigidbody2D rb;
+        public Animator animator;
 
-        }
-        protected override void MoveUp()
+        Vector2 movement;
+
+        // Update is called once per frame
+        void Update()
         {
-            Debug.Log("Up!");
+            // Input
+            movement.x = Input.GetAxisRaw("Horizontal");
+            //movement.y = Input.GetAxisRaw("Vertical");
+
+            animator.SetFloat("Horizontal", movement.x);
+            //animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
         }
-        protected override void MoveDown()
+
+        void FixedUpdate()
         {
-            Debug.Log("Down!");
+            // Movement
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
     }
 }
-
-
-
-
-

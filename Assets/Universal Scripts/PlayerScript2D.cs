@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ArcadeAnarchy
+/*namespace ArcadeAnarchy
 {
     public class PlayerScript2D : RSIControls
     {
@@ -12,5 +12,5 @@ namespace ArcadeAnarchy
             Debug.Log("Wahoo!");
         }
     }
-}
+}*/
 
