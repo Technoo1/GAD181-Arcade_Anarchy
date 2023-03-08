@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5cea86c70e558af4db9ddeaaa810140a
+guid: 591aef2e876a84649ab075a4422f1787
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,65 +101,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Alien_One_0
+      name: Alien 01_0
       rect:
         serializedVersion: 2
-        x: 141
-        y: 141
-        width: 203
-        height: 250
+        x: 20
+        y: 40
+        width: 130
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a16052c2840ad249bc29bd4cda8f5d2
-      internalID: -375064355
+      spriteID: 459bdc5839076af4ab2a27afadce4c71
+      internalID: -1565508921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alien_One_1
+      name: Alien 01_1
       rect:
         serializedVersion: 2
-        x: 641
-        y: 141
-        width: 203
-        height: 250
+        x: 170
+        y: 40
+        width: 130
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,29 +140,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 470034dad174f8543b0c796b4270ce58
-      internalID: 1720963514
+      spriteID: e21a9f1fe5d4b064c92d008867c703f3
+      internalID: 1974123794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alien_One_2
+      name: Alien 01_2
       rect:
         serializedVersion: 2
-        x: 1126
-        y: 140
-        width: 234
-        height: 218
+        x: 330
+        y: 40
+        width: 150
+        height: 140
       alignment: 9
-      pivot: {x: 0.5, y: 0.579}
+      pivot: {x: 0.5, y: 0.58}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d48446df0d96ed4cb27caee75d9fe95
-      internalID: 670720110
+      spriteID: 1e34b695b254b8a4eb9adcfb1f1360b5
+      internalID: 861743361
       vertices: []
       indices: 
       edges: []
@@ -226,9 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Alien_One_2: 670720110
-      Alien_One_0: -375064355
-      Alien_One_1: 1720963514
+      Alien 01_1: 1974123794
+      Alien 01_0: -1565508921
+      Alien 01_2: 861743361
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
