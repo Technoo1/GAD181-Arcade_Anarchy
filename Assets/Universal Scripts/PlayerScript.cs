@@ -14,7 +14,7 @@ namespace ArcadeAnarchy
             InputManager.instance.OnLeft += MoveLeft;
             InputManager.instance.OnUp += MoveUp;
             InputManager.instance.OnDown += MoveDown;
-            EventManager.instance.UpdateUI("9/10HP");
+            //EventManager.instance.UpdateUI("9/10HP");
         }
 
         protected virtual void Jump()
@@ -38,10 +38,7 @@ namespace ArcadeAnarchy
         {
             Debug.Log("Down!");
         }
-
     }
-
-
 }
 
 

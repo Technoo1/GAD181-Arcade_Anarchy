@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ArcadeAnarchy
 {
-    public class PlayerScript2D : PlayerScript
+    public class PlayerScript2D : RSIControls
     {
         protected override void Jump()
         {
