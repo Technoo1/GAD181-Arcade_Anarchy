@@ -37,10 +37,7 @@ namespace ArcadeAnarchy
         {
             Debug.Log("Down!");
         }
-
     }
-
-
 }
 
 
