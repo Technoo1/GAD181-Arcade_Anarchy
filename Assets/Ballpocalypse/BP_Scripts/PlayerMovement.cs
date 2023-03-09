@@ -34,7 +34,7 @@ namespace ArcadeAnarchy
                 crouch = true;
             } else if(Input.GetButtonUp("Crouch"))
             {
-                crouch = true;
+                crouch = false;
             }
 
         }
@@ -42,6 +42,11 @@ namespace ArcadeAnarchy
         public void OnLanding()
         {
             animator.SetBool("IsJumping", false);
+        }
+
+        public void OnCrouching (bool isCrouching)
+        {
+            animator.SetBool("IsCrouching", isCrouching);
         }
 
         private void FixedUpdate()
