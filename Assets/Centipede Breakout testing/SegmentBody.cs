@@ -31,8 +31,9 @@ public class SegmentBody : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        WASDTest();
 
-        transform.position = Input.mousePosition * 0.1f;
+        
         UpdatePreviousPositions();
         DebugVisual();
 
@@ -54,9 +55,6 @@ public class SegmentBody : MonoBehaviour
         }
 
 
-
-        ///transform.position = positionPreviousFrame;
-
     }
 
     private void DebugVisual()
@@ -64,7 +62,7 @@ public class SegmentBody : MonoBehaviour
         
         for (int i = 0; i < 100; i++)
         {
-            Debug.DrawLine(headPositionPrevious[i], headPositionPrevious[i] + new Vector2(0, 1f), Color.yellow);
+            Debug.DrawLine(headPositionPrevious[i], headPositionPrevious[i] + new Vector2(0, 0.1f), Color.yellow);
         }
         
     }
@@ -77,43 +75,35 @@ public class SegmentBody : MonoBehaviour
             beforeStartOfArray = 99; 
         }
 
-        /*
-        //Ensurese that if multiple points are stored in the same position they won't consider distance = 0
-        int PreviousMovedPositionCalculator = 1;
-        if (transform.position == positionPreviousFrame) {
-            
-            while (new Vector2(transform.position.x, transform.position.y) == headPositionPrevious[startOfArray - PreviousMovedPositionCalculator])
-            {
-                PreviousMovedPositionCalculator++;
-                // emergency escape
-                if (PreviousMovedPositionCalculator == 100)
-                {
-                    Debug.Log("EMERGENCY ESCAPE WITH SEGMENT BODY LINE, WHILE LOOP");
-                    return;
-                }
-            }
-        }
-        */
-
-        if (Vector3.Distance(transform.position, headPositionPrevious[beforeStartOfArray/*PreviousMovedPositionCalculator*/]) >= 0.1)
+     
+        distanceMoved += Vector3.Distance(transform.position, headPositionPrevious[beforeStartOfArray]);
+        while (distanceMoved >= 0.1)
         {
-            distanceMoved += Vector3.Distance(transform.position, headPositionPrevious[beforeStartOfArray/*PreviousMovedPositionCalculator*/]);
-        }
-
-        
-        while (distanceMoved >= 1)
-        {
-            distanceMoved -= 1;
+            distanceMoved -= 0.1f;
             
-            headPositionPrevious[beforeStartOfArray] = transform.position; 
+            headPositionPrevious[startOfArray] = transform.position; 
             startOfArray += 1;
 
-            if (startOfArray == 99)
+            if (startOfArray == 100)
             {
                 startOfArray = 0;
             }
         }
 
 
+        
+
+    }
+
+    private void WASDTest()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += new Vector3(0.1f,0,0);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position -= new Vector3(0.1f, 0, 0);
+        }
     }
 }
