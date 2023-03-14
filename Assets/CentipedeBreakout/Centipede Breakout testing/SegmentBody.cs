@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SegmentBody : MonoBehaviour
+public class SegmentBody : Segment
 {
     //tracks how far apart each body segment is and the values where it can be.
     private float distanceMoved;
     public Vector2[] headPositionPrevious;
+    private Vector3 previousFramePosition;
 
 
     //allows you to edit how long a centipede is, on start.
@@ -20,6 +21,7 @@ public class SegmentBody : MonoBehaviour
     //A counter for where the most recently updated value is, ++ is oldest, -- is newest
     private int startOfArray = 1;
     private int beforeStartOfArray;
+    
 
 
     // Start is called before the first frame update
@@ -29,20 +31,30 @@ public class SegmentBody : MonoBehaviour
         {
             distanceBetweenSegments = 0.1f;
         }
+
         
 
         bodySegments = new GameObject[numberOfbodySegments];
+        //Creates body parts and tells them what head they are attached to
         for (int i = 0; i < numberOfbodySegments; i++)
         {
-            bodySegments[i] = Instantiate(bodyPrefab, new Vector3(-3000, 3000, 0), Quaternion.identity);
+            if (bodySegments[i] == null)
+            {
+                bodySegments[i] = Instantiate(bodyPrefab, new Vector3(-3000, 3000, 0), Quaternion.identity);
+            }
+            //attached head is called to tell the head if the body part dies
+            //Without it the body part does not know which head it belongs to.
+            bodySegments[i].GetComponent<Segment>().attachedHead = gameObject;
         }
+        attachedHead = gameObject;
 
         for (int i = 0; i == bodySegments.Length * 10 - 1; i++)
         {
-            headPositionPrevious[i] = Vector2.zero;
+            headPositionPrevious[i] = new Vector2(1000,0);
         }
 
         headPositionPrevious = new Vector2[bodySegments.Length * 10];
+
     }
 
     // Update is called once per frame
@@ -71,6 +83,7 @@ public class SegmentBody : MonoBehaviour
             i++;
         }
 
+        previousFramePosition = transform.position;
 
     }
 
@@ -96,13 +109,16 @@ public class SegmentBody : MonoBehaviour
         }
 
      
+        //Remove this code post testing
         if (distanceBetweenSegments <= 0)
         {
             distanceBetweenSegments = 0.01f;
             Debug.Log("don't");
         }
 
-        distanceMoved += Vector3.Distance(transform.position, headPositionPrevious[beforeStartOfArray]);
+        
+
+        distanceMoved += Vector3.Distance(transform.position, previousFramePosition);
         while (distanceMoved >= distanceBetweenSegments)
         {
             distanceMoved -= distanceBetweenSegments;
@@ -133,4 +149,6 @@ public class SegmentBody : MonoBehaviour
             transform.position -= new Vector3(0.1f, 0, 0);
         }
     }
+
+    
 }
