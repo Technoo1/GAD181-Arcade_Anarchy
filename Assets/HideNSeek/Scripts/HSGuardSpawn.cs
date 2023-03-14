@@ -29,14 +29,20 @@ public class HSGuardSpawn : MonoBehaviour
         Debug.Log("SpawnGuard coroutine is done");
     }
 
+    void Start()
+    {
+        StartCoroutine(SpawnGuard());
+        Debug.Log("SpawnGuard coroutine has started");
+    }
+
     //event trigger relating to game start (scene change?) which starts SpawnGuard coroutine
     //test trigger with a key press, use g for guard lol
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            StartCoroutine(SpawnGuard());
-            Debug.Log("SpawnGuard coroutine has started");
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.G))
+    //    {
+    //        StartCoroutine(SpawnGuard());
+    //        Debug.Log("SpawnGuard coroutine has started");
+    //    }
+    //}
 }

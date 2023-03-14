@@ -29,7 +29,6 @@ public class HSGuardVision : MonoBehaviour
     public Sprite guardFront;
     public Sprite guardProfile;
 
-
     void Start()
     {
         StartCoroutine(StartPatrol());
@@ -49,10 +48,12 @@ public class HSGuardVision : MonoBehaviour
                     yield return new WaitForSeconds(waitTillTurn);
                     {
                         this.gameObject.GetComponent<SpriteRenderer>().sprite = guardFront;
+                        transform.tag = "GuardFront";
                         print("guard is facing you!!");
                         yield return new WaitForSeconds(waitBeforeSwapBack);
                         {
                             this.gameObject.GetComponent<SpriteRenderer>().sprite = guardProfile;
+                            transform.tag = "GuardProfile";
                             print("guard has turned away");
                             yield return new WaitForSeconds(5f);
                         }

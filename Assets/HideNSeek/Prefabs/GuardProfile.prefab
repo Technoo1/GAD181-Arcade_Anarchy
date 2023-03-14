@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1878984802875564097}
   m_Layer: 0
   m_Name: GuardProfile
-  m_TagString: Untagged
+  m_TagString: GuardProfile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,6 @@ MonoBehaviour:
   waitTillTurn: 2
   waitBeforeSwapBack: 3
   guardTurnChance: 0
-  guardMoveChance: 0
   guardTurn: {fileID: -2135585597343286014, guid: d529513558e437e458d38154ece7e491, type: 3}
   guardFront: {fileID: 7482667652216324306, guid: a27a82f3c30a10a4e8dadeb36ed55da1, type: 3}
   guardProfile: {fileID: 3625043607559282579, guid: e4a064eba0d83bc41b0738f3dad01888, type: 3}
