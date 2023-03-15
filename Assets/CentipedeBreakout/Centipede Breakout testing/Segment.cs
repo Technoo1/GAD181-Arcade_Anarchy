@@ -23,7 +23,7 @@ namespace CentipedeBreakout
         void OnMouseDown()
         {
             Debug.Log(gameObject + "Object clicked");
-            attachedHead.DeadSegment(gameObject);
+            attachedHead.GetComponent<SegmentBody>().DeadSegment(gameObject);
             Destroy(gameObject);
         }
 

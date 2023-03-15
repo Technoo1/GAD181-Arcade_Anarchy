@@ -45,7 +45,7 @@ namespace CentipedeBreakout
         public float centipedeSpeedRise;
         public float centipedeSpeedHorizontal;
 
-
+        public SegmentBody newHead;
 
 
 
@@ -240,11 +240,40 @@ namespace CentipedeBreakout
             {
                 if (bodySegments[deadPartArrayRef] == deadPart)
                 {
-                    for (int i = 0; i < deadPartArrayRef*10; i++)
+                    
+                    int countToEndOfRange = startOfArray + 10*deadPartArrayRef;
+                    /*
+                    if (countToEndOfRange >= bodySegments.Length)
                     {
-                        //headPositionPrevious.GetRange();
-                       
+                        countToEndOfRange -= bodySegments.Length;
                     }
+                    */
+
+                    List<Vector2> FrontOfWormList = headPositionPrevious.GetRange(startOfArray, countToEndOfRange);
+                    List<Vector2> BackOfWormList = headPositionPrevious.GetRange(deadPartArrayRef, bodySegments.Length - countToEndOfRange);
+
+                    newHead = bodySegments[deadPartArrayRef + 1].AddComponent<SegmentBody>();
+
+                    newHead.headPositionPrevious = BackOfWormList;
+                    newHead.fall = fall;
+                    newHead.attachedHead = deadPart;
+                    newHead.floor = floor;
+                    newHead.roof = roof;
+                    newHead.leftWall = leftWall;
+                    newHead.floor = floor;
+                    newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
+
+                    int Current = 0;
+                    for (int i = 0 + deadPartArrayRef; i <= bodySegments.Length; i++)
+                    {
+                        
+                        newHead.bodySegments[Current] = bodySegments[i];
+                        Current += 1;
+                    }
+                    
+                    //rb.mass = 10;
+
+                    headPositionPrevious = FrontOfWormList;
                 }
             }
 
