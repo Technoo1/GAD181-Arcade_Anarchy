@@ -1,32 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PrelimMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
+
     private BoxCollider2D bxCollider2d;
     public float baseSpeed;
     private Vector3 moveDirection;
-    private Vector3 upAndDown;
-    public float verticalDistance;
 
-    public bool laneOne, laneTwo, laneThree = false;
+    public List<Transform> Lanes;
+    public int currentLane = 1;
+
     public Animator anim;
-    public bool IsJump;
+    public bool IsJump = false;
     
-    public BoxCollider2D laneOnebx, LaneTwobx, LaneThreebx;
     // Start is called before the first frame update
     void Start()
     {
-        if (!rb)
-        {
-            rb = GetComponent<Rigidbody2D>();
-        }
+
         if (!bxCollider2d)
         {
             bxCollider2d = GetComponent<BoxCollider2D>();
         }
+
         anim = gameObject.GetComponent<Animator>();
 
         InputManager.instance.OnLeft += MoveLeft;
@@ -54,91 +52,46 @@ public class PrelimMovement : MonoBehaviour
         }
         else
         {
-            StartCoroutine (WaitForJump());
+            StartCoroutine(WaitForJump());
         }
     }
 
     public IEnumerator WaitForJump()
     {
+        bxCollider2d.enabled = false;
+        Vector2 startPos = transform.position;
+        transform.position = new Vector2(startPos.x, startPos.y + 0.7f);
         IsJump = true;
         anim.Play("HorseJump");
         Debug.Log("Jumping!!");
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.5f);
+        transform.position = new Vector2(transform.position.x, startPos.y);
+        //transform.position = startPos;
+        yield return new WaitForSeconds(0.3f);
         IsJump = false;
-
+        bxCollider2d.enabled = true;
     }
-    // Update is called once per frame
+
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.A))
-        {
-            moveDirection = -transform.right;
-            transform.position += moveDirection * (baseSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            moveDirection = transform.right;
-            transform.position += moveDirection * (baseSpeed * Time.deltaTime);
-        }*/
-
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if (laneOne)
+            if (currentLane != 0)
             {
-                transform.position = transform.position;
+                currentLane--;
+                Vector2 lane = Lanes[currentLane].position;
+                this.transform.position = new Vector2(transform.position.x, lane.y);
             }
-            else if (!laneOne)
-            {
-                upAndDown = transform.up;
-                transform.position += upAndDown * verticalDistance;
-            }
-            
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            if (laneThree)
+            if (currentLane < Lanes.Count - 1)
             {
-                transform.position = transform.position;
+                currentLane++;
+                Vector2 lane = Lanes[currentLane].position;
+                this.transform.position = new Vector2(transform.position.x, lane.y);
             }
-            else if (!laneThree)
-            {
-                upAndDown = transform.up;
-                transform.position -= upAndDown * verticalDistance;
-            }
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("laneOne"))
-        {
-            laneOne = true;
-        }
-        else if (collision.collider.CompareTag("laneTwo"))
-        {
-            laneTwo = true;
-        }
-        else if (collision.collider.CompareTag("laneThree"))
-        {
-            laneThree = true;
-        }
-
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("laneOne"))
-        {
-            laneOne = false;
-        }
-        else if (collision.collider.CompareTag("laneTwo"))
-        {
-            laneTwo = false;
-        }
-        else if (collision.collider.CompareTag("laneThree"))
-        {
-            laneThree = false;
         }
     }
 }
