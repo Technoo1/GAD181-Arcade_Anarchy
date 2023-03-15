@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2422633901575082676}
   - component: {fileID: 1732354177921688323}
   - component: {fileID: 2198369905766349470}
+  - component: {fileID: -6928307202613431642}
   m_Layer: 0
   m_Name: Rock2
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4877369040616031147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.13, y: -3.43, z: 0}
+  m_LocalPosition: {x: 3.1281385, y: -3.43, z: 0}
   m_LocalScale: {x: 0.24144372, y: 0.24144372, z: 0.24144372}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.8870025, y: 3.8132627}
   m_EdgeRadius: 0
+--- !u!114 &-6928307202613431642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4877369040616031147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b94783c3199e8146b9a79ce36c5a73e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3141387588215844749}
   - component: {fileID: 8187267093783219095}
   - component: {fileID: 6799041858250101133}
+  - component: {fileID: -3954670684885236671}
   m_Layer: 0
   m_Name: Rock3
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958067317683474631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.25, y: -3.59, z: 0}
+  m_LocalPosition: {x: 5.1944923, y: -3.59, z: 0}
   m_LocalScale: {x: 0.27641433, y: 0.27641433, z: 0.27641433}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.3536825, y: 3.9273698}
   m_EdgeRadius: 0
+--- !u!114 &-3954670684885236671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958067317683474631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b94783c3199e8146b9a79ce36c5a73e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
