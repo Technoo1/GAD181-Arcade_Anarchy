@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class BackgroundScript : MonoBehaviour
 {
-    [Range(0f, 5f)]
-    public float scrollSpeed = 0.5f;
+    [SerializeField] private float scrollSpeed = 0.5f;
     private float offset;
     private Material mat;
     void Start()
     {
         mat = GetComponent<Renderer>().material;
+
+        ScoreEvents.instance.OnThousandMeters += ThousandMeters;
+        ScoreEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
+
     }
 
     void Update()
     {
         offset += (Time.deltaTime * scrollSpeed) / 10f;
         mat.SetTextureOffset("_MainTex", new Vector2(offset, 0));
+    }
+
+    void FiveHundredMeters()
+    {
+        scrollSpeed = 2.25f;
+    }
+    void ThousandMeters()
+    {
+        scrollSpeed = 2.5f;
     }
 }

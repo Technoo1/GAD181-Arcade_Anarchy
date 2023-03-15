@@ -6,6 +6,22 @@ public class ObstacleMovement : MonoBehaviour
 {
     public float moveSpeed = 20f;
 
+    private void Start()
+    {
+        ScoreEvents.instance.OnThousandMeters += ThousandMeters;
+        ScoreEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
+    }
+
+    void FiveHundredMeters()
+    {
+        moveSpeed = 16f;
+    }
+    void ThousandMeters()
+    {
+        moveSpeed = 19f;
+    }
+
+    
     // Update is called once per frame
     void Update()
     {

@@ -8,6 +8,7 @@ public class HorseHealth : MonoBehaviour
     public List<GameObject> hearts;
 
     public BoxCollider2D bxCollider;
+    public bool isPaused = false;
      // Start is called before the first frame update
     void Start()
     {
@@ -28,15 +29,28 @@ public class HorseHealth : MonoBehaviour
         {
             hearts[1].SetActive(false);
         }
-        else if (horseHearts == 1)
+        else if (horseHearts <= 1)
         {
             hearts[0].SetActive(false);
+            //Debug.Log("death");
+            Time.timeScale = 0f;
+            isPaused = true;
         }
-        else if (horseHearts <= 0)
-        {
-            Debug.Log("death");
-        }
+
       
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            if (isPaused)
+            {
+                Time.timeScale = 1f;
+                isPaused = false;
+            }
+            else
+            {
+                Time.timeScale = 0f;
+                isPaused = true;
+            }
+        }
 
     }
     public void OnTriggerEnter2D(Collider2D collision)

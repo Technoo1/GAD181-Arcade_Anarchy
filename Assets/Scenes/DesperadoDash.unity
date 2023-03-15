@@ -853,6 +853,7 @@ MonoBehaviour:
   - {fileID: 4877369040616031147, guid: 34733ad5f08c01f4eabc48c736384a21, type: 3}
   - {fileID: 958067317683474631, guid: 86367e16684d3cf4f8ce8f8044c041d4, type: 3}
   isSpawn: 0
+  spawnTime: 0
 --- !u!4 &1138843464
 Transform:
   m_ObjectHideFlags: 0
@@ -1184,6 +1185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1536512131}
   - component: {fileID: 1536512132}
+  - component: {fileID: 1536512133}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1224,7 +1226,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd67ef1589010bb46a3db8ec805dcc46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1721004730}
+  count: 0
+  countText: {fileID: 1721004730}
+--- !u!114 &1536512133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536512130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf62b924c5eafea448f45f9ef5730493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreManager: {fileID: 1536512132}
 --- !u!1 &1684523756
 GameObject:
   m_ObjectHideFlags: 0

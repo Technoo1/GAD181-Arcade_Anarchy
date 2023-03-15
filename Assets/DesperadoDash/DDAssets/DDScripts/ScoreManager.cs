@@ -6,39 +6,33 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
-    private int score = 0;
-    private bool scoreRunning = false;
-    private float timeElapsed = 0.0f;
-    private float scoreIncrement = 1.0f;
-    void Start()
+    public int count = 0;
+    private float timer = 0f;
+    private float counterSpeed = 15f;
+    public TextMeshProUGUI countText;
+
+    private void Start()
     {
-        StartScoreSystem();
+        ScoreEvents.instance.OnThousandMeters += ThousandMeters;
+        ScoreEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
     }
 
-
+    void FiveHundredMeters()
+    {
+        counterSpeed = 20f;
+    }
+    void ThousandMeters()
+    {
+        counterSpeed = 25f;
+    }
     void Update()
     {
-        if (scoreRunning)
+        timer += Time.deltaTime;
+        if (timer >= 1f / counterSpeed)
         {
-            timeElapsed += Time.deltaTime;
-            scoreIncrement += timeElapsed * 25f;
-            int newScore = Mathf.FloorToInt(scoreIncrement);
-
-            if (newScore != score)
-            {
-                score = newScore;
-                scoreText.text = score.ToString() + "m";
-            }
-            if (scoreIncrement >= 25f)
-            {
-                scoreIncrement -= 25f;
-            }
+            count++;
+            countText.text = count.ToString() + "m";
+            timer -= 1f / counterSpeed;
         }
-    }
-
-    public void StartScoreSystem()
-    {
-        scoreRunning = true;
     }
 }
