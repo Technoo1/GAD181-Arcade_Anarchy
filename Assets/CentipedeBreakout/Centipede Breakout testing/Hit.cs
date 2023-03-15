@@ -2,7 +2,7 @@ using CentipedeBreakout;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CentipedeBreakout;
+
 
 public class Hit : MonoBehaviour
 {

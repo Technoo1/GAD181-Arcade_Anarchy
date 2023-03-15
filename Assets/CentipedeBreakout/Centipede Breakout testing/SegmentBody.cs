@@ -12,8 +12,8 @@ namespace CentipedeBreakout
     {
         //tracks how far apart each body segment is and the values where it can be.
         private float distanceMoved;
-        public Vector2[] headPositionPrevious;
-        //public List<Vector2> headPositionPrevious = new List<Vector2>();
+        //public Vector2[] headPositionPrevious;
+        public List<Vector2> headPositionPrevious = new List<Vector2>();
         private Vector3 previousFramePosition;
 
 
@@ -45,6 +45,15 @@ namespace CentipedeBreakout
         public float centipedeSpeedRise;
         public float centipedeSpeedHorizontal;
 
+
+
+
+
+
+
+
+
+
         // Start is called before the first frame update
         void Start()
         {
@@ -71,12 +80,10 @@ namespace CentipedeBreakout
             }
             attachedHead = gameObject;
 
-            for (int i = 0; i == bodySegments.Length * 10 - 1; i++)
+            for (int i = 0; i <= bodySegments.Length * 10 - 1; i++)
             {
-                headPositionPrevious[i] = new Vector2(1000, 0);
+                headPositionPrevious.Add(new Vector2(1000, 0));
             }
-
-            headPositionPrevious = new Vector2[bodySegments.Length * 10];
 
         }
 
@@ -153,10 +160,12 @@ namespace CentipedeBreakout
                     startOfArray = 0;
                 }
             }
+        }
 
-
-
-
+        private void ShiftingTheList()
+        {
+            //Remove list removes specific values not first element, otherwise useful
+            //headPositionPrevious.Remove(!null);
         }
 
         //not working???
@@ -233,7 +242,8 @@ namespace CentipedeBreakout
                 {
                     for (int i = 0; i < deadPartArrayRef*10; i++)
                     {
-                        headPositionPrevious[i] = headPositionPrevious[i];
+                        //headPositionPrevious.GetRange();
+                       
                     }
                 }
             }
