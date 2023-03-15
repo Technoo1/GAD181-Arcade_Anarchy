@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Assets/CentipedeBreakout/CentipedeController.cs
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -109,3 +110,31 @@ namespace CentipedeBreakout
 
     }
 }
+=======
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Segment : MonoBehaviour
+{
+    public GameObject attachedHead;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    void OnMouseDown()
+    {
+        Debug.Log(gameObject + "Object clicked");
+        Destroy(gameObject);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+>>>>>>> MaxsBranch:Assets/CentipedeBreakout/Centipede Breakout testing/Segment.cs

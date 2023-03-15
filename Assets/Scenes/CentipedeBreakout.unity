@@ -398,6 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d973f13e9babfa40ad3a1a5eb49ccd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   centipedeSpeedFall: 0.003
   centipedeSpeedRise: 0.01
   centipedeSpeedHorizontal: 0.03
@@ -408,6 +409,10 @@ MonoBehaviour:
   player: {fileID: 963015868}
   hit: {fileID: 0}
   centipedeSegments: []
+=======
+  collider: {fileID: 0}
+  rb: {fileID: 0}
+>>>>>>> MaxsBranch
 --- !u!61 &509788764
 BoxCollider2D:
   m_ObjectHideFlags: 0
