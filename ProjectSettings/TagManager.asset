@@ -7,6 +7,11 @@ TagManager:
   - laneOne
   - laneTwo
   - laneThree
+  - Largest Ball
+  - Large Ball
+  - Medium Ball
+  - Small Ball
+  - Smallest Ball
   layers:
   - Default
   - TransparentFX
