@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6278238747909113452}
   - component: {fileID: 6623889948126151281}
   - component: {fileID: -6070897353217903516}
+  - component: {fileID: -6650846471368103695}
   m_Layer: 0
   m_Name: Cactus3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,10 +97,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03860855, y: 0.1801709}
+  m_Offset: {x: -0.03860855, y: -1.3824311}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.4915252, y: 5.2160196}
+  m_Size: {x: 3.4915252, y: 2.0908153}
   m_EdgeRadius: 0
 --- !u!114 &-6070897353217903516
 MonoBehaviour:
@@ -124,4 +125,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b94783c3199e8146b9a79ce36c5a73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 13
+--- !u!50 &-6650846471368103695
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817795307245175948}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6

@@ -47,7 +47,7 @@ public class PrelimMovement : MonoBehaviour
     {
         if (IsJump)
         {
-            Debug.Log("No Jump");
+            //Debug.Log("No Jump");
             return;
         }
         else
@@ -63,7 +63,7 @@ public class PrelimMovement : MonoBehaviour
         transform.position = new Vector2(startPos.x, startPos.y + 0.7f);
         IsJump = true;
         anim.Play("HorseJump");
-        Debug.Log("Jumping!!");
+        //Debug.Log("Jumping!!");
         yield return new WaitForSeconds(0.5f);
         transform.position = new Vector2(transform.position.x, startPos.y);
         //transform.position = startPos;

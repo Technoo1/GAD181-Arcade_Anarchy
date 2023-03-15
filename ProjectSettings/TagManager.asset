@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - laneOne
-  - laneTwo
-  - laneThree
+  - DestroyBorder
+  - Obstacle
   layers:
   - Default
   - TransparentFX

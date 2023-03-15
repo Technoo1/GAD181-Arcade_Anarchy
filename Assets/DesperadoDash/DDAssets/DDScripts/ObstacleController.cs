@@ -35,6 +35,5 @@ public IEnumerator SpawnObstacles()
         yield return new WaitForSeconds(spawnTime);
         Instantiate(randomObstacle, randomTransform.position, randomTransform.rotation);
         isSpawn = false;
-
     }
 }
