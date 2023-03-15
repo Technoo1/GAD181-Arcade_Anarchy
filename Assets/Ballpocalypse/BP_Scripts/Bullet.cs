@@ -11,10 +11,9 @@ public class Bullet : MonoBehaviour
     public int damage = 40;
     public Rigidbody2D rb;
     public GameObject impactEffect;
-    bool ShootingUp = false;
-    bool ShootingHorizontal = false;
     
-    
+
+
 
 
     // Start is called before the first frame update
@@ -36,10 +35,9 @@ public class Bullet : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
-
 }

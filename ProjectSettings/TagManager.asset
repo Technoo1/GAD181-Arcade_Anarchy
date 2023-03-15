@@ -12,6 +12,9 @@ TagManager:
   - Medium Ball
   - Small Ball
   - Smallest Ball
+  - Ground
+  - Left Wall
+  - Right Wall
   layers:
   - Default
   - TransparentFX

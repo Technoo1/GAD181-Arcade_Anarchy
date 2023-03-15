@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5177763571411910300, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
+      propertyPath: originalBall
+      value: 
+      objectReference: {fileID: 5867112492093690929, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
     - target: {fileID: 5867112492093690893, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -77,24 +81,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
---- !u!1 &309918864321610670 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5867112492093690929, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
-  m_PrefabInstance: {fileID: 6134226126158256031}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3467056733428991805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309918864321610670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3f519f4607048e43b26f3cfd28349c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveLeft: 0
-  moveRight: 0
-  originalBall: {fileID: 0}
-  popSounds: []
