@@ -12,8 +12,9 @@ public class PrelimMovement : MonoBehaviour
     public float verticalDistance;
 
     public bool laneOne, laneTwo, laneThree = false;
- 
-
+    public Animator anim;
+    public bool IsJump;
+    
     public BoxCollider2D laneOnebx, LaneTwobx, LaneThreebx;
     // Start is called before the first frame update
     void Start()
@@ -26,9 +27,11 @@ public class PrelimMovement : MonoBehaviour
         {
             bxCollider2d = GetComponent<BoxCollider2D>();
         }
+        anim = gameObject.GetComponent<Animator>();
 
         InputManager.instance.OnLeft += MoveLeft;
         InputManager.instance.OnRight += MoveRight;
+        InputManager.instance.OnJump += Jump;
     }
 
     public void MoveRight()
@@ -42,7 +45,28 @@ public class PrelimMovement : MonoBehaviour
         transform.position += moveDirection * (baseSpeed * Time.deltaTime);
     }
 
-    
+    public void Jump()
+    {
+        if (IsJump)
+        {
+            Debug.Log("No Jump");
+            return;
+        }
+        else
+        {
+            StartCoroutine (WaitForJump());
+        }
+    }
+
+    public IEnumerator WaitForJump()
+    {
+        IsJump = true;
+        anim.Play("HorseJump");
+        Debug.Log("Jumping!!");
+        yield return new WaitForSeconds(0.7f);
+        IsJump = false;
+
+    }
     // Update is called once per frame
     void Update()
     {

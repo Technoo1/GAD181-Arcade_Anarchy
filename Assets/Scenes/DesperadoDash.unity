@@ -354,6 +354,8 @@ MonoBehaviour:
   laneOne: 0
   laneTwo: 0
   laneThree: 0
+  anim: {fileID: 660661713}
+  IsJump: 0
   laneOnebx: {fileID: 1739754886}
   LaneTwobx: {fileID: 206638009}
   LaneThreebx: {fileID: 1890087509}
