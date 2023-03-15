@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 using CentipedeBreakout;
+using System.Linq;
+using System;
 
 namespace CentipedeBreakout
 {
@@ -11,6 +13,7 @@ namespace CentipedeBreakout
         //tracks how far apart each body segment is and the values where it can be.
         private float distanceMoved;
         public Vector2[] headPositionPrevious;
+        //public List<Vector2> headPositionPrevious = new List<Vector2>();
         private Vector3 previousFramePosition;
 
 
@@ -36,8 +39,8 @@ namespace CentipedeBreakout
         private Collider2D collider;
         private Rigidbody2D rb;
 
-        private bool fall;
-        private float centipedeHorizontalAngle = 0.1f;
+        public bool fall;
+        public float centipedeHorizontalAngle = 0.1f;
         public float centipedeSpeedFall;
         public float centipedeSpeedRise;
         public float centipedeSpeedHorizontal;
@@ -80,7 +83,7 @@ namespace CentipedeBreakout
         // Update is called once per frame
         void Update()
         {
-            WASDTest();
+            //WASDTest();
 
             Fall();
             HorizontalMove();
@@ -218,6 +221,24 @@ namespace CentipedeBreakout
         private void HorizontalMove()
         {
             transform.position += Vector3.right * centipedeSpeedHorizontal * centipedeHorizontalAngle;
+        }
+
+        
+
+        public void DeadSegment(GameObject deadPart)
+        {
+            for (int deadPartArrayRef = 0; deadPartArrayRef < numberOfbodySegments; deadPartArrayRef++)
+            {
+                if (bodySegments[deadPartArrayRef] == deadPart)
+                {
+                    for (int i = 0; i < deadPartArrayRef*10; i++)
+                    {
+                        headPositionPrevious[i] = headPositionPrevious[i];
+                    }
+                }
+            }
+
+            
         }
 
 
