@@ -9,6 +9,7 @@ TagManager:
   - laneThree
   - GuardFront
   - GuardProfile
+  - Intel
   layers:
   - Default
   - TransparentFX

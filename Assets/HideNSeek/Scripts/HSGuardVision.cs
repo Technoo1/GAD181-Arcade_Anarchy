@@ -5,16 +5,14 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-//guard performs a check after 1 second
-//check is 50% chance to swap to another sprite
-//if check is successful, swap to alerted/turning guard sprite (this will be an otherwise identical sprite with an added visual cue i.e. exclamation point hanging overhead)
-//wait 1 second before swapping again to a front-facing guard sprite
-//wait 3 seconds before swapping back to original sprite
-//start first check again
-//if check is UNsuccessful, do nothing
-//wait 2 seconds before checking again
-
-//if front-facing guard sprite AND a peeking player sprite are both in the scene, trigger a game over event
+//DONE guard performs a check after x seconds DONE
+//DONE check is 50% chance to swap to another sprite DONE
+//DONE if check is successful, swap to alerted/turning guard sprite (this will be an otherwise identical sprite with an added visual cue i.e. exclamation point hanging overhead)
+//DONE wait x seconds before swapping again to a front-facing guard sprite
+//DONE wait x seconds before swapping back to original sprite
+//DONE start first check again
+//DONE if check is UNsuccessful, do nothing
+//DONE wait x seconds before checking again
 
 //iterate additional check to move left or right, if initial front swap fails
 
@@ -25,9 +23,9 @@ public class HSGuardVision : MonoBehaviour
     public float waitBeforeSwapBack = 3f; //wait x seconds before swapping back to original sprite
     public int guardTurnChance; //probability of guard turning
     //public int guardMoveChance; //probability of guard moving if it doesn't turn
-    public Sprite guardTurn;
-    public Sprite guardFront;
-    public Sprite guardProfile;
+    public Sprite guardTurn; //sprite of all turning guards
+    public Sprite guardFront; //sprite of all guards facing forward
+    public Sprite guardProfile; //sprite of all guards looking away, default state
 
     void Start()
     {
@@ -36,26 +34,26 @@ public class HSGuardVision : MonoBehaviour
 
     IEnumerator StartPatrol()
     {
-        yield return new WaitForSeconds(waitForCheck);
+        yield return new WaitForSeconds(waitForCheck); //waits before executing further
         {
-            for (int i = 0; i < 100000000; i++)
+            for (int i = 0; i < 100000000; i++) //loops the coroutine for a gajillion amount of seconds
             {
-                guardTurnChance = Random.Range(0, 101);
+                guardTurnChance = Random.Range(0, 101); //50% chance of turning
                 if (guardTurnChance >= 50)
                 {
-                    this.gameObject.GetComponent<SpriteRenderer>().sprite = guardTurn;
+                    this.gameObject.GetComponent<SpriteRenderer>().sprite = guardTurn; //swap to turning sprite
                     print("guard is turning!");
-                    yield return new WaitForSeconds(waitTillTurn);
+                    yield return new WaitForSeconds(waitTillTurn); //wait before swapping again
                     {
-                        this.gameObject.GetComponent<SpriteRenderer>().sprite = guardFront;
+                        this.gameObject.GetComponent<SpriteRenderer>().sprite = guardFront; //swap to front-facing sprite
                         transform.tag = "GuardFront";
                         print("guard is facing you!!");
-                        yield return new WaitForSeconds(waitBeforeSwapBack);
+                        yield return new WaitForSeconds(waitBeforeSwapBack); //wait before swapping again
                         {
-                            this.gameObject.GetComponent<SpriteRenderer>().sprite = guardProfile;
+                            this.gameObject.GetComponent<SpriteRenderer>().sprite = guardProfile; //swap to profile sprite
                             transform.tag = "GuardProfile";
                             print("guard has turned away");
-                            yield return new WaitForSeconds(5f);
+                            yield return new WaitForSeconds(5f); //wait 5 seconds before looping
                         }
                     }
                 }
@@ -70,7 +68,7 @@ public class HSGuardVision : MonoBehaviour
                 else
                 {
                     print("guard did nothing...");
-                    yield return new WaitForSeconds(5f);
+                    yield return new WaitForSeconds(5f); //wait 5 seconds before looping
                 }
             }
             yield return null;

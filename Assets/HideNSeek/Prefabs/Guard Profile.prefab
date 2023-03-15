@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3217329789270701622}
   - component: {fileID: 1878984802875564097}
   m_Layer: 0
-  m_Name: GuardProfile
+  m_Name: Guard Profile
   m_TagString: GuardProfile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
