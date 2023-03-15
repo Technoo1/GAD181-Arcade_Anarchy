@@ -101,6 +101,54 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -108,19 +156,19 @@ TextureImporter:
       name: Tank sprite_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 10
-        width: 150
-        height: 140
+        x: 100
+        y: 25
+        width: 188
+        height: 188
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ee6be956615af7479aec1aacde984b9
-      internalID: -1449888273
+      spriteID: e884e5f210f91c0429720091cb522715
+      internalID: 910025273
       vertices: []
       indices: 
       edges: []
@@ -129,19 +177,19 @@ TextureImporter:
       name: Tank sprite_1
       rect:
         serializedVersion: 2
-        x: 220
-        y: 10
-        width: 150
-        height: 150
+        x: 500
+        y: 12
+        width: 188
+        height: 188
       alignment: 9
-      pivot: {x: 0.5, y: 0.46923676}
+      pivot: {x: 0.5, y: 0.4981076}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1527c985ae45b2c4f94ced1e919c7aad
-      internalID: -90093795
+      spriteID: 24e9713dba94c20439f6a9297aedb6c4
+      internalID: 319877873
       vertices: []
       indices: 
       edges: []
@@ -150,19 +198,19 @@ TextureImporter:
       name: Tank sprite_2
       rect:
         serializedVersion: 2
-        x: 410
-        y: 11
-        width: 150
-        height: 140
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 900
+        y: 12
+        width: 187
+        height: 188
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4981076}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b362e32a7c6621a4aad237978fb5b248
-      internalID: 1088035762
+      spriteID: 0a5d6e45890dce74ca7a4d4a426418f1
+      internalID: 518044992
       vertices: []
       indices: 
       edges: []
@@ -178,9 +226,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tank sprite_1: -90093795
-      Tank sprite_0: -1449888273
-      Tank sprite_2: 1088035762
+      Tank sprite_1: 319877873
+      Tank sprite_0: 910025273
+      Tank sprite_2: 518044992
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
