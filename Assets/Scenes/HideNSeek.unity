@@ -168,8 +168,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intelPrefab: {fileID: 9003530396041259826, guid: b19a220c7eafdb54c9305d456e5cf8ad, type: 3}
-  timeBeforeSpawn: 2
-  isThereIntel: 0
+  timeBeforeFirstSpawn: 1
+  timeBeforeSpawn: 1
+  intelCount: 0
 --- !u!1 &323133501
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,8 +216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intelPrefab: {fileID: 9003530396041259826, guid: b19a220c7eafdb54c9305d456e5cf8ad, type: 3}
-  timeBeforeSpawn: 2
-  isThereIntel: 0
+  timeBeforeFirstSpawn: 1
+  timeBeforeSpawn: 1
+  intelCount: 0
 --- !u!1 &579492486
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +273,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: blah
+      value: 
+      objectReference: {fileID: 1882162183}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
       propertyPath: Guard
       value: 
       objectReference: {fileID: 4955733725309639875, guid: 1e304e78a37a6f946b64883e7b7078fb, type: 3}
@@ -287,6 +293,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7482667652216324306, guid: a27a82f3c30a10a4e8dadeb36ed55da1, type: 3}
     - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawn
+      value: 
+      objectReference: {fileID: 1882162183}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
       propertyPath: playerHide
       value: 
       objectReference: {fileID: -2413806693520163455, guid: 89ae9a9780190c248b99ed16fee1c9cb, type: 3}
@@ -294,6 +304,86 @@ PrefabInstance:
       propertyPath: playerPeek
       value: 
       objectReference: {fileID: -9095717837082945937, guid: 6a6999c515863bb488cdda441f9463a3, type: 3}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawner
+      value: 
+      objectReference: {fileID: 1696259593}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawner1
+      value: 
+      objectReference: {fileID: 1882162183}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawner2
+      value: 
+      objectReference: {fileID: 323133501}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawner3
+      value: 
+      objectReference: {fileID: 106133534}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawn.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawns.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawner.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 1882162183}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 323133501}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 106133534}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawners.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawns.Array.data[0]
+      value: 
+      objectReference: {fileID: 1882162183}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawns.Array.data[1]
+      value: 
+      objectReference: {fileID: 323133501}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawns.Array.data[2]
+      value: 
+      objectReference: {fileID: 106133534}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawner.Array.data[0]
+      value: 
+      objectReference: {fileID: 1882162183}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawner.Array.data[1]
+      value: 
+      objectReference: {fileID: 323133501}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawner.Array.data[2]
+      value: 
+      objectReference: {fileID: 106133534}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawners.Array.data[0]
+      value: 
+      objectReference: {fileID: 1882162183}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawners.Array.data[1]
+      value: 
+      objectReference: {fileID: 323133501}
+    - target: {fileID: 1939061617654030043, guid: 047c3da705167994484674e0ef063117, type: 3}
+      propertyPath: intelSpawners.Array.data[2]
+      value: 
+      objectReference: {fileID: 106133534}
     - target: {fileID: 7405587615093322885, guid: 047c3da705167994484674e0ef063117, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -541,8 +631,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intelPrefab: {fileID: 9003530396041259826, guid: b19a220c7eafdb54c9305d456e5cf8ad, type: 3}
-  timeBeforeSpawn: 2
-  isThereIntel: 0
+  timeBeforeFirstSpawn: 1
+  timeBeforeSpawn: 3
+  intelCount: 0
 --- !u!1 &1889206556
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,8 @@
+using ArcadeAnarchy;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 //wait x seconds to spawn Intel in scene
@@ -8,38 +11,31 @@ using UnityEngine;
 
 public class HSIntelSpawn : MonoBehaviour
 {
-    public GameObject intelPrefab; //manually defined sprite prefab to spawn in inspector
-    public float timeBeforeSpawn = 2f; //manually defined delay in seconds before spawning an enemy
-    public bool isThereIntel;
-
-    IEnumerator SpawnIntel() //coroutine to wait defined time before spawning enemies
-    {
-        bool playerIsPeeking = gameObject.GetComponent<SpriteRenderer>().sprite == playerPeek; //playerPeek Sprite must be active
-
-
-        for (int i = 0; i < 100000000; i++) //loops the coroutine for a gajillion amount of seconds
-        {
-            if (isThereIntel == false)
-            {
-                yield return new WaitForSeconds(timeBeforeSpawn); //wait for seconds defined in "timeBeforeSpawn"
-                Instantiate(intelPrefab, transform); //instantiate manually defined sprite
-                bool Intel;
-                Debug.Log("SpawnIntel coroutine at " + this.gameObject.name + " is done");
-            }
-        }
-    }
+    public GameObject intelPrefab; //define sprite prefab to spawn in inspector
+    public float timeBeforeFirstSpawn = 1f; //define delay in seconds before coroutine spawns first intel
+    public float timeBeforeSpawn = 5f; //define delay in seconds before spawning an enemy
+    public int intelCount; //value that determines whether Intel will spawn here
 
     void Start()
     {
         StartCoroutine(SpawnIntel());
-        Debug.Log("SpawnIntel coroutine has started");
+        Debug.Log("SpawnIntel coroutine at " + this.gameObject.name + " has started");
     }
 
-    void Update()
+    IEnumerator SpawnIntel() //coroutine to wait defined time before spawning enemies
     {
-        if (isThereIntel == true)
+        GameObject intelObject;
+        intelObject = GameObject.FindWithTag("Intel"); //defining the first object in a scene tagged as "Intel"
+
+        yield return new WaitForSeconds(timeBeforeFirstSpawn); //first spawn delayed by x seconds defined here
+        while (!intelObject) //while there's no object in the scene tagged as "Intel"...
         {
-            StopCoroutine(SpawnIntel));
+            Instantiate(intelPrefab, transform); //... instantiate a target object
+            Debug.Log("intel spawned at " + this.gameObject.name);
+            intelCount++;
+            Debug.Log(intelCount + " Intel is present");
+            yield return new WaitUntil(() => intelCount == 0); //pauses coroutine until there's 0 intel at this spawn
+            yield return new WaitForSeconds(timeBeforeSpawn);
         }
     }
 

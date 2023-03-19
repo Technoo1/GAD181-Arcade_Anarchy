@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -17,6 +18,10 @@ public class HSPlayerControls : MonoBehaviour
 {
     public Sprite playerPeek; //variable to place the peeking char sprite
     public Sprite playerHide; //variable to place the hiding char sprite
+    public GameObject intelSpawner1;
+    public GameObject intelSpawner2;
+    public GameObject intelSpawner3;
+
 
     void Update()
     {
@@ -25,8 +30,8 @@ public class HSPlayerControls : MonoBehaviour
 
         bool playerIsPeeking = gameObject.GetComponent<SpriteRenderer>().sprite == playerPeek; //playerPeek Sprite must be active
 
-        GameObject Intel;
-        Intel = GameObject.FindWithTag("Intel"); //search Intel present in the scene
+        GameObject intelIsHere;
+        intelIsHere = GameObject.FindWithTag("Intel"); //search Intel present in the scene
 
         if (Input.GetKeyDown(KeyCode.UpArrow)) //if up is pressed...
         {
@@ -44,11 +49,19 @@ public class HSPlayerControls : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("caught by guard!");
         }
-        if (Input.GetKeyDown(KeyCode.Space) && playerIsPeeking == true && Intel == true) //if the player presses a key/button while peeking...
+        if (Input.GetKeyDown(KeyCode.Space) && playerIsPeeking == true && intelIsHere == true) //if the player presses a key/button while peeking...
         {
             //add an intel point (to be converted to ticket later, or just add to ticket number straight away)
-            Destroy(Intel); //remove the Intel sprite from the scene
+            Destroy(intelIsHere); //remove the Intel sprite from the scene
             Debug.Log("intel collected!");
+
+            intelSpawner1.GetComponent<HSIntelSpawn>().intelCount--; //reduce the number of intel reported by the IntelSpawn script
+            intelSpawner2.GetComponent<HSIntelSpawn>().intelCount--; //reduce the number of intel reported by the IntelSpawn script
+            intelSpawner3.GetComponent<HSIntelSpawn>().intelCount--; //reduce the number of intel reported by the IntelSpawn script
+
+
+            //sets the referenced object i.e. the spawn point to disable in hierarchy. NEEDS TESTING
+            //try disabling the IntelSpawn class in spawn points, then have a spawn point script reenable the script again?
         }
     }
 }
