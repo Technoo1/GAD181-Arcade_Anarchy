@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class UIScript : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
 
     public TextMeshProUGUI uiText;
@@ -16,5 +16,12 @@ public class UIScript : MonoBehaviour
         uiText.SetText(text);
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+        }
+    }
 }
 
