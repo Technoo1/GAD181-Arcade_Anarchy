@@ -7,7 +7,7 @@ public class ScoreEvents : MonoBehaviour
 {
     public static ScoreEvents instance;
 
-    public ScoreManager scoreManager;
+    public DistanceManager scoreManager;
     // Start is called before the first frame update
     private void Awake()
     {

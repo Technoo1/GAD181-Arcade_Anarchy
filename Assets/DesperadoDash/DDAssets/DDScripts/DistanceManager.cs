@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+public class DistanceManager : MonoBehaviour
 {
     public int count = 0;
     private float timer = 0f;
