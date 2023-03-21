@@ -900,9 +900,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedHead: {fileID: 136109030968988771, guid: b87b7becc358bb4409d0bf8e4b6723e8, type: 3}
   headPositionPrevious: []
-  numberOfbodySegments: 5
+  numberOfbodySegments: 14
   bodyPrefab: {fileID: 136109030968988771, guid: b87b7becc358bb4409d0bf8e4b6723e8, type: 3}
   distanceBetweenSegments: 0.1
+  bodySegments: []
   leftWall: {fileID: 105279241}
   roof: {fileID: 1723173519}
   rightWall: {fileID: 450846904}
@@ -914,6 +915,7 @@ MonoBehaviour:
   centipedeSpeedRise: 0.04
   centipedeSpeedHorizontal: 0.05
   newHead: {fileID: 0}
+  newRigidBody: {fileID: 0}
 --- !u!61 &4696419154114656070
 BoxCollider2D:
   m_ObjectHideFlags: 0

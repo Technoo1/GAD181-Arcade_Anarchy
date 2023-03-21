@@ -22,11 +22,11 @@ namespace CentipedeBreakout
         public GameObject bodyPrefab;
         public float distanceBetweenSegments;
 
-        private GameObject[] bodySegments;
+        public List<GameObject> bodySegments = new List<GameObject>();
 
 
         //A counter for where the most recently updated value is, ++ is oldest, -- is newest
-        private int startOfArray = 1;
+        private int startOfArray = 0;
         private int beforeStartOfArray;
 
         // the code for collision and movemovent
@@ -46,9 +46,11 @@ namespace CentipedeBreakout
         public float centipedeSpeedHorizontal;
 
         public SegmentBody newHead;
+        public Rigidbody2D newRigidBody;
 
 
-
+        //dumb variables I made cos I was lazy and also didn't have internet
+        bool justBorn = true;
 
 
 
@@ -64,23 +66,24 @@ namespace CentipedeBreakout
                 distanceBetweenSegments = 0.1f;
             }
 
+            //HEHAHHRHERHEAHRI
 
-
-            bodySegments = new GameObject[numberOfbodySegments];
+            //bodySegments = new GameObject[numberOfbodySegments];
             //Creates body parts and tells them what head they are attached to
-            for (int i = 0; i < numberOfbodySegments; i++)
-            {
-                if (bodySegments[i] == null)
-                {
-                    bodySegments[i] = Instantiate(bodyPrefab, new Vector3(-3000, 3000, 0), Quaternion.identity);
-                }
-                //attached head is called to tell the head if the body part dies
-                //Without it the body part does not know which head it belongs to.
-                bodySegments[i].GetComponent<Segment>().attachedHead = gameObject;
-            }
-            attachedHead = gameObject;
 
-            for (int i = 0; i <= bodySegments.Length * 10 - 1; i++)
+            if (justBorn) {
+                for (int i = 0; i < numberOfbodySegments; i++)
+                {
+                    bodySegments.Add(Instantiate(bodyPrefab, new Vector3(-3000, 3000, 0), Quaternion.identity));
+                    //attached head is called to tell the head if the body part dies
+                    //Without it the body part does not know which head it belongs to.
+                    bodySegments[i].GetComponent<Segment>().attachedHead = gameObject;
+                }
+                attachedHead = gameObject;
+            }
+            
+
+            for (int i = 0; i <= bodySegments.Count * 10 - 1; i++)
             {
                 headPositionPrevious.Add(new Vector2(1000, 0));
             }
@@ -94,17 +97,18 @@ namespace CentipedeBreakout
 
             Fall();
             HorizontalMove();
-            UpdatePreviousPositions();
-            DebugVisual();
-
+            //UpdatePreviousPositions();
+            ShiftingTheList();
+            //DebugVisual();
+            
 
             int i = 1;
             foreach (var item in bodySegments)
             {
                 int x = 0;
-                if (startOfArray + i * 10 > bodySegments.Length * 10 - 1)
+                if (startOfArray + i * 10 > bodySegments.Count * 10 - 1)
                 {
-                    x = startOfArray + i * 10 - bodySegments.Length * 10;
+                    x = startOfArray + i * 10 - bodySegments.Count * 10;
                 }
                 else
                 {
@@ -120,7 +124,7 @@ namespace CentipedeBreakout
         private void DebugVisual()
         {
 
-            for (int i = 0; i < bodySegments.Length * 10 - 1; i++)
+            for (int i = 0; i < bodySegments.Count * 10 - 1; i++)
             {
                 Debug.DrawLine(headPositionPrevious[i], headPositionPrevious[i] + new Vector2(0, 0.1f), Color.yellow);
             }
@@ -134,7 +138,7 @@ namespace CentipedeBreakout
             beforeStartOfArray = startOfArray - 1;
             if (beforeStartOfArray == -1)
             {
-                beforeStartOfArray = bodySegments.Length * 10 - 1;
+                beforeStartOfArray = bodySegments.Count * 10 - 1;
             }
 
 
@@ -155,7 +159,7 @@ namespace CentipedeBreakout
                 headPositionPrevious[startOfArray] = transform.position;
                 startOfArray += 1;
 
-                if (startOfArray == bodySegments.Length * 10)
+                if (startOfArray == bodySegments.Count * 10)
                 {
                     startOfArray = 0;
                 }
@@ -166,6 +170,20 @@ namespace CentipedeBreakout
         {
             //Remove list removes specific values not first element, otherwise useful
             //headPositionPrevious.Remove(!null);
+            if (distanceBetweenSegments <= 0)
+            {
+                distanceBetweenSegments = 0.01f;
+                Debug.Log("don't");
+            }
+
+            distanceMoved += Vector3.Distance(transform.position, previousFramePosition);
+            while (distanceMoved >= distanceBetweenSegments)
+            {
+                distanceMoved -= distanceBetweenSegments;
+
+                headPositionPrevious.Remove(headPositionPrevious[0]);
+                headPositionPrevious.Add(transform.position);
+            }
         }
 
         //not working???
@@ -241,7 +259,7 @@ namespace CentipedeBreakout
                 if (bodySegments[deadPartArrayRef] == deadPart)
                 {
                     
-                    int countToEndOfRange = startOfArray + 10*deadPartArrayRef;
+                    //int countToEndOfRange = startOfArray + 10*deadPartArrayRef;
                     /*
                     if (countToEndOfRange >= bodySegments.Length)
                     {
@@ -249,31 +267,50 @@ namespace CentipedeBreakout
                     }
                     */
 
-                    List<Vector2> FrontOfWormList = headPositionPrevious.GetRange(startOfArray, countToEndOfRange);
-                    List<Vector2> BackOfWormList = headPositionPrevious.GetRange(deadPartArrayRef, bodySegments.Length - countToEndOfRange);
 
+                    //The Problem is that count doesn't loop around, you need to make a variable so when its >= to headpositionprevious.length, var excess = variable - length remove(both)
+                    Debug.Log("1");
+                    List<Vector2> FrontOfWormList = headPositionPrevious.GetRange(startOfArray, 10 * deadPartArrayRef);
+
+                    Debug.Log("2");
+                    List<Vector2> BackOfWormList = headPositionPrevious.GetRange(deadPartArrayRef * 10, bodySegments.Count * 10 - 10 * deadPartArrayRef);
+
+
+                    Debug.Log("3");
                     newHead = bodySegments[deadPartArrayRef + 1].AddComponent<SegmentBody>();
+                    newRigidBody = bodySegments[deadPartArrayRef + 1].AddComponent<Rigidbody2D>();
 
+                    newRigidBody.gravityScale = 0;
+                    newRigidBody.mass = 50;
+
+                    Debug.Log("4");
                     newHead.headPositionPrevious = BackOfWormList;
+
+                    Debug.Log("5");
                     newHead.fall = fall;
-                    newHead.attachedHead = deadPart;
+                    newHead.attachedHead = bodySegments[deadPartArrayRef + 1];
                     newHead.floor = floor;
                     newHead.roof = roof;
                     newHead.leftWall = leftWall;
+                    newHead.rightWall = rightWall;
                     newHead.floor = floor;
                     newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
+                    newHead.centipedeSpeedFall = centipedeSpeedFall;
+                    newHead.centipedeSpeedRise = centipedeSpeedRise;
+                    newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
+                    newHead.justBorn = false;
 
-                    int Current = 0;
-                    for (int i = 0 + deadPartArrayRef; i <= bodySegments.Length; i++)
+
+                    for (int i = 0; i < bodySegments.Count - deadPartArrayRef + 2; i++)
                     {
-                        
-                        newHead.bodySegments[Current] = bodySegments[i];
-                        Current += 1;
+                        newHead.bodySegments.Add(bodySegments[i]);
                     }
                     
                     //rb.mass = 10;
 
                     headPositionPrevious = FrontOfWormList;
+                    bodySegments.RemoveRange(deadPartArrayRef, bodySegments.Count - deadPartArrayRef - 1);
+                    Debug.Log("Finished");
                 }
             }
 
