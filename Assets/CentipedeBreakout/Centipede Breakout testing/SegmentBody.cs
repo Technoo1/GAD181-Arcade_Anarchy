@@ -83,7 +83,7 @@ namespace CentipedeBreakout
             }
             
 
-            for (int i = 0; i <= bodySegments.Count * 10 - 1; i++)
+            for (int i = 0; i <= bodySegments.Count * 10; i++)
             {
                 headPositionPrevious.Add(new Vector2(1000, 0));
             }
@@ -95,14 +95,23 @@ namespace CentipedeBreakout
         {
             //WASDTest();
 
-            Fall();
-            HorizontalMove();
+            //Fall();
+            //HorizontalMove();
             //UpdatePreviousPositions();
             ShiftingTheList();
             //DebugVisual();
             
 
-            int i = 1;
+            
+
+            //lol, literally what matt said in class where you can't change a foreach loop ig?
+            for (int i = 0; i < bodySegments.Count; i++)
+            {
+                bodySegments[i].transform.position = headPositionPrevious[i*10];
+            }
+
+            /*
+            int i = 0;
             foreach (var item in bodySegments)
             {
                 int x = 0;
@@ -112,11 +121,12 @@ namespace CentipedeBreakout
                 }
                 else
                 {
-                    x = startOfArray + i * 10;
+                    x = i * 10;
                 }
-                item.transform.position = headPositionPrevious[x];
+                item.transform.position = headPositionPrevious[x + 0];
                 i++;
             }
+            */
 
             previousFramePosition = transform.position;
         }
@@ -132,7 +142,7 @@ namespace CentipedeBreakout
         }
 
 
-
+        /*
         private void UpdatePreviousPositions()
         {
             beforeStartOfArray = startOfArray - 1;
@@ -159,13 +169,15 @@ namespace CentipedeBreakout
                 headPositionPrevious[startOfArray] = transform.position;
                 startOfArray += 1;
 
+
+
                 if (startOfArray == bodySegments.Count * 10)
                 {
                     startOfArray = 0;
                 }
             }
         }
-
+        */
         private void ShiftingTheList()
         {
             //Remove list removes specific values not first element, otherwise useful
@@ -270,10 +282,10 @@ namespace CentipedeBreakout
 
                     //The Problem is that count doesn't loop around, you need to make a variable so when its >= to headpositionprevious.length, var excess = variable - length remove(both)
                     Debug.Log("1");
-                    List<Vector2> FrontOfWormList = headPositionPrevious.GetRange(startOfArray, 10 * deadPartArrayRef);
+                    List<Vector2> FrontOfWormList = headPositionPrevious.GetRange(0, 10 * (deadPartArrayRef - 1));
 
                     Debug.Log("2");
-                    List<Vector2> BackOfWormList = headPositionPrevious.GetRange(deadPartArrayRef * 10, bodySegments.Count * 10 - 10 * deadPartArrayRef);
+                    List<Vector2> BackOfWormList = headPositionPrevious.GetRange(deadPartArrayRef * 10, (bodySegments.Count * 10) - (10 * deadPartArrayRef));
 
 
                     Debug.Log("3");
@@ -284,7 +296,7 @@ namespace CentipedeBreakout
                     newRigidBody.mass = 50;
 
                     Debug.Log("4");
-                    newHead.headPositionPrevious = BackOfWormList;
+                    newHead.headPositionPrevious = FrontOfWormList;
 
                     Debug.Log("5");
                     newHead.fall = fall;
@@ -308,8 +320,8 @@ namespace CentipedeBreakout
                     
                     //rb.mass = 10;
 
-                    headPositionPrevious = FrontOfWormList;
-                    bodySegments.RemoveRange(deadPartArrayRef, bodySegments.Count - deadPartArrayRef - 1);
+                    headPositionPrevious = BackOfWormList;
+                    bodySegments.RemoveRange(deadPartArrayRef, (bodySegments.Count * 10) - (10 * deadPartArrayRef));
                     Debug.Log("Finished");
                 }
             }
