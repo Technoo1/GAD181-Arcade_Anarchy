@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Instantiate(impactEffect, transform.position, transform.rotation);
+       
         Destroy(gameObject);
     }
 }

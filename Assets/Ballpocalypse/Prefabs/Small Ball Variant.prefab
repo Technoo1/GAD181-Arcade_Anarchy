@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 678387876382573608, guid: 4467cf30c3813934484c1bd6dc2b00e9, type: 3}
       propertyPath: originalBall
       value: 
-      objectReference: {fileID: 2296036589823962757, guid: 4467cf30c3813934484c1bd6dc2b00e9, type: 3}
+      objectReference: {fileID: 19926135523788852, guid: f27e8d9560691884db99ef453f03b30c, type: 3}
     - target: {fileID: 2296036589823962757, guid: 4467cf30c3813934484c1bd6dc2b00e9, type: 3}
       propertyPath: m_Name
       value: Small Ball Variant
@@ -77,3 +77,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4467cf30c3813934484c1bd6dc2b00e9, type: 3}
+--- !u!1 &4003873414300265414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2296036589823962757, guid: 4467cf30c3813934484c1bd6dc2b00e9, type: 3}
+  m_PrefabInstance: {fileID: 2904176024864343363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7469894521311275533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003873414300265414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea48ad665583844ca3cf833a462b381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
+  damage: 10

@@ -15,6 +15,7 @@ TagManager:
   - Ground
   - Left Wall
   - Right Wall
+  - Bullet
   layers:
   - Default
   - TransparentFX

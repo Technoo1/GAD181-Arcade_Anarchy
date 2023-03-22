@@ -74,6 +74,25 @@ PrefabInstance:
     - target: {fileID: 1367469896826595587, guid: 62dbb672f81ad854a96a2990a984d2ec, type: 3}
       propertyPath: originalBall
       value: 
-      objectReference: {fileID: 309918864321610670, guid: 62dbb672f81ad854a96a2990a984d2ec, type: 3}
+      objectReference: {fileID: 4003873414300265414, guid: 864f063fdcff8bf4ebf3af9d967fe893, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62dbb672f81ad854a96a2990a984d2ec, type: 3}
+--- !u!1 &2296036589823962757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 309918864321610670, guid: 62dbb672f81ad854a96a2990a984d2ec, type: 3}
+  m_PrefabInstance: {fileID: 1986127626478333227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-7199214322205782845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2296036589823962757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea48ad665583844ca3cf833a462b381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
+  damage: 10

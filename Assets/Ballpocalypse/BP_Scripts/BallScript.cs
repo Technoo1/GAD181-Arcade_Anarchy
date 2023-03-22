@@ -9,6 +9,9 @@ public class BallScript : MonoBehaviour
     private float forceY;
     private Vector3 temp;
 
+    public PlayerHealth playerHealth;
+    public int damage = 10;
+
     private Rigidbody2D myBody;
 
     [SerializeField]
@@ -19,9 +22,6 @@ public class BallScript : MonoBehaviour
 
     private GameObject ball1, ball2;
     private BallScript ball1Script, ball2Script;
-
-    [SerializeField]
-    private AudioClip[] popSounds;
 
     // Start is called before the first frame update
     private void Awake()
@@ -104,7 +104,7 @@ public class BallScript : MonoBehaviour
 
     void SetBallSpeed()
     {
-        forceX = 2.5f;
+        forceX = 1.5f;
 
         switch(this.gameObject.tag)
         {
@@ -157,7 +157,13 @@ public class BallScript : MonoBehaviour
             else
             {
                 gameObject.SetActive(false);
+                Destroy(gameObject);
             }
+        }
+
+        if(gameObject.tag == "Player")
+        {
+            playerHealth.TakeDamage(damage); 
         }
 
     }

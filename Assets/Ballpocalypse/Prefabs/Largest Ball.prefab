@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5867112492093690895}
   - component: {fileID: 5867112492093690928}
   - component: {fileID: 5177763571411910300}
+  - component: {fileID: -1853310676482412411}
   m_Layer: 0
   m_Name: Largest Ball
   m_TagString: Largest Ball
@@ -139,4 +140,17 @@ MonoBehaviour:
   moveLeft: 0
   moveRight: 0
   originalBall: {fileID: 0}
-  popSounds: []
+--- !u!114 &-1853310676482412411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5867112492093690929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea48ad665583844ca3cf833a462b381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
+  damage: 10
