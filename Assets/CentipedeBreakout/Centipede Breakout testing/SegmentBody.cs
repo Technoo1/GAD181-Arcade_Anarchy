@@ -81,13 +81,13 @@ namespace CentipedeBreakout
                 }
                 attachedHead = gameObject;
             }
-            
 
-            for (int i = 0; i <= bodySegments.Count * 10; i++)
-            {
-                headPositionPrevious.Add(new Vector2(1000, 0));
+            if (headPositionPrevious.Count == 0) {
+                for (int i = 0; i < bodySegments.Count * 10; i++)
+                {
+                    headPositionPrevious.Add(new Vector2(1000, 0));
+                }
             }
-
         }
 
         // Update is called once per frame
@@ -180,6 +180,20 @@ namespace CentipedeBreakout
         */
         private void ShiftingTheList()
         {
+
+            //HIGHLy ANNOYING
+            //The code has been modified to accomadate backward lists
+            //behind the head is position segment.count and position.count
+            //The end of the tail is position 0
+            //To fix this the insert function could be used
+            //segment.insert(0,element) segment.removeAt(segment.count)
+            //I suggest we implement this however first focus on a swing animation
+
+
+
+
+
+
             //Remove list removes specific values not first element, otherwise useful
             //headPositionPrevious.Remove(!null);
             if (distanceBetweenSegments <= 0)
@@ -262,73 +276,54 @@ namespace CentipedeBreakout
             transform.position += Vector3.right * centipedeSpeedHorizontal * centipedeHorizontalAngle;
         }
 
-        
 
         public void DeadSegment(GameObject deadPart)
         {
-            for (int deadPartArrayRef = 0; deadPartArrayRef < numberOfbodySegments; deadPartArrayRef++)
+            int deadPartArrayRef = bodySegments.IndexOf(deadPart);
+
+            Debug.Log("1");
+            List<Vector2> FrontOfWormList = headPositionPrevious.GetRange(0, 10 * (deadPartArrayRef + 1));
+
+            Debug.Log("2");
+            List<Vector2> BackOfWormList = headPositionPrevious.GetRange(deadPartArrayRef * 10, (bodySegments.Count * 10) - (10 * deadPartArrayRef));
+
+
+            Debug.Log("3");
+            newHead = bodySegments[deadPartArrayRef - 1].AddComponent<SegmentBody>();
+            newRigidBody = bodySegments[deadPartArrayRef - 1].AddComponent<Rigidbody2D>();
+
+            newRigidBody.gravityScale = 0;
+            newRigidBody.mass = 50;
+
+            Debug.Log("4");
+            newHead.headPositionPrevious = FrontOfWormList;
+
+            Debug.Log("5");
+            newHead.fall = fall;
+            newHead.attachedHead = bodySegments[deadPartArrayRef + 1];
+            newHead.floor = floor;
+            newHead.roof = roof;
+            newHead.leftWall = leftWall;
+            newHead.rightWall = rightWall;
+            newHead.floor = floor;
+            newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
+            newHead.centipedeSpeedFall = centipedeSpeedFall;
+            newHead.centipedeSpeedRise = centipedeSpeedRise;
+            newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
+            newHead.justBorn = false;
+
+
+            for (int i = deadPartArrayRef + 2; i < bodySegments.Count; i++)
             {
-                if (bodySegments[deadPartArrayRef] == deadPart)
-                {
-                    
-                    //int countToEndOfRange = startOfArray + 10*deadPartArrayRef;
-                    /*
-                    if (countToEndOfRange >= bodySegments.Length)
-                    {
-                        countToEndOfRange -= bodySegments.Length;
-                    }
-                    */
-
-
-                    //The Problem is that count doesn't loop around, you need to make a variable so when its >= to headpositionprevious.length, var excess = variable - length remove(both)
-                    Debug.Log("1");
-                    List<Vector2> FrontOfWormList = headPositionPrevious.GetRange(0, 10 * (deadPartArrayRef - 1));
-
-                    Debug.Log("2");
-                    List<Vector2> BackOfWormList = headPositionPrevious.GetRange(deadPartArrayRef * 10, (bodySegments.Count * 10) - (10 * deadPartArrayRef));
-
-
-                    Debug.Log("3");
-                    newHead = bodySegments[deadPartArrayRef + 1].AddComponent<SegmentBody>();
-                    newRigidBody = bodySegments[deadPartArrayRef + 1].AddComponent<Rigidbody2D>();
-
-                    newRigidBody.gravityScale = 0;
-                    newRigidBody.mass = 50;
-
-                    Debug.Log("4");
-                    newHead.headPositionPrevious = FrontOfWormList;
-
-                    Debug.Log("5");
-                    newHead.fall = fall;
-                    newHead.attachedHead = bodySegments[deadPartArrayRef + 1];
-                    newHead.floor = floor;
-                    newHead.roof = roof;
-                    newHead.leftWall = leftWall;
-                    newHead.rightWall = rightWall;
-                    newHead.floor = floor;
-                    newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
-                    newHead.centipedeSpeedFall = centipedeSpeedFall;
-                    newHead.centipedeSpeedRise = centipedeSpeedRise;
-                    newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
-                    newHead.justBorn = false;
-
-
-                    for (int i = 0; i < bodySegments.Count - deadPartArrayRef + 2; i++)
-                    {
-                        newHead.bodySegments.Add(bodySegments[i]);
-                    }
-                    
-                    //rb.mass = 10;
-
-                    headPositionPrevious = BackOfWormList;
-                    bodySegments.RemoveRange(deadPartArrayRef, (bodySegments.Count * 10) - (10 * deadPartArrayRef));
-                    Debug.Log("Finished");
-                }
+                newHead.bodySegments.Add(bodySegments[i]);
             }
 
-            
+            //rb.mass = 10;
+            bodySegments.RemoveRange(deadPartArrayRef, (bodySegments.Count) - (deadPartArrayRef));
+            bodySegments.RemoveRange(deadPartArrayRef, (bodySegments.Count) - (deadPartArrayRef));
+            headPositionPrevious = BackOfWormList;
+                    
+            Debug.Log("Finished");
         }
-
-
     }
 }

@@ -879,7 +879,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591423810170421451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.77, y: 1.2, z: 0}
+  m_LocalPosition: {x: -0.8, y: 1.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -900,7 +900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedHead: {fileID: 136109030968988771, guid: b87b7becc358bb4409d0bf8e4b6723e8, type: 3}
   headPositionPrevious: []
-  numberOfbodySegments: 14
+  numberOfbodySegments: 10
   bodyPrefab: {fileID: 136109030968988771, guid: b87b7becc358bb4409d0bf8e4b6723e8, type: 3}
   distanceBetweenSegments: 0.1
   bodySegments: []
