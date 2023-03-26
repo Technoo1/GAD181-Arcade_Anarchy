@@ -73,13 +73,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: e4a064eba0d83bc41b0738f3dad01888, type: 3}
+  m_SortingOrder: 6
+  m_Sprite: {fileID: 21300000, guid: 12d8abd750008824486b860101490cf2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 3.2, y: 3.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,6 +101,6 @@ MonoBehaviour:
   waitTillTurn: 2
   waitBeforeSwapBack: 3
   guardTurnChance: 0
-  guardTurn: {fileID: -2135585597343286014, guid: d529513558e437e458d38154ece7e491, type: 3}
-  guardFront: {fileID: 7482667652216324306, guid: a27a82f3c30a10a4e8dadeb36ed55da1, type: 3}
-  guardProfile: {fileID: 3625043607559282579, guid: e4a064eba0d83bc41b0738f3dad01888, type: 3}
+  guardTurn: {fileID: 21300000, guid: 07cf9bb33d2e9a5479187e928f678d20, type: 3}
+  guardFront: {fileID: 21300000, guid: f378dfc777c713945a707c1978754012, type: 3}
+  guardProfile: {fileID: 21300000, guid: 12d8abd750008824486b860101490cf2, type: 3}

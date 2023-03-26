@@ -18,7 +18,7 @@ public class HSPlayerControls : MonoBehaviour
 {
     public Sprite playerPeek; //variable to place the peeking char sprite
     public Sprite playerHide; //variable to place the hiding char sprite
-    public GameObject intelSpawner1;
+    public GameObject intelSpawner1; //define parent(s) of intel that spawns in, so that we can trigger more spawns
     public GameObject intelSpawner2;
     public GameObject intelSpawner3;
 
@@ -46,8 +46,8 @@ public class HSPlayerControls : MonoBehaviour
         if (guardFacing == true && playerIsPeeking == true) //if there are guards facing a peeking player...
         {
             //trigger a game over screen?
-            Destroy(gameObject);
-            Debug.Log("caught by guard!");
+            Destroy(gameObject); //"kill" player for now, if seen
+            Debug.Log("caught by guard! Snake? Snaaaaaake!");
         }
         if (Input.GetKeyDown(KeyCode.Space) && playerIsPeeking == true && intelIsHere == true) //if the player presses a key/button while peeking...
         {
