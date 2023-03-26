@@ -911,9 +911,9 @@ MonoBehaviour:
   hit: {fileID: 0}
   fall: 0
   centipedeHorizontalAngle: 0.1
-  centipedeSpeedFall: 0.02
-  centipedeSpeedRise: 0.04
-  centipedeSpeedHorizontal: 0.05
+  centipedeSpeedFall: 0.01
+  centipedeSpeedRise: 0.02
+  centipedeSpeedHorizontal: 0.02
   newHead: {fileID: 0}
   newRigidBody: {fileID: 0}
 --- !u!61 &4696419154114656070

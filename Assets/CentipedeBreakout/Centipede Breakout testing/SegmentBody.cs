@@ -104,30 +104,7 @@ namespace CentipedeBreakout
             HorizontalMove();
             //UpdatePreviousPositions();
             ShiftingTheList();
-            
-            
-
-            
-
-            
-
-            /*
-            int i = 0;
-            foreach (var item in bodySegments)
-            {
-                int x = 0;
-                if (startOfArray + i * 10 > bodySegments.Count * 10 - 1)
-                {
-                    x = startOfArray + i * 10 - bodySegments.Count * 10;
-                }
-                else
-                {
-                    x = i * 10;
-                }
-                item.transform.position = headPositionPrevious[x + 0];
-                i++;
-            }
-            */
+            DebugVisual();
 
             previousFramePosition = transform.position;
 
@@ -137,7 +114,7 @@ namespace CentipedeBreakout
                 bodySegments[i].transform.position = headPositionPrevious[i * 10 + 10];
             }
 
-            DebugVisual();
+            
         }
 
         private void DebugVisual()
@@ -145,7 +122,7 @@ namespace CentipedeBreakout
 
             for (int i = 0; i < bodySegments.Count * 10 - 1; i++)
             {
-                Debug.DrawLine(headPositionPrevious[i], headPositionPrevious[i] + new Vector2(0, 0.1f), Color.yellow);
+                Debug.DrawLine(headPositionPrevious[i], headPositionPrevious[i] + new Vector2(0, 1), Color.yellow);
             }
 
         }
@@ -250,7 +227,7 @@ namespace CentipedeBreakout
 
         public void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log("COLLIDING");
+            //Debug.Log("COLLIDING");
             if (collision.gameObject == leftWall)
             {
                 //Should use magnitude but angry ):<
@@ -262,7 +239,7 @@ namespace CentipedeBreakout
             }
             if (collision.gameObject == roof)
             {
-                Debug.Log("ROOF");
+                //Debug.Log("ROOF");
                 fall = true;
             }
             if (collision.gameObject == floor)
@@ -294,21 +271,147 @@ namespace CentipedeBreakout
 
         public void DeadSegment(GameObject deadPart)
         {
+            //if front do this then return / stop
+            if (deadPart == gameObject)
+            {
+                Debug.Log("THE HEAD Is DYING");
+
+
+                if (bodySegments.Count - 0 == 0)
+                {
+                    Debug.Log("he touched the but");
+                    return;
+                }
+                else if (bodySegments.Count  - 0 == 1)
+                {
+                    Debug.Log("The cats erogenous zone");
+
+                    newRigidBody.gravityScale = 0;
+                    newRigidBody.mass = 50;
+
+                    newHead.fall = fall;
+                    newHead.floor = floor;
+                    newHead.roof = roof;
+                    newHead.leftWall = leftWall;
+                    newHead.rightWall = rightWall;
+                    newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
+                    newHead.centipedeSpeedFall = centipedeSpeedFall;
+                    newHead.centipedeSpeedRise = centipedeSpeedRise;
+                    newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
+                    newHead.justBorn = false;
+                    return;
+                }
+
+                //Might 
+                List<Vector2> frontDied = headPositionPrevious.GetRange(0 + 10, headPositionPrevious.Count - 1 - 0 - 10);
+                frontDied.Add(transform.position);
+
+
+                Debug.Log("3");
+                newHead = bodySegments[0].AddComponent<SegmentBody>();
+                newRigidBody = bodySegments[0].AddComponent<Rigidbody2D>();
+
+                bodySegments[0].GetComponent<BoxCollider2D>().isTrigger = false;
+
+                newRigidBody.gravityScale = 0;
+                newRigidBody.mass = 50;
+
+                Debug.Log("4");
+                newHead.headPositionPrevious = frontDied;
+
+                Debug.Log("5");
+                newHead.fall = fall;
+                newHead.attachedHead = bodySegments[0 + 1];
+                newHead.floor = floor;
+                newHead.roof = roof;
+                newHead.leftWall = leftWall;
+                newHead.rightWall = rightWall;
+                newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
+                newHead.centipedeSpeedFall = centipedeSpeedFall;
+                newHead.centipedeSpeedRise = centipedeSpeedRise;
+                newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
+                newHead.justBorn = false;
+
+
+                //attaches body parts to the new head
+                for (int i = 0 + 1; i < bodySegments.Count; i++)
+                {
+                    newHead.bodySegments.Add(bodySegments[i]);
+                }
+
+                foreach (GameObject item in newHead.bodySegments)
+                {
+                    item.GetComponent<Segment>().attachedHead = bodySegments[0];
+                }
+
+                newHead.attachedHead = newHead.gameObject;
+
+                return;
+            }
+
             int deadPartArrayRef = bodySegments.IndexOf(deadPart);
             int deadPartPositionRef = deadPartArrayRef * 10 + 10;
+
+            newHead = bodySegments[deadPartArrayRef + 1].AddComponent<SegmentBody>();
+            newRigidBody = bodySegments[deadPartArrayRef + 1].AddComponent<Rigidbody2D>();
+
+            //If you touch the but or behind the but
+            if (bodySegments.Count - 1 - deadPartArrayRef == 0)
+            {
+                Debug.Log("OInga");
+                bodySegments.Remove(deadPart);
+                
+                return;
+            }
+            else if (bodySegments.Count - 1 - deadPartArrayRef == 1)
+            {
+
+                //CURRENT TODO
+                //MOVE SOME CODE AROUND SO WE CAN REMOVE THE 20 POSITIONS 
+                //AND THE 2 BUTT BODY SEGMENTS
+                //gonna sleep now thx bye love ya (;
+
+
+                Debug.Log("The cats erogenous zone");
+                newRigidBody.gravityScale = 0;
+                newRigidBody.mass = 50;
+
+                newHead.fall = fall;
+                newHead.floor = floor;
+                newHead.roof = roof;
+                newHead.leftWall = leftWall;
+                newHead.rightWall = rightWall;
+                newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
+                newHead.centipedeSpeedFall = centipedeSpeedFall;
+                newHead.centipedeSpeedRise = centipedeSpeedRise;
+                newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
+                newHead.justBorn = false;
+                return;
+            }
+
+            //touch anywhere that isn't the face or but or tailbone
+
+
+
+
+
+
+            
+
 
             Debug.Log("1");
             //I think when setting position it actually takes 9, 19, 29, 39 rather than multiples of 10
             List<Vector2> FrontOfWormList = headPositionPrevious.GetRange(0, deadPartPositionRef - 0);
 
             Debug.Log("2");
-            //I don't get it
-            List<Vector2> BackOfWormList = headPositionPrevious.GetRange(deadPartPositionRef + 0, headPositionPrevious.Count -1 - deadPartPositionRef - 0);
-
+            //array starts from zero but everything is indexed in 10's
+            //to fix this easily I just add a position
+            //technically this makes the movement slightly less smooth
+            List<Vector2> BackOfWormList = headPositionPrevious.GetRange(deadPartPositionRef + 10, headPositionPrevious.Count -1 - deadPartPositionRef - 10);
+            BackOfWormList.Add(headPositionPrevious[deadPartPositionRef +10]);
 
             Debug.Log("3");
-            newHead = bodySegments[deadPartArrayRef + 1].AddComponent<SegmentBody>();
-            newRigidBody = bodySegments[deadPartArrayRef + 1].AddComponent<Rigidbody2D>();
+           
 
             bodySegments[deadPartArrayRef + 1].GetComponent<BoxCollider2D>().isTrigger = false;
 
@@ -335,20 +438,39 @@ namespace CentipedeBreakout
             //attaches body parts to the new head
             for (int i = deadPartArrayRef + 2; i < bodySegments.Count; i++)
             {
-                newHead.bodySegments.Insert(0,bodySegments[i]);
-
+                newHead.bodySegments.Insert(0, bodySegments[i]);
             }
 
+            foreach (GameObject item in newHead.bodySegments)
+            {
+                item.GetComponent<Segment>().attachedHead = bodySegments[deadPartArrayRef + 1];
+            }
+
+
             //May need to change once splits 1 rather than 2
+            if (FrontOfWormList.Count == 0)
+            {
+                Destroy(gameObject);
+            }
+
+            headPositionPrevious = FrontOfWormList;
+
             while (bodySegments.Count > deadPartArrayRef)
             {
                 bodySegments.RemoveAt(bodySegments.Count - 1);
             }
 
+            /*
+            for (int i = deadPartArrayRef; i > 0; i--)
+            {
+                bodySegments.RemoveAt(bodySegments.Count - 1);
+            }
+            */
+
             //rb.mass = 10;
             //bodySegments.RemoveRange(deadPartArrayRef, (bodySegments.Count) - (deadPartArrayRef));
             //bodySegments.RemoveRange(deadPartArrayRef, (bodySegments.Count) - (deadPartArrayRef));
-            headPositionPrevious = FrontOfWormList;
+            
                     
             Debug.Log("Finished");
         }
