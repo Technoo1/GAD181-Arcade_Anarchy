@@ -24,7 +24,7 @@ namespace CentipedeBreakout
         {
             Debug.Log(gameObject + "Object clicked");
             attachedHead.GetComponent<SegmentBody>().DeadSegment(gameObject);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
 
         // Update is called once per frame

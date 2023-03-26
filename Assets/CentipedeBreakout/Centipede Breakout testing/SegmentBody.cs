@@ -74,6 +74,9 @@ namespace CentipedeBreakout
             if (justBorn) {
                 for (int i = 0; i < numberOfbodySegments; i++)
                 {
+
+                    
+
                     bodySegments.Add(Instantiate(bodyPrefab, new Vector3(-3000, 3000, 0), Quaternion.identity));
                     //attached head is called to tell the head if the body part dies
                     //Without it the body part does not know which head it belongs to.
@@ -82,8 +85,8 @@ namespace CentipedeBreakout
                 attachedHead = gameObject;
             }
 
-            if (headPositionPrevious.Count == 0) {
-                for (int i = 0; i < bodySegments.Count * 10; i++)
+            if (justBorn) {
+                for (int i = 0; i <= bodySegments.Count * 10; i++)
                 {
                     headPositionPrevious.Add(new Vector2(1000, 0));
                 }
@@ -93,22 +96,20 @@ namespace CentipedeBreakout
         // Update is called once per frame
         void Update()
         {
+
+            
             //WASDTest();
 
-            //Fall();
-            //HorizontalMove();
+            Fall();
+            HorizontalMove();
             //UpdatePreviousPositions();
             ShiftingTheList();
-            //DebugVisual();
+            
             
 
             
 
-            //lol, literally what matt said in class where you can't change a foreach loop ig?
-            for (int i = 0; i < bodySegments.Count; i++)
-            {
-                bodySegments[i].transform.position = headPositionPrevious[i*10];
-            }
+            
 
             /*
             int i = 0;
@@ -129,6 +130,14 @@ namespace CentipedeBreakout
             */
 
             previousFramePosition = transform.position;
+
+            //lol, literally what matt said in class where you can't change a foreach loop ig?
+            for (int i = 0; i < bodySegments.Count; i++)
+            {
+                bodySegments[i].transform.position = headPositionPrevious[i * 10 + 10];
+            }
+
+            DebugVisual();
         }
 
         private void DebugVisual()
@@ -202,13 +211,19 @@ namespace CentipedeBreakout
                 Debug.Log("don't");
             }
 
+
+            //adds to the start then removes the highest value
+            //new = 0
+            //old = maximum
             distanceMoved += Vector3.Distance(transform.position, previousFramePosition);
             while (distanceMoved >= distanceBetweenSegments)
             {
                 distanceMoved -= distanceBetweenSegments;
 
-                headPositionPrevious.Remove(headPositionPrevious[0]);
-                headPositionPrevious.Add(transform.position);
+                
+
+                headPositionPrevious.Insert(0, transform.position);
+                headPositionPrevious.RemoveAt(headPositionPrevious.Count -1);
             }
         }
 
@@ -280,23 +295,28 @@ namespace CentipedeBreakout
         public void DeadSegment(GameObject deadPart)
         {
             int deadPartArrayRef = bodySegments.IndexOf(deadPart);
+            int deadPartPositionRef = deadPartArrayRef * 10 + 10;
 
             Debug.Log("1");
-            List<Vector2> FrontOfWormList = headPositionPrevious.GetRange(0, 10 * (deadPartArrayRef + 1));
+            //I think when setting position it actually takes 9, 19, 29, 39 rather than multiples of 10
+            List<Vector2> FrontOfWormList = headPositionPrevious.GetRange(0, deadPartPositionRef - 0);
 
             Debug.Log("2");
-            List<Vector2> BackOfWormList = headPositionPrevious.GetRange(deadPartArrayRef * 10, (bodySegments.Count * 10) - (10 * deadPartArrayRef));
+            //I don't get it
+            List<Vector2> BackOfWormList = headPositionPrevious.GetRange(deadPartPositionRef + 0, headPositionPrevious.Count -1 - deadPartPositionRef - 0);
 
 
             Debug.Log("3");
-            newHead = bodySegments[deadPartArrayRef - 1].AddComponent<SegmentBody>();
-            newRigidBody = bodySegments[deadPartArrayRef - 1].AddComponent<Rigidbody2D>();
+            newHead = bodySegments[deadPartArrayRef + 1].AddComponent<SegmentBody>();
+            newRigidBody = bodySegments[deadPartArrayRef + 1].AddComponent<Rigidbody2D>();
+
+            bodySegments[deadPartArrayRef + 1].GetComponent<BoxCollider2D>().isTrigger = false;
 
             newRigidBody.gravityScale = 0;
             newRigidBody.mass = 50;
 
             Debug.Log("4");
-            newHead.headPositionPrevious = FrontOfWormList;
+            newHead.headPositionPrevious = BackOfWormList;
 
             Debug.Log("5");
             newHead.fall = fall;
@@ -305,7 +325,6 @@ namespace CentipedeBreakout
             newHead.roof = roof;
             newHead.leftWall = leftWall;
             newHead.rightWall = rightWall;
-            newHead.floor = floor;
             newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
             newHead.centipedeSpeedFall = centipedeSpeedFall;
             newHead.centipedeSpeedRise = centipedeSpeedRise;
@@ -313,15 +332,23 @@ namespace CentipedeBreakout
             newHead.justBorn = false;
 
 
+            //attaches body parts to the new head
             for (int i = deadPartArrayRef + 2; i < bodySegments.Count; i++)
             {
-                newHead.bodySegments.Add(bodySegments[i]);
+                newHead.bodySegments.Insert(0,bodySegments[i]);
+
+            }
+
+            //May need to change once splits 1 rather than 2
+            while (bodySegments.Count > deadPartArrayRef)
+            {
+                bodySegments.RemoveAt(bodySegments.Count - 1);
             }
 
             //rb.mass = 10;
-            bodySegments.RemoveRange(deadPartArrayRef, (bodySegments.Count) - (deadPartArrayRef));
-            bodySegments.RemoveRange(deadPartArrayRef, (bodySegments.Count) - (deadPartArrayRef));
-            headPositionPrevious = BackOfWormList;
+            //bodySegments.RemoveRange(deadPartArrayRef, (bodySegments.Count) - (deadPartArrayRef));
+            //bodySegments.RemoveRange(deadPartArrayRef, (bodySegments.Count) - (deadPartArrayRef));
+            headPositionPrevious = FrontOfWormList;
                     
             Debug.Log("Finished");
         }
