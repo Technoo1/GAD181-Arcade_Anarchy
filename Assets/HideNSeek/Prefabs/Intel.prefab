@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8568548855778923201}
   - component: {fileID: 3380072630622642674}
+  - component: {fileID: 5981720528252155641}
   m_Layer: 0
   m_Name: Intel
   m_TagString: Intel
@@ -84,3 +85,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5981720528252155641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9003530396041259826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a352796be0bf56449b04e600fdc2093d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
