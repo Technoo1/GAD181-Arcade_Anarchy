@@ -24,6 +24,16 @@ namespace CentipedeBreakout
         {
             Debug.Log(gameObject + "Object clicked");
             attachedHead.GetComponent<SegmentBody>().DeadSegment(gameObject);
+
+            Debug.Log("Murder");
+            Destroy(gameObject);
+        }
+
+        public void Death()
+        {
+            attachedHead.GetComponent<SegmentBody>().DeadSegment(gameObject);
+
+            Debug.Log("Murder");
             Destroy(gameObject);
         }
 

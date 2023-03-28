@@ -269,6 +269,9 @@ namespace CentipedeBreakout
         }
 
 
+        //known bug, sometimes the position of the wrong body is changed,
+        //this would have to do with attached head 
+        //or 
         public void DeadSegment(GameObject deadPart)
         {
             //if front do this then return / stop
@@ -286,6 +289,10 @@ namespace CentipedeBreakout
                 {
                     Debug.Log("The cats erogenous zone");
 
+                    newRigidBody = bodySegments[0].AddComponent<Rigidbody2D>();
+                    newHead = bodySegments[0].AddComponent<SegmentBody>();
+
+
                     newRigidBody.gravityScale = 0;
                     newRigidBody.mass = 50;
 
@@ -299,6 +306,13 @@ namespace CentipedeBreakout
                     newHead.centipedeSpeedRise = centipedeSpeedRise;
                     newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
                     newHead.justBorn = false;
+
+
+                    bodySegments[0].GetComponent<BoxCollider2D>().isTrigger = false;
+
+                    newHead.gameObject.GetComponent<Segment>().attachedHead = newHead.gameObject;
+                    
+
                     return;
                 }
 
@@ -344,7 +358,7 @@ namespace CentipedeBreakout
                     item.GetComponent<Segment>().attachedHead = bodySegments[0];
                 }
 
-                newHead.attachedHead = newHead.gameObject;
+                newHead.gameObject.GetComponent<Segment>().attachedHead = newHead.gameObject;
 
                 return;
             }
@@ -352,14 +366,14 @@ namespace CentipedeBreakout
             int deadPartArrayRef = bodySegments.IndexOf(deadPart);
             int deadPartPositionRef = deadPartArrayRef * 10 + 10;
 
-            newHead = bodySegments[deadPartArrayRef + 1].AddComponent<SegmentBody>();
-            newRigidBody = bodySegments[deadPartArrayRef + 1].AddComponent<Rigidbody2D>();
+            
 
             //If you touch the but or behind the but
             if (bodySegments.Count - 1 - deadPartArrayRef == 0)
             {
                 Debug.Log("OInga");
                 bodySegments.Remove(deadPart);
+                
                 
                 return;
             }
@@ -371,6 +385,8 @@ namespace CentipedeBreakout
                 //AND THE 2 BUTT BODY SEGMENTS
                 //gonna sleep now thx bye love ya (;
 
+                newHead = bodySegments[bodySegments.Count -1].AddComponent<SegmentBody>();
+                newRigidBody = bodySegments[bodySegments.Count - 1].AddComponent<Rigidbody2D>();
 
                 Debug.Log("The cats erogenous zone");
                 newRigidBody.gravityScale = 0;
@@ -386,17 +402,29 @@ namespace CentipedeBreakout
                 newHead.centipedeSpeedRise = centipedeSpeedRise;
                 newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
                 newHead.justBorn = false;
+
+                bodySegments[deadPartArrayRef + 1].GetComponent<BoxCollider2D>().isTrigger = false;
+                headPositionPrevious = headPositionPrevious.GetRange(0,headPositionPrevious.Count - 20);
+
+                for (int i = 0; i < 2; i++)
+                {
+                    bodySegments.RemoveAt(bodySegments.Count - 1);
+                }
+
+                newHead.gameObject.GetComponent<Segment>().attachedHead = newHead.gameObject;
+                
                 return;
             }
 
             //touch anywhere that isn't the face or but or tailbone
 
+            newHead = bodySegments[deadPartArrayRef + 1].AddComponent<SegmentBody>();
+            newRigidBody = bodySegments[deadPartArrayRef + 1].AddComponent<Rigidbody2D>();
 
 
 
 
 
-            
 
 
             Debug.Log("1");
@@ -441,7 +469,7 @@ namespace CentipedeBreakout
                 newHead.bodySegments.Insert(0, bodySegments[i]);
             }
 
-            foreach (GameObject item in newHead.bodySegments)
+            foreach (GameObject item in bodySegments)
             {
                 item.GetComponent<Segment>().attachedHead = bodySegments[deadPartArrayRef + 1];
             }
