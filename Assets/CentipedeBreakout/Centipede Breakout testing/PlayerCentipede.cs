@@ -12,6 +12,9 @@ namespace CentipedeBreakout
         public GameObject hit;
         private Vector3 playerMove;
         private float timer;
+        private float gunTimer;
+        public GameObject bullet;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -35,6 +38,14 @@ namespace CentipedeBreakout
                     StartCoroutine(Attack());
                 }
             }
+
+            gunTimer += Time.deltaTime;
+            if (Input.GetKey(KeyCode.LeftShift) && gunTimer >= 0.2)
+            {
+                //bject original, Vector3 position, Quaternion rotation
+                Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
+                gunTimer = 0;
+            }
         }
 
 
@@ -48,7 +59,7 @@ namespace CentipedeBreakout
             Destroy(currentHit);
         }
 
-
+        
         void Movement()
         {
             if (Input.GetKey(KeyCode.D))
@@ -71,6 +82,8 @@ namespace CentipedeBreakout
                 playerMove += new Vector3(0, -0.03f, 0);
             }
             if (Input.GetKey(KeyCode.None)) { }
+
+            
 
             rb.MovePosition(transform.position + playerMove);
             playerMove = Vector3.zero;

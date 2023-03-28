@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 113290933}
   - component: {fileID: 113290935}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,6 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   hit: {fileID: 7790266613900963629, guid: 89530a4ccd1f0574ba28ca07a8eac8f9, type: 3}
+  bullet: {fileID: 1236342120582959168, guid: aea526371a32aca4f9bcd68d34d183fd, type: 3}
 --- !u!1 &450846904
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +815,7 @@ GameObject:
   - component: {fileID: 4696419154114656071}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Centipede
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -879,7 +880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591423810170421451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8, y: 1.41, z: 0}
+  m_LocalPosition: {x: -0.8, y: 0.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -899,6 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachedHead: {fileID: 136109030968988771, guid: b87b7becc358bb4409d0bf8e4b6723e8, type: 3}
+  health: 4
   headPositionPrevious: []
   numberOfbodySegments: 10
   bodyPrefab: {fileID: 136109030968988771, guid: b87b7becc358bb4409d0bf8e4b6723e8, type: 3}

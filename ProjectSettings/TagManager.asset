@@ -7,6 +7,8 @@ TagManager:
   - laneOne
   - laneTwo
   - laneThree
+  - CBBullet
+  - Centipede
   layers:
   - Default
   - TransparentFX
