@@ -31,6 +31,19 @@ namespace CentipedeBreakout
             Destroy(gameObject);
         }
 
+        //Would work 10* better if bullet detects segment but segment
+        //is a trigger and triggers can't detect other triggers?
+        /*
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            Debug.Log("PEWPEPWPEW");
+            if (collision.gameObject.tag == "CBBullet")
+            {
+                gameObject.GetComponent<Segment>().LoseHealth();
+            }
+        }
+        */
+
         public void Death()
         {
             attachedHead.GetComponent<SegmentBody>().DeadSegment(gameObject);
