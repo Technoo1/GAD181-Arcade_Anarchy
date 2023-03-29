@@ -5,17 +5,13 @@ using UnityEngine;
 public class BallDamage : MonoBehaviour
 {
     public PlayerHealth playerHealth;
-    public int damage = 10;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int damage = 20;
+   
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

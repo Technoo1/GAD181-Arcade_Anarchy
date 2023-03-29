@@ -9,9 +9,6 @@ public class BallScript : MonoBehaviour
     private float forceY;
     private Vector3 temp;
 
-    public PlayerHealth playerHealth;
-    public int damage = 10;
-
     private Rigidbody2D myBody;
 
     [SerializeField]
@@ -161,10 +158,6 @@ public class BallScript : MonoBehaviour
             }
         }
 
-        if(gameObject.tag == "Player")
-        {
-            playerHealth.TakeDamage(damage); 
-        }
 
     }
 }
