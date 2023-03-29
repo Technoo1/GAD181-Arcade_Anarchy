@@ -310,7 +310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OutOfBounds: {fileID: 196657695}
-  CollObject: {fileID: 0}
   side: Right
 --- !u!1 &198840878
 GameObject:
@@ -924,7 +923,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OutOfBounds: {fileID: 0}
-  CollObject: {fileID: 0}
   side: 
 --- !u!1001 &572858129
 PrefabInstance:
@@ -1536,7 +1534,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OutOfBounds: {fileID: 1073494684}
-  CollObject: {fileID: 0}
   side: Left
 --- !u!212 &1073494689
 SpriteRenderer:
@@ -2517,6 +2514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77051a6144264e94e9eb87c216cd24ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserPrefab: {fileID: -6142093409228205099, guid: 9fd11dea7e5ceaa4e9d23a1ae033cddc, type: 3}
   moveSpeed: 4
   rb: {fileID: 2029444276}
 --- !u!61 &2029444278

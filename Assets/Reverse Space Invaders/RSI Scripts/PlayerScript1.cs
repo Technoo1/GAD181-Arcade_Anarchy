@@ -30,6 +30,14 @@ namespace ArcadeAnarchy
                 Debug.Log("I'm still being pressed");
             }
         }
+        /* Find a way to make it so that once hits boundary area, pushes alien swarm down a row.
+        movement.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Vertical", movement.y); */
+
+        // if(rb.position ==  )
+        // {
+
+        // }
 
         void FixedUpdate()
         {

@@ -1,24 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerScript2 : MonoBehaviour
 {
+    public Projectile laserPrefab; // Reference to the Projectile script 
+
     public float moveSpeed = 5f; // Public float to determine speed.
+
     public Rigidbody2D rb; // Calls the rigid body so that the sprite can be effected physically.
+
     Vector2 movement; // Uses a Vector based movement system. Placeholder, change to rigid body based later
 
     void Update()
     {
-
-        // Add a shooting function for the tank here
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            OnJump?.Invoke();
-        }*/
-
+        // Tank Movement code
         movement.x = 0f;
-
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             movement.x = Input.GetAxisRaw("Horizontal");
@@ -30,15 +28,16 @@ public class PlayerScript2 : MonoBehaviour
             Debug.Log("I'm still being pressed");
         }
 
+        // Tank Shooting code
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        {
+            Shoot(); //Instantiates bullets
+        }
+    }
 
-        /* Find a way to make it so that once hits boundary area, pushes alien swarm down a row.
-        movement.y = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("Vertical", movement.y); */
-
-        // if(rb.position ==  )
-        // {
-
-        // }
+    private void Shoot() // Code that instantiates and fires a projectile from the tank
+    {
+        Instantiate(this.laserPrefab, this.transform.position, quaternion.identity);
     }
 
     void FixedUpdate()
