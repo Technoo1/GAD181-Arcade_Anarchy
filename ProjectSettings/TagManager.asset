@@ -6,6 +6,23 @@ TagManager:
   tags:
   - DestroyBorder
   - Obstacle
+  - laneOne
+  - laneTwo
+  - laneThree
+  - GuardFront
+  - GuardProfile
+  - Intel
+  - CBBullet
+  - Centipede
+  - Largest Ball
+  - Large Ball
+  - Medium Ball
+  - Small Ball
+  - Smallest Ball
+  - Ground
+  - Left Wall
+  - Right Wall
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -13,7 +30,7 @@ TagManager:
   - Boundaries
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
