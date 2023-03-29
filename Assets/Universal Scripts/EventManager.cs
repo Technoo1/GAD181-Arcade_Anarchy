@@ -24,6 +24,12 @@ namespace ArcadeAnarchy
         {
             OnUpdateUI?.Invoke(text);
         }
+        public event Action OnTriggerGameOver;
+
+        public void TriggerGameOver()
+        {
+            OnTriggerGameOver?.Invoke();
+        }
 
     }
 
