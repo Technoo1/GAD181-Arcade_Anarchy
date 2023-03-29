@@ -3111,12 +3111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77051a6144264e94e9eb87c216cd24ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   moveSpeed: 5
-=======
-  laserPrefab: {fileID: -6142093409228205099, guid: 9fd11dea7e5ceaa4e9d23a1ae033cddc, type: 3}
-  moveSpeed: 4
->>>>>>> main
   rb: {fileID: 2029444276}
 --- !u!61 &2029444278
 BoxCollider2D:
