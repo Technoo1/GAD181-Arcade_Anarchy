@@ -11,6 +11,8 @@ public class PlayerScript2 : MonoBehaviour
 
     public Rigidbody2D rb; // Calls the rigid body so that the sprite can be effected physically.
 
+    private bool _laserActive; 
+
     Vector2 movement; // Uses a Vector based movement system. Placeholder, change to rigid body based later
 
     void Update()
@@ -37,7 +39,17 @@ public class PlayerScript2 : MonoBehaviour
 
     private void Shoot() // Code that instantiates and fires a projectile from the tank
     {
-        Instantiate(this.laserPrefab, this.transform.position, quaternion.identity);
+        if (!_laserActive) //Sets up so that only one bullet can be fired at a time.
+        {
+            Projectile projectile = Instantiate(this.laserPrefab, this.transform.position, quaternion.identity);
+            projectile.destroyed += LaserDestroyed;
+            _laserActive = true;
+        }
+    }
+
+    private void LaserDestroyed()
+    {
+        _laserActive = false;
     }
 
     void FixedUpdate()
