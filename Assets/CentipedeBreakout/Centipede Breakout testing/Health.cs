@@ -8,8 +8,9 @@ namespace CentipedeBreakout
 {
     public class Health : MonoBehaviour
     {
-        //Add hearts in inspector
+        //Add invincibility frames
 
+        //Add hearts in inspector
         public List<GameObject> hearts;
         private int heartsLeft = 3;
 
