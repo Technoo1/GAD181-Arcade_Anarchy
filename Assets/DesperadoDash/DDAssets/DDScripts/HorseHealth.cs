@@ -1,3 +1,4 @@
+using ArcadeAnarchy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,13 +10,15 @@ public class HorseHealth : MonoBehaviour
 
     public BoxCollider2D bxCollider;
     public bool isPaused = false;
-     // Start is called before the first frame update
+
+
     void Start()
     {
         if (!bxCollider)
         {
             bxCollider = GetComponent<BoxCollider2D>();
         }
+
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class HorseHealth : MonoBehaviour
             //Debug.Log("death");
             Time.timeScale = 0f;
             isPaused = true;
+            EventManager.instance.TriggerGameOver();
         }
 
       
