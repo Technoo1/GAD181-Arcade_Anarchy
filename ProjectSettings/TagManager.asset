@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - laneOne
-  - laneTwo
-  - laneThree
+  - DestroyBorder
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -43,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Lane1
+    uniqueID: 3820249903
+    locked: 0
+  - name: Lane2
+    uniqueID: 1250009031
+    locked: 0
+  - name: Lane3
+    uniqueID: 2343776579
     locked: 0
