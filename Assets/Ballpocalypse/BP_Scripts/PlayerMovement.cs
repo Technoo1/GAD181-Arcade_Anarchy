@@ -32,7 +32,9 @@ namespace ArcadeAnarchy
             if (Input.GetButton("Crouch"))
             {
                 crouch = true;
-            } else if(Input.GetButtonUp("Crouch"))
+
+            } 
+            else if(Input.GetButtonUp("Crouch"))
             {
                 crouch = false;
             }
