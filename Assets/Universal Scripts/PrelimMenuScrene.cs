@@ -22,7 +22,7 @@ public class PrelimMenuScrene : MonoBehaviour
     }
     public void CentipedeBreakout()
     {
-        SceneManager.LoadScene("CentipedeBreakout");
+        SceneManager.LoadScene("CentipedeTesting");
         SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
     }
     public void RevSpaceInvaders()
@@ -34,5 +34,6 @@ public class PrelimMenuScrene : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MenuScreen");
+        Time.timeScale = 1f;
     }
 }
