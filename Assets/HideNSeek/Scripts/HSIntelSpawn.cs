@@ -19,7 +19,7 @@ public class HSIntelSpawn : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnIntel());
-        Debug.Log("SpawnIntel coroutine at " + this.gameObject.name + " has started");
+        //Debug.Log("SpawnIntel coroutine at " + this.gameObject.name + " has started");
     }
 
     IEnumerator SpawnIntel() //coroutine to wait defined time before spawning enemies
@@ -31,9 +31,9 @@ public class HSIntelSpawn : MonoBehaviour
         while (!intelObject) //while there's no object in the scene tagged as "Intel"...
         {
             Instantiate(intelPrefab, transform); //... instantiate a target object
-            Debug.Log("intel spawned at " + this.gameObject.name);
+            //Debug.Log("intel spawned at " + this.gameObject.name);
             intelCount++;
-            Debug.Log(intelCount + " Intel is present");
+            //Debug.Log(intelCount + " Intel is present");
             yield return new WaitUntil(() => intelCount == 0); //pauses coroutine until there's 0 intel at this spawn
             yield return new WaitForSeconds(timeBeforeSpawn);
         }

@@ -53,7 +53,7 @@ public class HSPlayerControls : MonoBehaviour
         {
             //add an intel point (to be converted to ticket later, or just add to ticket number straight away)
             Destroy(intelIsHere); //remove the Intel sprite from the scene
-            Debug.Log("intel collected!");
+            //Debug.Log("intel collected!");
 
             intelSpawner1.GetComponent<HSIntelSpawn>().intelCount--; //reduce the number of intel reported by the IntelSpawn script
             intelSpawner2.GetComponent<HSIntelSpawn>().intelCount--; //reduce the number of intel reported by the IntelSpawn script

@@ -26,13 +26,13 @@ public class HSGuardSpawn : MonoBehaviour
         Instantiate(guardProfilePrefab, transform);
 
         //print to console
-        Debug.Log("SpawnGuard coroutine is done");
+        //Debug.Log("SpawnGuard coroutine is done");
     }
 
     void Start()
     {
         StartCoroutine(SpawnGuard());
-        Debug.Log("SpawnGuard coroutine has started");
+        //Debug.Log("SpawnGuard coroutine has started");
     }
 
     //event trigger relating to game start (scene change?) which starts SpawnGuard coroutine
