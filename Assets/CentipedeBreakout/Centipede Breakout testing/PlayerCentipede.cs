@@ -14,6 +14,8 @@ namespace CentipedeBreakout
         private float timer;
         private float gunTimer;
         public GameObject bullet;
+        public GameObject health;
+        private float iFrames;
 
         // Start is called before the first frame update
         void Start()
@@ -46,8 +48,35 @@ namespace CentipedeBreakout
                 Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
                 gunTimer = 0;
             }
+
+
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position - Vector3.up * 0.2f, Vector2.up * 0.2f);
+
+            iFrames += Time.deltaTime;
+            if (hit.collider.gameObject.tag == "Centipede" && iFrames > 2)
+            {
+                DamageTaken();
+                iFrames = 0;
+            }
         }
 
+        public List<GameObject> hearts;
+        private int heartsLeft = 3;
+
+        public void DamageTaken()
+        {
+            heartsLeft -= 1;
+            
+            if (heartsLeft < 0)
+            {
+                Debug.Log("gameover");
+            }
+            else {
+                Debug.Log("Piss" + hearts.Count);
+                hearts[heartsLeft].SetActive(false); 
+            }
+        }
 
         //Maybe delete this mess??
         public IEnumerator Attack()
@@ -59,6 +88,7 @@ namespace CentipedeBreakout
             Destroy(currentHit);
         }
 
+        
         
         void Movement()
         {
