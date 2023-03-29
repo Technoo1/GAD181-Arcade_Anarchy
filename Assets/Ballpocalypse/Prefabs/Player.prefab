@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4185268421039599414}
   - component: {fileID: 4185268421039599401}
   - component: {fileID: 4185268421039599400}
-  - component: {fileID: 6325634832559265111}
+  - component: {fileID: 1935155308853472912}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -273,7 +273,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: ed136c0e3a7fdf643be1da6e809ed091, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.020376459, y: 0.0715515}
@@ -357,7 +357,7 @@ MonoBehaviour:
   upFirePoint: {fileID: 4185268421168212400}
   bulletPrefab: {fileID: 7687631567146458560, guid: edd523fa3510f5541aa25a24ef10c6fd, type: 3}
   animator: {fileID: 4185268421039599401}
---- !u!114 &6325634832559265111
+--- !u!114 &1935155308853472912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c94271fda577447aae8f5076ae875a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   playerHealth: 0
 --- !u!1 &4185268421168212401
 GameObject:
