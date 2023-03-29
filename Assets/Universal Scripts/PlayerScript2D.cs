@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ArcadeAnarchy
+/*namespace ArcadeAnarchy
 {
-    public class PlayerScript2D : PlayerScript
+    public class PlayerScript2D : RSIControls
     {
         protected override void Jump()
         {
@@ -12,5 +12,5 @@ namespace ArcadeAnarchy
             Debug.Log("Wahoo!");
         }
     }
-}
+}*/
 
