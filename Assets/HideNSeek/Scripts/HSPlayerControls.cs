@@ -1,3 +1,4 @@
+using ArcadeAnarchy;
 using JetBrains.Annotations;
 using System;
 using System.Collections;
@@ -18,10 +19,13 @@ public class HSPlayerControls : MonoBehaviour
 {
     public Sprite playerPeek; //variable to place the peeking char sprite
     public Sprite playerHide; //variable to place the hiding char sprite
+
     public GameObject intelSpawner1; //define parent(s) of intel that spawns in, so that we can trigger more spawns
     public GameObject intelSpawner2;
     public GameObject intelSpawner3;
 
+    public GameObject Spawns; //spawn point parent object
+    public GameObject ingameScreen; //ingame ui object(s)
 
     void Update()
     {
@@ -45,9 +49,12 @@ public class HSPlayerControls : MonoBehaviour
         }
         if (guardFacing == true && playerIsPeeking == true) //if there are guards facing a peeking player...
         {
-            //trigger a game over screen?
-            Destroy(gameObject); //"kill" player for now, if seen
+            EventManager.instance.TriggerGameOver(); //triggers universal game over screen and menu
             Debug.Log("caught by guard! Snake? Snaaaaaake!");
+
+            //Spawns.SetActive(false); //disables spawned objects on screen
+            //ingameScreen.SetActive(false); //disable ingame ui
+            //Destroy(gameObject); //TEST. "kill" player for now, if seen
         }
         if (Input.GetKeyDown(KeyCode.Space) && playerIsPeeking == true && intelIsHere == true) //if the player presses a key/button while peeking...
         {
