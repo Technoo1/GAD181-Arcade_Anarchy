@@ -6,6 +6,12 @@ TagManager:
   tags:
   - DestroyBorder
   - Obstacle
+  - laneOne
+  - laneTwo
+  - laneThree
+  - GuardFront
+  - GuardProfile
+  - Intel
   layers:
   - Default
   - TransparentFX
