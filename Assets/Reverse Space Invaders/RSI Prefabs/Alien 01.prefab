@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5847484921353317245}
   - component: {fileID: 4557775599900639336}
   - component: {fileID: 5847484921353317243}
-  - component: {fileID: 4527111228987588370}
   m_Layer: 0
   m_Name: Alien 01
   m_TagString: Untagged
@@ -133,20 +132,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 1.6}
   m_EdgeRadius: 0
---- !u!114 &4527111228987588370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5847484921353317247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac2d339d4d217a043a7519c33a797720, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationSprites:
-  - {fileID: -1565508921, guid: 591aef2e876a84649ab075a4422f1787, type: 3}
-  - {fileID: 1974123794, guid: 591aef2e876a84649ab075a4422f1787, type: 3}
-  - {fileID: 861743361, guid: 591aef2e876a84649ab075a4422f1787, type: 3}
-  animationTime: 1

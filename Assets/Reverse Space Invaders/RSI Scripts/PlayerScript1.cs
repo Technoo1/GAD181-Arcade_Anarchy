@@ -29,6 +29,15 @@ namespace ArcadeAnarchy
                 Debug.Log("I'm still being pressed");
             }
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if(other.gameObject.layer == LayerMask.NameToLayer("Laser"))
+            {
+                this.gameObject.SetActive(false);
+            }
+        }
+
         /* Find a way to make it so that once hits boundary area, pushes alien swarm down a row.
         movement.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Vertical", movement.y); */
