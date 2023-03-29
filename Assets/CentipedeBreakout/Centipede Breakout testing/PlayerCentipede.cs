@@ -56,11 +56,13 @@ namespace CentipedeBreakout
             iFrames += Time.deltaTime;
             if (hit.collider.gameObject.tag == "Centipede" && iFrames > 2)
             {
-                DamageTaken();
+                EventManager.instance.HeartLost();
                 iFrames = 0;
             }
         }
 
+
+        /*
         public List<GameObject> hearts;
         private int heartsLeft = 3;
 
@@ -77,6 +79,7 @@ namespace CentipedeBreakout
                 hearts[heartsLeft].SetActive(false); 
             }
         }
+        */
 
         //Maybe delete this mess??
         public IEnumerator Attack()

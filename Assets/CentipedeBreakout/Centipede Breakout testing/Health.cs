@@ -3,29 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using CentipedeBreakout;
 using System.Xml.Serialization;
+using ArcadeAnarchy;
 
-namespace CentipedeBreakout
-{
+
     public class Health : MonoBehaviour
     {
-        //Add invincibility frames
+        public float secondsInvincible = 0;
 
         //Add hearts in inspector
-
-        
-        public int secondsInvincible;
         public List<GameObject> hearts;
 
         private int heartsLeft = 3;
-        private int iFrames;
+        private float iFrames = 0;
 
-        public void DamageTaken()
+
+        private void Start()
         {
-            iFrames += 0;
-
-            if(iFrames > secondsInvincible)
+            if (secondsInvincible <=0)
             {
-                iFrames = 0;
+                secondsInvincible = 1;
+            }
+
+            EventManager.instance.OnHeartLost += HeartLost;
+        }
+
+
+        private void Update()
+        {
+            iFrames += Time.deltaTime;
+        }
+
+        public void HeartLost()
+        {
+            if(iFrames < secondsInvincible)
+            {
                 return;
             }
 
@@ -33,13 +44,12 @@ namespace CentipedeBreakout
 
             if (heartsLeft < 0)
             {
-                Debug.Log("gameover");
-                //do this
+                EventManager.instance.TriggerGameOver();
             }
             else
             {
                 hearts[heartsLeft].SetActive(false);
+                iFrames = 0;
             }
         }
     }
-}
