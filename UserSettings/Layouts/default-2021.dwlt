@@ -48,8 +48,25 @@ MonoBehaviour:
   m_MinSize: {x: 503, y: 321}
   m_MaxSize: {x: 16192, y: 12117}
   vertical: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  controlID: 239
+=======
+  controlID: 100
+>>>>>>> GeorgeBranch
+=======
+  controlID: 73
+>>>>>>> UIBranch
+--- !u!114 &4
+=======
+  controlID: 119
+=======
   controlID: 30
+>>>>>>> GeorgeBranch
 --- !u!114 &3
+>>>>>>> GeorgeBranch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,8 +240,25 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 321}
   m_MaxSize: {x: 8096, y: 12117}
   vertical: 1
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  controlID: 240
+=======
+  controlID: 132
+>>>>>>> GeorgeBranch
+=======
+  controlID: 27
+>>>>>>> UIBranch
+--- !u!114 &11
+=======
+  controlID: 92
+=======
   controlID: 16
+>>>>>>> GeorgeBranch
 --- !u!114 &10
+>>>>>>> GeorgeBranch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,8 +282,25 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  controlID: 241
+=======
+  controlID: 133
+>>>>>>> GeorgeBranch
+=======
+  controlID: 28
+>>>>>>> UIBranch
+--- !u!114 &12
+=======
+  controlID: 93
+=======
   controlID: 17
+>>>>>>> GeorgeBranch
 --- !u!114 &11
+>>>>>>> GeorgeBranch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,22 +368,62 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/UI
+=======
+    - Assets
+>>>>>>> GeorgeBranch
+=======
+    - Assets/UI
+>>>>>>> GeorgeBranch
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< HEAD
+<<<<<<< HEAD
   - Assets/UI
+=======
+  - Assets
+>>>>>>> GeorgeBranch
+=======
+  - Assets/UI
+>>>>>>> GeorgeBranch
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\1028442\Desktop\gad181\GitKraken\GAD181-Arcade_Anarchy
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_SelectedIDs: 10610000
+    m_LastClickedID: 24848
+    m_ExpandedIDs: 00000000f860000000ca9a3b
+=======
+    m_SelectedIDs: 1a620000
+    m_LastClickedID: 25114
+    m_ExpandedIDs: 000000000862000000ca9a3b
+>>>>>>> GeorgeBranch
+=======
+    m_SelectedIDs: 1e610000
+    m_LastClickedID: 24862
+    m_ExpandedIDs: 00000000fc600000fe60000000ca9a3b
+>>>>>>> UIBranch
+=======
+    m_SelectedIDs: f4350000
+    m_LastClickedID: 13812
+    m_ExpandedIDs: 00000000f435000000ca9a3b
+>>>>>>> GeorgeBranch
+=======
     m_SelectedIDs: 22620000
     m_LastClickedID: 25122
     m_ExpandedIDs: 00000000fe6100000062000000ca9a3b
+>>>>>>> GeorgeBranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +451,23 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_ExpandedIDs: 00000000f8600000
+=======
+    m_ExpandedIDs: 0000000008620000
+>>>>>>> GeorgeBranch
+=======
+    m_ExpandedIDs: 00000000fc600000fe600000
+>>>>>>> UIBranch
+=======
+    m_ExpandedIDs: 00000000f4350000
+>>>>>>> GeorgeBranch
+=======
     m_ExpandedIDs: 00000000fe61000000620000
+>>>>>>> GeorgeBranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -490,7 +597,23 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 906d0000
       m_LastClickedID: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      m_ExpandedIDs: 26fbffff
+=======
+      m_ExpandedIDs: 1ef8ffff8cfaffff
+>>>>>>> GeorgeBranch
+=======
+      m_ExpandedIDs: 0efaffff26fbffff6e600000
+>>>>>>> UIBranch
+=======
+      m_ExpandedIDs: 42fbffff
+>>>>>>> GeorgeBranch
+=======
       m_ExpandedIDs: 96f7ffff80faffff
+>>>>>>> GeorgeBranch
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -506,8 +629,17 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+<<<<<<< HEAD
+        m_ClientGUIView: {fileID: 5}
       m_SearchString: 
+=======
+        m_ClientGUIView: {fileID: 0}
+<<<<<<< HEAD
+      m_SearchString:
+>>>>>>> GeorgeBranch
+=======
+      m_SearchString: 
+>>>>>>> GeorgeBranch
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
     m_LockTracker:
@@ -794,9 +926,33 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: {x: 577.24005, y: 447.00546, z: -8.512651}
+    speed: 2
+    m_Value: {x: 577.24005, y: 447.00546, z: -8.512651}
+=======
+    m_Target: {x: 1011.983, y: 280.5427, z: -11.14973}
+    speed: 2
+    m_Value: {x: 1011.983, y: 280.5427, z: -11.14973}
+>>>>>>> GeorgeBranch
+=======
+    m_Target: {x: 948.0758, y: 632.3504, z: -11.296181}
+    speed: 2
+    m_Value: {x: 948.0758, y: 632.3504, z: -11.296181}
+>>>>>>> UIBranch
+=======
+    m_Target: {x: 0, y: 0, z: 0}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0}
+>>>>>>> GeorgeBranch
+=======
     m_Target: {x: 500.0016, y: 113.654434, z: -4.261559}
     speed: 2
     m_Value: {x: 500.0016, y: 113.654434, z: -4.261559}
+>>>>>>> GeorgeBranch
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -847,9 +1003,33 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: 889.16235
+    speed: 2
+    m_Value: 889.16235
+=======
+    m_Target: 1110.307
+    speed: 2
+    m_Value: 1110.307
+>>>>>>> GeorgeBranch
+=======
+    m_Target: 1047.5249
+    speed: 2
+    m_Value: 1047.5249
+>>>>>>> UIBranch
+=======
+    m_Target: 10
+    speed: 2
+    m_Value: 10
+>>>>>>> GeorgeBranch
+=======
     m_Target: 460.38077
     speed: 2
     m_Value: 460.38077
+>>>>>>> GeorgeBranch
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -943,21 +1123,68 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+      y: 21
+<<<<<<< HEAD
+      width: 821.3334
+      height: 732
+<<<<<<< HEAD
+    m_Scale: {x: 0.6416667, y: 0.6416667}
+    m_Translation: {x: 410.6667, y: 366}
+=======
+      width: 844.66675
+      height: 732
+    m_Scale: {x: 0.6598959, y: 0.6598959}
+    m_Translation: {x: 422.33337, y: 366}
+>>>>>>> GeorgeBranch
+=======
+    m_Scale: {x: 0.6416667, y: 0.64166665}
+    m_Translation: {x: 410.6667, y: 366.00003}
+>>>>>>> UIBranch
+=======
+      y: 0
+      width: 1532
+      height: 790
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 766, y: 395}
+>>>>>>> GeorgeBranch
+=======
       y: 21
       width: 1470
       height: 732
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 735, y: 366}
+>>>>>>> GeorgeBranch
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+      x: -640
+<<<<<<< HEAD
+<<<<<<< HEAD
+      y: -570.3896
+=======
+      y: -570.38965
+>>>>>>> UIBranch
+      width: 1280
+      height: 1140.7793
+=======
+      x: -766
+      y: -395
+      width: 1532
+      height: 790
+>>>>>>> GeorgeBranch
+=======
       x: -735
       y: -366
       width: 1470
       height: 732
+>>>>>>> GeorgeBranch
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 2205, y: 1129.5}
