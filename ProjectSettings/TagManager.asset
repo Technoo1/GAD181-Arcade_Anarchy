@@ -12,6 +12,8 @@ TagManager:
   - GuardFront
   - GuardProfile
   - Intel
+  - CBBullet
+  - Centipede
   layers:
   - Default
   - TransparentFX
