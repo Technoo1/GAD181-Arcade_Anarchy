@@ -457,6 +457,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1935155308853472912, guid: 65e43756cb311ca4bafa0a7716c168dc, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935155308853472912, guid: 65e43756cb311ca4bafa0a7716c168dc, type: 3}
+      propertyPath: playerHealth
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4185268421039599409, guid: 65e43756cb311ca4bafa0a7716c168dc, type: 3}
       propertyPath: m_Name
       value: Player
@@ -511,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4185268421039599415, guid: 65e43756cb311ca4bafa0a7716c168dc, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4185268421039599415, guid: 65e43756cb311ca4bafa0a7716c168dc, type: 3}
       propertyPath: m_UsedByEffector
