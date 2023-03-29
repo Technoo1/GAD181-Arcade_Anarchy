@@ -11,17 +11,30 @@ namespace CentipedeBreakout
         //Add invincibility frames
 
         //Add hearts in inspector
+
+        
+        public int secondsInvincible;
         public List<GameObject> hearts;
+
         private int heartsLeft = 3;
+        private int iFrames;
 
         public void DamageTaken()
         {
+            iFrames += 0;
+
+            if(iFrames > secondsInvincible)
+            {
+                iFrames = 0;
+                return;
+            }
+
             heartsLeft -= 1;
 
             if (heartsLeft < 0)
             {
                 Debug.Log("gameover");
-                //Actually do the thing
+                //do this
             }
             else
             {
