@@ -14,11 +14,11 @@ public class BallDamage : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D hitinfo)
     {
-        if(collision.gameObject.tag == "Player")
+        if(hitinfo.tag == "Player")
         {
-            playerHealth.TakeDamage(damage);
+           hitinfo.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
     }
 }
