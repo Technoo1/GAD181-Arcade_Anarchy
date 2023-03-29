@@ -301,7 +301,7 @@ namespace CentipedeBreakout
                     newHead.roof = roof;
                     newHead.leftWall = leftWall;
                     newHead.rightWall = rightWall;
-                    newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
+                    newHead.centipedeHorizontalAngle = centipedeHorizontalAngle;
                     newHead.centipedeSpeedFall = centipedeSpeedFall;
                     newHead.centipedeSpeedRise = centipedeSpeedRise;
                     newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
@@ -340,7 +340,7 @@ namespace CentipedeBreakout
                 newHead.roof = roof;
                 newHead.leftWall = leftWall;
                 newHead.rightWall = rightWall;
-                newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
+                newHead.centipedeHorizontalAngle = centipedeHorizontalAngle;
                 newHead.centipedeSpeedFall = centipedeSpeedFall;
                 newHead.centipedeSpeedRise = centipedeSpeedRise;
                 newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
