@@ -9,6 +9,6 @@ public class HSIntelCollectable : MonoBehaviour
     private void OnDestroy()
     {
         HSIntelScore.playerIntel += intelValue;
-        Debug.Log("collected " + intelValue + " Intel");
+        //Debug.Log("collected " + intelValue + " Intel");
     }
 }

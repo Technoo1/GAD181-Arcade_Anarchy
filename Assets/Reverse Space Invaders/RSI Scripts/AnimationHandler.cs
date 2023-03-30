@@ -12,22 +12,21 @@ public class AnimationHandler : MonoBehaviour
 
     private int _animationFrame;
 
-    public void awake()
+    public void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void Start() 
-    
     {
-     InvokeRepeating(nameof(animationSprites), this.animationTime, this.animationTime);   
+     InvokeRepeating(nameof(AnimateSprite), this.animationTime, this.animationTime);   
     }
 
     private void AnimateSprite()
     {
         _animationFrame ++;
 
-        if(_animationFrame > this.animationSprites.Length)
+        if(_animationFrame > this.animationSprites.Length) 
         {
             _animationFrame = 0;
         }

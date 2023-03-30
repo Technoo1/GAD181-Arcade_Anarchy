@@ -42,17 +42,17 @@ public class HSGuardVision : MonoBehaviour
                 if (guardTurnChance >= 50)
                 {
                     this.gameObject.GetComponent<SpriteRenderer>().sprite = guardTurn; //swap to turning sprite
-                    print("guard is turning!");
+                    //print("guard is turning!");
                     yield return new WaitForSeconds(waitTillTurn); //wait before swapping again
                     {
                         this.gameObject.GetComponent<SpriteRenderer>().sprite = guardFront; //swap to front-facing sprite
                         transform.tag = "GuardFront";
-                        print("guard is facing you!!");
+                        //print("guard is facing you!!");
                         yield return new WaitForSeconds(waitBeforeSwapBack); //wait before swapping again
                         {
                             this.gameObject.GetComponent<SpriteRenderer>().sprite = guardProfile; //swap to profile sprite
                             transform.tag = "GuardProfile";
-                            print("guard has turned away");
+                            //print("guard has turned away");
                             yield return new WaitForSeconds(5f); //wait 5 seconds before looping
                         }
                     }
@@ -67,7 +67,7 @@ public class HSGuardVision : MonoBehaviour
                     }*/
                 else
                 {
-                    print("guard did nothing...");
+                    //print("guard did nothing...");
                     yield return new WaitForSeconds(5f); //wait 5 seconds before looping
                 }
             }
