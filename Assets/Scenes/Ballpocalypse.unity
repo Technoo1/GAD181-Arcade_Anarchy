@@ -242,6 +242,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5177763571411910300, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
+      propertyPath: moveLeft
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177763571411910300, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
       propertyPath: originalBall
       value: 
       objectReference: {fileID: 309918864321610670, guid: 62dbb672f81ad854a96a2990a984d2ec, type: 3}

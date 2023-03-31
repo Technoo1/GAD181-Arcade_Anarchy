@@ -12,22 +12,23 @@ public class AnimationHandler : MonoBehaviour
 
     private int _animationFrame;
 
-    public void awake()
+    public System.Action killed;
+
+    public void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void Start() 
-    
     {
-     InvokeRepeating(nameof(animationSprites), this.animationTime, this.animationTime);   
+     InvokeRepeating(nameof(AnimateSprite), this.animationTime, this.animationTime);   
     }
 
     private void AnimateSprite()
     {
         _animationFrame ++;
 
-        if(_animationFrame > this.animationSprites.Length)
+        if(_animationFrame > this.animationSprites.Length) 
         {
             _animationFrame = 0;
         }
@@ -37,4 +38,12 @@ public class AnimationHandler : MonoBehaviour
         }
         _spriteRenderer.sprite = this.animationSprites[_animationFrame];
     }
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if(other.gameObject.layer == LayerMask.NameToLayer("Laser"))
+            {
+                this.killed.Invoke();
+                this.gameObject.SetActive(false);
+            }
+        }
 }
