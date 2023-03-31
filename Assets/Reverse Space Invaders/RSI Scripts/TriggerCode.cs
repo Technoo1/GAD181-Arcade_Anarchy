@@ -16,11 +16,11 @@ public class TriggerCode : MonoBehaviour
 
             if (side == "Left")
             {
-                pos.x += 0.16f; // This pushes tank to the right
+                pos.x += 0.2f; // This pushes tank to the right
             }
             else if (side == "Right")
             {
-                pos.x -= 0.16f; // This pushes tank to the left
+                pos.x -= 0.2f; // This pushes tank to the left
             }
 
             Object.GetComponent<Transform>().position = pos;
@@ -30,7 +30,7 @@ public class TriggerCode : MonoBehaviour
              */
         }
 
-       if (Object.name == "Alien")
+       if (Object.name == "Alien 01 Variant")
         {
             Vector2 pos = Object.GetComponent<Transform>().position;
             pos.y -= 1;
@@ -38,11 +38,11 @@ public class TriggerCode : MonoBehaviour
             
             if (side == "Left")
             {
-                pos.x += 0.16f; // This pushes tank to the right
+                pos.x += 0.2f; // This pushes Alien to the right
             }
             else if (side == "Right")
             {
-                pos.x -= 0.16f; // This pushes tank to the left
+                pos.x -= 0.2f; // This pushes Alien to the left
             }
         }
     }
