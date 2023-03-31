@@ -8,14 +8,10 @@ namespace ArcadeAnarchy
     public class PlayerScript1 : MonoBehaviour
     {
         public float moveSpeed = 5f; // Public float to determine speed.
-        Vector2 movement; // Uses a Vector based movement system. Placeholder, change to rigid body based late.
+        Vector2 movement; 
 
         void Update()
         {
-            /* horizontalMove = Input.GetAxisRaw("Horizontal") * moveSpeed;
-             animator.SetFloat("Horizontal", Mathf.Abs(horizontalMove));
-             Debug.Log("I'm still being pressed"); */
-
             movement.x = 0f;
 
             if (Input.GetKey(KeyCode.A))
@@ -28,24 +24,16 @@ namespace ArcadeAnarchy
                 movement.x = Input.GetAxisRaw("Horizontal");
                 Debug.Log("I'm still being pressed");
             }
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if(other.gameObject.layer == LayerMask.NameToLayer("Laser"))
+            else if (Input.GetKey(KeyCode.S))
             {
-                this.gameObject.SetActive(false);
+                movement.y = Input.GetAxisRaw("Vertical");
+                Debug.Log("I'm still being pressed");
             }
         }
 
         /* Find a way to make it so that once hits boundary area, pushes alien swarm down a row.
         movement.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Vertical", movement.y); */
-
-        // if(rb.position ==  )
-        // {
-
-        // }
 
         void FixedUpdate()
         {
