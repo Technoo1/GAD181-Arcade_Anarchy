@@ -8,7 +8,12 @@ public class AlienManager : MonoBehaviour
     public AnimationHandler[] prefabs;
     public int rows = 3;
     public int columns = 9;
-    private float speed = 0f;
+    public AnimationCurve speed;
+
+    public int amountkilled {get; private set;}
+    public int totalAliens => this.rows * this.columns;
+    public float percentKilled => (float)this.amountkilled / (float)this.totalAliens;
+
 
     private Vector3 _direction = Vector2.right;
 
@@ -25,6 +30,7 @@ public class AlienManager : MonoBehaviour
             for(int col = 0; col < this.columns; col++) // A for loop to instantiate Aliens 
             {
                 AnimationHandler Aliens = Instantiate(this.prefabs[row], this.transform);
+                Aliens.killed += alienKilled;
                 Vector3 position = rowPosition;
                 position.x += col * 2.0f;
                 Aliens.transform.localPosition = position;
@@ -34,7 +40,7 @@ public class AlienManager : MonoBehaviour
 
     private void Update() 
     {
-        this.transform.position += _direction * this.speed * Time.deltaTime;
+        this.transform.position += _direction * this.speed.Evaluate(this.percentKilled) * Time.deltaTime;
         
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
@@ -73,4 +79,8 @@ public class AlienManager : MonoBehaviour
         position.y -= 1.0f;
     }
 
+    private void alienKilled()
+    {
+        this.amountkilled ++;
+    }
 }
