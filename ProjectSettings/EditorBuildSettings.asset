@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Ballpocalypse.unity
     guid: a1d887bd5811ae148a672fafa5fc7ee9
   - enabled: 1
-    path: Assets/CentipedeBreakout/Centipede Breakout testing/CentipedeTesting.unity
-    guid: 161a525de660f0e4dbd99ed09eb6f937
-  - enabled: 1
     path: Assets/Scenes/DesperadoDash.unity
     guid: 9b0560ed5df8aa74995104e53c8cda1f
   - enabled: 1
