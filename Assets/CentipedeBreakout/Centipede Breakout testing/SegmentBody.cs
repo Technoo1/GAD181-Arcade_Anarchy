@@ -269,6 +269,22 @@ namespace CentipedeBreakout
         }
 
 
+        //bleagh bluh, disgusting
+        //really need to fix the issue where the head is not counted
+        //to allow images to rotate
+        //and also assign head
+        public void RotateEverything()
+        {
+            for (int i = 0; i < bodySegments.Count; i++)
+            {
+                if (i == bodySegments.Count)
+                {
+                    
+                }
+                bodySegments[i].transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(bodySegments[i].transform.position, bodySegments[i + 1].transform.position, 1, 0));
+            }
+        }
+
         //known bug, sometimes the position of the wrong body is changed,
         //this would have to do with attached head 
         //or 
