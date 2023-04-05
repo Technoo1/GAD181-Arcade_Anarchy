@@ -1,3 +1,4 @@
+using ArcadeAnarchy;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,12 +8,12 @@ using UnityEngine;
 public class HSCountdown : MonoBehaviour
 {
     public float timerCount = 30; //30 seconds is the default
-    public TMP_Text timerText;
-    public bool timerIsRunning = false;
+    public TMP_Text timerText; //time remaining displayed
+    public bool timerIsRunning = false; //is the timer still running?
 
     void Start()
     {
-        timerIsRunning = true;
+        timerIsRunning = true; //run countdown once active
     }
 
     void Update()
@@ -21,16 +22,16 @@ public class HSCountdown : MonoBehaviour
         {
             if (timerCount > 0)
             {
-                timerCount -= Time.deltaTime;
+                timerCount -= Time.deltaTime; //run down the numbers
             }
             else
             {
-                timerCount = 0;
-                timerIsRunning = false;
+                timerCount = 0; //once the timer reaches zero...
+                timerIsRunning = false; //... stop the timer
+                EventManager.instance.TriggerGameOver(); //game over screen
                 Debug.Log("time's up! great living color song btw ;)");
             }
         }
-
         DisplayTime(timerCount);
     }
 
@@ -38,7 +39,7 @@ public class HSCountdown : MonoBehaviour
     {
         if (timeToDisplay < 0)
         {
-            timeToDisplay = 0;
+            timeToDisplay = 0; //force to show 0 if timer ever technically runs below 0
         }
 
         //float minutes = Mathf.FloorToInt(timeToDisplay / 60);
