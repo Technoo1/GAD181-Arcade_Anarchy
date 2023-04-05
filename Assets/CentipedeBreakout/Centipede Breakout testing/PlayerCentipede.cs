@@ -86,7 +86,7 @@ namespace CentipedeBreakout
         {
             Debug.Log("WORK");
             //100s can exist atm
-            GameObject currentHit = Instantiate(hit, gameObject.transform, false);
+            GameObject currentHit = Instantiate(hit, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.6f,0), Quaternion.identity);
             yield return new WaitForSeconds(0.4f);
             Destroy(currentHit);
         }
