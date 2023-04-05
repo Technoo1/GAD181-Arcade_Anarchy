@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public bool twoPlayer = true;
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
-        twoPlayer = false;
+        PlayerManager.instance.twoPlayer = false;
+        SceneManager.LoadScene("Reverse Space Invaders", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("Player Selection");
     }
     public void PlayGame2Player()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerManager.instance.twoPlayer = true;
+        SceneManager.LoadScene("Reverse Space Invaders", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("Player Selection");
     }
 }

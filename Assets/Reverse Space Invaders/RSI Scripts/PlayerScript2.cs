@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class PlayerScript2 : MonoBehaviour
 {
-    public Projectile laserPrefab; // Reference to the Projectile script 
-
-    public MainMenu TwoPlayer; // Reference to the Menu selection script
+    public Projectile laserPrefab; // Reference to the Projectile script
 
     public float moveSpeed = 5f; // Public float to determine speed.
 
@@ -19,7 +17,7 @@ public class PlayerScript2 : MonoBehaviour
 
     void Update()
     {
-        if (TwoPlayer == true)
+        if (PlayerManager.instance.twoPlayer == true)
         { 
             // Tank Movement code
             movement.x = 0f;
@@ -48,7 +46,7 @@ public class PlayerScript2 : MonoBehaviour
 
     private void Shoot() // Code that instantiates and fires a projectile from the tank
     {
-        if (TwoPlayer == true)
+        if (PlayerManager.instance.twoPlayer == true)
         {
             if (!_laserActive) //Sets up so that only one bullet can be fired at a time.
             {
