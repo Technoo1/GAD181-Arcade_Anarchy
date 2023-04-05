@@ -53,4 +53,10 @@ public class PrelimMenuScrene : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("GameOver");
     }
+
+    public void PrizeMenu()
+    {
+        SceneManager.LoadScene("PrizeMenu");
+        SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
+    }
 }

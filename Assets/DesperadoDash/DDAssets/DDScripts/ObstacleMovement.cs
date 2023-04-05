@@ -14,11 +14,11 @@ public class ObstacleMovement : MonoBehaviour
 
     void FiveHundredMeters()
     {
-        moveSpeed = 16f;
+        moveSpeed = 16.25f;
     }
     void ThousandMeters()
     {
-        moveSpeed = 19f;
+        moveSpeed = 18f;
     }
 
     
@@ -34,4 +34,5 @@ public class ObstacleMovement : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }
