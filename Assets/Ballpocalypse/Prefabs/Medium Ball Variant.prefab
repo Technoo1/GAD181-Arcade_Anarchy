@@ -75,5 +75,9 @@ PrefabInstance:
       propertyPath: originalBall
       value: 
       objectReference: {fileID: 4003873414300265414, guid: 864f063fdcff8bf4ebf3af9d967fe893, type: 3}
+    - target: {fileID: 5478765659707785149, guid: 62dbb672f81ad854a96a2990a984d2ec, type: 3}
+      propertyPath: damage
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62dbb672f81ad854a96a2990a984d2ec, type: 3}

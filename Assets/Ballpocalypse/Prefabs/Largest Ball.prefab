@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveLeft: 0
   moveRight: 0
-  originalBall: {fileID: 0}
+  originalBall: {fileID: 309918864321610670, guid: 62dbb672f81ad854a96a2990a984d2ec, type: 3}
 --- !u!114 &-7410292207134382046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +154,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1935155308853472912, guid: 65e43756cb311ca4bafa0a7716c168dc, type: 3}
   damage: 20
+  sprite: {fileID: 4185268421039599410, guid: 65e43756cb311ca4bafa0a7716c168dc, type: 3}
