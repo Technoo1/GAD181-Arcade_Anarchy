@@ -736,6 +736,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1907698990}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: SaveScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1014591187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1321,6 +1333,7 @@ GameObject:
   - component: {fileID: 1907698987}
   - component: {fileID: 1907698986}
   - component: {fileID: 1907698985}
+  - component: {fileID: 1907698990}
   - component: {fileID: 1907698989}
   m_Layer: 5
   m_Name: Canvas
@@ -1430,6 +1443,20 @@ MonoBehaviour:
   optionsMenu: {fileID: 2122952703}
   isPaused: 0
   uiText: {fileID: 0}
+--- !u!114 &1907698990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907698984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88193a661ca685a4f9439e175a409764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tickets: 0
+  ticketText: {fileID: 2026856763}
 --- !u!1 &2024140418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,7 +1591,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0535ac4e0a8b87d42abae871c6fafe74, type: 2}
   m_sharedMaterial: {fileID: -3350840070698539936, guid: 0535ac4e0a8b87d42abae871c6fafe74, type: 2}

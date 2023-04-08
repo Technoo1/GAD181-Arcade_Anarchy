@@ -42,10 +42,17 @@ public class PrelimMenuScrene : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void QuitGame()
+    public void QuitGameSave()
     {
         Application.Quit();
-        Debug.Log("quit game");
+        Debug.Log("quit game (Saved Data)");
+    }
+
+    public void QuitGameDelete()
+    {
+        Application.Quit();
+        Debug.Log("quit game (Deleted Data)");
+        SaveSystem.DeleteData();
     }
 
     private void TriggerGameOver()
@@ -58,5 +65,11 @@ public class PrelimMenuScrene : MonoBehaviour
     {
         SceneManager.LoadScene("PrizeMenu");
         SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
+    }
+
+
+    public void LoadScore()
+    {
+        SaveSystem.LoadTickets();
     }
 }

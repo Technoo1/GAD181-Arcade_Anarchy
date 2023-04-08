@@ -15,8 +15,8 @@ public class SceneStateController : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("Dictionary: " + sceneState.objectColors);
-        Debug.Log("Object Name: " + gameObject.name);
+        //Debug.Log("Dictionary: " + sceneState.objectColors);
+       // Debug.Log("Object Name: " + gameObject.name);
         //Debug.Log("OnEnable called for " + gameObject.name);
         string sceneStateJson = PlayerPrefs.GetString(sceneStateKey);
         if (!string.IsNullOrEmpty(sceneStateJson))
