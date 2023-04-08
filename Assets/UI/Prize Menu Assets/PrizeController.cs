@@ -23,7 +23,10 @@ public class PrizeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (GetComponent<Image>().color == Color.white)
+        {
+            isPurchased = true;
+        }
     }
     public void OnItemClicked()
     {
