@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ScoreEvents : MonoBehaviour
+public class DistanceEvents : MonoBehaviour
 {
-    public static ScoreEvents instance;
+    public static DistanceEvents instance;
 
     public DistanceManager scoreManager;
     // Start is called before the first frame update

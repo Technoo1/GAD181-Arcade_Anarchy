@@ -12,26 +12,31 @@ public class PrelimMenuScrene : MonoBehaviour
     }
     public void DesDash()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("DesperadoDash");
         SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
     }
     public void HideNSeek()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("HideNSeek");
         SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
     }
     public void Ballpocalypse()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Ballpocalypse");
         SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
     }
     public void CentipedeBreakout()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("CentipedeTesting");
         SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
     }
     public void RevSpaceInvaders()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Reverse Space Invaders");
         SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
     }
@@ -57,8 +62,11 @@ public class PrelimMenuScrene : MonoBehaviour
 
     private void TriggerGameOver()
     {
-        Time.timeScale = 1f;
+
         SceneManager.LoadScene("GameOver");
+        SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
+        //SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+        //SceneManager.UnloadSceneAsync("UI Scene");
     }
 
     public void PrizeMenu()

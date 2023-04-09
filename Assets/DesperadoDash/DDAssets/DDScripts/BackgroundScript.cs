@@ -11,8 +11,8 @@ public class BackgroundScript : MonoBehaviour
     {
         mat = GetComponent<Renderer>().material;
 
-        ScoreEvents.instance.OnThousandMeters += ThousandMeters;
-        ScoreEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
+        DistanceEvents.instance.OnThousandMeters += ThousandMeters;
+        DistanceEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
 
         offset = 0f;
         scrollSpeed = startScrollSpeed;

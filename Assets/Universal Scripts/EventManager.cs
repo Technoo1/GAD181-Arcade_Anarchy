@@ -29,6 +29,7 @@ namespace ArcadeAnarchy
         public void TriggerGameOver()
         {
             OnTriggerGameOver?.Invoke();
+            Debug.Log("game over triggered");
         }
 
     }

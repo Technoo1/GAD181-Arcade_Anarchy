@@ -8,8 +8,8 @@ public class ObstacleMovement : MonoBehaviour
 
     private void Start()
     {
-        ScoreEvents.instance.OnThousandMeters += ThousandMeters;
-        ScoreEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
+        DistanceEvents.instance.OnThousandMeters += ThousandMeters;
+        DistanceEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
     }
 
     void FiveHundredMeters()

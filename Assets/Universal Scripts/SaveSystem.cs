@@ -15,7 +15,7 @@ public static class SaveSystem
 
         formatter.Serialize(stream, data);
         stream.Close();
-        Debug.Log("Saving Tickets: " + score.tickets);
+        //Debug.Log("Saving Tickets: " + score.tickets);
     }
 
     public static PlayerData LoadTickets()
@@ -27,7 +27,7 @@ public static class SaveSystem
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
             PlayerData data = formatter.Deserialize(stream) as PlayerData;
-            Debug.Log("Loading tickets: " + data.tickets);
+            //Debug.Log("Loading tickets: " + data.tickets);
             stream.Close();
             return data;
         } else

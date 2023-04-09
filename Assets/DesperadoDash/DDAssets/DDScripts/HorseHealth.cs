@@ -11,13 +11,19 @@ public class HorseHealth : MonoBehaviour
     public BoxCollider2D bxCollider;
     public bool isPaused = false;
 
+    private GameObject DistanceObject;
+    private DistanceManager distanceManagerScript;
 
+    public bool isDead = false;
+    public bool gameOverLoaded = false;
     void Start()
     {
         if (!bxCollider)
         {
             bxCollider = GetComponent<BoxCollider2D>();
         }
+        DistanceObject = GameObject.Find("Score");
+        distanceManagerScript = DistanceObject.GetComponent<DistanceManager>();
 
     }
 
@@ -39,6 +45,30 @@ public class HorseHealth : MonoBehaviour
             Time.timeScale = 0f;
             isPaused = true;
             EventManager.instance.TriggerGameOver();
+            if (distanceManagerScript.count <= 500f && !isDead)
+            {
+                ScoreManager.instance.TicketTierOne();
+                isDead = true;
+                Debug.Log("Ticket Tier one");
+            }
+            else if (distanceManagerScript.count >= 501f && distanceManagerScript.count <= 1000f && !isDead)
+            {
+                ScoreManager.instance.TicketTierTwo();
+                isDead = true;
+
+            } 
+            else if (distanceManagerScript.count >= 1001f && !isDead)
+            {
+                ScoreManager.instance.TicketTierThree();
+                isDead = true;
+                
+            }
+            //EventManager.instance.TriggerGameOver();
+            //if (!gameOverLoaded && isDead)
+            //{
+            //    EventManager.instance.TriggerGameOver();
+            //    gameOverLoaded = true;
+            //}
         }
 
       
@@ -62,8 +92,9 @@ public class HorseHealth : MonoBehaviour
         if (collision.tag == "Obstacle")
         {
             horseHearts -= 1;
-            Debug.Log("Hit!");
+
         }
     }
 
+    
 }
