@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Globalization;
-using TMPro;
-using Unity.VisualScripting;
+using System.Security.Cryptography;
 using UnityEngine;
 
 //DONE guard performs a check after x seconds DONE
@@ -13,19 +10,28 @@ using UnityEngine;
 //DONE start first check again
 //DONE if check is UNsuccessful, do nothing
 //DONE wait x seconds before checking again
-
-//iterate additional check to move left or right, if initial front swap fails
+//DONE iterate additional check to move left or right, if initial front swap fails
 
 public class HSGuardVision : MonoBehaviour
 {
-    public float waitForCheck = 1f; //guard performs a check after x second/s
-    public float waitTillTurn = 1.5f; //guard waits to fully turn to face player
-    public float waitBeforeSwapBack = 3f; //wait x seconds before swapping back to original sprite
-    public int guardTurnChance; //probability of guard turning
-    //public int guardMoveChance; //probability of guard moving if it doesn't turn
+    public int guardTurnChance; //must exceed this value, a percentage chance, a good example is 50% or 33%
+    public int guardTurnCheck; //the result of the random range check
+    public int guardMoveRChance; //value to check against, change in inspector
+    public int guardMoveRCheck; //a random value generated, do not change, can be made private
+    public int guardMoveLChance; //value to check against, change in inspector
+    public int guardMoveLCheck; //a random value generated, do not change, can be made private
+
+    public float waitForCheck = 1f; //guard starts to check after x second/s
+    public float waitTillTurn = 1f; //guard waits to fully turn to face player
+    public float waitBeforeSwapBack = 2f; //wait x seconds before swapping back to original sprite
+    public float waitForLoop = 4f; //wait x seconds before looping
+
     public Sprite guardTurn; //sprite of all turning guards
+    public Sprite guardTurnL; //sprite of all turning guards that face left
     public Sprite guardFront; //sprite of all guards facing forward
     public Sprite guardProfile; //sprite of all guards looking away, default state
+    public Sprite guardProfileL; ////sprite of all guards looking away to DA LEFT
+    public Sprite guardAlert; //sprite of all guards detecting the player
 
     void Start()
     {
@@ -38,38 +44,94 @@ public class HSGuardVision : MonoBehaviour
         {
             for (int i = 0; i < 100000000; i++) //loops the coroutine for a gajillion amount of seconds
             {
-                guardTurnChance = Random.Range(0, 101); //50% chance of turning
-                if (guardTurnChance >= 50)
+                guardTurnCheck = Random.Range(0, 99); //random number between 1 and 100
+                if (guardTurnCheck > guardTurnChance) //if the result is greater than the specified value...
                 {
                     this.gameObject.GetComponent<SpriteRenderer>().sprite = guardTurn; //swap to turning sprite
-                    //print("guard is turning!");
+                    Debug.Log("guard is turning!");
                     yield return new WaitForSeconds(waitTillTurn); //wait before swapping again
                     {
                         this.gameObject.GetComponent<SpriteRenderer>().sprite = guardFront; //swap to front-facing sprite
                         transform.tag = "GuardFront";
-                        //print("guard is facing you!!");
+                        //Debug.Log("guard is facing you!!");
                         yield return new WaitForSeconds(waitBeforeSwapBack); //wait before swapping again
                         {
                             this.gameObject.GetComponent<SpriteRenderer>().sprite = guardProfile; //swap to profile sprite
                             transform.tag = "GuardProfile";
-                            //print("guard has turned away");
-                            yield return new WaitForSeconds(5f); //wait 5 seconds before looping
+                            //Debug.Log("guard has turned away");
+                            yield return new WaitForSeconds(waitForLoop); //wait before looping
                         }
                     }
+                    //if (CompareTag("guardProfile"))
+                    //{
+                    //    gameObject.GetComponent<SpriteRenderer>().sprite = guardTurn; //swap to turning sprite
+                    //    Debug.Log("guard is turning from the right!");
+                    //    yield return new WaitForSeconds(waitTillTurn); //wait before swapping again
+                    //    {
+                    //        gameObject.GetComponent<SpriteRenderer>().sprite = guardFront; //swap to front-facing sprite
+                    //        transform.tag = "GuardFront";
+                    //        //Debug.Log("guard is facing you!!");
+                    //        yield return new WaitForSeconds(waitBeforeSwapBack); //wait before swapping again
+                    //        {
+                    //            gameObject.GetComponent<SpriteRenderer>().sprite = guardProfile; //swap to profile sprite
+                    //            transform.tag = "GuardProfile";
+                    //            //Debug.Log("guard has turned away");
+                    //            yield return new WaitForSeconds(waitForLoop); //wait before looping
+                    //        }
+                    //    }
+                    //}
+                    //else if (CompareTag("guardProfileL"))
+                    //{
+                    //    gameObject.GetComponent<SpriteRenderer>().sprite = guardTurnL; //swap to turning sprite facing left
+                    //    Debug.Log("guard is turning from the left!");
+                    //    yield return new WaitForSeconds(waitTillTurn); //wait before swapping again
+                    //    {
+                    //        gameObject.GetComponent<SpriteRenderer>().sprite = guardFront; //swap to front-facing sprite
+                    //        transform.tag = "GuardFront";
+                    //        //Debug.Log("guard is facing you!!");
+                    //        yield return new WaitForSeconds(waitBeforeSwapBack); //wait before swapping again
+                    //        {
+                    //            gameObject.GetComponent<SpriteRenderer>().sprite = guardProfile; //swap to profile sprite
+                    //            transform.tag = "GuardProfile";
+                    //            //Debug.Log("guard has turned away");
+                    //            yield return new WaitForSeconds(waitForLoop); //wait before looping
+                    //        }
+                    //    }
+                    //}
                 }
-                /*else if (guardTurnChance < 50) //this adds the chance to move left or right after a failed turn check
-                {
-                    guardMoveChance = Random.Range(0, 101);
-                    if (guardMoveChance >= 50)
-                    {
-                        //swap to another sprite in the sprite renderer component
-                        print("guard is moving!");
-                    }*/
                 else
-                {
-                    //print("guard did nothing...");
-                    yield return new WaitForSeconds(5f); //wait 5 seconds before looping
+                    {
+                    guardMoveRCheck = Random.Range(0, 99);
+                    guardMoveLCheck = Random.Range(0, 99);
+                    if (guardMoveRCheck > guardMoveRChance)
+                    {
+                        //make sure sprite is the facing right
+                        gameObject.GetComponent<SpriteRenderer>().sprite = guardProfile; //swap to profile sprite (right as default)
+                        transform.tag = "GuardProfile";
+                        transform.position += Vector3.right;
+                        Debug.Log("guard is moving right!");
+                        yield return new WaitForSeconds(waitForLoop);
+                    }
+                    else if (guardMoveLCheck > guardMoveLChance)
+                    {
+                        //make sure sprite is the facing right
+                        gameObject.GetComponent<SpriteRenderer>().sprite = guardProfileL; //swap to left-facing profile sprite
+                        transform.tag = "GuardProfileL";
+                        transform.position += Vector3.left;
+                        Debug.Log("guard is moving left!");
+                        yield return new WaitForSeconds(waitForLoop);
+                    }
+                    else
+                    {
+                        Debug.Log("guard did nothing...");
+                        yield return new WaitForSeconds(waitForLoop); //wait before looping
+                    }
                 }
+                //else
+                //{
+                //    //Debug.Log("guard did nothing...");
+                //    yield return new WaitForSeconds(5f); //wait 5 seconds before looping
+                //}
             }
             yield return null;
         }
