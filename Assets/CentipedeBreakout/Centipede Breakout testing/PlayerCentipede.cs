@@ -56,7 +56,7 @@ namespace CentipedeBreakout
             iFrames += Time.deltaTime;
             if (hit.collider.gameObject.tag == "Centipede" && iFrames > 2)
             {
-                //EventManager.instance.HeartLost();
+                EventManager.instance.HeartLost();
                 iFrames = 0;
             }
         }
