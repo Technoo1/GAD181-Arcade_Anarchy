@@ -2,12 +2,16 @@ using ArcadeAnarchy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AlienManager : MonoBehaviour
 {
+    public static AlienManager instance;
+
     public AnimationHandler[] prefabs;
     public int rows = 3;
     public int columns = 9;
+    public int deadAliens;
     // public AnimationCurve speed;
 
     public int amountkilled {get; private set;}
@@ -19,6 +23,8 @@ public class AlienManager : MonoBehaviour
 
     private void Awake() 
     {
+        instance = this;
+
         for(int row = 0; row < this.rows; row++) // A for loop to instantiate the aliens
         {
             // Code to offset/center the alien swarm on screen
@@ -30,7 +36,6 @@ public class AlienManager : MonoBehaviour
             for(int col = 0; col < this.columns; col++) // A for loop to instantiate Aliens 
             {
                 AnimationHandler Aliens = Instantiate(this.prefabs[row], this.transform);
-                Aliens.killed += alienKilled;
                 Vector3 position = rowPosition;
                 position.x += col * 2.0f;
                 Aliens.transform.localPosition = position;
@@ -69,7 +74,11 @@ public class AlienManager : MonoBehaviour
             {
                 AdvanceRow();
             }
-        }    
+        }
+        if (deadAliens >= totalAliens)
+        {
+            SceneManager.LoadScene("MenuScreen");
+        }
     }
 
     private void AdvanceRow()

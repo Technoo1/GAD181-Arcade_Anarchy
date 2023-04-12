@@ -7,15 +7,7 @@ public class WinCode : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D Object)
     {
-        if (Object.name == "Alien 1(Clone)")
-        {
-            SceneManager.LoadScene("MenuScreen");
-        }
-        else if (Object.name == "Alien 2(Clone)" )
-        {
-            SceneManager.LoadScene("MenuScreen");
-        }
-        else if (Object.name == "Alien 3(Clone)")
+        if (Object.CompareTag("Alien"))
         {
             SceneManager.LoadScene("MenuScreen");
         }
