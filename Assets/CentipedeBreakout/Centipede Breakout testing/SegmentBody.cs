@@ -281,6 +281,11 @@ namespace CentipedeBreakout
         {
             for (int i = 0; i <= bodySegments.Count; i++)
             {
+                if (bodySegments.Count == 0)
+                {
+                    return;
+                }
+
                 Debug.Log(i);
                 if (i == bodySegments.Count)    //treated as if the head
                 {
@@ -290,11 +295,11 @@ namespace CentipedeBreakout
                     gameObject.transform.rotation = quaternion.AxisAngle(Vector3.forward, Mathf.PI / 2 + angle1);
 
                     //Debug.Log("AHHH");
-                    return; //return ends the script if head is only one
+                    return;                     //return ends the script if head is only one
                 }
                 if (i == bodySegments.Count - 1)    //the butt
                 {
-                    Vector2 vectorForAngle1 = new Vector2(bodySegments[i].transform.position.x, bodySegments[i].transform.position.y) - headPositionPrevious[i * 10 - 5];
+                    Vector2 vectorForAngle1 = new Vector2(bodySegments[i].transform.position.x, bodySegments[i].transform.position.y) - headPositionPrevious[i * 10 + 5];
 
                     float angle1 = Mathf.Atan2(vectorForAngle1.y , vectorForAngle1.x);
                     bodySegments[i].transform.rotation = quaternion.AxisAngle(Vector3.forward, Mathf.PI/2 + angle1);
@@ -457,7 +462,7 @@ namespace CentipedeBreakout
                 newHead.justBorn = false;
 
                 bodySegments[deadPartArrayRef + 1].GetComponent<BoxCollider2D>().isTrigger = false;
-                headPositionPrevious = headPositionPrevious.GetRange(0,headPositionPrevious.Count - 20);
+                headPositionPrevious = headPositionPrevious.GetRange(0,headPositionPrevious.Count - 10);
 
                 for (int i = 0; i < 2; i++)
                 {
