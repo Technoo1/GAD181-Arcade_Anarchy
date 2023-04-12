@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject optionsMenu;
-    public bool isPaused;
+    public bool isPaused = false;
 
 
     private void OnEnable()
@@ -27,17 +27,34 @@ public class UIManager : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        if (Input.GetKeyDown(KeyCode.Escape) && SaveSystem.loadedScene != "MenuScreen")
         {
-            isPaused = true;
-            Time.timeScale = 0f;
-            pauseMenu.SetActive(true);
+            if (pauseMenu.activeSelf)
+            {
+                Resume();
+                optionsMenu.SetActive(false);
+            }
+            else
+            {
+                Pause();
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
-        {
-            Resume();
-            optionsMenu.SetActive(false);
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        //{
+        //    isPaused = true;
+        //    Time.timeScale = 0f;
+        //    pauseMenu.SetActive(true);
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        //{
+        //    Resume();
+        //    optionsMenu.SetActive(false);
+        //}
+    }
+    private void Pause()
+    {
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
     }
 
     public void MainMenu()
@@ -49,7 +66,7 @@ public class UIManager : MonoBehaviour
     }
     public void Resume()
     {
-        isPaused = false;
+        //isPaused = false;
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
     }

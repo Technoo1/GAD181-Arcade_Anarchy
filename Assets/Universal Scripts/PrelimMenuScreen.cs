@@ -7,19 +7,34 @@ using UnityEngine.SceneManagement;
 public class PrelimMenuScreen : MonoBehaviour
 {
     public string sceneToLoad;
+    private static bool uiSceneLoaded = false;
     private void Start()
     {
-        Scene currentScene = SceneManager.GetSceneByName("UI Scene");
-
-        if (currentScene.name != sceneToLoad)
+        if (!uiSceneLoaded)
         {
-            SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
-            Debug.Log("Loaded UI" + name);
+            StartCoroutine(LoadUISceneAsync());
             SaveSystem.loadedScene = "MenuScene";
         }
+        //Scene currentScene = SceneManager.GetSceneByName("UI Scene");
 
-
+        //if (currentScene.name != sceneToLoad)
+        //{
+        //    SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
+        //    Debug.Log("Loaded UI" + name);
+        //    SaveSystem.loadedScene = "MenuScene";
+        //}
     }
+
+    private IEnumerator LoadUISceneAsync()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+        uiSceneLoaded = true;
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadSceneAsync("MenuScreen", LoadSceneMode.Additive);
@@ -37,26 +52,31 @@ public class PrelimMenuScreen : MonoBehaviour
     public void HideNSeek()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("HideNSeek");
-        SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("HideNSeek", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("MenuScreen");
+        SaveSystem.loadedScene = "HideNSeek";
     }
     public void Ballpocalypse()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Ballpocalypse");
-        SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Ballpocalypse", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("MenuScreen");
+        SaveSystem.loadedScene = "Ballpocalypse";
+
     }
     public void CentipedeBreakout()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("CentipedeTesting");
-        SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("CentipedeTesting", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("MenuScreen");
+        SaveSystem.loadedScene = "CentipedeTesting";
     }
     public void RevSpaceInvaders()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Reverse Space Invaders");
-        SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Reverse Space Invaders", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("MenuScreen");
+        SaveSystem.loadedScene = "Reverse Space Invaders";
     }
 
 
@@ -75,8 +95,9 @@ public class PrelimMenuScreen : MonoBehaviour
 
     public void PrizeMenu()
     {
-        SceneManager.LoadScene("PrizeMenu");
-        SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("PrizeMenu", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync("MenuScreen");
+        SaveSystem.loadedScene = "PrizeMenu";
     }
     public void LoadScore()
     {
