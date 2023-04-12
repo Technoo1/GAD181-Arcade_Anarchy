@@ -8,7 +8,6 @@ public enum Side { Left, Right }
 
 public class TriggerCode : MonoBehaviour
 {
-    public YTransfromer yTransformer;
     public GameObject OutOfBounds;
     public Side side;
     //Bools to activate and deactivate the triggers. Makes aliens go to opposite of screen each time to go down.
@@ -51,9 +50,6 @@ public class TriggerCode : MonoBehaviour
                     pos.y -= 0.2f;
                     alien.position = pos;
                 }
-                //pos.y -= 1; // This pushes alien down
-                //Object.transform.parent.transform.position = pos;
-                //Debug.Log(Object.transform.parent.name);
                 PlayerManager.instance.alienSide = Side.Right;
             }
             else if (side == Side.Right && PlayerManager.instance.alienSide == Side.Right)
@@ -66,8 +62,6 @@ public class TriggerCode : MonoBehaviour
                     pos.y -= 0.2f;
                     alien.position = pos;
                 }
-                //pos.y -= 1;
-                //Object.transform.parent.transform.position = pos;
                 PlayerManager.instance.alienSide = Side.Left;
             }
         }
