@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 2132342895476393049}
   m_Father: {fileID: 4185268421039599413}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4177254105963378124
 MonoBehaviour:
@@ -197,37 +197,6 @@ Transform:
   m_Father: {fileID: 4185268421039599413}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4185268420542861809
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4185268420542861808}
-  m_Layer: 6
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4185268420542861808
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4185268420542861809}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1804, y: 0.0259, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4185268421039599413}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4185268421039599409
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +213,6 @@ GameObject:
   - component: {fileID: 4185268421039599412}
   - component: {fileID: 4185268421039599414}
   - component: {fileID: 4185268421039599401}
-  - component: {fileID: 4185268421039599400}
   - component: {fileID: 1935155308853472912}
   m_Layer: 6
   m_Name: Player
@@ -267,7 +235,6 @@ Transform:
   m_Children:
   - {fileID: 4185268420168598755}
   - {fileID: 4185268420004847419}
-  - {fileID: 4185268420542861808}
   - {fileID: 4185268421218272688}
   - {fileID: 6551693241911743626}
   m_Father: {fileID: 0}
@@ -475,23 +442,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &4185268421039599400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4185268421039599409}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcf4436a43b3f694888162dab0c53f7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 4185268420542861808}
-  crouchFirePoint: {fileID: 4185268421218272688}
-  upFirePoint: {fileID: 0}
-  bulletPrefab: {fileID: 7687631567146458560, guid: edd523fa3510f5541aa25a24ef10c6fd, type: 3}
-  animator: {fileID: 4185268421039599401}
 --- !u!114 &1935155308853472912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,5 +485,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4185268421039599413}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -41,6 +41,7 @@ public class MouseShooting : MonoBehaviour
             {
                 canFire = true;
                 timer = 0;
+              
             }
         }
 
@@ -48,7 +49,11 @@ public class MouseShooting : MonoBehaviour
         {
             canFire = false;
             Instantiate(bulletPrefab, bulletTransform.position, Quaternion.identity);
-            animator.SetBool("IsFiring", true);
+            animator.SetBool("IsShooting", true);
+        }
+        else
+        {
+            animator.SetBool("IsShooting", false);
         }
     }
 }

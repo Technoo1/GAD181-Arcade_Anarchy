@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 5867112492093690895}
   - component: {fileID: 5867112492093690928}
   - component: {fileID: 5177763571411910300}
-  - component: {fileID: -7410292207134382046}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Largest Ball
   m_TagString: Largest Ball
   m_Icon: {fileID: 0}
@@ -140,18 +139,3 @@ MonoBehaviour:
   moveLeft: 0
   moveRight: 0
   originalBall: {fileID: 309918864321610670, guid: 62dbb672f81ad854a96a2990a984d2ec, type: 3}
---- !u!114 &-7410292207134382046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5867112492093690929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fea48ad665583844ca3cf833a462b381, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: {fileID: 1935155308853472912, guid: 65e43756cb311ca4bafa0a7716c168dc, type: 3}
-  damage: 20
-  sprite: {fileID: 4185268421039599410, guid: 65e43756cb311ca4bafa0a7716c168dc, type: 3}
