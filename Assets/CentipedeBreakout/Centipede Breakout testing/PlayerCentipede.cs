@@ -16,11 +16,13 @@ namespace CentipedeBreakout
         public GameObject bullet;
         public GameObject health;
         private float iFrames;
-        public SpriteRenderer sprite;   
+        public SpriteRenderer sprite;
+        private Animator animator;
 
         // Start is called before the first frame update
         void Start()
         {
+            animator = GetComponent<Animator>();
             rb = gameObject.GetComponent<Rigidbody2D>();
             sprite = gameObject.GetComponent<SpriteRenderer>();
         }
@@ -36,7 +38,7 @@ namespace CentipedeBreakout
             {
                 if (timer >= 1)
                 {
-
+                    animator.SetBool("Attack", true);
                     Debug.Log("I DONT UNDERSTAND COROUTINES?");
                     timer = 0;
                     StartCoroutine(Attack());
@@ -106,30 +108,34 @@ namespace CentipedeBreakout
                 yield return new WaitForSeconds(0.1f);
             }
         }
+
         
 
         void Movement()
         {
             if (Input.GetKey(KeyCode.D))
             {
-
+                animator.SetBool("Walk", true);
                 playerMove += new Vector3(0.06f, 0, 0);
             }
             if (Input.GetKey(KeyCode.A))
             {
-
+                animator.SetBool("Walk", true);
                 playerMove += new Vector3(-0.06f, 0, 0);
             }
             if (Input.GetKey(KeyCode.W) && transform.position.y <= -3)
             {
-
+                animator.SetBool("Walk", true);
                 playerMove += new Vector3(0, 0.03f, 0);
             }
             if (Input.GetKey(KeyCode.S))
             {
+                animator.SetBool("Walk", true);
                 playerMove += new Vector3(0, -0.03f, 0);
             }
-            if (Input.GetKey(KeyCode.None)) { }
+            if (Input.GetKey(KeyCode.None)) {
+                animator.SetBool("Walk", false);
+            }
 
             
 

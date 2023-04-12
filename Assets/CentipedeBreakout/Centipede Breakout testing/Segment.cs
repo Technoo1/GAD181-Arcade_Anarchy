@@ -14,7 +14,7 @@ namespace CentipedeBreakout
     {
         public GameObject attachedHead;
         public int health = 5;
-        private Renderer ren;
+        public Renderer ren;
 
         // Start is called before the first frame update
         void Start()
