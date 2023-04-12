@@ -17,17 +17,17 @@ namespace ArcadeAnarchy
             if (Input.GetKey(KeyCode.A))
             {
                 movement.x = Input.GetAxisRaw("Horizontal");
-                Debug.Log("I'm still being pressed");
+                //Debug.Log("I'm still being pressed");
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 movement.x = Input.GetAxisRaw("Horizontal");
-                Debug.Log("I'm still being pressed");
+                //Debug.Log("I'm still being pressed");
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 movement.y = Input.GetAxisRaw("Vertical");
-                Debug.Log("I'm still being pressed");
+                //Debug.Log("I'm still being pressed");
             }
         }
 
