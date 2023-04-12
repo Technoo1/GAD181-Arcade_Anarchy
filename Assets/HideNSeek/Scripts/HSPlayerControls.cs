@@ -48,7 +48,7 @@ public class HSPlayerControls : MonoBehaviour
         }
         if (guardFacing == true && playerIsPeeking == true) //if there are guards facing a peeking player...
         {
-            EventManager.instance.TriggerGameOver(); //triggers universal game over screen and menu
+            EventManager.instance.TriggerGameOver(TicketTier.None); //triggers universal game over screen and menu
             Debug.Log("caught by guard! Snake? Snaaaaaake!");
 
             //Spawns.SetActive(false); //disables spawned objects on screen

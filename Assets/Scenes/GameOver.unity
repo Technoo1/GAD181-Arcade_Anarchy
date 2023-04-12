@@ -268,8 +268,6 @@ GameObject:
   m_Component:
   - component: {fileID: 379775511}
   - component: {fileID: 379775510}
-  - component: {fileID: 379775512}
-  - component: {fileID: 379775513}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -335,34 +333,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &379775512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379775508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b10dd41e54224fc469b100c98fb8155a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &379775513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379775508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88193a661ca685a4f9439e175a409764, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tickets: 0
-  ticketsEarned: 0
-  ticketText: {fileID: 434219681}
-  addedTicketScoreText: {fileID: 0}
 --- !u!1 &434219679
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +748,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 379775512}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PrelimMenuScrene, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
@@ -790,7 +760,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 379775513}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
         m_MethodName: SaveScore
         m_Mode: 1
@@ -1036,7 +1006,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 379775512}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PrelimMenuScrene, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1

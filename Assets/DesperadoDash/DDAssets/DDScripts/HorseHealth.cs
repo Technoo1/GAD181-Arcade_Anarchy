@@ -38,31 +38,32 @@ public class HorseHealth : MonoBehaviour
         {
             hearts[1].SetActive(false);
         }
-        else if (horseHearts <= 1)
+        else if (horseHearts <= 1 && !isPaused)
         {
             hearts[0].SetActive(false);
             //Debug.Log("death");
             Time.timeScale = 0f;
             isPaused = true;
-            EventManager.instance.TriggerGameOver();
+            TicketTier earned = TicketTier.None;
             if (distanceManagerScript.count <= 500f && !isDead)
             {
-                ScoreManager.instance.TicketTierOne();
+                earned = TicketTier.One;
                 isDead = true;
                 Debug.Log("Ticket Tier one");
             }
             else if (distanceManagerScript.count >= 501f && distanceManagerScript.count <= 1000f && !isDead)
             {
-                ScoreManager.instance.TicketTierTwo();
+                earned = TicketTier.Two;
                 isDead = true;
 
             } 
             else if (distanceManagerScript.count >= 1001f && !isDead)
             {
-                ScoreManager.instance.TicketTierThree();
+                earned = TicketTier.Three;
                 isDead = true;
-                
             }
+
+            EventManager.instance.TriggerGameOver(earned);
             //EventManager.instance.TriggerGameOver();
             //if (!gameOverLoaded && isDead)
             //{

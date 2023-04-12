@@ -11,10 +11,13 @@ public class PlayerData
     //constructor
     public PlayerData (ScoreManager score)
     {
-        tickets = score.tickets;
+        tickets = score.Tickets;
     }
 
-
+    public PlayerData (int score)
+    {
+        tickets = score;
+    }
 
 
 

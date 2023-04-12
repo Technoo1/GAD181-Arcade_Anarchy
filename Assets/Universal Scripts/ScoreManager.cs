@@ -5,14 +5,15 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+public enum TicketTier { None, One, Two, Three }
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    public int tickets;
+    public int Tickets { get { return SaveSystem.currentTickets; } set { SaveSystem.currentTickets = value; } }
     public int ticketsEarned;
     public TextMeshProUGUI ticketText;
     public TextMeshProUGUI addedTicketScoreText;
-    
+
 
     void Awake() 
     {
@@ -21,19 +22,6 @@ public class ScoreManager : MonoBehaviour
             instance = this;
         }
     }
-    private void Start()
-    {
-        ScoreManager.instance.onTicketTierOne += TierOne;
-        ScoreManager.instance.onTicketTierTwo += TierTwo;
-        ScoreManager.instance.onTicketTierThree += TierThree;
-
-    }
-    private void OnDisable()
-    {
-        ScoreManager.instance.onTicketTierOne -= TierOne;
-        ScoreManager.instance.onTicketTierTwo -= TierTwo;
-        ScoreManager.instance.onTicketTierThree -= TierThree;
-    }
 
     // Update is called once per frame
     void Update()
@@ -41,15 +29,10 @@ public class ScoreManager : MonoBehaviour
         //tickets += ticketsEarned;
         if (Input.GetKeyDown(KeyCode.P))
         {
-            tickets += 1;
+            Tickets += 1;
         }
 
-        ticketText.text = tickets.ToString();
-
-        if (addedTicketScoreText != null)
-        {
-            addedTicketScoreText.SetText(ticketsEarned.ToString());
-        }
+        ticketText.text = Tickets.ToString();
 
     }
 
@@ -63,55 +46,55 @@ public class ScoreManager : MonoBehaviour
     {
         Debug.Log("loading score...");
         PlayerData data = SaveSystem.LoadTickets();
-        tickets = data.tickets;
-        ticketText.text = tickets.ToString();
+        ticketText.SetText(Tickets.ToString());
     }
 
     public void OnEnable()
     {
-        //LoadScore();
+        LoadScore();
     }
 
-    // Ticketting Events
-    public event Action onTicketTierOne; 
-    public event Action onTicketTierTwo;
-    public event Action onTicketTierThree;
+    public void TriggerTicketTier(TicketTier tier)
+    {
+        switch (tier)
+        {
+            case TicketTier.None:
+                break;
+            case TicketTier.One:
+                TierOne();
+                break;
+            case TicketTier.Two:
+                TierTwo();
+                break;
+            case TicketTier.Three:
+                TierThree();
+                break;
+        }
+    }
 
-    public void TicketTierOne() 
+    private void TierOne() 
     {
-        onTicketTierOne?.Invoke();
-    }
-    public void TicketTierTwo()
-    {
-        onTicketTierTwo?.Invoke();
-    }
-    public void TicketTierThree()
-    {
-        onTicketTierThree?.Invoke();
-    }
-
-    public void TierOne() 
-    {
+        Debug.Log("Recieved Command");
         ticketsEarned = 50;
-       // Debug.Log("Tickets earned: " + ticketsEarned);
-        tickets += ticketsEarned;
+        Tickets += ticketsEarned;
         addedTicketScoreText.gameObject.SetActive(true);
         if (addedTicketScoreText != null)
         {
-            addedTicketScoreText.text = ticketsEarned.ToString();
-            Debug.Log("tickets changed");
+            addedTicketScoreText.SetText(ticketsEarned.ToString());
+            //addedTicketScoreText.text = ticketsEarned.ToString();
+            Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);
         }
         else
         {
             Debug.LogError("Tickets not changed");
         }
     }
-    public void TierTwo()
+    private void TierTwo()
     {
         ticketsEarned = 75;
 
     }
-    public void TierThree()
+    private void TierThree()
     {
         ticketsEarned = 100;
 
