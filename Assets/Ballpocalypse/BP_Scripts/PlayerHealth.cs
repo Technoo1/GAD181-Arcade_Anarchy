@@ -1,3 +1,4 @@
+using ArcadeAnarchy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +20,10 @@ public class PlayerHealth : MonoBehaviour
         if(playerHealth <= 0)
         {
             Destroy(gameObject);
+            EventManager.instance.TriggerGameOver(); 
         }
-    }
+   }
+
+
 
 }
