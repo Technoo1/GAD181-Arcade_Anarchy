@@ -14,11 +14,15 @@ namespace CentipedeBreakout
         private float timer;
         private float gunTimer;
         public GameObject bullet;
+        public GameObject health;
+        private float iFrames;
+        public SpriteRenderer sprite;   
 
         // Start is called before the first frame update
         void Start()
         {
             rb = gameObject.GetComponent<Rigidbody2D>();
+            sprite = gameObject.GetComponent<SpriteRenderer>();
         }
 
         // Update is called once per frame
@@ -46,20 +50,64 @@ namespace CentipedeBreakout
                 Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
                 gunTimer = 0;
             }
+
+
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position - Vector3.up * 0.2f, Vector2.up * 0.2f);
+
+            iFrames += Time.deltaTime;
+            if (hit.collider.gameObject.tag == "Centipede" && iFrames > 1)
+            {
+                StartCoroutine(FlashRed());
+                EventManager.instance.HeartLost();
+                iFrames = 0;
+            }
         }
 
+
+        /*
+        public List<GameObject> hearts;
+        private int heartsLeft = 3;
+
+        public void DamageTaken()
+        {
+            heartsLeft -= 1;
+            
+            if (heartsLeft < 0)
+            {
+                Debug.Log("gameover");
+            }
+            else {
+                Debug.Log("Piss" + hearts.Count);
+                hearts[heartsLeft].SetActive(false); 
+            }
+        }
+        */
 
         //Maybe delete this mess??
         public IEnumerator Attack()
         {
             Debug.Log("WORK");
             //100s can exist atm
-            GameObject currentHit = Instantiate(hit, gameObject.transform, false);
+            GameObject currentHit = Instantiate(hit, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.6f,0), Quaternion.identity);
             yield return new WaitForSeconds(0.4f);
             Destroy(currentHit);
         }
 
+
+
+        //will flash semi randomly, but it's fine
+        public IEnumerator FlashRed()
+        {
+            for (int i = 0; i <= 2; i++) {
+                sprite.color = Color.red;
+                yield return new WaitForSeconds(0.1f);
+                sprite.color = Color.white;
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
         
+
         void Movement()
         {
             if (Input.GetKey(KeyCode.D))
