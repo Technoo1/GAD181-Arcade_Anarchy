@@ -105,16 +105,17 @@ public class HSGuardVision : MonoBehaviour
                     guardMoveLCheck = Random.Range(0, 99);
                     if (guardMoveRCheck > guardMoveRChance)
                     {
-                        //make sure sprite is the facing right
                         gameObject.GetComponent<SpriteRenderer>().sprite = guardProfile; //swap to profile sprite (right as default)
                         transform.tag = "GuardProfile";
                         transform.position += Vector3.right;
                         Debug.Log("guard is moving right!");
                         yield return new WaitForSeconds(waitForLoop);
+
+                        //if (guardMoveRCheck > guardMoveRChance)
+                        //moveRight == true
                     }
                     else if (guardMoveLCheck > guardMoveLChance)
                     {
-                        //make sure sprite is the facing right
                         gameObject.GetComponent<SpriteRenderer>().sprite = guardProfileL; //swap to left-facing profile sprite
                         transform.tag = "GuardProfileL";
                         transform.position += Vector3.left;
@@ -135,5 +136,12 @@ public class HSGuardVision : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    void Update()
+    {
+        //if a moveleft or moveright boolean is true in coroutine, transform the position of the guard smoothly over a period of time. coroutine resumes after x seconds?
+        //if (MoveRight == true)
+        //transform.position += 10f * Time.deltaTime * Vector3.right;
     }
 }
