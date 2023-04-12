@@ -6,12 +6,27 @@ using UnityEngine.SceneManagement;
 
 public class PrelimMenuScreen : MonoBehaviour
 {
+    public string sceneToLoad;
     private void Start()
     {
-        SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
-        SaveSystem.loadedScene = "MenuScene";
-    }
+        Scene currentScene = SceneManager.GetSceneByName("UI Scene");
 
+        if (currentScene.name != sceneToLoad)
+        {
+            SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
+            Debug.Log("Loaded UI" + name);
+            SaveSystem.loadedScene = "MenuScene";
+        }
+
+
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadSceneAsync("MenuScreen", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
+        SaveSystem.loadedScene = "MenuScreen";
+        Time.timeScale = 1f;
+    }
     public void DesDash()
     {
         Time.timeScale = 1f;
@@ -44,11 +59,6 @@ public class PrelimMenuScreen : MonoBehaviour
         SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
     }
 
-    //public void MainMenu()
-    //{
-    //    SceneManager.LoadScene("MenuScreen");
-    //    Time.timeScale = 1f;
-    //}
 
     public void QuitGameSave()
     {
@@ -72,23 +82,4 @@ public class PrelimMenuScreen : MonoBehaviour
     {
         SaveSystem.LoadTickets();
     }
-
-
-
-    ///
-    //private void TriggerGameOver(TicketTier tier)
-    //{
-    //    SceneManager.LoadScene("GameOver");
-    //    SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
-    //    StartCoroutine(WaitForTriggerTicket(tier));
-        
-    //}
-
-    //private IEnumerator WaitForTriggerTicket(TicketTier tier)
-    //{
-    //    yield return new WaitForSeconds(1f);
-    //    ScoreManager.instance.TriggerTicketTier(tier);
-    //}
-
-    
 }

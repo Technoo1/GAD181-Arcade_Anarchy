@@ -15,12 +15,18 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI addedTicketScoreText;
 
 
-    void Awake() 
+    void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
+    }
+
+    public void OnDisable()
+    {
+        Debug.Log("Saving score...");
+        SaveSystem.SaveTickets(this);
     }
 
     // Update is called once per frame
@@ -34,6 +40,14 @@ public class ScoreManager : MonoBehaviour
 
         ticketText.text = Tickets.ToString();
 
+        if (SaveSystem.loadedScene == "GameOver")
+        {
+            addedTicketScoreText.gameObject.SetActive(true);
+        }
+        else
+        {
+            addedTicketScoreText.gameObject.SetActive(false);
+        }
     }
 
     public void SaveScore()
@@ -72,22 +86,14 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+
     private void TierOne() 
     {
         Debug.Log("Recieved Command");
         ticketsEarned = 50;
         Tickets += ticketsEarned;
-        addedTicketScoreText.gameObject.SetActive(true);
-        if (addedTicketScoreText != null)
-        {
-            addedTicketScoreText.SetText(ticketsEarned.ToString());
-            //addedTicketScoreText.text = ticketsEarned.ToString();
-            Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);
-        }
-        else
-        {
-            Debug.LogError("Tickets not changed");
-        }
+        addedTicketScoreText.SetText(ticketsEarned.ToString());
+        Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);
     }
     private void TierTwo()
     {

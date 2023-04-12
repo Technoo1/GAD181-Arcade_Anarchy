@@ -50,7 +50,17 @@ public static class SaveSystem
 
     public static void DeleteData()
     {
-        GenerateSaveFile(0);
+        string path = Application.persistentDataPath + "/playerdata.AA";
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+            Debug.Log("Saved data Deleted");
+        }
+        else
+        {
+            Debug.Log("Saved data not found");
+        }
+        //GenerateSaveFile(0);
     }
 
 }

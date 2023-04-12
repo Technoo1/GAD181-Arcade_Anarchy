@@ -29,7 +29,6 @@ namespace ArcadeAnarchy
         public void TriggerGameOver(TicketTier tier)
         {
             OnTriggerGameOver?.Invoke(tier);
-            Debug.Log("game over triggered");
         }
 
     }

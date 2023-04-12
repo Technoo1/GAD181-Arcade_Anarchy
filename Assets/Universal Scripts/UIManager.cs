@@ -12,10 +12,6 @@ public class UIManager : MonoBehaviour
     public GameObject optionsMenu;
     public bool isPaused;
 
-    public void Awake()
-    {
-
-    }
 
     private void OnEnable()
     {
@@ -46,7 +42,9 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MenuScreen");
+        SceneManager.LoadSceneAsync("MenuScreen", LoadSceneMode.Additive);
+        SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
+        SaveSystem.loadedScene = "MenuScreen";
         Time.timeScale = 1f;
     }
     public void Resume()
@@ -62,15 +60,8 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
         SaveSystem.loadedScene = "GameOver";
-        StartCoroutine(WaitForTriggerTicket(tier));
-
-    }
-
-    private IEnumerator WaitForTriggerTicket(TicketTier tier)
-    {
-        yield return new WaitForSeconds(1f);
-        Debug.Log("Trigger Ticket Tier");
         ScoreManager.instance.TriggerTicketTier(tier);
+
     }
 }
 

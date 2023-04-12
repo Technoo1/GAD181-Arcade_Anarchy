@@ -62,14 +62,7 @@ public class HorseHealth : MonoBehaviour
                 earned = TicketTier.Three;
                 isDead = true;
             }
-
             EventManager.instance.TriggerGameOver(earned);
-            //EventManager.instance.TriggerGameOver();
-            //if (!gameOverLoaded && isDead)
-            //{
-            //    EventManager.instance.TriggerGameOver();
-            //    gameOverLoaded = true;
-            //}
         }
 
       
