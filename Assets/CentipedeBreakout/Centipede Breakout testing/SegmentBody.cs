@@ -5,6 +5,8 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 using CentipedeBreakout;
 using System.Linq;
 using System;
+using Unity.Mathematics;
+using UnityEngine.UIElements;
 
 namespace CentipedeBreakout
 {
@@ -39,6 +41,7 @@ namespace CentipedeBreakout
         private Collider2D collider;
         private Rigidbody2D rb;
 
+        //types of speed
         public bool fall;
         public float centipedeHorizontalAngle = 0.1f;
         public float centipedeSpeedFall;
@@ -52,7 +55,7 @@ namespace CentipedeBreakout
         //dumb variables I made cos I was lazy and also didn't have internet
         bool justBorn = true;
 
-
+      
 
 
 
@@ -105,6 +108,7 @@ namespace CentipedeBreakout
             //UpdatePreviousPositions();
             ShiftingTheList();
             DebugVisual();
+            RotateEverything();
 
             previousFramePosition = transform.position;
 
@@ -254,18 +258,18 @@ namespace CentipedeBreakout
             {
                 //Debug.Log("FALL");
                 //transform.position += Vector3.down * centipedeSpeedFall + new Vector3(0, bodySegments.Length, 0) * centipedeSpeedFall;
-                transform.position += Vector3.down * centipedeSpeedFall;
+                transform.position += Vector3.down * centipedeSpeedFall /100;
             }
             else
             {
                 //transform.position += Vector3.up * centipedeSpeedRise + new Vector3(0, bodySegments.Length, 0) * centipedeSpeedRise;
-                transform.position += Vector3.up * centipedeSpeedRise;
+                transform.position += Vector3.up * centipedeSpeedRise / 100;
             }
         }
 
         private void HorizontalMove()
         {
-            transform.position += Vector3.right * centipedeSpeedHorizontal * centipedeHorizontalAngle;
+            transform.position += Vector3.right * centipedeSpeedHorizontal * centipedeHorizontalAngle / 200;
         }
 
 
@@ -275,15 +279,48 @@ namespace CentipedeBreakout
         //and also assign head
         public void RotateEverything()
         {
-            for (int i = 0; i < bodySegments.Count; i++)
+            for (int i = 0; i <= bodySegments.Count; i++)
             {
-                if (i == bodySegments.Count)
+                Debug.Log(i);
+                if (i == bodySegments.Count)    //treated as if the head
                 {
-                    
+                    Vector2 vectorForAngle1 = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) - headPositionPrevious[5];
+
+                    float angle1 = Mathf.Atan2(vectorForAngle1.y , vectorForAngle1.x);
+                    gameObject.transform.rotation = quaternion.AxisAngle(Vector3.forward, Mathf.PI / 2 + angle1);
+
+                    //Debug.Log("AHHH");
+                    return; //return ends the script if head is only one
                 }
-                bodySegments[i].transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(bodySegments[i].transform.position, bodySegments[i + 1].transform.position, 1, 0));
+                if (i == bodySegments.Count - 1)    //the butt
+                {
+                    Vector2 vectorForAngle1 = new Vector2(bodySegments[i].transform.position.x, bodySegments[i].transform.position.y) - headPositionPrevious[i * 10 - 5];
+
+                    float angle1 = Mathf.Atan2(vectorForAngle1.y , vectorForAngle1.x);
+                    bodySegments[i].transform.rotation = quaternion.AxisAngle(Vector3.forward, Mathf.PI/2 + angle1);
+                    //Debug.Log("OOOH");
+                    continue;                   //begins next iteration
+                }
+
+                Vector2 vectorForAngle = new Vector2(bodySegments[i].transform.position.x, bodySegments[i].transform.position.y) - headPositionPrevious[i*10 + 5];
+
+                float angle = Mathf.Atan2(vectorForAngle.y , vectorForAngle.x);
+                bodySegments[i].transform.rotation = quaternion.AxisAngle(Vector3.forward, Mathf.PI / 2 + angle);
+                //Debug.Log("EEEE");
             }
         }
+
+        //psudocode
+        //if i > 1
+        //bodysegment[i].direction == pointToward(previousPosition[i*10], previousPosition[i*10 - 5])
+        //if i == 0
+        //bodysegment[i].direction == pi + pointToward(previousPosition[i*10], previousPosition[i*10 + 5])
+        //if i == bodysegment.count
+        //treat this as the head
+        //gameObject.direction == pi + pointToward(previousPosition[0], previousPosition[5])
+
+
+
 
         //known bug, sometimes the position of the wrong body is changed,
         //this would have to do with attached head 

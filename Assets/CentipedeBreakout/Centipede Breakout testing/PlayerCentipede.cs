@@ -16,11 +16,13 @@ namespace CentipedeBreakout
         public GameObject bullet;
         public GameObject health;
         private float iFrames;
+        public SpriteRenderer sprite;   
 
         // Start is called before the first frame update
         void Start()
         {
             rb = gameObject.GetComponent<Rigidbody2D>();
+            sprite = gameObject.GetComponent<SpriteRenderer>();
         }
 
         // Update is called once per frame
@@ -54,8 +56,9 @@ namespace CentipedeBreakout
             RaycastHit2D hit = Physics2D.Raycast(transform.position - Vector3.up * 0.2f, Vector2.up * 0.2f);
 
             iFrames += Time.deltaTime;
-            if (hit.collider.gameObject.tag == "Centipede" && iFrames > 2)
+            if (hit.collider.gameObject.tag == "Centipede" && iFrames > 1)
             {
+                StartCoroutine(FlashRed());
                 EventManager.instance.HeartLost();
                 iFrames = 0;
             }
@@ -91,8 +94,20 @@ namespace CentipedeBreakout
             Destroy(currentHit);
         }
 
+
+
+        //will flash semi randomly, but it's fine
+        public IEnumerator FlashRed()
+        {
+            for (int i = 0; i <= 2; i++) {
+                sprite.color = Color.red;
+                yield return new WaitForSeconds(0.1f);
+                sprite.color = Color.white;
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
         
-        
+
         void Movement()
         {
             if (Input.GetKey(KeyCode.D))
