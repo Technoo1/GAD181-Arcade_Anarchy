@@ -10,8 +10,6 @@ public class BallDamage : MonoBehaviour
 
     public SpriteRenderer sprite;
 
-
-
     public IEnumerator FlashRed()
     {
         sprite.color = Color.red;
