@@ -80,6 +80,10 @@ PrefabInstance:
       value: Large Ball Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5867112492093690929, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867112492093690929, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
       propertyPath: m_TagString
       value: Large Ball
       objectReference: {fileID: 0}
