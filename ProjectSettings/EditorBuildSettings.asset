@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CentipedeBreakout/Centipede Breakout testing/CentipedeTesting.unity
     guid: 161a525de660f0e4dbd99ed09eb6f937
+  - enabled: 1
+    path: Assets/Scenes/UI Scene.unity
+    guid: a9a2d383899bb9c48b916225039d78fb
   m_configObjects: {}
