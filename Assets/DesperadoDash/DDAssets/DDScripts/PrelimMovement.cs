@@ -15,6 +15,7 @@ public class PrelimMovement : MonoBehaviour
 
     public Animator anim;
     public bool IsJump = false;
+    public float jumpAmmount;
     
     // Start is called before the first frame update
     void Start()
@@ -67,7 +68,7 @@ public class PrelimMovement : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         transform.position = new Vector2(transform.position.x, startPos.y);
         //transform.position = startPos;
-        yield return new WaitForSeconds(0.3f);
+        //yield return new WaitForSeconds(0.3f);
         IsJump = false;
         bxCollider2d.enabled = true;
     }
