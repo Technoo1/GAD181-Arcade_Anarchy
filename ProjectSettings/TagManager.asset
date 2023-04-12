@@ -23,6 +23,7 @@ TagManager:
   - Left Wall
   - Right Wall
   - Bullet
+  - BulletIgnore
   layers:
   - Default
   - TransparentFX
@@ -30,11 +31,11 @@ TagManager:
   - Boundaries
   - Water
   - UI
+  - Tank
+  - Aliens
+  - Laser
+  - Missile
   - Player
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 
