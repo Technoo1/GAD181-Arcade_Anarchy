@@ -49,7 +49,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1211643514426303976, guid: c2b9cec22bc812244872f1d29c632dbd, type: 3}
       propertyPath: m_Name
-      value: Alien 1 Variant
+      value: Alien 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211643514426303976, guid: c2b9cec22bc812244872f1d29c632dbd, type: 3}
+      propertyPath: m_TagString
+      value: Alien
       objectReference: {fileID: 0}
     - target: {fileID: 1231147226283550911, guid: c2b9cec22bc812244872f1d29c632dbd, type: 3}
       propertyPath: m_RootOrder
