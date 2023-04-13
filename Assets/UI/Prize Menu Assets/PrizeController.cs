@@ -11,14 +11,24 @@ public class PrizeController : MonoBehaviour
     public int cost;
 
     public bool isPurchased = false;
-
+    private GameObject canvas;
+    private ScoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        //isPurchased = false;
         image = GetComponent<Image>();
-        isPurchased = PlayerPrefs.GetInt(itemName, 0) == 1;
-        UpdateUI();
+        if (PlayerPrefs.HasKey(itemName))
+        {
+            isPurchased = PlayerPrefs.GetInt(itemName, 0) == 0;
+        }
+        else
+        {
+            isPurchased = false;
+        }
+
+        Debug.Log("Item: " + itemName + ", isPurchased: " + isPurchased);
     }
 
     // Update is called once per frame
@@ -36,6 +46,9 @@ public class PrizeController : MonoBehaviour
                 ResetPrizeItem();
             }
         }
+
+        UpdateUI();
+        
     }
     public void ResetPrizeItem()
     {
@@ -44,13 +57,19 @@ public class PrizeController : MonoBehaviour
     }
     public void OnItemClicked()
     {
-        Debug.Log("pressed");
-        image.color = Color.white;
-        isPurchased = true;
-        PlayerPrefs.SetInt(itemName, 1);
+        if (!isPurchased)
+        {
+            Debug.Log("pressed");
+            image.color = Color.white;
+            PlayerPrefs.SetInt(itemName, 1);
+            isPurchased = true;
+
+            SaveSystem.currentTickets -= cost;
+        }
+
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         if (isPurchased)
         {

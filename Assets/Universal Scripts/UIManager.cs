@@ -12,11 +12,14 @@ public class UIManager : MonoBehaviour
     public GameObject optionsMenu;
     public bool isPaused = false;
 
-
+    public GameObject prizes;
+    public PrizeController prizeController;
     private void OnEnable()
     {
         Debug.Log("Seting up menu");
         EventManager.instance.OnTriggerGameOver += TriggerGameOver;
+
+        
     }
 
     private void OnDisable()
@@ -27,6 +30,15 @@ public class UIManager : MonoBehaviour
 
     public void Update()
     {
+        if (SaveSystem.loadedScene == "PrizeMenu")
+        {
+            prizes.SetActive(true);
+        }
+        else
+        {
+            prizes.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape) && SaveSystem.loadedScene != "MenuScreen")
         {
             if (pauseMenu.activeSelf)
