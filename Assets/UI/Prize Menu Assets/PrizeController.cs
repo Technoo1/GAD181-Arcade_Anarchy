@@ -17,7 +17,8 @@ public class PrizeController : MonoBehaviour
     void Start()
     {
         image = GetComponent<Image>();
-
+        isPurchased = PlayerPrefs.GetInt(itemName, 0) == 1;
+        UpdateUI();
     }
 
     // Update is called once per frame
@@ -26,23 +27,38 @@ public class PrizeController : MonoBehaviour
         if (GetComponent<Image>().color == Color.white)
         {
             isPurchased = true;
+            PlayerPrefs.SetInt(itemName, 1);
         }
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                ResetPrizeItem();
+            }
+        }
+    }
+    public void ResetPrizeItem()
+    {
+        isPurchased = false;
+        image.color = Color.black;
     }
     public void OnItemClicked()
     {
         Debug.Log("pressed");
-        image.color = new Color32(255, 255, 255, 255);
+        image.color = Color.white;
         isPurchased = true;
+        PlayerPrefs.SetInt(itemName, 1);
     }
-    //public void PurchaseConfirmation()
-    //{
-    //    if (!isPurchased)
-    //    {
-    //        purchCont.purchaseScreen.SetActive(true);
-    //    }
-    //}
 
-
-
-
+    void UpdateUI()
+    {
+        if (isPurchased)
+        {
+            image.color = Color.white;
+        }
+        else
+        {
+            image.color = Color.black;
+        }
+    }
 }
