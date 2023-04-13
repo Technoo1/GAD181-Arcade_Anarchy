@@ -139,3 +139,5 @@ MonoBehaviour:
   moveLeft: 0
   moveRight: 0
   originalBall: {fileID: 309918864321610670, guid: 62dbb672f81ad854a96a2990a984d2ec, type: 3}
+  popSource: {fileID: 0}
+  popSound: {fileID: 8300000, guid: fbc5545016089924894ea1f807f2a84f, type: 3}

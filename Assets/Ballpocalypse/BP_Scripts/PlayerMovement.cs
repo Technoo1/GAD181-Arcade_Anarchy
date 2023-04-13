@@ -16,6 +16,9 @@ namespace ArcadeAnarchy
         bool jump = false;
         bool crouch = false;
 
+        public AudioSource jumpSource;
+        public AudioClip jumping;
+
 
          void Update()
          {
@@ -27,6 +30,7 @@ namespace ArcadeAnarchy
             {
                 jump = true;
                 animator.SetBool("IsJumping", true);
+                jumpSource.PlayOneShot(jumping);
             }
 
             if (Input.GetButton("Crouch"))

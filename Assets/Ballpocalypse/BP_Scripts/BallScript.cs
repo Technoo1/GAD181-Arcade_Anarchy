@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BallScript : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class BallScript : MonoBehaviour
 
     private GameObject ball1, ball2;
     private BallScript ball1Script, ball2Script;
+
+    public AudioSource popSource;
+    public AudioClip popSound;
 
     // Start is called before the first frame update
     private void Awake()
@@ -44,6 +48,9 @@ public class BallScript : MonoBehaviour
 
             ball1Script = ball1.GetComponent<BallScript>();
             ball2Script = ball2.GetComponent<BallScript>();
+
+            popSource.PlayOneShot(popSound);
+            gameObject.SetActive(false);
         }
     }
 

@@ -12,6 +12,10 @@ PrefabInstance:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5177763571411910300, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
+      propertyPath: popSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fbc5545016089924894ea1f807f2a84f, type: 3}
+    - target: {fileID: 5177763571411910300, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
       propertyPath: originalBall
       value: 
       objectReference: {fileID: 2296036589823962757, guid: 4467cf30c3813934484c1bd6dc2b00e9, type: 3}
