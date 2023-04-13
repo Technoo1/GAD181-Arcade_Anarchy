@@ -24,12 +24,10 @@ public class PlayerScript2 : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 movement.x = Input.GetAxisRaw("Horizontal");
-                Debug.Log("I'm still being pressed");
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 movement.x = Input.GetAxisRaw("Horizontal");
-                Debug.Log("I'm still being pressed");
             }
 
             // Tank Shooting code

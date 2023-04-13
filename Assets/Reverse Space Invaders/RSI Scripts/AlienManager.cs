@@ -12,6 +12,7 @@ public class AlienManager : MonoBehaviour
     public int rows = 3;
     public int columns = 9;
     public int deadAliens;
+    public ScreenShake cameraShake;
     // public AnimationCurve speed;
 
     public int amountkilled {get; private set;}
@@ -91,5 +92,6 @@ public class AlienManager : MonoBehaviour
     private void alienKilled()
     {
         this.amountkilled ++;
+        StartCoroutine(cameraShake.Shake(.15f, .4f)); // Script to cause Camera shake once alien is killed.
     }
 }
