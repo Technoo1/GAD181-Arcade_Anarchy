@@ -95,14 +95,15 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Large Ball
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5711823210190529394, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
 --- !u!1 &309918864321610670 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5867112492093690929, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
   m_PrefabInstance: {fileID: 6134226126158256031}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &3706290108684557115
+--- !u!82 &4924539536776312336
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,8 +113,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: fbc5545016089924894ea1f807f2a84f, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5867112492093690895}
   - component: {fileID: 5867112492093690928}
   - component: {fileID: 5177763571411910300}
-  - component: {fileID: 5711823210190529394}
+  - component: {fileID: 8564655004909879928}
   m_Layer: 11
   m_Name: Largest Ball
   m_TagString: Largest Ball
@@ -140,9 +140,7 @@ MonoBehaviour:
   moveLeft: 0
   moveRight: 0
   originalBall: {fileID: 309918864321610670, guid: 62dbb672f81ad854a96a2990a984d2ec, type: 3}
-  popSource: {fileID: -1163997536741174444, guid: 65e43756cb311ca4bafa0a7716c168dc, type: 3}
-  popSound: {fileID: 8300000, guid: fbc5545016089924894ea1f807f2a84f, type: 3}
---- !u!82 &5711823210190529394
+--- !u!82 &8564655004909879928
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,8 +150,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: fbc5545016089924894ea1f807f2a84f, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

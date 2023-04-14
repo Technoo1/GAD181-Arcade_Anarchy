@@ -21,8 +21,7 @@ public class BallScript : MonoBehaviour
     private GameObject ball1, ball2;
     private BallScript ball1Script, ball2Script;
 
-    public AudioSource popSource;
-    public AudioClip popSound;
+    AudioSource bulletSource; 
 
     // Start is called before the first frame update
     private void Awake()
@@ -34,6 +33,11 @@ public class BallScript : MonoBehaviour
      void Update()
     {
         MoveBall();
+    }
+
+     void Start()
+    {
+        bulletSource = GetComponent<AudioSource>(); 
     }
 
     void InstantiateBalls()
@@ -49,7 +53,7 @@ public class BallScript : MonoBehaviour
             ball1Script = ball1.GetComponent<BallScript>();
             ball2Script = ball2.GetComponent<BallScript>();
 
-            popSource.PlayOneShot(popSound);
+            
             gameObject.SetActive(false);
         }
     }
@@ -158,6 +162,7 @@ public class BallScript : MonoBehaviour
             {
                 InitializeBallsAndTurnOffCurrentBall();
                 Destroy(gameObject);
+                bulletSource.Play(); 
             }
             else
             {
