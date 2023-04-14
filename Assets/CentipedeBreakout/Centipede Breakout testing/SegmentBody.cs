@@ -7,6 +7,8 @@ using System.Linq;
 using System;
 using Unity.Mathematics;
 using UnityEngine.UIElements;
+using TMPro;
+
 
 namespace CentipedeBreakout
 {
@@ -55,13 +57,20 @@ namespace CentipedeBreakout
         //dumb variables I made cos I was lazy and also didn't have internet
         bool justBorn = true;
 
-      
+        //used to change sprite
+        private SpriteRenderer spriteRenderer;
 
+        //Point score amounts:
+        public const int PointSmall = 100;
+        public const int PointMedium = 300;
+        public const int PointBig = 500;
 
+        
 
         // Start is called before the first frame update
         void Start()
         {
+            
             //rb = gameObject.AddComponent<Rigidbody2D>();
 
             if (distanceBetweenSegments == 0)
@@ -71,14 +80,15 @@ namespace CentipedeBreakout
 
             //HEHAHHRHERHEAHRI
 
+            spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Resources.Load<Sprite>("CBCentipede_Head");
+
             //bodySegments = new GameObject[numberOfbodySegments];
             //Creates body parts and tells them what head they are attached to
 
             if (justBorn) {
                 for (int i = 0; i < numberOfbodySegments; i++)
                 {
-
-                    
 
                     bodySegments.Add(Instantiate(bodyPrefab, new Vector3(-3000, 3000, 0), Quaternion.identity));
                     //attached head is called to tell the head if the body part dies
@@ -94,6 +104,34 @@ namespace CentipedeBreakout
                     headPositionPrevious.Add(new Vector2(1000, 0));
                 }
             }
+
+            PointScorer.instance.OnPointGain += PointGain;
+        }
+
+        void PointGain(int pointsScored)
+        {
+            
+            switch (pointsScored)
+            {
+                case PointSmall:
+                    {
+                        break;
+                    }
+                case PointMedium:
+                    {
+                        break;
+                    }
+                case PointBig:
+                    {
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+
+            }
+            Debug.Log("piss");
         }
 
         // Update is called once per frame
@@ -286,7 +324,7 @@ namespace CentipedeBreakout
                     return;
                 }
 
-                Debug.Log(i);
+                //Debug.Log(i);
                 if (i == bodySegments.Count)    //treated as if the head
                 {
                     Vector2 vectorForAngle1 = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y) - headPositionPrevious[5];
@@ -335,7 +373,8 @@ namespace CentipedeBreakout
             //if front do this then return / stop
             if (deadPart == gameObject)
             {
-                Debug.Log("THE HEAD Is DYING");
+                PointScorer.instance.PointGain(PointMedium);
+                //Debug.Log("THE HEAD Is DYING");
 
 
                 if (bodySegments.Count - 0 == 0)
@@ -379,7 +418,7 @@ namespace CentipedeBreakout
                 frontDied.Add(transform.position);
 
 
-                Debug.Log("3");
+                //Debug.Log("3");
                 newHead = bodySegments[0].AddComponent<SegmentBody>();
                 newRigidBody = bodySegments[0].AddComponent<Rigidbody2D>();
 
@@ -388,10 +427,10 @@ namespace CentipedeBreakout
                 newRigidBody.gravityScale = 0;
                 newRigidBody.mass = 50;
 
-                Debug.Log("4");
+                //Debug.Log("4");
                 newHead.headPositionPrevious = frontDied;
 
-                Debug.Log("5");
+                //Debug.Log("5");
                 newHead.fall = fall;
                 newHead.attachedHead = bodySegments[0 + 1];
                 newHead.floor = floor;
@@ -429,6 +468,7 @@ namespace CentipedeBreakout
             //If you touch the but or behind the but
             if (bodySegments.Count - 1 - deadPartArrayRef == 0)
             {
+                PointScorer.instance.PointGain(PointMedium);
                 Debug.Log("OInga");
                 bodySegments.Remove(deadPart);
                 
@@ -437,7 +477,7 @@ namespace CentipedeBreakout
             }
             else if (bodySegments.Count - 1 - deadPartArrayRef == 1)
             {
-
+                PointScorer.instance.PointGain(PointBig);
                 //CURRENT TODO
                 //MOVE SOME CODE AROUND SO WE CAN REMOVE THE 20 POSITIONS 
                 //AND THE 2 BUTT BODY SEGMENTS
@@ -475,6 +515,7 @@ namespace CentipedeBreakout
             }
 
             //touch anywhere that isn't the face or but or tailbone
+            PointScorer.instance.PointGain(PointBig);
 
             newHead = bodySegments[deadPartArrayRef + 1].AddComponent<SegmentBody>();
             newRigidBody = bodySegments[deadPartArrayRef + 1].AddComponent<Rigidbody2D>();
@@ -559,6 +600,11 @@ namespace CentipedeBreakout
             
                     
             Debug.Log("Finished");
+        }
+
+        private void OnDisable()
+        {
+            PointScorer.instance.OnPointGain -= PointGain;
         }
     }
 }

@@ -120,6 +120,7 @@ MonoBehaviour:
   centipedeSpeedHorizontal: 1
   newHead: {fileID: 0}
   newRigidBody: {fileID: 0}
+  newSprite: {fileID: 21300000, guid: 66c9d9d0cde79f44ab4c1524a89378eb, type: 3}
 --- !u!50 &2921461692359501936
 Rigidbody2D:
   serializedVersion: 4

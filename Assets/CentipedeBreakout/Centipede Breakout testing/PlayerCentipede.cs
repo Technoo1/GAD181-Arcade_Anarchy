@@ -33,6 +33,11 @@ namespace CentipedeBreakout
             Movement();
 
 
+            if (animator.GetBool("Attack"))
+            {
+                animator.SetBool("Attack", false);
+            }
+
             timer += Time.deltaTime;
             if (Input.GetKey(KeyCode.Space))
             {
@@ -113,6 +118,7 @@ namespace CentipedeBreakout
 
         void Movement()
         {
+            animator.SetBool("Walk", false);
             if (Input.GetKey(KeyCode.D))
             {
                 animator.SetBool("Walk", true);
@@ -133,11 +139,7 @@ namespace CentipedeBreakout
                 animator.SetBool("Walk", true);
                 playerMove += new Vector3(0, -0.03f, 0);
             }
-            if (Input.GetKey(KeyCode.None)) {
-                animator.SetBool("Walk", false);
-            }
 
-            
 
             rb.MovePosition(transform.position + playerMove);
             playerMove = Vector3.zero;

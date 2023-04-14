@@ -48,7 +48,7 @@ namespace CentipedeBreakout
         {
             attachedHead.GetComponent<SegmentBody>().DeadSegment(gameObject);
 
-            Debug.Log("Murder");
+            //Debug.Log("Murder");
             Destroy(gameObject);
         }
 
