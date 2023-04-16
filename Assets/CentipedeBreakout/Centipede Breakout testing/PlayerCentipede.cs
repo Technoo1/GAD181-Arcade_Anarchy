@@ -44,7 +44,7 @@ namespace CentipedeBreakout
                 if (timer >= 1)
                 {
                     animator.SetBool("Attack", true);
-                    Debug.Log("I DONT UNDERSTAND COROUTINES?");
+                    //Debug.Log("I DONT UNDERSTAND COROUTINES?");
                     timer = 0;
                     StartCoroutine(Attack());
                 }
@@ -94,7 +94,7 @@ namespace CentipedeBreakout
         //Maybe delete this mess??
         public IEnumerator Attack()
         {
-            Debug.Log("WORK");
+            //Debug.Log("WORK");
             //100s can exist atm
             GameObject currentHit = Instantiate(hit, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.6f,0), Quaternion.identity);
             yield return new WaitForSeconds(0.4f);

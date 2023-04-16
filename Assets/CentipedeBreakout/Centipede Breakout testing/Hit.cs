@@ -38,11 +38,11 @@ namespace CentipedeBreakout
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("STEP 1");
+            //Debug.Log("STEP 1");
             if (collision.GetComponent<SegmentBody>())
             {
                 collision.GetComponent<SegmentBody>().fall = false;
-                Debug.Log("STEP 2");
+                //Debug.Log("STEP 2");
 
                 if (collision.OverlapPoint(transform.position + edgeOfHit))
                 {
@@ -55,7 +55,7 @@ namespace CentipedeBreakout
                 else if (Mathf.Abs(collision.GetComponent<SegmentBody>().centipedeHorizontalAngle) == 1)
                 {
                     collision.GetComponent<SegmentBody>().centipedeHorizontalAngle *= 0.3f;
-                    Debug.Log("STEP 3");
+                    //Debug.Log("STEP 3");
                 }
                 if (killedAHead == false)
                 {

@@ -267,7 +267,7 @@ namespace CentipedeBreakout
             }
         }
 
-        public void OnCollisionEnter2D(Collision2D collision)
+        public void OnTriggerEnter2D(Collider2D collision)
         {
             //Debug.Log("COLLIDING");
             if (collision.gameObject == leftWall)
@@ -405,7 +405,7 @@ namespace CentipedeBreakout
                     newHead.justBorn = false;
 
 
-                    bodySegments[0].GetComponent<BoxCollider2D>().isTrigger = false;
+                    bodySegments[0].GetComponent<BoxCollider2D>().isTrigger = true;
 
                     newHead.gameObject.GetComponent<Segment>().attachedHead = newHead.gameObject;
                     
@@ -422,7 +422,7 @@ namespace CentipedeBreakout
                 newHead = bodySegments[0].AddComponent<SegmentBody>();
                 newRigidBody = bodySegments[0].AddComponent<Rigidbody2D>();
 
-                bodySegments[0].GetComponent<BoxCollider2D>().isTrigger = false;
+                bodySegments[0].GetComponent<BoxCollider2D>().isTrigger = true;
 
                 newRigidBody.gravityScale = 0;
                 newRigidBody.mass = 50;
@@ -501,7 +501,7 @@ namespace CentipedeBreakout
                 newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
                 newHead.justBorn = false;
 
-                bodySegments[deadPartArrayRef + 1].GetComponent<BoxCollider2D>().isTrigger = false;
+                bodySegments[deadPartArrayRef + 1].GetComponent<BoxCollider2D>().isTrigger = true;
                 headPositionPrevious = headPositionPrevious.GetRange(0,headPositionPrevious.Count - 10);
 
                 for (int i = 0; i < 2; i++)
@@ -540,7 +540,7 @@ namespace CentipedeBreakout
             Debug.Log("3");
            
 
-            bodySegments[deadPartArrayRef + 1].GetComponent<BoxCollider2D>().isTrigger = false;
+            bodySegments[deadPartArrayRef + 1].GetComponent<BoxCollider2D>().isTrigger = true;
 
             newRigidBody.gravityScale = 0;
             newRigidBody.mass = 50;
