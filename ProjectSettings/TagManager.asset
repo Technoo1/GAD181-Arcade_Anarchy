@@ -24,6 +24,8 @@ TagManager:
   - Right Wall
   - Bullet
   - BulletIgnore
+  - GuardProfileL
+  - Alien
   layers:
   - Default
   - TransparentFX
@@ -35,8 +37,8 @@ TagManager:
   - Aliens
   - Laser
   - Missile
-  - 
-  - 
+  - Player
+  - Ball
   - 
   - 
   - 

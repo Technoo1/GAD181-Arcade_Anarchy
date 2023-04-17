@@ -32,7 +32,7 @@ public class PrelimMenuScrene : MonoBehaviour
     }
     public void RevSpaceInvaders()
     {
-        SceneManager.LoadScene("Reverse Space Invaders");
+        SceneManager.LoadScene("Player Selection");
         SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
     }
 

@@ -31,6 +31,13 @@ namespace ArcadeAnarchy
             OnTriggerGameOver?.Invoke();
         }
 
+        public event Action OnHeartLost;
+
+        public void HeartLost()
+        {
+            OnHeartLost?.Invoke();
+        }
+
     }
 
 }

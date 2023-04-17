@@ -150,6 +150,7 @@ public class BallScript : MonoBehaviour
             if(gameObject.tag != "Smallest Ball")
             {
                 InitializeBallsAndTurnOffCurrentBall();
+                Destroy(gameObject);
             }
             else
             {

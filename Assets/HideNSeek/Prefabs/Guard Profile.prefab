@@ -97,10 +97,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1b8c06247cb8c41847334fc55dd502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guardTurnChance: 50
+  guardTurnCheck: 0
+  guardMoveRChance: 75
+  guardMoveRCheck: 0
+  guardMoveLChance: 75
+  guardMoveLCheck: 0
   waitForCheck: 2
-  waitTillTurn: 2
-  waitBeforeSwapBack: 3
-  guardTurnChance: 0
+  waitTillTurn: 1
+  waitBeforeSwapBack: 2
+  waitForLoop: 3
   guardTurn: {fileID: 21300000, guid: 07cf9bb33d2e9a5479187e928f678d20, type: 3}
+  guardTurnL: {fileID: 21300000, guid: b3ec1061335d1564991ab5bd5e9e6e37, type: 3}
   guardFront: {fileID: 21300000, guid: f378dfc777c713945a707c1978754012, type: 3}
   guardProfile: {fileID: 21300000, guid: 12d8abd750008824486b860101490cf2, type: 3}
+  guardProfileL: {fileID: 21300000, guid: 3db9990e37cbd57488664282fe225816, type: 3}
+  guardAlert: {fileID: 21300000, guid: d0e25189549aed445ab053bf83bac7ef, type: 3}

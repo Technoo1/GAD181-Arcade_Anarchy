@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerScript2 : MonoBehaviour
 {
-    public Projectile laserPrefab; // Reference to the Projectile script 
+    public Projectile laserPrefab; // Reference to the Projectile script
 
     public float moveSpeed = 5f; // Public float to determine speed.
 
@@ -17,33 +17,47 @@ public class PlayerScript2 : MonoBehaviour
 
     void Update()
     {
-        // Tank Movement code
-        movement.x = 0f;
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            movement.x = Input.GetAxisRaw("Horizontal");
-            Debug.Log("I'm still being pressed");
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            movement.x = Input.GetAxisRaw("Horizontal");
-            Debug.Log("I'm still being pressed");
-        }
+        if (PlayerManager.instance.twoPlayer == true)
+        { 
+            // Tank Movement code
+            movement.x = 0f;
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                movement.x = Input.GetAxisRaw("Horizontal");
+                Debug.Log("I'm still being pressed");
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                movement.x = Input.GetAxisRaw("Horizontal");
+                Debug.Log("I'm still being pressed");
+            }
 
-        // Tank Shooting code
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            // Tank Shooting code
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                Shoot(); //Instantiates bullets
+            }
+        }
+        else
         {
-            Shoot(); //Instantiates bullets
+            //Do nothing
         }
     }
 
     private void Shoot() // Code that instantiates and fires a projectile from the tank
     {
-        if (!_laserActive) //Sets up so that only one bullet can be fired at a time.
+        if (PlayerManager.instance.twoPlayer == true)
         {
-            Projectile projectile = Instantiate(this.laserPrefab, this.transform.position, quaternion.identity);
-            projectile.destroyed += LaserDestroyed;
-            _laserActive = true;
+            if (!_laserActive) //Sets up so that only one bullet can be fired at a time.
+            {
+                Projectile projectile = Instantiate(this.laserPrefab, this.transform.position, quaternion.identity);
+                projectile.destroyed += LaserDestroyed;
+                _laserActive = true;
+            }
+        }
+        else
+        {
+            //Do nothing
         }
     }
 

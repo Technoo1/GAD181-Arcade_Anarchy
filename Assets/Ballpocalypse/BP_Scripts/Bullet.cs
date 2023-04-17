@@ -11,7 +11,8 @@ public class Bullet : MonoBehaviour
     public int damage = 40;
     public Rigidbody2D rb;
     public GameObject impactEffect;
-    
+    private Vector3 mousePos;
+    private Camera mainCam;
 
 
 
@@ -19,19 +20,14 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Shoots up or left and right
-        //if(ShootingHorizontal == true)
-        //{
-        //    rb.velocity = transform.right * speed;
-        //}
-
-        //if(ShootingUp == true)
-        //{
-        //    rb.velocity = transform.up * speed;
-        //}
-
-        rb.velocity = transform.right * speed;
-        //rb.velocity = transform.up * speed;
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        rb = GetComponent<Rigidbody2D>();
+        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mousePos - transform.position;
+        Vector3 rotation = transform.position - mousePos;
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
+        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
 

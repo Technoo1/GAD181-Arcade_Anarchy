@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinCode : MonoBehaviour
 {
-    public GameObject WinArea;
-
     private void OnTriggerEnter2D(Collider2D Object)
     {
-        if (Object.name == "Alien")
+        if (Object.CompareTag("Alien"))
         {
-            WinArea.GetComponent<SpriteRenderer>().enabled = true; 
+            SceneManager.LoadScene("MenuScreen");
         }
     }
 }

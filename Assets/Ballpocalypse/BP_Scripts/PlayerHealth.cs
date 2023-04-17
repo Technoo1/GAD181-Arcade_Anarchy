@@ -22,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
             Destroy(gameObject);
             EventManager.instance.TriggerGameOver(); 
         }
-    }
+   }
+
+
 
 }
