@@ -33,6 +33,8 @@ public class HSGuardVision : MonoBehaviour
     public Sprite guardProfileL; ////sprite of all guards looking away to DA LEFT
     public Sprite guardAlert; //sprite of all guards detecting the player
 
+    public AudioSource guardTurningAudio;
+
     void Start()
     {
         StartCoroutine(StartPatrol());
@@ -48,6 +50,7 @@ public class HSGuardVision : MonoBehaviour
                 if (guardTurnCheck > guardTurnChance) //if the result is greater than the specified value...
                 {
                     this.gameObject.GetComponent<SpriteRenderer>().sprite = guardTurn; //swap to turning sprite
+                    guardTurningAudio.Play();
                     Debug.Log("guard is turning!");
                     yield return new WaitForSeconds(waitTillTurn); //wait before swapping again
                     {

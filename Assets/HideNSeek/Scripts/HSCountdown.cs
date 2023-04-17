@@ -11,6 +11,9 @@ public class HSCountdown : MonoBehaviour
     public TMP_Text timerText; //time remaining displayed
     public bool timerIsRunning = false; //is the timer still running?
 
+    public AudioSource fiveSecsRemain;
+    public bool alreadyPlayed = false;
+
     void Start()
     {
         timerIsRunning = true; //run countdown once active
@@ -23,13 +26,16 @@ public class HSCountdown : MonoBehaviour
             if (timerCount > 0)
             {
                 timerCount -= Time.deltaTime; //run down the numbers
+                if (timerCount < 5)
+                {
+                    PlayAudio();
+                }
             }
             else
             {
                 timerCount = 0; //once the timer reaches zero...
                 timerIsRunning = false; //... stop the timer
-                EventManager.instance.TriggerGameOver(); //game over screen
-                Debug.Log("time's up! great living color song btw ;)");
+                StartCoroutine(GameOverScreen());
             }
         }
         DisplayTime(timerCount);
@@ -48,4 +54,21 @@ public class HSCountdown : MonoBehaviour
         timerText.text = string.Format("{00}", seconds); //if I just want to show double digits in seconds with 59 being the max value
         //timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds); //if I want to include minutes in the format
     }
+
+    void PlayAudio()
+    {
+        if (!alreadyPlayed)
+        {
+            fiveSecsRemain.Play();
+            alreadyPlayed = true;
+        }
+    }
+
+    IEnumerator GameOverScreen()
+    {
+        Debug.Log("time's up! great living color song btw ;)");
+        yield return new WaitForSeconds(3f); //delay before displaying the game over scene
+        EventManager.instance.TriggerGameOver(); //game over screen
+    }
+
 }
