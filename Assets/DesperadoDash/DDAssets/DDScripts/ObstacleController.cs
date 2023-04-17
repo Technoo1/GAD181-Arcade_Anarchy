@@ -8,6 +8,11 @@ public class ObstacleController : MonoBehaviour
     public List<Transform> spawnLanes;
     public GameObject[] obstacleArray;
 
+    public GameObject tumbleweed;
+    public float tumbleweedSpawnTime;
+    public Transform tumbleweedTransform;
+    public bool isTumbleweed;
+
     public bool isSpawn = false;
     public float spawnTime;
     // Start is called before the first frame update
@@ -16,27 +21,30 @@ public class ObstacleController : MonoBehaviour
         spawnTime = Random.Range(0.5f, 1f);
         ScoreEvents.instance.OnThousandMeters += ThousandMeters;
         ScoreEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
-
-    }
-    private IEnumerator OnSceneStart()
-    {
-        yield return new WaitForSeconds(8f);
+        tumbleweedSpawnTime = Random.Range(5f, 10f);
     }
 
     void FiveHundredMeters()
     {
         spawnTime = Random.Range(0.4f, 0.8f);
+        tumbleweedSpawnTime = Random.Range(3f, 7f);
     }
     void ThousandMeters()
     {
         spawnTime = Random.Range(0.3f, 0.6f);
+        tumbleweedSpawnTime = Random.Range(1f, 5f);
     }
 
     void Update()
     {
         if (!isSpawn)
         {
-        StartCoroutine(SpawnObstacles());
+            StartCoroutine(SpawnObstacles());
+ 
+        }
+        if (!isTumbleweed)
+        {
+            StartCoroutine(SpawnTumbleweed());
         }
 
     }
@@ -49,5 +57,14 @@ public IEnumerator SpawnObstacles()
         yield return new WaitForSeconds(spawnTime);
         Instantiate(randomObstacle, randomTransform.position, randomTransform.rotation);
         isSpawn = false;
+    }
+
+    public IEnumerator SpawnTumbleweed()
+    {
+
+        isTumbleweed = true;
+        yield return new WaitForSeconds(tumbleweedSpawnTime);
+        Instantiate(tumbleweed, tumbleweedTransform.position, tumbleweedTransform.rotation);
+        isTumbleweed = false;
     }
 }
