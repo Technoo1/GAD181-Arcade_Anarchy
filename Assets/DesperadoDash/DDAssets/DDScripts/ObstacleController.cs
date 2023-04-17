@@ -16,6 +16,11 @@ public class ObstacleController : MonoBehaviour
         spawnTime = Random.Range(0.5f, 1f);
         ScoreEvents.instance.OnThousandMeters += ThousandMeters;
         ScoreEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
+
+    }
+    private IEnumerator OnSceneStart()
+    {
+        yield return new WaitForSeconds(8f);
     }
 
     void FiveHundredMeters()
