@@ -10,10 +10,13 @@ public class HorseHealth : MonoBehaviour
 
     public BoxCollider2D bxCollider;
     public bool isPaused = false;
+    public AudioSource damageSound;
 
+    ScreenShake screenShake;
 
     void Start()
     {
+        screenShake = Camera.main.GetComponent<ScreenShake>();
         if (!bxCollider)
         {
             bxCollider = GetComponent<BoxCollider2D>();
@@ -63,6 +66,8 @@ public class HorseHealth : MonoBehaviour
         {
             horseHearts -= 1;
             Debug.Log("Hit!");
+            damageSound.Play(0);
+            screenShake.ShakeScreen();
         }
     }
 
