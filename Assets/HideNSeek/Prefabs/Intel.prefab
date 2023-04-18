@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioPrefab: {fileID: 8956092583347026815, guid: 62ed966e9bc382d4f8de10f7387373c7, type: 3}
-  audioClip: {fileID: 8300000, guid: 0f132a20abae90f49b4763c0cff2d9c8, type: 3}
+  timeAdded: 5
 --- !u!82 &-4363720816167259906
 AudioSource:
   m_ObjectHideFlags: 0

@@ -25,6 +25,7 @@ TagManager:
   - Bullet
   - BulletIgnore
   - GuardProfileL
+  - HSTimer
   layers:
   - Default
   - TransparentFX
