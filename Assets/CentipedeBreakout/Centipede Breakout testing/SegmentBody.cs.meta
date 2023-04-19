@@ -3,7 +3,18 @@ guid: bee12cb304ac74c439fd5d4e0750d6a9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - attachedHead: {instanceID: 0}
+  - ren: {instanceID: 0}
+  - bodyPrefab: {instanceID: 0}
+  - leftWall: {instanceID: 0}
+  - roof: {instanceID: 0}
+  - rightWall: {instanceID: 0}
+  - floor: {instanceID: 0}
+  - hit: {instanceID: 0}
+  - newHead: {instanceID: 0}
+  - newRigidBody: {instanceID: 0}
+  - newSprite: {fileID: 21300000, guid: 66c9d9d0cde79f44ab4c1524a89378eb, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

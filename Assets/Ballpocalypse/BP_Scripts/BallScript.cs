@@ -162,7 +162,6 @@ public class BallScript : MonoBehaviour
             {
                 InitializeBallsAndTurnOffCurrentBall();
                 Destroy(gameObject);
-                 
             }
             else
             {

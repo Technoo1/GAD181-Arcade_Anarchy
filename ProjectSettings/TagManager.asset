@@ -24,6 +24,10 @@ TagManager:
   - Right Wall
   - Bullet
   - BulletIgnore
+  - GuardProfileL
+  - Alien
+  - Health Pickup
+  - HSTimer
   layers:
   - Default
   - TransparentFX
