@@ -10,14 +10,12 @@ public class BallDamage : MonoBehaviour
 
     public SpriteRenderer sprite;
 
-
-
     public IEnumerator FlashRed()
     {
         sprite.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         sprite.color = Color.white;
-    }
+    } 
 
 
 
@@ -25,13 +23,15 @@ public class BallDamage : MonoBehaviour
     {
         if (hitinfo.tag == "Player")
         {
-            hitinfo.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+           
             StartCoroutine(FlashRed());
         }
     }
 
-
-
+    private void Update()
+    {
+        
+    }
 
 
 }

@@ -9,9 +9,16 @@ public class Bullet : MonoBehaviour
 
     public float speed = 20f;
     public int damage = 40;
+
     public Rigidbody2D rb;
     public GameObject impactEffect;
-    
+    private Vector3 mousePos;
+    private Camera mainCam;
+
+    public AudioSource bulletSource;
+
+    public AudioSource ballPop;
+    public AudioClip popClip;
 
 
 
@@ -19,25 +26,52 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Shoots up or left and right
-        //if(ShootingHorizontal == true)
-        //{
-        //    rb.velocity = transform.right * speed;
-        //}
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        rb = GetComponent<Rigidbody2D>();
+        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mousePos - transform.position;
+        Vector3 rotation = transform.position - mousePos;
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
+        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
 
-        //if(ShootingUp == true)
-        //{
-        //    rb.velocity = transform.up * speed;
-        //}
-
-        rb.velocity = transform.right * speed;
-        //rb.velocity = transform.up * speed;
+        bulletSource = GetComponent<AudioSource>();
     }
 
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-       
+
         Destroy(gameObject);
+
+        if (hitInfo.tag == "Largest Ball")
+        {
+            ballPop.Play();
+            Debug.Log("ball popped");
+        }
+
+        if (hitInfo.tag == "Large Ball")
+        {
+            ballPop.Play();
+            Debug.Log("ball popped");
+
+        }
+        if (hitInfo.tag == "Medium Ball")
+        {
+            ballPop.Play();
+            Debug.Log("ball popped");
+        }
+
+        if (hitInfo.tag == "Small Ball")
+        {
+            ballPop.Play();
+            Debug.Log("ball popped");
+        }
+
+        if (hitInfo.tag == "Smallest Ball")
+        {
+            ballPop.Play();
+            Debug.Log("ball popped");
+        }
     }
 }

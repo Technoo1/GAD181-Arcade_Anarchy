@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BallScript : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class BallScript : MonoBehaviour
     private GameObject ball1, ball2;
     private BallScript ball1Script, ball2Script;
 
+    AudioSource bulletSource; 
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -30,6 +33,11 @@ public class BallScript : MonoBehaviour
      void Update()
     {
         MoveBall();
+    }
+
+     void Start()
+    {
+        bulletSource = GetComponent<AudioSource>(); 
     }
 
     void InstantiateBalls()
@@ -44,6 +52,9 @@ public class BallScript : MonoBehaviour
 
             ball1Script = ball1.GetComponent<BallScript>();
             ball2Script = ball2.GetComponent<BallScript>();
+
+            
+            gameObject.SetActive(false);
         }
     }
 
@@ -150,6 +161,7 @@ public class BallScript : MonoBehaviour
             if(gameObject.tag != "Smallest Ball")
             {
                 InitializeBallsAndTurnOffCurrentBall();
+                Destroy(gameObject);
             }
             else
             {
