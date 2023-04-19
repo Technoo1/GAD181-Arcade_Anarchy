@@ -21,6 +21,9 @@ public class BallScript : MonoBehaviour
     private GameObject ball1, ball2;
     private BallScript ball1Script, ball2Script;
 
+    public AudioSource ballPop;
+    public AudioClip popClip; 
+
     AudioSource bulletSource; 
 
     // Start is called before the first frame update
@@ -162,6 +165,7 @@ public class BallScript : MonoBehaviour
             {
                 InitializeBallsAndTurnOffCurrentBall();
                 Destroy(gameObject);
+                ballPop.PlayOneShot(popClip); 
             }
             else
             {

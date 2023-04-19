@@ -46,31 +46,31 @@ public class Bullet : MonoBehaviour
 
         if (hitInfo.tag == "Largest Ball")
         {
-            ballPop.Play();
+            ballPop.PlayOneShot(popClip);
             Debug.Log("ball popped");
         }
 
         if (hitInfo.tag == "Large Ball")
         {
-            ballPop.Play();
+            ballPop.PlayOneShot(popClip);
             Debug.Log("ball popped");
 
         }
         if (hitInfo.tag == "Medium Ball")
         {
-            ballPop.Play();
+            ballPop.PlayOneShot(popClip);
             Debug.Log("ball popped");
         }
 
         if (hitInfo.tag == "Small Ball")
         {
-            ballPop.Play();
+            ballPop.PlayOneShot(popClip);
             Debug.Log("ball popped");
         }
 
         if (hitInfo.tag == "Smallest Ball")
         {
-            ballPop.Play();
+            ballPop.PlayOneShot(popClip); 
             Debug.Log("ball popped");
         }
     }
