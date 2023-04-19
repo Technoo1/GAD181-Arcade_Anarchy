@@ -37,8 +37,6 @@ public class PlayerScript2 : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
                 Shoot(); //Instantiates bullets
-                bulletSource = GetComponent<AudioSource>();
-                bulletSource.PlayOneShot(shotSound);
             }
         }
         else
@@ -56,6 +54,8 @@ public class PlayerScript2 : MonoBehaviour
                 Projectile projectile = Instantiate(this.laserPrefab, this.transform.position, quaternion.identity);
                 projectile.destroyed += LaserDestroyed;
                 _laserActive = true;
+                bulletSource = GetComponent<AudioSource>();
+                bulletSource.PlayOneShot(shotSound);
             }
         }
         else
