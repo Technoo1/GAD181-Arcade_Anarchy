@@ -83,7 +83,7 @@ public class HSPlayerControls : MonoBehaviour
     IEnumerator GameOverScreen()
     {
         yield return new WaitForSeconds(timeTillGameOver);
-        EventManager.instance.TriggerGameOver(); //triggers universal game over screen and menu
+        //EventManager.instance.TriggerGameOver(); //triggers universal game over screen and menu
         Debug.Log("Y O U D I E D");
     }
 }

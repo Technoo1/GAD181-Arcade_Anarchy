@@ -788,7 +788,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1527899426, guid: e99c8e6fdb590124589cc841781e1b43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -834,6 +834,10 @@ MonoBehaviour:
   - {fileID: 318972350}
   bxCollider: {fileID: 1071988072}
   isPaused: 0
+  damageSound: {fileID: 1071988079}
+  mainCamera: {fileID: 1449747501}
+  isDead: 0
+  gameOverLoaded: 0
 --- !u!114 &1071988078
 MonoBehaviour:
   m_ObjectHideFlags: 0

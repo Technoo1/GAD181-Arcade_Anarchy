@@ -14,8 +14,8 @@ public class TumbleweedMovement : MonoBehaviour
         endPoint = new Vector2(-33f, -6.84f);
         speed = 10f;
 
-        ScoreEvents.instance.OnThousandMeters += ThousandMeters;
-        ScoreEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
+        DistanceEvents.instance.OnThousandMeters += ThousandMeters;
+        DistanceEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
     }
 
     void Update()

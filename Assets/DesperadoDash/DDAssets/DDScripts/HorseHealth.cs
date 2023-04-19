@@ -12,7 +12,8 @@ public class HorseHealth : MonoBehaviour
     public bool isPaused = false;
     public AudioSource damageSound;
 
-    ScreenShake screenShake;
+    public Camera mainCamera;
+    private ScreenShake screenShake;
     private GameObject DistanceObject;
     private DistanceManager distanceManagerScript;
 
@@ -20,7 +21,7 @@ public class HorseHealth : MonoBehaviour
     public bool gameOverLoaded = false;
     void Start()
     {
-        screenShake = Camera.main.GetComponent<ScreenShake>();
+        screenShake = mainCamera.GetComponent<ScreenShake>();
         if (!bxCollider)
         {
             bxCollider = GetComponent<BoxCollider2D>();
