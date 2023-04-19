@@ -17,8 +17,6 @@ public class AlienManager : MonoBehaviour
     public int amountkilled {get; private set;}
     public int totalAliens => this.rows * this.columns;
     // public float percentKilled => (float)this.amountkilled / (float)this.totalAliens;
-
-
     private Vector3 _direction = Vector2.right;
 
     private void Awake() 
@@ -77,7 +75,7 @@ public class AlienManager : MonoBehaviour
         }
         if (deadAliens >= totalAliens)
         {
-            SceneManager.LoadScene("MenuScreen");
+            SceneManager.LoadScene("MenuScreen"); // Goes to Main Menu if all aliens are dead.
         }
     }
 

@@ -123,8 +123,12 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 73
 >>>>>>> JakeBranch
+=======
+  controlID: 26
+>>>>>>> Pablo's-Branch
 --- !u!114 &3
 >>>>>>> MaxsBranch
 =======
@@ -138,6 +142,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
   m_Name:
   m_EditorClassIdentifier:
   m_Children: []
@@ -178,15 +183,31 @@ MonoBehaviour:
 >>>>>>> JakeBranch
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1956
+    y: 0
+    width: 604
+    height: 1307
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> Pablo's-Branch
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
   m_Selected: 0
   m_LastSelected: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &7
 >>>>>>> MaxsBranch
 =======
+=======
+>>>>>>> Pablo's-Branch
 --- !u!114 &4
 >>>>>>> MaxsBranch
 =======
@@ -207,6 +228,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     width: 502
@@ -238,6 +260,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
 >>>>>>> JakeBranch
+=======
+    width: 484
+    height: 774
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 14}
+>>>>>>> Pablo's-Branch
   m_Panes:
   - {fileID: 14}
   m_Selected: 0
@@ -265,6 +294,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -327,11 +357,20 @@ MonoBehaviour:
     width: 1578
     height: 310
 >>>>>>> MaxsBranch
+=======
+    y: 774
+    width: 1956
+    height: 533
+>>>>>>> Pablo's-Branch
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 12}
   m_Panes:
+<<<<<<< HEAD
   - {fileID: 13}
+=======
+  - {fileID: 12}
+>>>>>>> Pablo's-Branch
   - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 1
@@ -533,6 +572,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 2028
     height: 1283
   m_MinSize: {x: 200, y: 200}
@@ -547,6 +587,14 @@ MonoBehaviour:
   vertical: 1
   controlID: 74
 >>>>>>> JakeBranch
+=======
+    width: 1956
+    height: 1307
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 27
+>>>>>>> Pablo's-Branch
 --- !u!114 &10
 >>>>>>> main
 =======
@@ -599,6 +647,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 921
     height: 394
   m_MinSize: {x: 403, y: 221}
@@ -639,6 +688,14 @@ MonoBehaviour:
   vertical: 0
   controlID: 75
 >>>>>>> JakeBranch
+=======
+    width: 1956
+    height: 774
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 28
+>>>>>>> Pablo's-Branch
 --- !u!114 &11
 >>>>>>> MaxsBranch
 =======
@@ -657,6 +714,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -687,10 +745,17 @@ MonoBehaviour:
     y: 0
     width: 1190
     height: 637
+=======
+    x: 484
+    y: 0
+    width: 1472
+    height: 774
+>>>>>>> Pablo's-Branch
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 16}
+  m_ActualView: {fileID: 15}
   m_Panes:
+<<<<<<< HEAD
 =======
     x: 228
     y: 0
@@ -708,6 +773,10 @@ MonoBehaviour:
   - {fileID: 15}
   - {fileID: 16}
 >>>>>>> JakeBranch
+=======
+  - {fileID: 15}
+  - {fileID: 16}
+>>>>>>> Pablo's-Branch
   m_Selected: 0
   m_LastSelected: 1
 <<<<<<< HEAD
@@ -757,6 +826,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -852,6 +922,8 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+=======
+>>>>>>> Pablo's-Branch
   m_EditorHideFlags: 1
 <<<<<<< HEAD
 >>>>>>> MaxsBranch
@@ -879,6 +951,7 @@ MonoBehaviour:
 =======
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 710
     width: 1577
     height: 289
@@ -894,6 +967,11 @@ MonoBehaviour:
     width: 920
     height: 250
 >>>>>>> GeorgeBranch
+=======
+    y: 847
+    width: 1955
+    height: 512
+>>>>>>> Pablo's-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter:
@@ -910,6 +988,7 @@ MonoBehaviour:
     m_Folders:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Universal Scripts
 =======
     - Assets/CentipedeBreakout/Centipede Breakout testing
@@ -917,13 +996,20 @@ MonoBehaviour:
 =======
     - Assets
 >>>>>>> GeorgeBranch
+=======
+    - Assets/Reverse Space Invaders/RSI Scenes
+>>>>>>> Pablo's-Branch
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Assets/Universal Scripts
+=======
+  - Assets/Reverse Space Invaders/RSI Scenes
+>>>>>>> Pablo's-Branch
   m_LastFoldersGridSize: -1
   m_LastProjectPath: G:\UnityProjects\GAD181-Arcade_Anarchy
 =======
@@ -944,6 +1030,7 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -968,6 +1055,11 @@ MonoBehaviour:
     m_LastClickedID: 25606
     m_ExpandedIDs: 00000000c0630000c2630000c4630000c6630000c8630000ca630000cc630000ce630000d0630000f263000000ca9a3b
 >>>>>>> JakeBranch
+=======
+    m_SelectedIDs: 2c610000
+    m_LastClickedID: 24876
+    m_ExpandedIDs: 00000000f8600000fa600000fc600000fe60000000ca9a3b
+>>>>>>> Pablo's-Branch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1031,6 +1123,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000c4600000c6600000c8600000ca600000cc600000ce600000d0600000d2600000d4600000
 =======
     m_ExpandedIDs: 0000000072610000
@@ -1041,6 +1134,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000f4350000
 >>>>>>> GeorgeBranch
+=======
+    m_ExpandedIDs: 00000000f8600000fa600000fc600000fe600000
+>>>>>>> Pablo's-Branch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name:
@@ -1070,6 +1166,7 @@ MonoBehaviour:
 <<<<<<< HEAD
     m_HadKeyboardFocusLastEvent: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c6230000
 >>>>>>> main
 =======
@@ -1086,6 +1183,13 @@ MonoBehaviour:
       m_UserAcceptedRename: 0
       m_Name:
       m_OriginalName:
+=======
+    m_ExpandedInstanceIDs: c6230000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+>>>>>>> Pablo's-Branch
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -1097,7 +1201,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 0}
+=======
+      m_ClientGUIView: {fileID: 11}
+>>>>>>> Pablo's-Branch
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1114,6 +1222,7 @@ MonoBehaviour:
   m_DirectoriesAreaWidth: 115
 =======
   m_DirectoriesAreaWidth: 207
+<<<<<<< HEAD
 >>>>>>> MaxsBranch
 --- !u!114 &14
 =======
@@ -1124,6 +1233,9 @@ MonoBehaviour:
   m_DirectoriesAreaWidth: 207
 --- !u!114 &13
 >>>>>>> GeorgeBranch
+=======
+--- !u!114 &13
+>>>>>>> Pablo's-Branch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1143,6 +1255,7 @@ MonoBehaviour:
     m_Tooltip:
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1168,6 +1281,12 @@ MonoBehaviour:
     width: 284
     height: 644
 >>>>>>> GeorgeBranch
+=======
+    x: 1956
+    y: 73
+    width: 603
+    height: 1286
+>>>>>>> Pablo's-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization:
@@ -1182,6 +1301,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1244,6 +1364,9 @@ MonoBehaviour:
 =======
 --- !u!114 &14
 >>>>>>> JakeBranch
+=======
+--- !u!114 &14
+>>>>>>> Pablo's-Branch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1275,6 +1398,7 @@ MonoBehaviour:
     x: 0
     y: 73
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 387
     height: 616
 >>>>>>> MaxsBranch
@@ -1288,10 +1412,15 @@ MonoBehaviour:
     width: 227
     height: 373
 >>>>>>> GeorgeBranch
+=======
+    width: 483
+    height: 753
+>>>>>>> Pablo's-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs:
       m_LastClickedID: 0
 <<<<<<< HEAD
@@ -1307,6 +1436,11 @@ MonoBehaviour:
 =======
       m_ExpandedIDs: 42fbffff
 >>>>>>> GeorgeBranch
+=======
+      m_SelectedIDs: 60600000
+      m_LastClickedID: 24672
+      m_ExpandedIDs: 26fbffff466000005a600000
+>>>>>>> Pablo's-Branch
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name:
@@ -1323,7 +1457,11 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 0}
+<<<<<<< HEAD
       m_SearchString:
+=======
+      m_SearchString: 
+>>>>>>> Pablo's-Branch
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
     m_LockTracker:
@@ -1340,6 +1478,7 @@ MonoBehaviour:
 >>>>>>> MaxsBranch
 =======
   m_WindowGUID: 4c969a2b90040154d917609493e03593
+<<<<<<< HEAD
 --- !u!114 &16
 >>>>>>> MaxsBranch
 =======
@@ -1350,6 +1489,9 @@ MonoBehaviour:
   m_WindowGUID: 4c969a2b90040154d917609493e03593
 --- !u!114 &15
 >>>>>>> GeorgeBranch
+=======
+--- !u!114 &15
+>>>>>>> Pablo's-Branch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1372,6 +1514,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 510
     y: 81
     width: 1524
@@ -1388,6 +1531,12 @@ MonoBehaviour:
     width: 1469
     height: 726
 >>>>>>> JakeBranch
+=======
+    x: 484
+    y: 73
+    width: 1470
+    height: 753
+>>>>>>> Pablo's-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1662,6 +1811,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 1.4161927, y: 0.6198504, z: -8.152267}
     speed: 2
     m_Value: {x: 1.4161927, y: 0.6198504, z: -8.152267}
@@ -1690,6 +1840,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0}
 >>>>>>> GeorgeBranch
+=======
+    m_Target: {x: 1023.8888, y: 383.00217, z: -29.645868}
+    speed: 2
+    m_Value: {x: 1023.8888, y: 383.00217, z: -29.645868}
+>>>>>>> Pablo's-Branch
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1744,6 +1899,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 5.8187933
     speed: 2
     m_Value: 5.8187933
@@ -1772,6 +1928,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 10
 >>>>>>> GeorgeBranch
+=======
+    m_Target: 681.406
+    speed: 2
+    m_Value: 681.406
+>>>>>>> Pablo's-Branch
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1800,6 +1961,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &18
 =======
 --- !u!114 &17
@@ -1810,6 +1972,9 @@ MonoBehaviour:
 =======
 --- !u!114 &16
 >>>>>>> GeorgeBranch
+=======
+--- !u!114 &16
+>>>>>>> Pablo's-Branch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1831,6 +1996,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 510
     y: 81
     width: 1524
@@ -1847,6 +2013,12 @@ MonoBehaviour:
     width: 1532
     height: 790
 >>>>>>> GeorgeBranch
+=======
+    x: 484
+    y: 73
+    width: 1470
+    height: 753
+>>>>>>> Pablo's-Branch
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -1892,6 +2064,7 @@ MonoBehaviour:
 <<<<<<< HEAD
       y: 21
 <<<<<<< HEAD
+<<<<<<< HEAD
       width: 1524
       height: 734
     m_Scale: {x: 0.6796296, y: 0.6796296}
@@ -1909,12 +2082,19 @@ MonoBehaviour:
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 766, y: 395}
 >>>>>>> GeorgeBranch
+=======
+      width: 1470
+      height: 732
+    m_Scale: {x: 0.67777777, y: 0.67777777}
+    m_Translation: {x: 735, y: 366}
+>>>>>>> Pablo's-Branch
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       x: -1121.199
@@ -1942,6 +2122,15 @@ MonoBehaviour:
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1532, y: 790}
 >>>>>>> GeorgeBranch
+=======
+      x: -1084.4263
+      y: -540
+      width: 2168.8525
+      height: 1080
+    m_MinimalGUI: 1
+  m_defaultScale: 0.67777777
+  m_LastWindowPixelSize: {x: 1470, y: 753}
+>>>>>>> Pablo's-Branch
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1976,6 +2165,7 @@ MonoBehaviour:
 =======
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 710
     width: 1577
     height: 289
@@ -1991,5 +2181,10 @@ MonoBehaviour:
     width: 920
     height: 250
 >>>>>>> GeorgeBranch
+=======
+    y: 847
+    width: 1955
+    height: 512
+>>>>>>> Pablo's-Branch
   m_ViewDataDictionary: {fileID: 0}
 

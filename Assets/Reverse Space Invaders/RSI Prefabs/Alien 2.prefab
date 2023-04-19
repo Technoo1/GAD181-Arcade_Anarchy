@@ -116,6 +116,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6656759119719482391, guid: c2b9cec22bc812244872f1d29c632dbd, type: 3}
+      propertyPath: boomSound
+      value: 
+      objectReference: {fileID: 8300000, guid: eda24575e78828e488468b36502233c3, type: 3}
+    - target: {fileID: 6656759119719482391, guid: c2b9cec22bc812244872f1d29c632dbd, type: 3}
+      propertyPath: boomSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656759119719482391, guid: c2b9cec22bc812244872f1d29c632dbd, type: 3}
       propertyPath: animationTime
       value: 0.3
       objectReference: {fileID: 0}
