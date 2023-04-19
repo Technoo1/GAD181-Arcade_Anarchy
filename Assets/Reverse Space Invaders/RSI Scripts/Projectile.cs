@@ -26,8 +26,11 @@ public class Projectile : MonoBehaviour
             Debug.Log(collision.name);
             this.destroyed.Invoke();
             Destroy(this.gameObject); //If collision is true destroys bullet
-            //StartCoroutine(cameraShake.Shake(.15f, .4f)); // Script to cause Camera shake once alien is killed.
-            cameraShake.ShakeScreen();
+
+            if (collision.tag == "Alien")
+            {
+                cameraShake.ShakeScreen(); // Script to cause Camera shake once alien is killed.
+            }
         }        
 
         /*
