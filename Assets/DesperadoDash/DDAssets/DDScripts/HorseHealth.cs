@@ -11,6 +11,7 @@ public class HorseHealth : MonoBehaviour
     public BoxCollider2D bxCollider;
     public bool isPaused = false;
     public AudioSource damageSound;
+    public AudioSource pickupSound;
 
     public Camera mainCamera;
     private ScreenShake screenShake;
@@ -34,13 +35,22 @@ public class HorseHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (horseHearts == 3)
+        if(horseHearts == 4)
+        {
+            hearts[2].SetActive(true);
+            hearts[1].SetActive(true);
+            hearts[0].SetActive(true);
+        }
+        else if (horseHearts == 3)
         {
             hearts[2].SetActive(false);
+            hearts[1].SetActive(true);
+            hearts[0].SetActive(true);
         }
         else if (horseHearts == 2)
         {
             hearts[1].SetActive(false);
+            hearts[0].SetActive(true);
         }
         else if (horseHearts <= 1 && !isPaused)
         {
@@ -94,6 +104,14 @@ public class HorseHealth : MonoBehaviour
             damageSound.Play(0);
             screenShake.ShakeScreen();
 
+        }
+        if (collision.tag == "Health Pickup")
+        {
+            if (horseHearts <= 3)
+            {
+                horseHearts += 1;
+                pickupSound.Play(0);
+            }
         }
     }
 

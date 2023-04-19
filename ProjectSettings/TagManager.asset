@@ -26,6 +26,7 @@ TagManager:
   - BulletIgnore
   - GuardProfileL
   - Alien
+  - Health Pickup
   layers:
   - Default
   - TransparentFX

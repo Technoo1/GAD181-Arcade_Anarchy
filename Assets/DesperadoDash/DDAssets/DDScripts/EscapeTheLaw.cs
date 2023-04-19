@@ -17,11 +17,9 @@ public class EscapeTheLaw : MonoBehaviour
         StartCoroutine(OnSceneStart());
     }
 
-    private void OnEnable()
+    private void OnDisable()
     {
-
-
-
+        bgMusic.Stop();
     }
     // Update is called once per frame
     void Update()
