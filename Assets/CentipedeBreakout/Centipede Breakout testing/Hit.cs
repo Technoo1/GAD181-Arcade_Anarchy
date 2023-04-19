@@ -46,11 +46,11 @@ namespace CentipedeBreakout
 
                 if (collision.OverlapPoint(transform.position + edgeOfHit))
                 {
-                    collision.GetComponent<SegmentBody>().centipedeHorizontalAngle = 1;
+                    collision.GetComponent<SegmentBody>().centipedeHorizontalAngle = 1.5f;
                 }
                 else if (collision.OverlapPoint(transform.position - edgeOfHit))
                 {
-                    collision.GetComponent<SegmentBody>().centipedeHorizontalAngle = -1;
+                    collision.GetComponent<SegmentBody>().centipedeHorizontalAngle = -1.5f;
                 }
                 else if (Mathf.Abs(collision.GetComponent<SegmentBody>().centipedeHorizontalAngle) == 1)
                 {

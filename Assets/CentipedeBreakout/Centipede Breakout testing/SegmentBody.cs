@@ -135,7 +135,7 @@ namespace CentipedeBreakout
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
 
             
@@ -510,7 +510,24 @@ namespace CentipedeBreakout
                 }
 
                 newHead.gameObject.GetComponent<Segment>().attachedHead = newHead.gameObject;
-                
+
+                foreach (GameObject item in newHead.bodySegments)
+                {
+                    item.GetComponent<Segment>().attachedHead = newHead.gameObject;
+                }
+
+                for (int i = deadPartArrayRef + 2; i < bodySegments.Count; i++)
+                {
+                    newHead.bodySegments.Insert(0, bodySegments[i]);
+                }
+
+
+                //attaches body parts to the new head
+                for (int i = deadPartArrayRef + 2; i < bodySegments.Count; i++)
+                {
+                    newHead.bodySegments.Insert(0, bodySegments[i]);
+                }
+
                 return;
             }
 
