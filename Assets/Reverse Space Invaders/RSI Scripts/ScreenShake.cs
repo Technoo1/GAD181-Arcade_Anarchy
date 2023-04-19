@@ -32,7 +32,7 @@ public class ScreenShake : MonoBehaviour
         transform.localPosition = originalPos;
     }
 
-    public void ShakeScreen()
+    public void ShakeScreen() // The screenshake function is bundled with a sound effect.
     {
         boomSource = GetComponent<AudioSource>();
         boomSource.PlayOneShot(boomSound);
