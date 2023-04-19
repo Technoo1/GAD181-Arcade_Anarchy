@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrizeMenu.unity
     guid: 5ae1c7f560a93ff478adbb2e104cb667
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: fe91d7418c2136246bff7e99a15b1d0c
   m_configObjects: {}

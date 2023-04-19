@@ -14,6 +14,8 @@ public class MouseShooting : MonoBehaviour
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
+    public AudioClip fireBullet;
+    public AudioSource bulletSource;
 
 
 
@@ -50,10 +52,18 @@ public class MouseShooting : MonoBehaviour
             canFire = false;
             Instantiate(bulletPrefab, bulletTransform.position, Quaternion.identity);
             animator.SetBool("IsShooting", true);
+            bulletSource.PlayOneShot(fireBullet);
         }
         else
         {
             animator.SetBool("IsShooting", false);
+            
         }
+    }
+
+    private void InstantiateAudio(AudioClip clip)
+    {
+        bulletSource = gameObject.AddComponent<AudioSource>();
+        bulletSource.clip = clip;
     }
 }

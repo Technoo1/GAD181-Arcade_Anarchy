@@ -46,9 +46,10 @@ namespace CentipedeBreakout
 
         public void Death()
         {
+            //Needs an attached head if not dying it's because it hasn't got an attached head
             attachedHead.GetComponent<SegmentBody>().DeadSegment(gameObject);
 
-            Debug.Log("Murder");
+            //Debug.Log("Murder");
             Destroy(gameObject);
         }
 
@@ -85,6 +86,7 @@ namespace CentipedeBreakout
                     }
                 default:
                     {
+                        Death();
                         Debug.Log("HEY LISTEN");
                         break;
                     }

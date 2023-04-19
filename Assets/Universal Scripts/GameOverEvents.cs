@@ -11,7 +11,7 @@ public class GameOverEvents : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-
+        
     }
 
 
@@ -21,7 +21,9 @@ public class GameOverEvents : MonoBehaviour
         if (isDead)
         {
             Time.timeScale = 1f;
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
+            SaveSystem.loadedScene = "GameOver";
         }
     }
 }

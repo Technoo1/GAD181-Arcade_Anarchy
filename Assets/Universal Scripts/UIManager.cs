@@ -73,6 +73,7 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("MenuScreen", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
+        Debug.Log("loaded scene is" + SaveSystem.loadedScene);
         SaveSystem.loadedScene = "MenuScreen";
         Time.timeScale = 1f;
     }

@@ -33,13 +33,18 @@ namespace CentipedeBreakout
             Movement();
 
 
+            if (animator.GetBool("Attack"))
+            {
+                animator.SetBool("Attack", false);
+            }
+
             timer += Time.deltaTime;
             if (Input.GetKey(KeyCode.Space))
             {
                 if (timer >= 1)
                 {
                     animator.SetBool("Attack", true);
-                    Debug.Log("I DONT UNDERSTAND COROUTINES?");
+                    //Debug.Log("I DONT UNDERSTAND COROUTINES?");
                     timer = 0;
                     StartCoroutine(Attack());
                 }
@@ -89,7 +94,7 @@ namespace CentipedeBreakout
         //Maybe delete this mess??
         public IEnumerator Attack()
         {
-            Debug.Log("WORK");
+            //Debug.Log("WORK");
             //100s can exist atm
             GameObject currentHit = Instantiate(hit, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.6f,0), Quaternion.identity);
             yield return new WaitForSeconds(0.4f);
@@ -113,6 +118,7 @@ namespace CentipedeBreakout
 
         void Movement()
         {
+            animator.SetBool("Walk", false);
             if (Input.GetKey(KeyCode.D))
             {
                 animator.SetBool("Walk", true);
@@ -133,11 +139,7 @@ namespace CentipedeBreakout
                 animator.SetBool("Walk", true);
                 playerMove += new Vector3(0, -0.03f, 0);
             }
-            if (Input.GetKey(KeyCode.None)) {
-                animator.SetBool("Walk", false);
-            }
 
-            
 
             rb.MovePosition(transform.position + playerMove);
             playerMove = Vector3.zero;
