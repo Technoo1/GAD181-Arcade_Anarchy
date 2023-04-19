@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     public List<GameObject> hearts;
     public bool isPaused = false;
 
+    public bool isDead = false;
+
     public SpriteRenderer sprite;
 
     // Makes the character flash red when hit.
@@ -46,13 +48,16 @@ public class PlayerHealth : MonoBehaviour
             hearts[1].SetActive(false);
             StartCoroutine(FlashRedHeart());
         }
-        else if (playerHearts <= 1)
+        else if (playerHearts <= 1 && !isDead)
         {
             hearts[0].SetActive(false);
             Time.timeScale = 0f;
             isPaused = true;
             TicketTier earned = TicketTier.Two;
             EventManager.instance.TriggerGameOver(earned);
+            isDead = true;
+            Debug.Log("Loaded gameOver from " + name);
+            
 
         }
 
