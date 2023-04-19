@@ -22,6 +22,10 @@ public class AlienManager : MonoBehaviour
 
     private Vector3 _direction = Vector2.right;
 
+    private void Start()
+    {
+        cameraShake = Camera.main.GetComponent<ScreenShake>();
+    }
     private void Awake() 
     {
         instance = this;
@@ -92,6 +96,8 @@ public class AlienManager : MonoBehaviour
     private void alienKilled()
     {
         this.amountkilled ++;
-        StartCoroutine(cameraShake.Shake(.15f, .4f)); // Script to cause Camera shake once alien is killed.
+        //StartCoroutine(cameraShake.Shake(.15f, .4f)); // Script to cause Camera shake once alien is killed.
+        cameraShake.ShakeScreen();
+        Debug.Log("Screenshake has been called.");
     }
 }

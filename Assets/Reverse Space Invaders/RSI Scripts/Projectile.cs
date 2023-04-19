@@ -6,8 +6,13 @@ public class Projectile : MonoBehaviour
     public Vector3 direction; 
     public float speed;
     public System.Action destroyed;
-    public ScreenShake cameraShake;
+    private ScreenShake cameraShake;
 
+
+    private void Start()
+    {
+        cameraShake = Camera.main.GetComponent<ScreenShake>();
+    }
     private void Update() // Generic code to generate projectiles.
     {
         this.transform.position += this.direction * this.speed * Time.deltaTime;
@@ -21,7 +26,8 @@ public class Projectile : MonoBehaviour
             Debug.Log(collision.name);
             this.destroyed.Invoke();
             Destroy(this.gameObject); //If collision is true destroys bullet
-            StartCoroutine(cameraShake.Shake(.15f, .4f)); // Script to cause Camera shake once alien is killed.
+            //StartCoroutine(cameraShake.Shake(.15f, .4f)); // Script to cause Camera shake once alien is killed.
+            cameraShake.ShakeScreen();
         }        
 
         /*

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ScreenShake : MonoBehaviour
 {
-    public IEnumerator Shake (float duration, float magnitude)
+    public IEnumerator Shake ()
     {
+        float duration = 0.6f;
+        float magnitude = 0.2f;
+        Debug.Log("ScreenShake has been called");
         Vector3 originalPos = transform.localPosition;
 
         float elapsed = 0.0f;
@@ -23,5 +26,10 @@ public class ScreenShake : MonoBehaviour
         }
 
         transform.localPosition = originalPos;
+    }
+
+    public void ShakeScreen()
+    {
+        StartCoroutine(Shake());
     }
 }
