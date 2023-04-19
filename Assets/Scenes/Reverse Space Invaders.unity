@@ -700,7 +700,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 87edb0134775f4b4eb42df84f6c32ba5, type: 3}
@@ -1601,6 +1601,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1502844587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1502844588}
+  m_Layer: 6
+  m_Name: BulletPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1502844588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502844587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.128, y: 0.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2029444274}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1869193813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,7 +1817,8 @@ Transform:
   m_LocalPosition: {x: 0.22298, y: -3.4014, z: -0.024563}
   m_LocalScale: {x: 0.566834, y: 0.5334908, z: 0.5334908}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1502844588}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1828,8 +1860,8 @@ MonoBehaviour:
   rb: {fileID: 2029444276}
   bulletSource: {fileID: 2029444279}
   shotSound: {fileID: 8300000, guid: d59bc0c8ce2ac094d914deb7fb3ae43c, type: 3}
-  boomSource: {fileID: 2029444279}
-  boomSound: {fileID: 8300000, guid: eda24575e78828e488468b36502233c3, type: 3}
+  bullet: {fileID: 7266121566394854375, guid: 9fd11dea7e5ceaa4e9d23a1ae033cddc, type: 3}
+  bulletPos: {fileID: 1502844588}
 --- !u!61 &2029444278
 BoxCollider2D:
   m_ObjectHideFlags: 0

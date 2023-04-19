@@ -5,25 +5,26 @@ using UnityEngine;
 
 public class PlayerScript2 : MonoBehaviour
 {
+    // TWO PLAYER VARIABLES
     public Projectile laserPrefab; // Reference to the Projectile script
-
     public float moveSpeed = 5f; // Public float to determine speed.
-
     public Rigidbody2D rb; // Calls the rigid body so that the sprite can be effected physically.
-
     private bool _laserActive;
+    Vector2 movement; // Uses a Vector based movement system. Placeholder, change to rigid body based later
 
+    // SOUNDS
     public AudioSource bulletSource;
     public AudioClip shotSound;
 
-    public AudioSource boomSource;
-    public AudioClip boomSound;
-
-    Vector2 movement; // Uses a Vector based movement system. Placeholder, change to rigid body based later
+    // SINGLE PLAYER VARIABLES
+    public GameObject bullet;
+    public Transform bulletPos;
+    private float timer;
 
     void Update()
     {
-        if (PlayerManager.instance.twoPlayer == true)
+        // TWO PLAYERS
+        if (PlayerManager.instance.twoPlayer == true) // If Two player selected then player can control tank.
         { 
             // Tank Movement code
             movement.x = 0f;
@@ -42,9 +43,16 @@ public class PlayerScript2 : MonoBehaviour
                 Shoot(); //Instantiates bullets
             }
         }
-        else
+        // SINGLE PLAYER
+        else if (PlayerManager.instance.twoPlayer == false) // If One player selected then ai controls tank.
         {
-            //Do nothing
+            timer += Time.deltaTime;
+
+            if (timer > 2)
+            {
+                timer = 0;
+                Shoot();
+            }
         }
     }
 
@@ -61,9 +69,13 @@ public class PlayerScript2 : MonoBehaviour
                 bulletSource.PlayOneShot(shotSound); // Plays the Pew Pew sound effect.
             }
         }
-        else
+        else if (PlayerManager.instance.twoPlayer == false)
         {
-            //Do nothing
+            Projectile projectile = Instantiate(this.laserPrefab, this.transform.position, quaternion.identity);
+            projectile.destroyed += LaserDestroyed;
+            _laserActive = true;
+            bulletSource = GetComponent<AudioSource>(); // Gets the audio source (Tank)
+            bulletSource.PlayOneShot(shotSound); // Plays the Pew Pew sound effect.
         }
     }
 
