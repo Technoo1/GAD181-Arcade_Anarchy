@@ -28,7 +28,7 @@ public class HSCountdown : MonoBehaviour
             {
                 timerCount = 0; //once the timer reaches zero...
                 timerIsRunning = false; //... stop the timer
-                EventManager.instance.TriggerGameOver(); //game over screen
+                EventManager.instance.TriggerGameOver(TicketTier.None); //game over screen
                 Debug.Log("time's up! great living color song btw ;)");
             }
         }

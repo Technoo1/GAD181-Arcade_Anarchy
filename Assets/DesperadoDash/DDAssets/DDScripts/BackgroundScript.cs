@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class BackgroundScript : MonoBehaviour
 {
-    [SerializeField] private float scrollSpeed, startScrollSpeed = 0.5f;
+    [SerializeField] private float scrollSpeed, startScrollSpeed;
     private float offset;
     private Material mat;
     void Start()
     {
         mat = GetComponent<Renderer>().material;
 
-        ScoreEvents.instance.OnThousandMeters += ThousandMeters;
-        ScoreEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
+        DistanceEvents.instance.OnThousandMeters += ThousandMeters;
+        DistanceEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
 
         offset = 0f;
         scrollSpeed = startScrollSpeed;

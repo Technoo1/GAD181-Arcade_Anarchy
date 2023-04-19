@@ -13,8 +13,10 @@ public class DistanceManager : MonoBehaviour
 
     private void Start()
     {
-        ScoreEvents.instance.OnThousandMeters += ThousandMeters;
-        ScoreEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
+        DistanceEvents.instance.OnThousandMeters += ThousandMeters;
+        DistanceEvents.instance.OnFiveHundredMeters += FiveHundredMeters;
+
+
     }
 
     void FiveHundredMeters()
@@ -35,4 +37,5 @@ public class DistanceManager : MonoBehaviour
             timer -= 1f / counterSpeed;
         }
     }
+
 }

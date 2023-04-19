@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
         if(playerHealth <= 0)
         {
             Destroy(gameObject);
-            EventManager.instance.TriggerGameOver(); 
+            EventManager.instance.TriggerGameOver(TicketTier.None); 
         }
    }
 

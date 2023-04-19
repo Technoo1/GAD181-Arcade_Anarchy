@@ -24,11 +24,11 @@ namespace ArcadeAnarchy
         {
             OnUpdateUI?.Invoke(text);
         }
-        public event Action OnTriggerGameOver;
 
-        public void TriggerGameOver()
+        public event Action<TicketTier> OnTriggerGameOver;
+        public void TriggerGameOver(TicketTier tier)
         {
-            OnTriggerGameOver?.Invoke();
+            OnTriggerGameOver?.Invoke(tier);
         }
 
         public event Action OnHeartLost;

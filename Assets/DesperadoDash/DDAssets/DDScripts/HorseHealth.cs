@@ -13,7 +13,11 @@ public class HorseHealth : MonoBehaviour
     public AudioSource damageSound;
 
     ScreenShake screenShake;
+    private GameObject DistanceObject;
+    private DistanceManager distanceManagerScript;
 
+    public bool isDead = false;
+    public bool gameOverLoaded = false;
     void Start()
     {
         screenShake = Camera.main.GetComponent<ScreenShake>();
@@ -21,6 +25,8 @@ public class HorseHealth : MonoBehaviour
         {
             bxCollider = GetComponent<BoxCollider2D>();
         }
+        DistanceObject = GameObject.Find("Score");
+        distanceManagerScript = DistanceObject.GetComponent<DistanceManager>();
 
     }
 
@@ -35,13 +41,31 @@ public class HorseHealth : MonoBehaviour
         {
             hearts[1].SetActive(false);
         }
-        else if (horseHearts <= 1)
+        else if (horseHearts <= 1 && !isPaused)
         {
             hearts[0].SetActive(false);
             //Debug.Log("death");
             Time.timeScale = 0f;
             isPaused = true;
-            EventManager.instance.TriggerGameOver();
+            TicketTier earned = TicketTier.None;
+            if (distanceManagerScript.count <= 500f && !isDead)
+            {
+                earned = TicketTier.One;
+                isDead = true;
+                Debug.Log("Ticket Tier one");
+            }
+            else if (distanceManagerScript.count >= 501f && distanceManagerScript.count <= 1000f && !isDead)
+            {
+                earned = TicketTier.Two;
+                isDead = true;
+
+            } 
+            else if (distanceManagerScript.count >= 1001f && !isDead)
+            {
+                earned = TicketTier.Three;
+                isDead = true;
+            }
+            EventManager.instance.TriggerGameOver(earned);
         }
 
       
@@ -68,7 +92,9 @@ public class HorseHealth : MonoBehaviour
             Debug.Log("Hit!");
             damageSound.Play(0);
             screenShake.ShakeScreen();
+
         }
     }
 
+    
 }
