@@ -58,6 +58,7 @@ namespace CentipedeBreakout
         //dumb variables I made cos I was lazy and also didn't have internet
         bool justBorn = true;
         Vector3 previousPositionJustForHeadRotate;
+        public bool OutOfTutorial = true;
 
         //used to change sprite
         private SpriteRenderer spriteRenderer;
@@ -89,6 +90,7 @@ namespace CentipedeBreakout
             //Creates body parts and tells them what head they are attached to
 
             if (justBorn) {
+                OutOfTutorial = false;
                 for (int i = 0; i < numberOfbodySegments; i++)
                 {
 
@@ -140,25 +142,28 @@ namespace CentipedeBreakout
         void FixedUpdate()
         {
 
-            
+
             //WASDTest();
-
-            Fall();
-            HorizontalMove();
-            //UpdatePreviousPositions();
-            ShiftingTheList();
-            DebugVisual();
-            RotateEverything();
-
-            previousFramePosition = transform.position;
-
-            //lol, literally what matt said in class where you can't change a foreach loop ig?
-            for (int i = 0; i < bodySegments.Count; i++)
+            if (OutOfTutorial)
             {
-                bodySegments[i].transform.position = headPositionPrevious[i * 10 + 10];
-            }
+                Fall();
+                HorizontalMove();
+                //UpdatePreviousPositions();
+                ShiftingTheList();
+                DebugVisual();
+                RotateEverything();
 
-            previousPositionJustForHeadRotate = transform.position;
+                previousFramePosition = transform.position;
+
+                //lol, literally what matt said in class where you can't change a foreach loop ig?
+                for (int i = 0; i < bodySegments.Count; i++)
+                {
+                    bodySegments[i].transform.position = headPositionPrevious[i * 10 + 10];
+                }
+
+                previousPositionJustForHeadRotate = transform.position;
+            }
+            
         }
 
         private void DebugVisual()
