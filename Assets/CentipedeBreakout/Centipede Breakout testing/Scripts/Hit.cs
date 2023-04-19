@@ -46,15 +46,15 @@ namespace CentipedeBreakout
 
                 if (collision.OverlapPoint(transform.position + edgeOfHit))
                 {
-                    collision.GetComponent<SegmentBody>().centipedeHorizontalAngle = 1.5f;
+                    collision.GetComponent<SegmentBody>().centipedeHorizontalAngle = 2f;
                 }
                 else if (collision.OverlapPoint(transform.position - edgeOfHit))
                 {
-                    collision.GetComponent<SegmentBody>().centipedeHorizontalAngle = -1.5f;
+                    collision.GetComponent<SegmentBody>().centipedeHorizontalAngle = -2f;
                 }
                 else if (Mathf.Abs(collision.GetComponent<SegmentBody>().centipedeHorizontalAngle) == 1)
                 {
-                    collision.GetComponent<SegmentBody>().centipedeHorizontalAngle *= 0.3f;
+                    collision.GetComponent<SegmentBody>().centipedeHorizontalAngle *= 1f;
                     //Debug.Log("STEP 3");
                 }
                 if (killedAHead == false)

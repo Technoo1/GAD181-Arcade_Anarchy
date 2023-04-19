@@ -9,7 +9,7 @@ using Unity.Mathematics;
 using UnityEngine.UIElements;
 using TMPro;
 using Unity.VisualScripting;
-
+using ArcadeAnarchy;
 
 namespace CentipedeBreakout
 {
@@ -65,7 +65,7 @@ namespace CentipedeBreakout
 
         //Point score amounts:
         public const int PointSmall = 100;
-        public const int PointMedium = 300;
+        public const int PointMedium = 200;
         public const int PointBig = 500;
 
         
@@ -380,6 +380,11 @@ namespace CentipedeBreakout
         //or 
         public void DeadSegment(GameObject deadPart)
         {
+            if (GameObject.FindGameObjectsWithTag("Centipede").Count() <= 1)
+            {
+                EventManager.instance.TriggerGameOver();
+            }
+
             //if front do this then return / stop
             if (deadPart == gameObject)
             {

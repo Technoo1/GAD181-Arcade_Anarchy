@@ -19,6 +19,10 @@ namespace CentipedeBreakout
         public SpriteRenderer sprite;
         private Animator animator;
 
+        //movespeeds
+        public float playerSpeedHorizontal;
+        public float playerSpeedVertical;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -122,22 +126,22 @@ namespace CentipedeBreakout
             if (Input.GetKey(KeyCode.D))
             {
                 animator.SetBool("Walk", true);
-                playerMove += new Vector3(0.06f, 0, 0);
+                playerMove += new Vector3(playerSpeedHorizontal / 30, 0, 0);
             }
             if (Input.GetKey(KeyCode.A))
             {
                 animator.SetBool("Walk", true);
-                playerMove += new Vector3(-0.06f, 0, 0);
+                playerMove += new Vector3(-playerSpeedHorizontal / 30, 0, 0);
             }
             if (Input.GetKey(KeyCode.W) && transform.position.y <= -3)
             {
                 animator.SetBool("Walk", true);
-                playerMove += new Vector3(0, 0.03f, 0);
+                playerMove += new Vector3(0, playerSpeedVertical / 30, 0);
             }
             if (Input.GetKey(KeyCode.S))
             {
                 animator.SetBool("Walk", true);
-                playerMove += new Vector3(0, -0.03f, 0);
+                playerMove += new Vector3(0, -playerSpeedVertical / 30, 0);
             }
 
 

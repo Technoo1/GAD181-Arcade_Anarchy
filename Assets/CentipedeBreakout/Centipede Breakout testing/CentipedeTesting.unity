@@ -462,6 +462,8 @@ MonoBehaviour:
   bullet: {fileID: 1236342120582959168, guid: aea526371a32aca4f9bcd68d34d183fd, type: 3}
   health: {fileID: 1699480103}
   sprite: {fileID: 113290931}
+  playerSpeedHorizontal: 2
+  playerSpeedVertical: 1.5
 --- !u!95 &113290936
 Animator:
   serializedVersion: 5

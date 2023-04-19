@@ -29,11 +29,14 @@ public class TutorialScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (walkActive && shootActive && swordActive)
         {
             GameUI.SetActive(true);
             InitialCentipede.GetComponent<SegmentBody>().OutOfTutorial = true;
             TutorialParent.SetActive(false);
+            return;
             //foreach (SpriteRenderer child in moveUI)
             //{
             //newColor = child.color;

@@ -45,7 +45,7 @@ public class CBBullet : MonoBehaviour
 
         transform.position += new Vector3(0,ShotSpeed,0);
 
-        if (transform.position.y > 8)
+        if (transform.position.y > 4.3f)
         {
             Destroy(gameObject);
         }
