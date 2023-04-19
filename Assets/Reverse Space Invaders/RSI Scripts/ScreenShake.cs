@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ScreenShake : MonoBehaviour
 {
+
+    public AudioSource boomSource;
+    public AudioClip boomSound;
+
     public IEnumerator Shake ()
     {
         float duration = 0.6f;
@@ -30,6 +34,8 @@ public class ScreenShake : MonoBehaviour
 
     public void ShakeScreen()
     {
+        boomSource = GetComponent<AudioSource>();
+        boomSource.PlayOneShot(boomSound);
         StartCoroutine(Shake());
     }
 }

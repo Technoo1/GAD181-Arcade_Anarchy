@@ -16,6 +16,9 @@ public class PlayerScript2 : MonoBehaviour
     public AudioSource bulletSource;
     public AudioClip shotSound;
 
+    public AudioSource boomSource;
+    public AudioClip boomSound;
+
     Vector2 movement; // Uses a Vector based movement system. Placeholder, change to rigid body based later
 
     void Update()
@@ -54,8 +57,8 @@ public class PlayerScript2 : MonoBehaviour
                 Projectile projectile = Instantiate(this.laserPrefab, this.transform.position, quaternion.identity);
                 projectile.destroyed += LaserDestroyed;
                 _laserActive = true;
-                bulletSource = GetComponent<AudioSource>();
-                bulletSource.PlayOneShot(shotSound);
+                bulletSource = GetComponent<AudioSource>(); // Gets the audio source (Tank)
+                bulletSource.PlayOneShot(shotSound); // Plays the Pew Pew sound effect.
             }
         }
         else
@@ -73,12 +76,5 @@ public class PlayerScript2 : MonoBehaviour
     {
         // Executes movement code: checks where sprite is then uses vector movement based on Deltatime.
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        bulletSource.Play(); 
     }
 }

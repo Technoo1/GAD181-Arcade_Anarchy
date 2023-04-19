@@ -1731,6 +1731,8 @@ MonoBehaviour:
   rb: {fileID: 2029444276}
   bulletSource: {fileID: 2029444279}
   shotSound: {fileID: 8300000, guid: d59bc0c8ce2ac094d914deb7fb3ae43c, type: 3}
+  boomSource: {fileID: 2029444279}
+  boomSound: {fileID: 8300000, guid: eda24575e78828e488468b36502233c3, type: 3}
 --- !u!61 &2029444278
 BoxCollider2D:
   m_ObjectHideFlags: 0

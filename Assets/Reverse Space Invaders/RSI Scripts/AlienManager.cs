@@ -12,21 +12,13 @@ public class AlienManager : MonoBehaviour
     public int rows = 3;
     public int columns = 9;
     public int deadAliens;
-    private ScreenShake cameraShake;
     // public AnimationCurve speed;
 
     public int amountkilled {get; private set;}
     public int totalAliens => this.rows * this.columns;
     // public float percentKilled => (float)this.amountkilled / (float)this.totalAliens;
-
-
     private Vector3 _direction = Vector2.right;
 
-    private void Start()
-    {
-        alienKilled();
-        cameraShake = Camera.main.GetComponent<ScreenShake>();
-    }
     private void Awake() 
     {
         instance = this;
@@ -83,7 +75,7 @@ public class AlienManager : MonoBehaviour
         }
         if (deadAliens >= totalAliens)
         {
-            SceneManager.LoadScene("MenuScreen");
+            SceneManager.LoadScene("MenuScreen"); // Goes to Main Menu if all aliens are dead.
         }
     }
 
@@ -97,7 +89,5 @@ public class AlienManager : MonoBehaviour
     private void alienKilled()
     {
         this.amountkilled ++;
-        cameraShake.ShakeScreen(); // Script to cause Camera shake once alien is killed.
-        Debug.Log("Screenshake has been called.");
     }
 }

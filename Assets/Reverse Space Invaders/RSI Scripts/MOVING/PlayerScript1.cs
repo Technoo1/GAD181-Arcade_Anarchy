@@ -31,10 +31,6 @@ namespace ArcadeAnarchy
             }
         }
 
-        /* Find a way to make it so that once hits boundary area, pushes alien swarm down a row.
-        movement.y = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("Vertical", movement.y); */
-
         void FixedUpdate()
         {
             // Executes movement code: checks where sprite is then uses vector movement based on Deltatime.

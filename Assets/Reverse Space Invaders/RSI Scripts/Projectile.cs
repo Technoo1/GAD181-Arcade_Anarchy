@@ -8,7 +8,6 @@ public class Projectile : MonoBehaviour
     public System.Action destroyed;
     private ScreenShake cameraShake;
 
-
     private void Start()
     {
         cameraShake = Camera.main.GetComponent<ScreenShake>();
@@ -21,13 +20,13 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) //Checks bullet collision
     {
-        if(collision.tag != "BulletIgnore")
+        if(collision.tag != "BulletIgnore") // Checks to see if collided with ANYTHING.
         {
             Debug.Log(collision.name);
             this.destroyed.Invoke();
             Destroy(this.gameObject); //If collision is true destroys bullet
 
-            if (collision.tag == "Alien")
+            if (collision.tag == "Alien") // Checks to see if collided specifically with the Aliens.
             {
                 cameraShake.ShakeScreen(); // Script to cause Camera shake once alien is killed.
             }
