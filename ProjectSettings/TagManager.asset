@@ -25,6 +25,8 @@ TagManager:
   - Bullet
   - BulletIgnore
   - GuardProfileL
+  - Alien
+  - Health Pickup
   - HSTimer
   layers:
   - Default
@@ -37,8 +39,8 @@ TagManager:
   - Aliens
   - Laser
   - Missile
-  - 
-  - 
+  - Player
+  - Ball
   - 
   - 
   - 

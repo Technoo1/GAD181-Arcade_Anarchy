@@ -74,9 +74,11 @@ public class HSCountdown : MonoBehaviour
 
     IEnumerator GameOverScreen()
     {
+        TicketTier earned = TicketTier.Two;
+
         Debug.Log("time's up! great living color song btw ;)");
         yield return new WaitForSecondsRealtime(5f); //delay before displaying the game over scene
-        EventManager.instance.TriggerGameOver(); //game over screen
+        EventManager.instance.TriggerGameOver(earned); //game over screen
 
         //either delete timer and assign a keypress to if statement, to return to start game UI menu...
         //or return to start menu INSTEAD of the main menu scene
