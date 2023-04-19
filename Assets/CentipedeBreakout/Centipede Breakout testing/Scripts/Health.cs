@@ -44,6 +44,7 @@ using ArcadeAnarchy;
 
             if (heartsLeft < 0)
             {
+                PointScorer.instance.CBGameOver();
                 //EventManager.instance.TriggerGameOver(earned);
             }
             else

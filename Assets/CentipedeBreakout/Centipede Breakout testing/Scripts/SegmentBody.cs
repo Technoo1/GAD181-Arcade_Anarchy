@@ -54,6 +54,8 @@ namespace CentipedeBreakout
         public SegmentBody newHead;
         public Rigidbody2D newRigidBody;
 
+        ////access to point score for gameOver
+        //public GameObject PointScoreManager;
 
         //dumb variables I made cos I was lazy and also didn't have internet
         bool justBorn = true;
@@ -380,9 +382,15 @@ namespace CentipedeBreakout
         //or 
         public void DeadSegment(GameObject deadPart)
         {
+            //When the very last dies, only works when in menu
             if (GameObject.FindGameObjectsWithTag("Centipede").Count() <= 1)
             {
-                EventManager.instance.TriggerGameOver();
+
+                //if (PointScoreManager.totalPoints)
+                //{
+
+                //}
+                PointScorer.instance.CBGameOver();
             }
 
             //if front do this then return / stop
