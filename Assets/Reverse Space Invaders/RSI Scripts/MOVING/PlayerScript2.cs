@@ -11,7 +11,10 @@ public class PlayerScript2 : MonoBehaviour
 
     public Rigidbody2D rb; // Calls the rigid body so that the sprite can be effected physically.
 
-    private bool _laserActive; 
+    private bool _laserActive;
+
+    public AudioSource bulletSource;
+    public AudioClip shotSound;
 
     Vector2 movement; // Uses a Vector based movement system. Placeholder, change to rigid body based later
 
@@ -34,6 +37,8 @@ public class PlayerScript2 : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
                 Shoot(); //Instantiates bullets
+                bulletSource = GetComponent<AudioSource>();
+                bulletSource.PlayOneShot(shotSound);
             }
         }
         else
@@ -68,5 +73,12 @@ public class PlayerScript2 : MonoBehaviour
     {
         // Executes movement code: checks where sprite is then uses vector movement based on Deltatime.
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        bulletSource.Play(); 
     }
 }

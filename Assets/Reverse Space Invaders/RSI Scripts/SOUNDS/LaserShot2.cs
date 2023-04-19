@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.VisualScripting;
 
-public class LaserShot : MonoBehaviour
+public class LaserShot2 : MonoBehaviour
 {
     public AudioSource bulletSource;
     public AudioClip shotSound;
@@ -14,8 +14,8 @@ public class LaserShot : MonoBehaviour
         bulletSource = GetComponent<AudioSource>();
     }
 
-    private void Awake() 
+    private void Awake()
     {
-        
+
     }
 }
