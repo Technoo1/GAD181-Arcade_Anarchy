@@ -27,6 +27,7 @@ TagManager:
   - GuardProfileL
   - Alien
   - Health Pickup
+  - HSTimer
   layers:
   - Default
   - TransparentFX
