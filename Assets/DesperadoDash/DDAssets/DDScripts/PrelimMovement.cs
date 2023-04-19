@@ -70,12 +70,13 @@ public class PrelimMovement : MonoBehaviour
         //transform.position = startPos;
         //yield return new WaitForSeconds(0.3f);
         IsJump = false;
+        yield return new WaitForSeconds(0.5f);
         bxCollider2d.enabled = true;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && !IsJump)
         {
             if (currentLane != 0)
             {
@@ -85,7 +86,7 @@ public class PrelimMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && !IsJump)
         {
             if (currentLane < Lanes.Count - 1)
             {
