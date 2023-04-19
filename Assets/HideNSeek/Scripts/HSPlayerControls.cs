@@ -52,6 +52,7 @@ public class HSPlayerControls : MonoBehaviour
         }
         if (guardFacing == true && playerIsPeeking == true) //if there are guards facing a peeking player...
         {
+            EventManager.instance.TriggerGameOver(TicketTier.None); //triggers universal game over screen and menu
             Debug.Log("caught by guard! Snake? Snaaaaaake!");
             Countdown.GetComponent<HSCountdown>().timerIsRunning = false; //stops the mission timer
             StartCoroutine(GameOverScreen()); //basically preventing the game over screen from appearing for x seconds
@@ -82,7 +83,7 @@ public class HSPlayerControls : MonoBehaviour
     IEnumerator GameOverScreen()
     {
         yield return new WaitForSeconds(timeTillGameOver);
-        EventManager.instance.TriggerGameOver(); //triggers universal game over screen and menu
+        //EventManager.instance.TriggerGameOver(); //triggers universal game over screen and menu
         Debug.Log("Y O U D I E D");
     }
 }

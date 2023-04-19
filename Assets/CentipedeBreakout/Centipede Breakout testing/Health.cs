@@ -44,7 +44,7 @@ using ArcadeAnarchy;
 
             if (heartsLeft < 0)
             {
-                EventManager.instance.TriggerGameOver();
+                //EventManager.instance.TriggerGameOver(earned);
             }
             else
             {
