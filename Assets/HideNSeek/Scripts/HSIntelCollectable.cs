@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class HSIntelCollectable : MonoBehaviour
@@ -15,11 +17,12 @@ public class HSIntelCollectable : MonoBehaviour
         Countdown = GameObject.FindGameObjectWithTag("HSTimer").GetComponent<HSCountdown>(); //finding the timer to be referenced
     }
 
-    void OnDestroy()
+    void OnDisable()
     {
         HSIntelScore.playerIntel += intelValue; //adds to my Intel score
         Instantiate(audioPrefab); //plays IntelGet audio
         Countdown.timerCount += timeAdded; //adds x time to the timer
         //Debug.Log("collected " + intelValue + " Intel");
+        Destroy(gameObject);
     }
 }

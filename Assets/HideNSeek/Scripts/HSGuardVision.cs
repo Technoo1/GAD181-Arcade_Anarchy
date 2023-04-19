@@ -35,6 +35,9 @@ public class HSGuardVision : MonoBehaviour
 
     public AudioSource guardTurningAudio;
 
+    public bool moveRight = false;
+    public bool moveLeft = false;
+
     void Start()
     {
         StartCoroutine(StartPatrol());
@@ -46,12 +49,14 @@ public class HSGuardVision : MonoBehaviour
         {
             for (int i = 0; i < 100000000; i++) //loops the coroutine for a gajillion amount of seconds
             {
+                moveRight = false;
+                moveLeft = false;
                 guardTurnCheck = Random.Range(0, 99); //random number between 1 and 100
                 if (guardTurnCheck > guardTurnChance) //if the result is greater than the specified value...
                 {
                     this.gameObject.GetComponent<SpriteRenderer>().sprite = guardTurn; //swap to turning sprite
                     guardTurningAudio.Play();
-                    Debug.Log("guard is turning!");
+                    //Debug.Log("guard is turning!");
                     yield return new WaitForSeconds(waitTillTurn); //wait before swapping again
                     {
                         this.gameObject.GetComponent<SpriteRenderer>().sprite = guardFront; //swap to front-facing sprite
@@ -110,24 +115,21 @@ public class HSGuardVision : MonoBehaviour
                     {
                         gameObject.GetComponent<SpriteRenderer>().sprite = guardProfile; //swap to profile sprite (right as default)
                         transform.tag = "GuardProfile";
-                        transform.position += Vector3.right;
-                        Debug.Log("guard is moving right!");
+                        ////Debug.Log("guard is moving right!");
+                        moveRight = true;
                         yield return new WaitForSeconds(waitForLoop);
-
-                        //if (guardMoveRCheck > guardMoveRChance)
-                        //moveRight == true
                     }
                     else if (guardMoveLCheck > guardMoveLChance)
                     {
                         gameObject.GetComponent<SpriteRenderer>().sprite = guardProfileL; //swap to left-facing profile sprite
                         transform.tag = "GuardProfileL";
-                        transform.position += Vector3.left;
-                        Debug.Log("guard is moving left!");
+                        ////Debug.Log("guard is moving left!");
+                        moveLeft = true;
                         yield return new WaitForSeconds(waitForLoop);
                     }
                     else
                     {
-                        Debug.Log("guard did nothing...");
+                        //Debug.Log("guard did nothing...");
                         yield return new WaitForSeconds(waitForLoop); //wait before looping
                     }
                 }
@@ -143,8 +145,14 @@ public class HSGuardVision : MonoBehaviour
 
     void Update()
     {
-        //if a moveleft or moveright boolean is true in coroutine, transform the position of the guard smoothly over a period of time. coroutine resumes after x seconds?
-        //if (MoveRight == true)
-        //transform.position += 10f * Time.deltaTime * Vector3.right;
+        //if a moveleft or moveright boolean is true in coroutine, transform the position of the guard smoothly until guard checks to move again
+        if (moveRight)
+        {
+            transform.position += 0.5f * Time.deltaTime * Vector3.right;
+        }
+        if (moveLeft)
+        {
+            transform.position += 0.5f * Time.deltaTime * Vector3.left;
+        }
     }
 }

@@ -75,7 +75,8 @@ public class HSPlayerControls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && playerIsPeeking == true && intelIsHere == true) //if the player presses Space while peeking...
         {
             //add an intel point (to be converted to ticket later, or just add to ticket number straight away)
-            Destroy(intelIsHere); //remove the Intel sprite from the scene
+            //Destroy(intelIsHere); //remove the Intel sprite from the scene
+            intelIsHere.SetActive(false); //disable Intel sprite
             //Debug.Log("intel collected!");
 
             intelSpawner1.GetComponent<HSIntelSpawn>().intelCount--; //reduce the number of intel reported by the IntelSpawn script
