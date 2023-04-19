@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4003873414300265414, guid: 864f063fdcff8bf4ebf3af9d967fe893, type: 3}
       propertyPath: m_Name
-      value: Smallest Ball Variant
+      value: Smallest Ball
       objectReference: {fileID: 0}
     - target: {fileID: 4003873414300265414, guid: 864f063fdcff8bf4ebf3af9d967fe893, type: 3}
       propertyPath: m_TagString
@@ -82,4 +82,5 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3034194707222482005, guid: 864f063fdcff8bf4ebf3af9d967fe893, type: 3}
     - {fileID: 52637828704407410, guid: 864f063fdcff8bf4ebf3af9d967fe893, type: 3}
+    - {fileID: 8613955238300311160, guid: 864f063fdcff8bf4ebf3af9d967fe893, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 864f063fdcff8bf4ebf3af9d967fe893, type: 3}

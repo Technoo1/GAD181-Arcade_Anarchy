@@ -141,6 +141,8 @@ MonoBehaviour:
   damage: 40
   rb: {fileID: 5405198055502510573}
   impactEffect: {fileID: 4601963852631366545, guid: c09e3cea882488a4db949711ff7e7f87, type: 3}
+  ballPop: {fileID: 8497243498237371764}
+  popClip: {fileID: 8300000, guid: fbc5545016089924894ea1f807f2a84f, type: 3}
 --- !u!82 &8497243498237371764
 AudioSource:
   m_ObjectHideFlags: 0
@@ -151,7 +153,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fbc5545016089924894ea1f807f2a84f, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

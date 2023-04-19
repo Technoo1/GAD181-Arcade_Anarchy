@@ -15,7 +15,10 @@ public class Bullet : MonoBehaviour
     private Vector3 mousePos;
     private Camera mainCam;
 
-    AudioSource bulletSource;
+    public AudioSource bulletSource;
+
+    public AudioSource ballPop;
+    public AudioClip popClip;
 
 
 
@@ -38,7 +41,37 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        bulletSource.Play();
+
         Destroy(gameObject);
+
+        if (hitInfo.tag == "Largest Ball")
+        {
+            ballPop.Play();
+            Debug.Log("ball popped");
+        }
+
+        if (hitInfo.tag == "Large Ball")
+        {
+            ballPop.Play();
+            Debug.Log("ball popped");
+
+        }
+        if (hitInfo.tag == "Medium Ball")
+        {
+            ballPop.Play();
+            Debug.Log("ball popped");
+        }
+
+        if (hitInfo.tag == "Small Ball")
+        {
+            ballPop.Play();
+            Debug.Log("ball popped");
+        }
+
+        if (hitInfo.tag == "Smallest Ball")
+        {
+            ballPop.Play();
+            Debug.Log("ball popped");
+        }
     }
 }

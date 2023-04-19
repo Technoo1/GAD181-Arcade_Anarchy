@@ -162,7 +162,7 @@ public class BallScript : MonoBehaviour
             {
                 InitializeBallsAndTurnOffCurrentBall();
                 Destroy(gameObject);
-                bulletSource.Play(); 
+                 
             }
             else
             {
