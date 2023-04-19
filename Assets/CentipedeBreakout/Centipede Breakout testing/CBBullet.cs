@@ -5,6 +5,7 @@ using CentipedeBreakout;
 
 public class CBBullet : MonoBehaviour
 {
+    public float ShotSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class CBBullet : MonoBehaviour
     */
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position - Vector3.up * 0.75f, Vector2.up * 0.5f);
 
@@ -42,7 +43,7 @@ public class CBBullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        transform.position += new Vector3(0,0.05f,0);
+        transform.position += new Vector3(0,ShotSpeed,0);
 
         if (transform.position.y > 8)
         {
