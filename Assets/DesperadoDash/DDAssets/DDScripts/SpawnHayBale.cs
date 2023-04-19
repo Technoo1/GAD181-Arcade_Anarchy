@@ -8,16 +8,12 @@ public class SpawnHayBale : MonoBehaviour
     public bool isSpawn;
     public List<Transform> spawnLanes;
     public GameObject hayBale;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if (!isSpawn)
+        if (!isSpawn) //only play if not already playing
         {
             StartCoroutine(HayBaleSpawn());
         }
@@ -25,11 +21,11 @@ public class SpawnHayBale : MonoBehaviour
 
     public IEnumerator HayBaleSpawn()
     {
-        isSpawn = true;
-        spawnTime = Random.Range(5f, 7f);
-        Transform randomTransform = spawnLanes[Random.Range(0, spawnLanes.Count)];
-        yield return new WaitForSeconds(spawnTime);
-        Instantiate(hayBale, randomTransform.position, randomTransform.rotation);
-        isSpawn = false;
+        isSpawn = true;                                                             //makes sure another doesnt spawn at the same time
+        spawnTime = Random.Range(5f, 7f);                                           //sets random spawn time
+        Transform randomTransform = spawnLanes[Random.Range(0, spawnLanes.Count)];  //picks a random lane
+        yield return new WaitForSeconds(spawnTime);                                 //waits for the spawn time that was set
+        Instantiate(hayBale, randomTransform.position, randomTransform.rotation);   //instantiates a hay bale in the position and rotation of the lane
+        isSpawn = false;                                                            //lets another one spawn
     }
 }
