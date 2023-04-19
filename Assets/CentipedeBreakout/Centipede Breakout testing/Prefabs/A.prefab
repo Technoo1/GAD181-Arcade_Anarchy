@@ -120,6 +120,7 @@ MonoBehaviour:
   centipedeSpeedHorizontal: 4
   newHead: {fileID: 0}
   newRigidBody: {fileID: 0}
+  OutOfTutorial: 1
 --- !u!50 &2641331452513736703
 Rigidbody2D:
   serializedVersion: 4

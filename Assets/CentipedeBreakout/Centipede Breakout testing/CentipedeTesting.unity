@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 105279244}
   - component: {fileID: 105279243}
   - component: {fileID: 105279242}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1068,7 +1068,7 @@ GameObject:
   - component: {fileID: 450846907}
   - component: {fileID: 450846906}
   - component: {fileID: 450846905}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2194,9 +2194,9 @@ MonoBehaviour:
   - {fileID: 578216328}
   - {fileID: 1931733391}
   - {fileID: 440947377}
-  moveUI: {fileID: 0}
-  swordUI: {fileID: 0}
-  shootUI: {fileID: 0}
+  moveUI: {fileID: 1931733391}
+  swordUI: {fileID: 578216328}
+  shootUI: {fileID: 440947377}
   InitialCentipede: {fileID: 1365454697}
   TutorialParent: {fileID: 1331053241}
   GameUI: {fileID: 1374092013}
@@ -2682,7 +2682,7 @@ GameObject:
   - component: {fileID: 1723173522}
   - component: {fileID: 1723173521}
   - component: {fileID: 1723173520}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
