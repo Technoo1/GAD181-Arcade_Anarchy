@@ -51,7 +51,8 @@ public class PlayerHealth : MonoBehaviour
             hearts[0].SetActive(false);
             Time.timeScale = 0f;
             isPaused = true;
-            //EventManager.instance.TriggerGameOver();
+            TicketTier earned = TicketTier.Two;
+            EventManager.instance.TriggerGameOver(earned);
 
         }
 
