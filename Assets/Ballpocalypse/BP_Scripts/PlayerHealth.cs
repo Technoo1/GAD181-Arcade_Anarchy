@@ -39,14 +39,22 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (playerHearts == 3)
+        if (playerHearts == 4)
+        {
+            hearts[2].SetActive(true);
+            hearts[1].SetActive(true);
+            hearts[0].SetActive(true);
+        }
+        else if (playerHearts == 3)
         {
             hearts[2].SetActive(false);
+            hearts[1].SetActive(true);
+            hearts[0].SetActive(true);
         }
         else if (playerHearts == 2)
         {
             hearts[1].SetActive(false);
-            StartCoroutine(FlashRedHeart());
+            hearts[0].SetActive(true);
         }
         else if (playerHearts <= 1 && !isDead)
         {
@@ -57,8 +65,6 @@ public class PlayerHealth : MonoBehaviour
             EventManager.instance.TriggerGameOver(earned);
             isDead = true;
             Debug.Log("Loaded gameOver from " + name);
-            
-
         }
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -107,6 +113,15 @@ public class PlayerHealth : MonoBehaviour
         {
             playerHearts -= 1;
             StartCoroutine(FlashRed());
+        }
+
+        if (collision.tag == "Health Pickup")   //if player collides with a health pickup
+        {
+            Destroy(gameObject);
+            if (playerHearts <= 3)               //only if they're not at full hearts
+            {
+                playerHearts += 1;               //add one heart      
+            }
         }
     } 
 
