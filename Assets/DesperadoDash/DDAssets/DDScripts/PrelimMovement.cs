@@ -16,7 +16,11 @@ public class PrelimMovement : MonoBehaviour
     public Animator anim;
     public bool IsJump = false;
     public float jumpAmmount;
-    
+
+    private bool isAtLeftEdge, isAtRightEdge;
+    public GameObject boundary;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,7 @@ public class PrelimMovement : MonoBehaviour
         InputManager.instance.OnLeft += MoveLeft; //sub to input manager
         InputManager.instance.OnRight += MoveRight;
         InputManager.instance.OnJump += Jump;
+
     }
 
     private void OnDisable() //unsub from input manager when scene is unloaded
@@ -42,14 +47,23 @@ public class PrelimMovement : MonoBehaviour
 
     public void MoveRight() //smoothly moves player to the right
     {
-        moveDirection = transform.right;
-        transform.position += moveDirection * (baseSpeed * Time.deltaTime);
+        if (transform.position.x <= 7f)
+        {
+            moveDirection = transform.right;
+            transform.position += moveDirection * (baseSpeed * Time.deltaTime);
+        }
+
     }
     public void MoveLeft() //smoothly moves player to the left
     {
-        moveDirection = -transform.right;
-        transform.position += moveDirection * (baseSpeed * Time.deltaTime);
+        if (transform.position.x >= -7f )
+        {
+            moveDirection = -transform.right;
+            transform.position += moveDirection * (baseSpeed * Time.deltaTime);
+        }
     }
+
+    
 
     public void Jump() //only jump when not already jumping
     {
@@ -100,4 +114,5 @@ public class PrelimMovement : MonoBehaviour
             }
         }
     }
+    
 }
