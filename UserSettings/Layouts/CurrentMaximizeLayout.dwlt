@@ -14,17 +14,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 3}
-  - {fileID: 14}
+  - {fileID: 13}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    width: 1280
+    height: 1307
+  m_MinSize: {x: 400, y: 200}
+  m_MaxSize: {x: 32384, y: 16192}
+  vertical: 0
+  controlID: 150
+=======
+    width: 2560
+    height: 1307.3334
+  m_MinSize: {x: 400, y: 200}
+  m_MaxSize: {x: 32384, y: 16192}
+  vertical: 0
+  controlID: 26
+>>>>>>> MaxsBranch
+=======
+    width: 2560
+    height: 1307.3334
+  m_MinSize: {x: 400, y: 200}
+  m_MaxSize: {x: 32384, y: 16192}
+  vertical: 0
+  controlID: 18726
+>>>>>>> GeorgeBranch
+=======
     width: 1920
     height: 947
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 8274
+  controlID: 114
+>>>>>>> KeeganBranch
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -34,25 +61,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 200, y: 200}
+  m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Game
-    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+<<<<<<< HEAD
+    m_Text: Console
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 839
+<<<<<<< HEAD
+<<<<<<< HEAD
+    x: 1280
     y: 73
-    width: 776
-    height: 626
+    width: 704
+    height: 854
+=======
+    x: 0
+    y: 847.3334
+    width: 1953.6666
+    height: 511.6667
+>>>>>>> MaxsBranch
+=======
+    m_Text: Game
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1194.6667
+    y: 72.66667
+    width: 758
+    height: 753.6667
+>>>>>>> GeorgeBranch
+=======
+    x: 0
+    y: 73
+    width: 506
+    height: 611
+>>>>>>> KeeganBranch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+<<<<<<< HEAD
   m_SerializedViewNames: []
   m_SerializedViewValues: []
   m_PlayModeViewName: GameView
@@ -74,10 +128,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -960
-    m_HBaseRangeMax: 960
-    m_VBaseRangeMin: -540
-    m_VBaseRangeMax: 540
+    m_HBaseRangeMin: -640
+    m_HBaseRangeMax: 640
+    m_VBaseRangeMin: -360
+    m_VBaseRangeMax: 360
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -95,28 +149,47 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 776
-      height: 605
-    m_Scale: {x: 0.40416667, y: 0.40416667}
-    m_Translation: {x: 388, y: 302.5}
+<<<<<<< HEAD
+      width: 758
+      height: 732.6667
+    m_Scale: {x: 0.5921875, y: 0.5921875}
+    m_Translation: {x: 379, y: 366.33334}
+=======
+      width: 506
+      height: 590
+    m_Scale: {x: 0.26354167, y: 0.26354167}
+    m_Translation: {x: 253, y: 295}
+>>>>>>> KeeganBranch
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -960
-      y: -748.4536
-      width: 1920
-      height: 1496.9072
+<<<<<<< HEAD
+      x: -640
+      y: -618.61035
+      width: 1280
+      height: 1237.2207
     m_MinimalGUI: 1
-  m_defaultScale: 0.40416667
-  m_LastWindowPixelSize: {x: 776, y: 626}
+  m_defaultScale: 0.5921875
+  m_LastWindowPixelSize: {x: 1137, y: 1130.5}
+=======
+      x: -960
+      y: -1119.3676
+      width: 1920
+      height: 2238.735
+    m_MinimalGUI: 1
+  m_defaultScale: 0.26354167
+  m_LastWindowPixelSize: {x: 506, y: 611}
+>>>>>>> KeeganBranch
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
-  m_LowResolutionForAspectRatios: 00000000000000000000
+  m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
+=======
+>>>>>>> MaxsBranch
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -131,17 +204,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 4}
+<<<<<<< HEAD
   - {fileID: 11}
+=======
+  - {fileID: 10}
+>>>>>>> GeorgeBranch
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1617
-    height: 947
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    width: 805
+    height: 1307
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 112
+=======
+    width: 1954.6666
+    height: 1307.3334
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 8249
+  controlID: 27
+>>>>>>> MaxsBranch
+=======
+    width: 1954.6666
+    height: 1307.3334
+  m_MinSize: {x: 300, y: 200}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 1
+  controlID: 18727
+>>>>>>> GeorgeBranch
+=======
+    width: 1208
+    height: 947
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 115
+>>>>>>> KeeganBranch
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,17 +261,44 @@ MonoBehaviour:
   m_Children:
   - {fileID: 5}
   - {fileID: 7}
-  - {fileID: 10}
+  - {fileID: 9}
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1617
-    height: 647
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    width: 805
+    height: 875
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 102
+=======
+    width: 1954.6666
+    height: 774.6667
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 8250
+  controlID: 76
+>>>>>>> MaxsBranch
+=======
+    width: 1954.6666
+    height: 774.6667
+  m_MinSize: {x: 300, y: 100}
+  m_MaxSize: {x: 24288, y: 8096}
+  vertical: 0
+  controlID: 18728
+>>>>>>> GeorgeBranch
+=======
+    width: 1208
+    height: 632
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 104
+>>>>>>> KeeganBranch
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,11 +316,34 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 355
-    height: 647
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    width: 705
+    height: 875
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+=======
+    width: 507
+    height: 632
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> KeeganBranch
+  m_ActualView: {fileID: 2}
+=======
+    width: 484
+    height: 774.6667
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 6}
+>>>>>>> MaxsBranch
+=======
+    width: 483.33334
+    height: 774.6667
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
+>>>>>>> GeorgeBranch
   m_Panes:
   - {fileID: 6}
   m_Selected: 0
@@ -210,14 +364,18 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 73
-    width: 354
-    height: 626
+    y: 72.66667
+<<<<<<< HEAD
+    width: 483
+=======
+    width: 482.33334
+>>>>>>> GeorgeBranch
+    height: 753.6667
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -227,21 +385,36 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 56ebffffbcf9ffffecfaffffa8610000ce620000
+<<<<<<< HEAD
+      m_ExpandedIDs: 0ef0ffff5cf7ffffacf7ffffa8f9ffff
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: Head
+        m_OriginalName: Head
+=======
+      m_ExpandedIDs: 0281ffffcc83ffff5e85ffff7a87ffff2eaeffff5eaeffff1ab3ffff4eb3ffff08b4ffff52c7ffff82c7ffff54cbffff26ccffffc4ccffffdcccffff12cdffff52cdffff44ceffffeecfffff32d7ffff7ad8ffff1cdafffface4ffffe2e8ffff1ce9ffff76eaffff80ecffffceedffffc2effffffcefffff52f1ffffacf2ffff2ef5ffff98f8ffff92cc0000bad200007ad30000dcd5000086da0000eae60000e4e800000c180100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
         m_OriginalName: 
+>>>>>>> GeorgeBranch
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
+<<<<<<< HEAD
+        m_UserData: 33380
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 0
+=======
         m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 11
+>>>>>>> GeorgeBranch
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -250,7 +423,7 @@ MonoBehaviour:
     m_LockTracker:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
-  m_WindowGUID: e96de4f027ec3f24996d762ad6f0b736
+  m_WindowGUID: 4c969a2b90040154d917609493e03593
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -266,16 +439,40 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 355
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    x: 705
+=======
+    x: 483.33334
+>>>>>>> GeorgeBranch
     y: 0
-    width: 484
-    height: 647
+    width: 711.33325
+    height: 774.6667
+=======
+    x: 507
+    y: 0
+    width: 701
+    height: 632
+>>>>>>> KeeganBranch
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+<<<<<<< HEAD
+  m_ActualView: {fileID: 7}
+=======
+    x: 484
+    y: 0
+    width: 692
+    height: 774.6667
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 8}
+>>>>>>> MaxsBranch
+=======
+  m_ActualView: {fileID: 8}
+>>>>>>> GeorgeBranch
   m_Panes:
   - {fileID: 8}
-  - {fileID: 9}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &8
@@ -294,14 +491,35 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 355
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    x: 1985
     y: 73
-    width: 482
-    height: 626
+    width: 98
+    height: 854
+=======
+    x: 484
+    y: 72.66667
+    width: 690
+    height: 753.6667
+>>>>>>> MaxsBranch
+=======
+    x: 483.33334
+    y: 72.66667
+    width: 709.33325
+    height: 753.6667
+>>>>>>> GeorgeBranch
+=======
+    x: 507
+    y: 73
+    width: 699
+    height: 611
+>>>>>>> KeeganBranch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -312,7 +530,19 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
       snapOffset: {x: 0, y: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      snapOffsetDelta: {x: -98, y: -26}
+=======
+      snapOffsetDelta: {x: -98.66669, y: -26}
+>>>>>>> MaxsBranch
+=======
+      snapOffsetDelta: {x: -98.66669, y: -26}
+>>>>>>> GeorgeBranch
+=======
       snapOffsetDelta: {x: -101, y: -26}
+>>>>>>> KeeganBranch
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -377,9 +607,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 67.5, y: 86}
+      snapOffset: {x: -30.5, y: 86}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 1
       id: Orientation
       index: 0
       layout: 4
@@ -396,12 +626,12 @@ MonoBehaviour:
       layout: 4
     - dockPosition: 1
       containerId: overlay-container--right
-      floating: 0
+      floating: 1
       collapsed: 0
       displayed: 0
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: -228, y: -145}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 3
       id: Scene View/Camera
       index: 1
       layout: 4
@@ -548,7 +778,7 @@ MonoBehaviour:
       id: Scene View/Tilemap Focus
       index: 3
       layout: 4
-  m_WindowGUID: e243f1f5f0333d74ba755daeb6f5391d
+  m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
@@ -558,9 +788,27 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 912.5557, y: 597.7139, z: -16.807632}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 912.5557, y: 597.7139, z: -16.807632}
+    m_Value: {x: 0, y: 0, z: 0}
+=======
+    m_Target: {x: 1.3447952, y: 1.176142, z: 0.026566753}
+    speed: 2
+    m_Value: {x: 1.3447952, y: 1.176142, z: 0.026566753}
+>>>>>>> MaxsBranch
+=======
+    m_Target: {x: 3.4883182, y: -0.59611183, z: -0.021976167}
+    speed: 2
+    m_Value: {x: 3.4883182, y: -0.59611183, z: -0.021976167}
+>>>>>>> GeorgeBranch
+=======
+    m_Target: {x: -0.11262821, y: 0.45754653, z: 0.025958728}
+    speed: 2
+    m_Value: {x: -0.11262821, y: 0.45754653, z: 0.025958728}
+>>>>>>> KeeganBranch
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -594,7 +842,7 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
         m_Target: 1
@@ -611,9 +859,27 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 795.79504
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: 10
     speed: 2
-    m_Value: 795.79504
+    m_Value: 10
+=======
+    m_Target: 7.343193
+    speed: 2
+    m_Value: 7.343193
+>>>>>>> MaxsBranch
+=======
+    m_Target: 12.197638
+    speed: 2
+    m_Value: 12.197638
+>>>>>>> GeorgeBranch
+=======
+    m_Target: 8.81718
+    speed: 2
+    m_Value: 8.81718
+>>>>>>> KeeganBranch
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -621,7 +887,7 @@ MonoBehaviour:
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
-    m_SpeedMin: 0.01
+    m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
     m_EasingDuration: 0.4
@@ -638,7 +904,9 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &9
+<<<<<<< HEAD
+<<<<<<< HEAD
+--- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -646,27 +914,32 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 400, y: 100}
-  m_MaxSize: {x: 2048, y: 2048}
-  m_TitleContent:
-    m_Text: Asset Store
-    m_Image: {fileID: -8693916549880196297, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
+  m_Children:
+  - {fileID: 9}
+  - {fileID: 11}
+  m_Position:
     serializedVersion: 2
-    x: 468
-    y: 181
-    width: 973
-    height: 501
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
---- !u!114 &10
+    x: 0
+    y: 632
+    width: 1208
+    height: 315
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+<<<<<<< HEAD
+  controlID: 113
+=======
+>>>>>>> MaxsBranch
+=======
+>>>>>>> GeorgeBranch
+=======
+  controlID: 116
+>>>>>>> KeeganBranch
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -681,17 +954,146 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 839
+<<<<<<< HEAD
+    x: 1176
     y: 0
-    width: 778
-    height: 647
+<<<<<<< HEAD
+<<<<<<< HEAD
+    width: 292
+    height: 432
+=======
+    width: 502
+    height: 315
+>>>>>>> KeeganBranch
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+=======
+    width: 778.6666
+    height: 774.6667
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> MaxsBranch
+  m_ActualView: {fileID: 10}
+=======
+    x: 1194.6666
+    y: 0
+    width: 760
+    height: 774.6667
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
+>>>>>>> GeorgeBranch
   m_Panes:
   - {fileID: 2}
   m_Selected: 0
   m_LastSelected: 0
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+<<<<<<< HEAD
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Game
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+    x: 1280
+    y: 948
+    width: 291
+    height: 411
+=======
+    x: 1176
+    y: 72.66667
+    width: 776.6666
+    height: 753.6667
+>>>>>>> MaxsBranch
+=======
+    x: 0
+    y: 705
+    width: 501
+    height: 294
+>>>>>>> KeeganBranch
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+  m_SerializedViewNames: []
+  m_SerializedViewValues: []
+  m_PlayModeViewName: GameView
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+  m_TargetSize: {x: 1920, y: 1080}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_EnterPlayModeBehavior: 0
+  m_UseMipMap: 0
+  m_VSyncEnabled: 0
+  m_Gizmos: 0
+  m_Stats: 0
+  m_SelectedSizes: 03000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_ZoomArea:
+    m_HRangeLocked: 0
+    m_VRangeLocked: 0
+    hZoomLockedByDefault: 0
+    vZoomLockedByDefault: 0
+    m_HBaseRangeMin: -640
+    m_HBaseRangeMax: 640
+    m_VBaseRangeMin: -360
+    m_VBaseRangeMax: 360
+    m_HAllowExceedBaseRangeMin: 1
+    m_HAllowExceedBaseRangeMax: 1
+    m_VAllowExceedBaseRangeMin: 1
+    m_VAllowExceedBaseRangeMax: 1
+    m_ScaleWithWindow: 0
+    m_HSlider: 1
+    m_VSlider: 0
+    m_IgnoreScrollWheelUntilClicked: 0
+    m_EnableMouseInput: 1
+    m_EnableSliderZoomHorizontal: 0
+    m_EnableSliderZoomVertical: 0
+    m_UniformScale: 1
+    m_UpDirection: 1
+    m_DrawArea:
+      serializedVersion: 2
+      x: 0
+      y: 21
+      width: 776.6666
+      height: 732.6667
+    m_Scale: {x: 0.66303474, y: 0.66303474}
+    m_Translation: {x: 353.65527, y: 366.33334}
+    m_MarginLeft: 0
+    m_MarginRight: 0
+    m_MarginTop: 0
+    m_MarginBottom: 0
+    m_LastShownAreaInsideMargins:
+      serializedVersion: 2
+      x: -533.38873
+      y: -552.51
+      width: 1171.3815
+      height: 1105.02
+    m_MinimalGUI: 1
+  m_defaultScale: 0.6067708
+  m_LastWindowPixelSize: {x: 1165, y: 1130.5}
+  m_ClearInEditMode: 1
+  m_NoCameraWarning: 1
+  m_LowResolutionForAspectRatios: 01000000000000000000
+  m_XRRenderMode: 0
+  m_RenderTexture: {fileID: 0}
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -701,25 +1103,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+=======
+>>>>>>> GeorgeBranch
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 0
-    y: 647
-    width: 1617
-    height: 300
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    x: 292
+=======
+    x: 502
+>>>>>>> KeeganBranch
+    y: 0
+    width: 706
+    height: 315
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 12}
+=======
+=======
+>>>>>>> GeorgeBranch
+    x: 0
+    y: 774.6667
+    width: 1954.6666
+    height: 532.6667
+<<<<<<< HEAD
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 2}
+>>>>>>> MaxsBranch
+=======
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_ActualView: {fileID: 11}
+>>>>>>> GeorgeBranch
   m_Panes:
+  - {fileID: 11}
   - {fileID: 12}
-  - {fileID: 13}
+<<<<<<< HEAD
+  - {fileID: 2}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &12
+=======
   m_Selected: 0
   m_LastSelected: 1
---- !u!114 &12
+--- !u!114 &11
+>>>>>>> GeorgeBranch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -735,14 +1169,34 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    x: 1572
+    y: 948
+    width: 511
+    height: 411
+=======
+=======
+>>>>>>> GeorgeBranch
     x: 0
-    y: 720
-    width: 1616
-    height: 279
+    y: 847.3334
+    width: 1953.6666
+    height: 511.6667
+<<<<<<< HEAD
+>>>>>>> MaxsBranch
+=======
+>>>>>>> GeorgeBranch
+=======
+    x: 502
+    y: 705
+    width: 704
+    height: 294
+>>>>>>> KeeganBranch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -760,22 +1214,71 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/UI/Prize Menu Assets
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    - Assets/Scenes
+=======
+    - Assets/CentipedeBreakout/Centipede Breakout testing
+>>>>>>> MaxsBranch
+=======
+    - Assets/DesperadoDash/DDAssets/DDScripts
+>>>>>>> GeorgeBranch
+=======
+    - Assets/HideNSeek/Prefabs
+>>>>>>> KeeganBranch
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/UI/Prize Menu Assets
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  - Assets/Scenes
+=======
+  - Assets/DesperadoDash/DDAssets/DDScripts
+>>>>>>> GeorgeBranch
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: P:\GitKraken\GAD181-Arcade_Anarchy
+  m_LastProjectPath: C:\Users\1028442\Desktop\gad181\GitKraken\GAD181-Arcade_Anarchy
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 33}
-    m_SelectedIDs: 2e720000
-    m_LastClickedID: 29230
-    m_ExpandedIDs: 00000000666100007c61000000ca9a3b
+<<<<<<< HEAD
+    scrollPos: {x: 0, y: 67}
+    m_SelectedIDs: 50610000
+    m_LastClickedID: 24912
+    m_ExpandedIDs: 0000000034610000366100003861000000ca9a3bffffff7f
+=======
+  - Assets/CentipedeBreakout/Centipede Breakout testing
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Users\1030163\Pictures\ArcadeAnarchyGit\GAD181-Arcade_Anarchy
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: a0630000
+    m_LastClickedID: 25504
+    m_ExpandedIDs: 00000000986300009a6300009c6300009e630000a063000000ca9a3b
+>>>>>>> MaxsBranch
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 945f0000
+    m_LastClickedID: 24468
+    m_ExpandedIDs: 00000000745f00007e5f00008e5f000000ca9a3b
+>>>>>>> GeorgeBranch
+=======
+  - Assets/HideNSeek/Prefabs
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Users\z-kow\Git Repositories\GAD181-Arcade_Anarchy
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 82}
+    m_SelectedIDs: 46610000
+    m_LastClickedID: 24902
+    m_ExpandedIDs: 00000000206100002261000024610000266100002861000000ca9a3b
+>>>>>>> KeeganBranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -791,7 +1294,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 0}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -803,7 +1306,19 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006661000000ca9a3b
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_ExpandedIDs: 00000000346100003661000038610000
+=======
+    m_ExpandedIDs: 00000000986300009a6300009c6300009e630000a0630000
+>>>>>>> MaxsBranch
+=======
+    m_ExpandedIDs: 00000000745f000000ca9a3b
+>>>>>>> GeorgeBranch
+=======
+    m_ExpandedIDs: 000000002061000022610000246100002661000028610000
+>>>>>>> KeeganBranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -828,10 +1343,29 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 56ebffff
-    m_LastClickedInstanceID: -5290
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_SelectedInstanceIDs: a0610000
+    m_LastClickedInstanceID: 24992
+=======
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+>>>>>>> KeeganBranch
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c62300007a6300006a630000
+=======
+    m_SelectedInstanceIDs: f641ffff
+    m_LastClickedInstanceID: -48650
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
+>>>>>>> MaxsBranch
+=======
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c623000000eb0000
+>>>>>>> GeorgeBranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -847,7 +1381,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -858,8 +1392,48 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 363
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_DirectoriesAreaWidth: 203
+=======
+  m_DirectoriesAreaWidth: 207
+>>>>>>> MaxsBranch
+=======
+  m_DirectoriesAreaWidth: 178
+>>>>>>> KeeganBranch
 --- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
+  m_Name: SceneHierarchyWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1208
+    y: 0
+    width: 328
+    height: 947
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &14
+=======
+  m_DirectoriesAreaWidth: 207
+--- !u!114 &12
+>>>>>>> GeorgeBranch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -875,19 +1449,59 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
-    y: 720
-    width: 1530
-    height: 279
+    y: 847.3334
+    width: 1953.6666
+    height: 511.6667
+=======
+    x: 1208
+    y: 73
+    width: 326
+    height: 926
+>>>>>>> KeeganBranch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
---- !u!114 &14
+<<<<<<< HEAD
+--- !u!114 &13
+=======
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: a6f9ffff22fbffff92610000e261000054620000
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 13}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: 4c969a2b90040154d917609493e03593
+--- !u!114 &15
+>>>>>>> KeeganBranch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -902,18 +1516,43 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1617
+<<<<<<< HEAD
+    x: 1954.6666
     y: 0
-    width: 303
+    width: 605.3334
+    height: 1307.3334
+=======
+    x: 1536
+    y: 0
+    width: 384
     height: 947
+>>>>>>> KeeganBranch
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 15}
+<<<<<<< HEAD
+  m_ActualView: {fileID: 16}
+=======
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1954.6666
+    y: 0
+    width: 605.3334
+    height: 1307.3334
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 14}
+>>>>>>> MaxsBranch
+=======
+  m_ActualView: {fileID: 14}
+>>>>>>> GeorgeBranch
   m_Panes:
-  - {fileID: 15}
+  - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &15
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -929,14 +1568,34 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1617
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    x: 2304
     y: 73
-    width: 302
+    width: 255
+    height: 1286
+=======
+=======
+>>>>>>> GeorgeBranch
+    x: 1954.6667
+    y: 72.66667
+    width: 604.3334
+    height: 1286.3334
+<<<<<<< HEAD
+>>>>>>> MaxsBranch
+=======
+>>>>>>> GeorgeBranch
+=======
+    x: 1536
+    y: 73
+    width: 383
     height: 926
+>>>>>>> KeeganBranch
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -947,8 +1606,20 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -5290
-  m_LastVerticalScrollValue: 184
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_LastInspectedObjectInstanceID: 24992
+=======
+  m_LastInspectedObjectInstanceID: -1
+>>>>>>> MaxsBranch
+=======
+  m_LastInspectedObjectInstanceID: -1
+>>>>>>> GeorgeBranch
+=======
+  m_LastInspectedObjectInstanceID: -1
+>>>>>>> KeeganBranch
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

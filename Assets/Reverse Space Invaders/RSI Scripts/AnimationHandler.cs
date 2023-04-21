@@ -12,8 +12,6 @@ public class AnimationHandler : MonoBehaviour
 
     private int _animationFrame;
 
-    public System.Action killed;
-
     public void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -42,7 +40,7 @@ public class AnimationHandler : MonoBehaviour
         {
             if(other.gameObject.layer == LayerMask.NameToLayer("Laser"))
             {
-                this.killed.Invoke();
+                AlienManager.instance.deadAliens++;
                 this.gameObject.SetActive(false);
             }
         }
