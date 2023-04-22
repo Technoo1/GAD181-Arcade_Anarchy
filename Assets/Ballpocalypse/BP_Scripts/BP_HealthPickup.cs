@@ -4,27 +4,11 @@ using UnityEngine;
 
 public class BP_HealthPickup : MonoBehaviour
 {
-    PlayerHealth playerHealth;
-    public List<GameObject> hearts;
-    public int playerHearts = 4;
-
-    public float healthBonus = 4;
-
-     void Awake()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        playerHealth = FindObjectOfType<PlayerHealth>();
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "HealthPickup") 
+        if (collision.tag == "Player") //if the gameobject hits something with the tag "Player" aka, the horse, it will be destroyed.
         {
-           
-            if (playerHearts <= 3)               //only if they're not at full hearts
-            {
-                playerHearts += 1;               //add one heart      
-            }
+            Destroy(this.gameObject);
         }
-
     }
 }

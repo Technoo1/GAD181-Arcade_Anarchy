@@ -115,12 +115,12 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(FlashRed());
         }
 
-        if (collision.tag == "Health Pickup")   //if player collides with a health pickup
+        if (collision.tag == "Health Pickup")   
         {
-            Destroy(gameObject);
-            if (playerHearts <= 3)               //only if they're not at full hearts
+            
+            if (playerHearts <= 3)               
             {
-                playerHearts += 1;               //add one heart      
+                playerHearts += 1;                  
             }
         }
     } 
