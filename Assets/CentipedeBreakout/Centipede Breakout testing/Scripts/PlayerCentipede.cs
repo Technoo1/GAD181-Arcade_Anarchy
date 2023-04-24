@@ -23,17 +23,26 @@ namespace CentipedeBreakout
         public float playerSpeedHorizontal;
         public float playerSpeedVertical;
 
+        public bool canMove = true;
+
         // Start is called before the first frame update
         void Start()
         {
             animator = GetComponent<Animator>();
             rb = gameObject.GetComponent<Rigidbody2D>();
             sprite = gameObject.GetComponent<SpriteRenderer>();
+            //health.GetComponent<Health>().heartsLeft = 3;
+            canMove = true;
         }
 
         // Update is called once per frame
         void Update()
         {
+            if (canMove == false)
+            {
+                return;
+            }
+
             Movement();
 
 

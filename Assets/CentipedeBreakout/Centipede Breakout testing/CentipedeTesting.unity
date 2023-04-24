@@ -464,6 +464,7 @@ MonoBehaviour:
   sprite: {fileID: 113290931}
   playerSpeedHorizontal: 3
   playerSpeedVertical: 2
+  canMove: 0
 --- !u!95 &113290936
 Animator:
   serializedVersion: 5
@@ -921,6 +922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalPoints: 0
+  player: {fileID: 113290930}
 --- !u!1 &440947377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,6 +1636,7 @@ MonoBehaviour:
   - {fileID: 1116029992}
   - {fileID: 124575785}
   - {fileID: 268914270}
+  player: {fileID: 113290930}
 --- !u!1 &1028800722
 GameObject:
   m_ObjectHideFlags: 0

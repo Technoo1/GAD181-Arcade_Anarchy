@@ -390,6 +390,8 @@ namespace CentipedeBreakout
                 //{
 
                 //}
+
+                Debug.Log("you killed everything");
                 PointScorer.instance.CBGameOver();
             }
 

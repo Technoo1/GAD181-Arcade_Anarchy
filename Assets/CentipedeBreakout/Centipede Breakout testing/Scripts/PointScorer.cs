@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using ArcadeAnarchy;
+using CentipedeBreakout;
 
 public class PointScorer : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PointScorer : MonoBehaviour
     private TextMeshProUGUI Text;
 
     public int totalPoints;
+
+    public GameObject player;
 
     public void Awake()
     {
@@ -38,29 +41,35 @@ public class PointScorer : MonoBehaviour
     public event Action CBOnGameOver;
     public void CBGameOver()
     {
-        CBOnGameOver?.Invoke();
+
+        //CBOnGameOver?.Invoke();
+
+        StartCoroutine(CBGameOverDelay());
+    }
+
+    public IEnumerator CBGameOverDelay()
+    {
+        player.GetComponent<PlayerCentipede>().canMove = false;
+        Debug.Log(player.GetComponent<PlayerCentipede>().canMove);
+        yield return new WaitForSeconds(2f);
+        player.GetComponent<PlayerCentipede>().canMove = true;
 
         if (totalPoints <= 4000)
         {
             EventManager.instance.TriggerGameOver(TicketTier.None);
-            return;
         }
-        if (totalPoints <= 4300)
+        else if (totalPoints <= 4300)
         {
             EventManager.instance.TriggerGameOver(TicketTier.One);
-            return;
         }
-        if (totalPoints <= 4900)
+        else if (totalPoints <= 4900)
         {
             EventManager.instance.TriggerGameOver(TicketTier.Two);
-            return;
         }
-        if (totalPoints >= 5500)
+        else if (totalPoints >= 5500)
         {
             EventManager.instance.TriggerGameOver(TicketTier.Three);
-            return;
         }
-        
     }
 
     private void Start()
