@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //key press to peek DONE
 //different key press to hide DONE
@@ -36,6 +37,14 @@ public class HSPlayerControls : MonoBehaviour
     public AudioSource audioIfPeeking;
     public AudioSource audioIfHiding;
 
+    public GameObject missionFailScr;
+    public GameObject ingameScr;
+
+    void Awake()
+    {
+        HSIntelScore.playerIntel = 0; //resets intel score to 0 each new game
+    }
+
     void Update()
     {
         GameObject guardFacing;
@@ -62,6 +71,9 @@ public class HSPlayerControls : MonoBehaviour
         {
             Countdown.GetComponent<HSCountdown>().timerIsRunning = false; //stops the mission timer
             PlayAudio();
+            missionFailScr.SetActive(true); //show the "mission complete" UI
+            ingameScr.GetComponent<AudioSource>().pitch = 0.5f;
+            Time.timeScale = 0; //effectively pauses the game, minus audio
             StartCoroutine(GameOverScreen()); //basically preventing the game over screen from appearing for x seconds
 
             //EventManager.instance.TriggerGameOver(); //triggers universal game over screen and menu
@@ -99,8 +111,10 @@ public class HSPlayerControls : MonoBehaviour
 
     IEnumerator GameOverScreen()
     {
-        yield return new WaitForSeconds(timeTillGameOver);
-        //EventManager.instance.TriggerGameOver(); //triggers universal game over screen and menu
-        Debug.Log("Y O U D I E D");
-    }
+		TicketTier earned = TicketTier.None; //giving 0 tickets to player if they're detected
+
+		yield return new WaitForSecondsRealtime(timeTillGameOver); //overrides timescale changes
+		EventManager.instance.TriggerGameOver(earned); //triggers universal game over screen and menu
+		Debug.Log("Y O U D I E D");
+	}
 }
