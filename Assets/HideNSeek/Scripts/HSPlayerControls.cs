@@ -40,6 +40,7 @@ public class HSPlayerControls : MonoBehaviour
     public GameObject missionFailScr;
     public GameObject ingameScr;
 
+    private bool isDead = false;
     void Awake()
     {
         HSIntelScore.playerIntel = 0; //resets intel score to 0 each new game
@@ -112,9 +113,16 @@ public class HSPlayerControls : MonoBehaviour
     IEnumerator GameOverScreen()
     {
 		TicketTier earned = TicketTier.None; //giving 0 tickets to player if they're detected
+        if (!isDead)
+        {
+            isDead = true;
+		    yield return new WaitForSecondsRealtime(timeTillGameOver); //overrides timescale changes
+		    EventManager.instance.TriggerGameOver(earned); //triggers universal game over screen and menu
+            Debug.Log("Game over screen triggered from " + name);
+            Debug.Log("Y O U D I E D");
+        }
 
-		yield return new WaitForSecondsRealtime(timeTillGameOver); //overrides timescale changes
-		EventManager.instance.TriggerGameOver(earned); //triggers universal game over screen and menu
-		Debug.Log("Y O U D I E D");
+
+
 	}
 }
