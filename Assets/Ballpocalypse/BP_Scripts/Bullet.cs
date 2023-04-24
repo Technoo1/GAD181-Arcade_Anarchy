@@ -15,11 +15,6 @@ public class Bullet : MonoBehaviour
     private Vector3 mousePos;
     private Camera mainCam;
 
-    public AudioSource bulletSource;
-
-    public AudioSource ballPop;
-    public AudioClip popClip;
-
 
 
 
@@ -43,35 +38,6 @@ public class Bullet : MonoBehaviour
     {
 
         Destroy(gameObject);
-
-        if (hitInfo.tag == "Largest Ball")
-        {
-            ballPop.PlayOneShot(popClip);
-            Debug.Log("ball popped");
-        }
-
-        if (hitInfo.tag == "Large Ball")
-        {
-            ballPop.PlayOneShot(popClip);
-            Debug.Log("ball popped");
-
-        }
-        if (hitInfo.tag == "Medium Ball")
-        {
-            ballPop.PlayOneShot(popClip);
-            Debug.Log("ball popped");
-        }
-
-        if (hitInfo.tag == "Small Ball")
-        {
-            ballPop.PlayOneShot(popClip);
-            Debug.Log("ball popped");
-        }
-
-        if (hitInfo.tag == "Smallest Ball")
-        {
-            ballPop.PlayOneShot(popClip); 
-            Debug.Log("ball popped");
-        }
+           
     }
 }

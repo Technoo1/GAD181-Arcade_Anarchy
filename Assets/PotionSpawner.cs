@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PotionSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject[] potionPrefab;
+   /* [SerializeField] GameObject[] potionPrefab;
     [SerializeField] float secondSpawn = 15f;
     [SerializeField] float minTras;
     [SerializeField] float maxTras;
@@ -24,6 +24,6 @@ public class PotionSpawner : MonoBehaviour
             yield return new WaitForSeconds(secondSpawn);
             Destroy(gameObject, 5f);
         }
-    }
+    } */
 
 }

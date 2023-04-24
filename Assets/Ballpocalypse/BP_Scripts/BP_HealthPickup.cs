@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class BP_HealthPickup : MonoBehaviour
 {
+
+    public HealthBar healthbar;
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player") //if the gameobject hits something with the tag "Player" aka, the horse, it will be destroyed.
+        if (collision.tag == "Player") //if the gameobject hits something with the tag "Player" 
         {
             Destroy(this.gameObject);
+            
         }
     }
 }

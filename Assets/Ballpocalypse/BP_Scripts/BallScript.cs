@@ -21,12 +21,12 @@ public class BallScript : MonoBehaviour
     private GameObject ball1, ball2;
     private BallScript ball1Script, ball2Script;
 
-    public AudioSource ballPop;
-    public AudioClip popClip; 
+    AudioSource bulletSource;
 
-    AudioSource bulletSource; 
-
-    // Start is called before the first frame update
+    private void OnDisable()
+    {
+        Destroy(gameObject);
+    }
     private void Awake()
     {
         SetBallSpeed();
@@ -34,9 +34,9 @@ public class BallScript : MonoBehaviour
     }
 
      void Update()
-    {
+     {
         MoveBall();
-    }
+     }
 
      void Start()
     {
@@ -164,8 +164,7 @@ public class BallScript : MonoBehaviour
             if(gameObject.tag != "Smallest Ball")
             {
                 InitializeBallsAndTurnOffCurrentBall();
-                Destroy(gameObject);
-                ballPop.PlayOneShot(popClip); 
+                Destroy(gameObject); 
             }
             else
             {

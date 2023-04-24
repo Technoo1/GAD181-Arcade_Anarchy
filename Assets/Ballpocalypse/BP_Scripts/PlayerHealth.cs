@@ -3,16 +3,42 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int playerHearts = 4;
-    public List<GameObject> hearts;
-    public bool isPaused = false;
+    public int currentHealth;
+    public int maxHealth = 100;
 
+    public HealthBar healthbar;
+    
+    public bool isPaused = false;
     public bool isDead = false;
 
     public SpriteRenderer sprite;
+
+    void RestoreHealth()
+    {
+        currentHealth += 20;
+    }
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+        healthbar.SetMaxHealth(maxHealth);
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        healthbar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            isDead = true;
+        }
+    }
 
     // Makes the character flash red when hit.
     public IEnumerator FlashRed()
@@ -29,45 +55,10 @@ public class PlayerHealth : MonoBehaviour
         sprite.color = Color.white;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-   
-
-    void Update()
-    {
-        if (playerHearts == 4)
+        void Update()
         {
-            hearts[2].SetActive(true);
-            hearts[1].SetActive(true);
-            hearts[0].SetActive(true);
-        }
-        else if (playerHearts == 3)
-        {
-            hearts[2].SetActive(false);
-            hearts[1].SetActive(true);
-            hearts[0].SetActive(true);
-        }
-        else if (playerHearts == 2)
-        {
-            hearts[1].SetActive(false);
-            hearts[0].SetActive(true);
-        }
-        else if (playerHearts <= 1 && !isDead)
-        {
-            hearts[0].SetActive(false);
-            Time.timeScale = 0f;
-            isPaused = true;
-            TicketTier earned = TicketTier.Two;
-            EventManager.instance.TriggerGameOver(earned);
-            isDead = true;
-            Debug.Log("Loaded gameOver from " + name);
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
+        
+        if (Input.GetKeyDown(KeyCode.P)) // Pauses & Unpauses the game if P is pressed
         {
             if (isPaused)
             {
@@ -87,41 +78,38 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.tag == "Largest Ball")
         {
-            playerHearts -= 1;
+            TakeDamage(25);
             StartCoroutine(FlashRed());
         }
 
         if (collision.tag == "Large Ball")
         {
-            playerHearts -= 1;
+            TakeDamage(20);
             StartCoroutine(FlashRed());
         }
 
         if (collision.tag == "Medium Ball")
         {
-            playerHearts -= 1;
+            TakeDamage(15);
             StartCoroutine(FlashRed());
         }
 
         if (collision.tag == "Small Ball")
         {
-            playerHearts -= 1;
+            TakeDamage(10);
             StartCoroutine(FlashRed());
         }
 
         if (collision.tag == "Smallest Ball")
         {
-            playerHearts -= 1;
+            TakeDamage(5);
             StartCoroutine(FlashRed());
         }
 
         if (collision.tag == "Health Pickup")   
         {
+            RestoreHealth();
             
-            if (playerHearts <= 3)               
-            {
-                playerHearts += 1;                  
-            }
         }
     } 
 
