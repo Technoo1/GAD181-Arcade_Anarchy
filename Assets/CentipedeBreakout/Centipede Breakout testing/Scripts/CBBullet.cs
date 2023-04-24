@@ -39,7 +39,7 @@ public class CBBullet : MonoBehaviour
 
         if (hit.collider.gameObject.tag == "Centipede")
         {
-            CBAudioManager.instance.PlaySound("Miss");
+            CBAudioManager.instance.PlaySound("ShotHit");
             hit.collider.gameObject.GetComponent<Segment>().LoseHealth();
             Destroy(gameObject);
         }

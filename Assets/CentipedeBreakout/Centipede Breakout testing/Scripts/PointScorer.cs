@@ -41,7 +41,6 @@ public class PointScorer : MonoBehaviour
     public event Action CBOnGameOver;
     public void CBGameOver()
     {
-
         //CBOnGameOver?.Invoke();
 
         StartCoroutine(CBGameOverDelay());
@@ -49,6 +48,7 @@ public class PointScorer : MonoBehaviour
 
     public IEnumerator CBGameOverDelay()
     {
+        CBAudioManager.instance.PlaySound("Bloop");
         player.GetComponent<PlayerCentipede>().canMove = false;
         Debug.Log(player.GetComponent<PlayerCentipede>().canMove);
         yield return new WaitForSeconds(2f);

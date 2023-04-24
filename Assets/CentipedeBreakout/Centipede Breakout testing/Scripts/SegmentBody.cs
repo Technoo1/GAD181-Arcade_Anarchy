@@ -399,6 +399,7 @@ namespace CentipedeBreakout
             if (deadPart == gameObject)
             {
                 PointScorer.instance.PointGain(PointMedium);
+                CBAudioManager.instance.PlaySound("PointMedium");
                 //Debug.Log("THE HEAD Is DYING");
 
 
@@ -491,9 +492,10 @@ namespace CentipedeBreakout
 
 
 
-            //If you touch the but or behind the but
+            //If you touch the but
             if (bodySegments.Count - 1 - deadPartArrayRef == 0)
             {
+                CBAudioManager.instance.PlaySound("PointMedium");
                 PointScorer.instance.PointGain(PointMedium);
                 Debug.Log("OInga");
                 bodySegments.Remove(deadPart);
@@ -504,6 +506,7 @@ namespace CentipedeBreakout
             //if you touch behind the but
             else if (bodySegments.Count - 1 - deadPartArrayRef == 1)
             {
+                CBAudioManager.instance.PlaySound("PointBig");
                 PointScorer.instance.PointGain(PointBig);
                 //CURRENT TODO
                 //MOVE SOME CODE AROUND SO WE CAN REMOVE THE 20 POSITIONS 
@@ -560,6 +563,7 @@ namespace CentipedeBreakout
             //touch anywhere that isn't the face or but or tailbone
             else
             {
+                CBAudioManager.instance.PlaySound("PointBig");
                 PointScorer.instance.PointGain(PointBig);
 
                 newHead = bodySegments[deadPartArrayRef + 1].AddComponent<SegmentBody>();

@@ -6,7 +6,7 @@ using UnityEngine;
 public class CBAudioManager : MonoBehaviour
 {
     public static CBAudioManager instance;
-    public AudioSource Speaker;
+    public AudioSource speaker;
 
     public void Awake()
     {
@@ -14,26 +14,22 @@ public class CBAudioManager : MonoBehaviour
         {
             instance = this;
         }
-
     }
 
     public void Start()
     {
-        Speaker = GameObject.Find("AudioManager").GetComponent<AudioSource>();
-        Debug.Log(Speaker);
-        PlaySound("Miss");
+        speaker = GameObject.Find("AudioManager").GetComponent<AudioSource>();
     }
 
-    public void PlaySound(string file) //Input, passing a string to anything listening
+    //Invoke using CBAudioManager.instance.PlaySound("file name")
+    public void PlaySound(string file)
     {
-        //OnUpdateUI?.Invoke(file);
+        AudioClip[] audio = Resources.LoadAll<AudioClip>(file);                     //file full of potential audio to play
 
-        AudioClip[] audio = Resources.LoadAll<AudioClip>(file);
+        AudioClip audioRandom = audio[UnityEngine.Random.Range(0, audio.Length)];   //pick random sound from file
 
-        AudioClip AudioRandom = audio[UnityEngine.Random.Range(0, audio.Length)];
-
-        //UnityEngine.Random.Range(0, 10);
-        Speaker.PlayOneShot(AudioRandom);
-        //audioRandom[UnityEngine.Random.Range(0, audioRandom.Length)];
+        //play the sound attached to an object (speaker) in 3D space
+        //can modify speaker in editor to modify sound
+        speaker.PlayOneShot(audioRandom);                                           
     }
 }

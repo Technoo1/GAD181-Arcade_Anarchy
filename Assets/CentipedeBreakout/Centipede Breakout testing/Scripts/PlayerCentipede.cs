@@ -67,6 +67,7 @@ namespace CentipedeBreakout
             if (Input.GetKey(KeyCode.LeftShift) && gunTimer >= 0.2)
             {
                 //bject original, Vector3 position, Quaternion rotation
+                CBAudioManager.instance.PlaySound("Shoot");
                 Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
                 gunTimer = 0;
             }
@@ -109,6 +110,7 @@ namespace CentipedeBreakout
         {
             //Debug.Log("WORK");
             //100s can exist atm
+            CBAudioManager.instance.PlaySound("SwordSwing");
             GameObject currentHit = Instantiate(hit, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.6f,0), Quaternion.identity);
             yield return new WaitForSeconds(0.4f);
             Destroy(currentHit);
@@ -119,6 +121,7 @@ namespace CentipedeBreakout
         //will flash semi randomly, but it's fine
         public IEnumerator FlashRed()
         {
+            CBAudioManager.instance.PlaySound("PlayerHurt");
             for (int i = 0; i <= 2; i++) {
                 sprite.color = Color.red;
                 yield return new WaitForSeconds(0.1f);
