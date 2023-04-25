@@ -27,7 +27,7 @@ public class HSPlayerControls : MonoBehaviour
     public GameObject Spawns; //spawn point parent object
     public GameObject ingameScreen; //ingame ui object(s)
 
-    public float timeTillGameOver = 3f; //time to wait before game over scene triggers, allows for additional animations, effects, etc.
+    public float timeTillGameOver = 5f; //time to wait before game over scene triggers, allows for additional animations, effects, etc.
 
     public GameObject Countdown; //the mission timer
 
@@ -76,6 +76,9 @@ public class HSPlayerControls : MonoBehaviour
             ingameScr.GetComponent<AudioSource>().pitch = 0.5f;
             Time.timeScale = 0; //effectively pauses the game, minus audio
             StartCoroutine(GameOverScreen()); //basically preventing the game over screen from appearing for x seconds
+            this.enabled = false; //disables this update function. Resets on new game because it's reloading the scene
+            //Debug.Log("Game over screen triggered from " + name);
+
 
             //EventManager.instance.TriggerGameOver(); //triggers universal game over screen and menu
             //Debug.Log("caught by guard! Snake? Snaaaaaake!");
@@ -86,18 +89,12 @@ public class HSPlayerControls : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && playerIsPeeking == true && intelIsHere == true) //if the player presses Space while peeking...
         {
-            //add an intel point (to be converted to ticket later, or just add to ticket number straight away)
-            //Destroy(intelIsHere); //remove the Intel sprite from the scene
             intelIsHere.SetActive(false); //disable Intel sprite
             //Debug.Log("intel collected!");
 
             intelSpawner1.GetComponent<HSIntelSpawn>().intelCount--; //reduce the number of intel reported by the IntelSpawn script
             //intelSpawner2.GetComponent<HSIntelSpawn>().intelCount--; //reduce the number of intel reported by the IntelSpawn script
             //intelSpawner3.GetComponent<HSIntelSpawn>().intelCount--; //reduce the number of intel reported by the IntelSpawn script
-
-
-            //sets the referenced object i.e. the spawn point to disable in hierarchy. NEEDS TESTING
-            //try disabling the IntelSpawn class in spawn points, then have a spawn point script reenable the script again?
         }
     }
 
@@ -118,11 +115,7 @@ public class HSPlayerControls : MonoBehaviour
             isDead = true;
 		    yield return new WaitForSecondsRealtime(timeTillGameOver); //overrides timescale changes
 		    EventManager.instance.TriggerGameOver(earned); //triggers universal game over screen and menu
-            Debug.Log("Game over screen triggered from " + name);
             Debug.Log("Y O U D I E D");
         }
-
-
-
 	}
 }

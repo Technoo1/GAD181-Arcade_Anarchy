@@ -12,12 +12,14 @@ public class HSCountdown : MonoBehaviour
     public bool timerIsRunning = false; //is the timer still running?
 
     public AudioSource fiveSecsRemain;
-    public bool alreadyPlayed = false;
+    //public bool alreadyPlayed = false;
 
     public GameObject ingameScr;
     public GameObject missionCompleteScr;
 
     public bool isGameOver;
+
+    public GameObject Player;
 
     void Start()
     {
@@ -31,21 +33,21 @@ public class HSCountdown : MonoBehaviour
             if (timerCount > 0)
             {
                 timerCount -= Time.deltaTime; //run down the numbers
-                if (timerCount < 5)
+                if (timerCount > 6)
                 {
-                    PlayAudio();
+                    fiveSecsRemain.Play();
+                    //PlayAudio();
                 }
             }
             else
             {
                 timerCount = 0; //once the timer reaches zero...
                 timerIsRunning = false; //... stop the timer
-                //ingameScr.SetActive(false); //disable the ingame UI (this breaks the coroutine in here obviously, find a solution?)
                 missionCompleteScr.SetActive(true); //show the "mission complete" UI
-                //ingameScr.GetComponent<AudioSource>().volume = 0.1f; //drop the ingame music to 50% volume
                 ingameScr.GetComponent<AudioSource>().pitch = 1.0f;
                 Time.timeScale = 0; //effectively pauses the game, minus audio
                 StartCoroutine(GameOverScreen());
+                Player.GetComponent<HSPlayerControls>().enabled = false; //disables the player controller, preventing move spam during mission completion screen
             }
         }
         DisplayTime(timerCount);
@@ -65,14 +67,14 @@ public class HSCountdown : MonoBehaviour
         //timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds); //if I want to include minutes in the format
     }
 
-    void PlayAudio()
-    {
-        if (!alreadyPlayed)
-        {
-            fiveSecsRemain.Play();
-            alreadyPlayed = true;
-        }
-    }
+    //void PlayAudio()
+    //{
+    //    if (!alreadyPlayed)
+    //    {
+    //        fiveSecsRemain.Play();
+    //        alreadyPlayed = true;
+    //    }
+    //}
 
     IEnumerator GameOverScreen()
     {
