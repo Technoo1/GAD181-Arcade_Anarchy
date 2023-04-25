@@ -2,6 +2,7 @@ using ArcadeAnarchy;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class HSCountdown : MonoBehaviour
     public bool timerIsRunning = false; //is the timer still running?
 
     public AudioSource fiveSecsRemain;
-    //public bool alreadyPlayed = false;
+    public bool alreadyPlayed = false;
 
     public GameObject ingameScr;
     public GameObject missionCompleteScr;
@@ -35,10 +36,17 @@ public class HSCountdown : MonoBehaviour
             if (timerCount > 0)
             {
                 timerCount -= Time.deltaTime; //run down the numbers
-                if (timerCount > 6)
+                if (timerCount < 6)
                 {
-                    fiveSecsRemain.Play();
-                    //PlayAudio();
+                    GetComponent<Animator>().enabled = true; //plays the animation that flashes from yellow to red. this somehow breaks audio playback without a boolean to support it
+                    //fiveSecsRemain.Play();
+                    PlayAudio();
+                }
+                else
+                {
+                    GetComponent<Animator>().enabled = false; //disable the flashing effect
+                    GetComponent<TextMeshProUGUI>().color = new Color(255,221,0); //resets the timer colour if beyond 5 seconds on the timer
+                    alreadyPlayed = false;
                 }
             }
             else
@@ -82,14 +90,14 @@ public class HSCountdown : MonoBehaviour
         //timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds); //if I want to include minutes in the format
     }
 
-    //void PlayAudio()
-    //{
-    //    if (!alreadyPlayed)
-    //    {
-    //        fiveSecsRemain.Play();
-    //        alreadyPlayed = true;
-    //    }
-    //}
+    void PlayAudio()
+    {
+        if (!alreadyPlayed)
+        {
+            fiveSecsRemain.Play();
+            alreadyPlayed = true;
+        }
+    }
 
     IEnumerator GameOverScreen()
     {                

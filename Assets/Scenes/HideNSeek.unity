@@ -1411,6 +1411,7 @@ GameObject:
   - component: {fileID: 387059321}
   - component: {fileID: 387059323}
   - component: {fileID: 387059324}
+  - component: {fileID: 387059325}
   m_Layer: 5
   m_Name: Seconds Text
   m_TagString: HSTimer
@@ -1551,6 +1552,7 @@ MonoBehaviour:
   timerText: {fileID: 387059321}
   timerIsRunning: 0
   fiveSecsRemain: {fileID: 387059324}
+  alreadyPlayed: 0
   ingameScr: {fileID: 221665411}
   missionCompleteScr: {fileID: 255931532}
   isGameOver: 0
@@ -1652,6 +1654,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &387059325
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387059318}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d920e9efedc01944587f926de0da9028, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &425752963
 GameObject:
   m_ObjectHideFlags: 0
