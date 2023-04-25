@@ -8,6 +8,8 @@ public class ScreenShake : MonoBehaviour
     public AudioSource boomSource;
     public AudioClip boomSound;
 
+    public AudioClip longBoom;
+
     public IEnumerator Shake ()
     {
         float duration = 0.6f;
@@ -37,5 +39,18 @@ public class ScreenShake : MonoBehaviour
         boomSource = GetComponent<AudioSource>();
         boomSource.PlayOneShot(boomSound);
         StartCoroutine(Shake());
+    }
+
+    public void ShakeScreenCastle()
+    {
+        boomSource = GetComponent<AudioSource>();
+        boomSource.PlayOneShot(longBoom);
+        StartCoroutine(Shake());
+    }
+
+    public void BoomBabyBoom()
+    {
+        boomSource = GetComponent<AudioSource>();
+        boomSource.PlayOneShot(boomSound);
     }
 }
