@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public enum TicketTier { None, One, Two, Three }
 public class ScoreManager : MonoBehaviour
@@ -39,6 +40,8 @@ public class ScoreManager : MonoBehaviour
         }
 
         ticketText.text = Tickets.ToString();
+
+        
 
         if (SaveSystem.loadedScene == "GameOver")
         {
