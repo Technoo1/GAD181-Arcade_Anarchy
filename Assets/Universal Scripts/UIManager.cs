@@ -43,11 +43,13 @@ public class UIManager : MonoBehaviour
         {
             if (pauseMenu.activeSelf)
             {
+                UIAudioManager.instance.PlaySound("Pause");
                 Resume();
                 optionsMenu.SetActive(false);
             }
             else
             {
+                UIAudioManager.instance.PlaySound("Pause");
                 Pause();
             }
         }

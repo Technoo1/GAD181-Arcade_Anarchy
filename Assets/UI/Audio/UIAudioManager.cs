@@ -21,7 +21,7 @@ public class UIAudioManager : MonoBehaviour
         speaker = GameObject.Find("UIAudioManager").GetComponent<AudioSource>();
     }
 
-    //Invoke using CBAudioManager.instance.PlaySound("file name")
+    //Invoke using UIAudioManager.instance.PlaySound("file name")
     public void PlaySound(string name)
     {
         AudioClip audio = Resources.Load<AudioClip>(name);                     //file full of potential audio to play
