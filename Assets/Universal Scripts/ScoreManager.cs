@@ -78,15 +78,19 @@ public class ScoreManager : MonoBehaviour
         switch (tier)
         {
             case TicketTier.None:
+                UIAudioManager.instance.PlaySound("GameOver");
                 TierNone();
                 break;
             case TicketTier.One:
+                UIAudioManager.instance.PlaySound("GameOver");
                 TierOne();
                 break;
             case TicketTier.Two:
+                UIAudioManager.instance.PlaySound("GameOver");
                 TierTwo();
                 break;
             case TicketTier.Three:
+                UIAudioManager.instance.PlaySound("GameOver");
                 TierThree();
                 break;
         }
