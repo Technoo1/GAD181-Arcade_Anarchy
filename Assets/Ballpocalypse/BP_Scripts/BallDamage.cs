@@ -1,24 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BallDamage : MonoBehaviour
 {
     public PlayerHealth playerHealth;
-    public int damage = 20;
-   
+    public int damage;
 
-    // Update is called once per frame
-    void Update()
+    public SpriteRenderer sprite;
+
+    public IEnumerator FlashRed()
     {
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = Color.white;
+    } 
 
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    public void OnTriggerEnter2D(Collider2D hitinfo)
     {
-        if(collision.gameObject.tag == "Player")
+        if (hitinfo.tag == "Player")
         {
-            playerHealth.TakeDamage(damage);
+           
+            StartCoroutine(FlashRed());
         }
     }
+
+    private void Update()
+    {
+        
+    }
+
+
 }
+
