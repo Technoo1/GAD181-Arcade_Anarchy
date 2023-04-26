@@ -28,6 +28,7 @@ TagManager:
   - Alien
   - Health Pickup
   - HSTimer
+  - Boundary
   layers:
   - Default
   - TransparentFX
