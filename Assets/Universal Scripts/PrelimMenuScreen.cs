@@ -66,9 +66,9 @@ public class PrelimMenuScreen : MonoBehaviour
     public void RevSpaceInvaders()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync("Reverse Space Invaders", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Player Selection", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("MenuScreen");
-        SaveSystem.loadedScene = "Reverse Space Invaders";
+        SaveSystem.loadedScene = "Player Selection";
     }
 
 
