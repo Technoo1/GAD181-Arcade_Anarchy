@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public enum TicketTier { None, One, Two, Three }
 public class ScoreManager : MonoBehaviour
@@ -40,6 +41,8 @@ public class ScoreManager : MonoBehaviour
 
         ticketText.text = Tickets.ToString();
 
+        
+
         if (SaveSystem.loadedScene == "GameOver")
         {
             addedTicketScoreText.gameObject.SetActive(true);
@@ -75,6 +78,7 @@ public class ScoreManager : MonoBehaviour
         switch (tier)
         {
             case TicketTier.None:
+                TierNone();
                 break;
             case TicketTier.One:
                 TierOne();
@@ -88,24 +92,30 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-
+    private void TierNone()
+    {
+        ticketsEarned = 0;
+        Tickets += ticketsEarned;
+        addedTicketScoreText.SetText(ticketsEarned.ToString());
+        Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);
+    }
     private void TierOne() 
     {
-        ticketsEarned = 50;
+        ticketsEarned = 5;
         Tickets += ticketsEarned;
         addedTicketScoreText.SetText(ticketsEarned.ToString());
         Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);
     }
     private void TierTwo()
     {
-        ticketsEarned = 75;
+        ticketsEarned = 10;
         Tickets += ticketsEarned;
         addedTicketScoreText.SetText(ticketsEarned.ToString());
         Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);
     }
     private void TierThree()
     {
-        ticketsEarned = 100;
+        ticketsEarned = 25;
         Tickets += ticketsEarned;
         addedTicketScoreText.SetText(ticketsEarned.ToString());
         Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);

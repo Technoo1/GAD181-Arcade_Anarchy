@@ -93,5 +93,13 @@ public class UIManager : MonoBehaviour
         ScoreManager.instance.TriggerTicketTier(tier);
 
     }
+
+    public void RestartButton()
+    {
+        SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
+        SceneManager.LoadSceneAsync(SaveSystem.loadedScene, LoadSceneMode.Additive);
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
 }
 
