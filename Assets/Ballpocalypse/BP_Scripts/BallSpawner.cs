@@ -9,7 +9,7 @@ public class BallSpawner : MonoBehaviour
     public float timeBeforeFirstSpawn = 0.5f;
     public float timeBeforeSpawn = 15f;
     public int ballCount;
-
+    
 
 
     // Start is called before the first frame update
@@ -40,9 +40,10 @@ public class BallSpawner : MonoBehaviour
         }
 
       if (largestBall)
-        {
+       {
             Instantiate(ballToSpawn);
-        }
+            
+       }
     }
 
 }

@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int potionRestore = 20;
 
+    private BP_Timer timer;
+    private GameObject timerGameObject;
     public HealthBar healthbar;
     
     public bool isPaused = false;
@@ -28,6 +30,9 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
+        timerGameObject = GameObject.Find("Timer");
+        timer = timerGameObject.GetComponent<BP_Timer>();
+        
     }
 
     void TakeDamage(int damage)
@@ -36,11 +41,29 @@ public class PlayerHealth : MonoBehaviour
 
         healthbar.SetHealth(currentHealth);
 
-        if(currentHealth <= 0)
+        if(currentHealth <= 0 && timer.timerCount > 0 && timer.timerCount <=30f)
         {
             Time.timeScale = 0f;
             isPaused = true;
-            TicketTier earned = TicketTier.Two; //sets the ticket tier to none by default
+            TicketTier earned = TicketTier.One;
+            EventManager.instance.TriggerGameOver(earned); //triggers game over event and changes scenes 
+            Destroy(gameObject);
+        }
+
+        if (currentHealth <= 0 && timer.timerCount >=31f && timer.timerCount <= 120f)
+        {
+            Time.timeScale = 0f;
+            isPaused = true;
+            TicketTier earned = TicketTier.Two;
+            EventManager.instance.TriggerGameOver(earned); //triggers game over event and changes scenes 
+            Destroy(gameObject);
+        }
+
+        if (currentHealth <= 0 && timer.timerCount >= 121f)
+        {
+            Time.timeScale = 0f;
+            isPaused = true;
+            TicketTier earned = TicketTier.Three;
             EventManager.instance.TriggerGameOver(earned); //triggers game over event and changes scenes 
             Destroy(gameObject);
         }
@@ -76,6 +99,7 @@ public class PlayerHealth : MonoBehaviour
                 Time.timeScale = 0f;
                 isPaused = true;
             }
+
         } 
     }
 
@@ -115,7 +139,6 @@ public class PlayerHealth : MonoBehaviour
         if (collision.tag == "Potion")   
         {
             RestoreHealth();
-            
         }
     } 
 

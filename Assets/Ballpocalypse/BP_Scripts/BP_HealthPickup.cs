@@ -14,5 +14,11 @@ public class BP_HealthPickup : MonoBehaviour
             Destroy(this.gameObject);
             
         }
+
+        if (collision.tag == "Bullet")
+        {
+            Destroy(this.gameObject);
+
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Bullet : MonoBehaviour
 {
@@ -38,6 +39,6 @@ public class Bullet : MonoBehaviour
     {
 
         Destroy(gameObject);
-           
+
     }
 }

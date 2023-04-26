@@ -174,6 +174,11 @@ public class BallScript : MonoBehaviour
                 gameObject.SetActive(false);
                 Destroy(gameObject);
             }
+
+            if (target.tag == "Potion")
+            {
+                Destroy(gameObject);
+            }
         }
 
 
