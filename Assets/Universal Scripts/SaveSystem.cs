@@ -7,7 +7,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public static class SaveSystem
 {
     public static int currentTickets;
-    public static string loadedScene;
+    public static string loadedScene = "MenuScreen";
 
     public static void SaveTickets (ScoreManager score)
     {
