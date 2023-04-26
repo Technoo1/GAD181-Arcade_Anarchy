@@ -14,7 +14,6 @@ public class WinCode : MonoBehaviour
             isDead = true;
             TicketTier earned = TicketTier.Two;
             EventManager.instance.TriggerGameOver(earned);
-            //SceneManager.LoadScene("MenuScreen");
         }
     }
 }
