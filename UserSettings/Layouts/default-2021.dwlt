@@ -21,7 +21,11 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title:
   m_RootView: {fileID: 6}
+<<<<<<< HEAD
   m_MinSize: {x: 875, y: 371}
+=======
+  m_MinSize: {x: 875, y: 300}
+>>>>>>> PrizeBranch
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 0
 --- !u!114 &2
@@ -272,7 +276,11 @@ MonoBehaviour:
   - {fileID: 15}
   - {fileID: 16}
   m_Selected: 0
+<<<<<<< HEAD
   m_LastSelected: 0
+=======
+  m_LastSelected: 1
+>>>>>>> PrizeBranch
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52

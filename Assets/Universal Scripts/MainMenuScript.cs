@@ -25,4 +25,12 @@ public class MainMenuScript : MonoBehaviour
     {
         SaveSystem.LoadTickets();
     }
+
+
+    public void QuitGameDelete()
+    {
+        Application.Quit();
+        Debug.Log("quit game (Deleted Data)");
+        SaveSystem.DeleteData();
+    }
 }
