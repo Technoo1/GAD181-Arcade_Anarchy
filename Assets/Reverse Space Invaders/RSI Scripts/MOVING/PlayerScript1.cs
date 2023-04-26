@@ -24,11 +24,6 @@ namespace ArcadeAnarchy
                 movement.x = Input.GetAxisRaw("Horizontal");
                 //Debug.Log("I'm still being pressed");
             }
-            else if (Input.GetKey(KeyCode.S))
-            {
-                movement.y = Input.GetAxisRaw("Vertical");
-                //Debug.Log("I'm still being pressed");
-            }
         }
 
         void FixedUpdate()
