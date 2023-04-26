@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Bullet : MonoBehaviour
 {
@@ -14,11 +15,6 @@ public class Bullet : MonoBehaviour
     public GameObject impactEffect;
     private Vector3 mousePos;
     private Camera mainCam;
-
-    public AudioSource bulletSource;
-
-    public AudioSource ballPop;
-    public AudioClip popClip;
 
 
 
@@ -35,7 +31,7 @@ public class Bullet : MonoBehaviour
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
 
-        bulletSource = GetComponent<AudioSource>();
+      
     }
 
 
@@ -44,34 +40,5 @@ public class Bullet : MonoBehaviour
 
         Destroy(gameObject);
 
-        if (hitInfo.tag == "Largest Ball")
-        {
-            ballPop.Play();
-            Debug.Log("ball popped");
-        }
-
-        if (hitInfo.tag == "Large Ball")
-        {
-            ballPop.Play();
-            Debug.Log("ball popped");
-
-        }
-        if (hitInfo.tag == "Medium Ball")
-        {
-            ballPop.Play();
-            Debug.Log("ball popped");
-        }
-
-        if (hitInfo.tag == "Small Ball")
-        {
-            ballPop.Play();
-            Debug.Log("ball popped");
-        }
-
-        if (hitInfo.tag == "Smallest Ball")
-        {
-            ballPop.Play();
-            Debug.Log("ball popped");
-        }
     }
 }
