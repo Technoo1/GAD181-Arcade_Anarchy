@@ -405,6 +405,8 @@ GameObject:
   - component: {fileID: 571214293}
   - component: {fileID: 571214292}
   - component: {fileID: 571214291}
+  - component: {fileID: 571214296}
+  - component: {fileID: 571214295}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -497,6 +499,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &571214295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571214290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2128952ae71806b4ba83bda7b7925e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  twoPlayer: 1
+  alienSide: 0
+  tankSide: 0
+--- !u!114 &571214296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571214290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4994bff7019af9643b131a25e9a9d978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
+  optionsMenu: {fileID: 0}
+  isPaused: 0
+  prizes: {fileID: 0}
+  prizeController: {fileID: 0}
 --- !u!1 &854678702
 GameObject:
   m_ObjectHideFlags: 0
