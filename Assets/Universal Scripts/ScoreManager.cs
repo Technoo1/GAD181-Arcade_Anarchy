@@ -75,6 +75,7 @@ public class ScoreManager : MonoBehaviour
         switch (tier)
         {
             case TicketTier.None:
+                TierNone();
                 break;
             case TicketTier.One:
                 TierOne();
@@ -88,7 +89,13 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-
+    private void TierNone()
+    {
+        ticketsEarned = 0;
+        Tickets += ticketsEarned;
+        addedTicketScoreText.SetText(ticketsEarned.ToString());
+        Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);
+    }
     private void TierOne() 
     {
         ticketsEarned = 5;
