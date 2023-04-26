@@ -214,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &253920327
 RectTransform:
   m_ObjectHideFlags: 0
@@ -476,7 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 418516386}
   itemName: Candy
-  cost: 1
+  cost: 30
   isPurchased: 0
 --- !u!114 &418516389
 MonoBehaviour:
@@ -695,7 +695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &465349633
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 795153689}
   itemName: Radio
-  cost: 1
+  cost: 60
   isPurchased: 0
 --- !u!114 &795153692
 MonoBehaviour:
@@ -1686,7 +1686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 897287807}
   itemName: Puzzle Cube
-  cost: 1
+  cost: 30
   isPurchased: 0
 --- !u!114 &897287810
 MonoBehaviour:
@@ -2108,7 +2108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 979487426}
   itemName: Kite
-  cost: 1
+  cost: 60
   isPurchased: 0
 --- !u!114 &979487429
 MonoBehaviour:
@@ -2808,7 +2808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1194254673}
   itemName: Spinning Top
-  cost: 1
+  cost: 30
   isPurchased: 0
 --- !u!114 &1194254676
 MonoBehaviour:
@@ -3254,7 +3254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1336520595}
   itemName: Epic Salmon
-  cost: 1
+  cost: 250
   isPurchased: 0
 --- !u!114 &1336520598
 MonoBehaviour:
@@ -3406,7 +3406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1338452366}
   itemName: Music Player
-  cost: 1
+  cost: 30
   isPurchased: 0
 --- !u!114 &1338452369
 MonoBehaviour:
@@ -3737,7 +3737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1405154989}
   itemName: Bouncy Balls
-  cost: 1
+  cost: 30
   isPurchased: 0
 --- !u!114 &1405154992
 MonoBehaviour:
@@ -3889,7 +3889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1476465925}
   itemName: Slinky
-  cost: 1
+  cost: 30
   isPurchased: 0
 --- !u!114 &1476465928
 MonoBehaviour:
@@ -4176,7 +4176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1532460910}
   itemName: Cool Sunglasses
-  cost: 1
+  cost: 30
   isPurchased: 0
 --- !u!114 &1532460913
 MonoBehaviour:
@@ -4598,7 +4598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1807994820}
   itemName: Propeller Hat
-  cost: 1
+  cost: 40
   isPurchased: 0
 --- !u!114 &1807994823
 MonoBehaviour:
@@ -4750,7 +4750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1856662798}
   itemName: Lava Lamp
-  cost: 1
+  cost: 40
   isPurchased: 0
 --- !u!114 &1856662801
 MonoBehaviour:
@@ -5466,7 +5466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2076494848}
   itemName: Teddy Bear
-  cost: 3
+  cost: 65
   isPurchased: 0
 --- !u!114 &2076494851
 MonoBehaviour:
