@@ -902,7 +902,6 @@ GameObject:
   m_Component:
   - component: {fileID: 534515358}
   - component: {fileID: 534515357}
-  - component: {fileID: 534515359}
   m_Layer: 0
   m_Name: ShootSound
   m_TagString: Untagged
@@ -1021,18 +1020,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &534515359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534515355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0052f0cbee4176247bda8b43ae4d64fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &543841970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,8 +1910,6 @@ GameObject:
   - component: {fileID: 2029444278}
   - component: {fileID: 2029444276}
   - component: {fileID: 2029444277}
-  - component: {fileID: 2029444281}
-  - component: {fileID: 2029444280}
   - component: {fileID: 2029444279}
   m_Layer: 6
   m_Name: Tank
@@ -2192,50 +2177,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2029444280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029444271}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8710dcd44f7207429dec4ff52a9e84e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointDestination:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  rb: {fileID: 0}
-  anim: {fileID: 0}
-  currentPoint: {fileID: 0}
-  speed: 2
-  point: {x: 0, y: 0}
---- !u!114 &2029444281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029444271}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0e33c7ff7c0fc4d81e2f292f06576b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goToRandPoints:
-  - {fileID: 1090878634}
-  - {fileID: 1232658127}
-  - {fileID: 1770715225}
-  - {fileID: 1243756439}
-  - {fileID: 50425495}
-  - {fileID: 1083972047}
-  - {fileID: 748811592}
-  destPoint: 0
-  moveSpeed: 1

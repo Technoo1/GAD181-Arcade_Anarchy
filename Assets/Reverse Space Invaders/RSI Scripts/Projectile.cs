@@ -6,11 +6,11 @@ public class Projectile : MonoBehaviour
     public Vector3 direction; 
     public float speed;
     public System.Action destroyed;
-    private ScreenShake cameraShake;
+    private RSI_ScreenShake cameraShake;
 
     private void Start()
     {
-        cameraShake = Camera.main.GetComponent<ScreenShake>();
+        cameraShake = Camera.main.GetComponent<RSI_ScreenShake>();
     }
     private void Update() // Generic code to generate projectiles.
     {

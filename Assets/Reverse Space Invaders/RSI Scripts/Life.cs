@@ -7,11 +7,11 @@ public class Life : MonoBehaviour
     public int life;
     public string tagHit = "Laser";
     public List<Color> randColors;
-    private ScreenShake cameraShake;
+    private RSI_ScreenShake cameraShake;
 
     private void Start()
     {
-        cameraShake = Camera.main.GetComponent<ScreenShake>();
+        cameraShake = Camera.main.GetComponent<RSI_ScreenShake>();
     }
 
     void Update()
