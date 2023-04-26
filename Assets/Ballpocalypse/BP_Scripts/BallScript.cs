@@ -12,6 +12,8 @@ public class BallScript : MonoBehaviour
 
     private Rigidbody2D myBody;
 
+    public GameObject ballToSpawn;
+
     [SerializeField]
     private bool moveLeft, moveRight;
 
@@ -40,7 +42,8 @@ public class BallScript : MonoBehaviour
 
      void Start()
     {
-        bulletSource = GetComponent<AudioSource>(); 
+        bulletSource = GetComponent<AudioSource>();
+        
     }
 
     void InstantiateBalls()

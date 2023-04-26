@@ -35,6 +35,15 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
 
         healthbar.SetHealth(currentHealth);
+
+        if(currentHealth <= 0)
+        {
+            Time.timeScale = 0f;
+            isPaused = true;
+            TicketTier earned = TicketTier.Two; //sets the ticket tier to none by default
+            EventManager.instance.TriggerGameOver(earned); //triggers game over event and changes scenes 
+            Destroy(gameObject);
+        }
     }
 
     // Makes the character flash red when hit.
@@ -66,14 +75,6 @@ public class PlayerHealth : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 isPaused = true;
-            }
-
-            if (currentHealth == 0)
-            {
-                Time.timeScale = 0f;                //game is paused
-                isPaused = true;                    //paused bool is true
-                TicketTier earned = TicketTier.None;//sets the ticket tier to none by default
-                EventManager.instance.TriggerGameOver(earned); //triggers game over event and changes scenes 
             }
         } 
     }
@@ -111,7 +112,7 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(FlashRed());
         }
 
-        if (collision.tag == "Health Pickup")   
+        if (collision.tag == "Potion")   
         {
             RestoreHealth();
             

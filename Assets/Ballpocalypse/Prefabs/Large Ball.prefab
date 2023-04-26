@@ -16,6 +16,10 @@ PrefabInstance:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5177763571411910300, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
+      propertyPath: bp_Timer
+      value: 
+      objectReference: {fileID: 7185050077672290831, guid: e8cef14ee343d9c47a62294256dbacfb, type: 3}
+    - target: {fileID: 5177763571411910300, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
       propertyPath: popSound
       value: 
       objectReference: {fileID: 8300000, guid: fbc5545016089924894ea1f807f2a84f, type: 3}
@@ -90,10 +94,6 @@ PrefabInstance:
     - target: {fileID: 5867112492093690929, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
       propertyPath: m_Name
       value: Large Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 5867112492093690929, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
-      propertyPath: m_Layer
-      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5867112492093690929, guid: e4e2231e5d6a26a4488391a209328ddd, type: 3}
       propertyPath: m_Layer
