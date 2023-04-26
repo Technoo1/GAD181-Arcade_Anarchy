@@ -46,7 +46,7 @@ namespace CentipedeBreakout
 
         //types of speed
         public bool fall;
-        public float centipedeHorizontalAngle = 0.1f;
+        public float centipedeHorizontalAngle = 1f;
         public float centipedeSpeedFall;
         public float centipedeSpeedRise;
         public float centipedeSpeedHorizontal;
@@ -525,7 +525,8 @@ namespace CentipedeBreakout
                 newHead.roof = roof;
                 newHead.leftWall = leftWall;
                 newHead.rightWall = rightWall;
-                newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
+
+                newHead.centipedeHorizontalAngle = -centipedeHorizontalAngle;
                 newHead.centipedeSpeedFall = centipedeSpeedFall;
                 newHead.centipedeSpeedRise = centipedeSpeedRise;
                 newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
@@ -604,7 +605,7 @@ namespace CentipedeBreakout
                 newHead.roof = roof;
                 newHead.leftWall = leftWall;
                 newHead.rightWall = rightWall;
-                newHead.centipedeHorizontalAngle = UnityEngine.Random.Range(-1f, 1f);
+                newHead.centipedeHorizontalAngle = -centipedeHorizontalAngle;
                 newHead.centipedeSpeedFall = centipedeSpeedFall;
                 newHead.centipedeSpeedRise = centipedeSpeedRise;
                 newHead.centipedeSpeedHorizontal = centipedeSpeedHorizontal;
