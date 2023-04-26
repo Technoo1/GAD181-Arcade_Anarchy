@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(true);
     }
 
-    public void MainMenu()
+    public void GameMenu()
     {
         SceneManager.LoadSceneAsync("MenuScreen", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
@@ -103,5 +103,7 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
+
+
 }
 
