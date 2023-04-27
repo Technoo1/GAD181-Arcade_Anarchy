@@ -20,12 +20,14 @@ public class ObstacleController : MonoBehaviour
     {    
         DistanceEvents.instance.OnThousandMeters += ThousandMeters; //subscribe function to event
         DistanceEvents.instance.OnFiveHundredMeters += FiveHundredMeters; //subscribe function to event
+        DistanceEvents.instance.OnThousandMeters += TwoThousandMeters;
     }
 
     private void OnDisable() //unsubscribes functions from event when scene is unloaded
     {
         DistanceEvents.instance.OnThousandMeters -= ThousandMeters;
         DistanceEvents.instance.OnFiveHundredMeters -= FiveHundredMeters;
+        DistanceEvents.instance.OnThousandMeters -= TwoThousandMeters;
     }
 
     void FiveHundredMeters()
@@ -35,8 +37,14 @@ public class ObstacleController : MonoBehaviour
     }
     void ThousandMeters()
     {
-        spawnTime = Random.Range(0.3f, 0.6f);   //even faster spawn rates
+        spawnTime = Random.Range(0.2f, 0.5f);   //even faster spawn rates
         tumbleweedSpawnTime = Random.Range(1f, 5f); //even faster tumbleweed spawn rates
+    }
+
+    void TwoThousandMeters()
+    {
+        spawnTime = Random.Range(0.1f, 0.3f);   //even faster spawn rates
+        tumbleweedSpawnTime = Random.Range(0.5f, 1f); //even faster tumbleweed spawn rates
     }
 
     void Update()
