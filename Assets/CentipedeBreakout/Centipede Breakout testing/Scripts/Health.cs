@@ -6,51 +6,60 @@ using System.Xml.Serialization;
 using ArcadeAnarchy;
 
 
-    public class Health : MonoBehaviour
+public class Health : MonoBehaviour
+{
+    public float secondsInvincible = 0;
+
+    //Add hearts in inspector
+    public List<GameObject> hearts;
+
+    public int heartsLeft = 3;
+    private float iFrames = 0;
+
+    public GameObject player;
+
+    private void Start()
     {
-        public float secondsInvincible = 0;
-
-        //Add hearts in inspector
-        public List<GameObject> hearts;
-
-        private int heartsLeft = 3;
-        private float iFrames = 0;
-
-
-        private void Start()
+        heartsLeft = 3;
+        if (secondsInvincible <=0)
         {
-            if (secondsInvincible <=0)
-            {
-                secondsInvincible = 1;
-            }
-
-            EventManager.instance.OnHeartLost += HeartLost;
+            secondsInvincible = 1;
         }
 
+        EventManager.instance.OnHeartLost += HeartLost;
+    }
 
-        private void Update()
+
+    private void Update()
+    {
+        iFrames += Time.deltaTime;
+    }
+
+    public void HeartLost()
+    {
+        if (iFrames < secondsInvincible)
         {
-            iFrames += Time.deltaTime;
+            return;
         }
 
-        public void HeartLost()
+        heartsLeft -= 1;
+
+        if (heartsLeft < 0)
         {
-            if(iFrames < secondsInvincible)
-            {
-                return;
-            }
-
-            heartsLeft -= 1;
-
-            if (heartsLeft < 0)
-            {
-                PointScorer.instance.CBGameOver();
-                //EventManager.instance.TriggerGameOver(earned);
-            }
-            else
-            {
-                hearts[heartsLeft].SetActive(false);
-                iFrames = 0;
-            }
+            Debug.Log("Why in fuck Am I triggering");
+            PointScorer.instance.CBGameOver();
+            //EventManager.instance.TriggerGameOver(earned);
+        }
+        else
+        {
+            hearts[heartsLeft].SetActive(false);
+            iFrames = 0;
         }
     }
+
+    public void OnDisable()
+    {
+        EventManager.instance.OnHeartLost -= HeartLost;
+    }
+
+}

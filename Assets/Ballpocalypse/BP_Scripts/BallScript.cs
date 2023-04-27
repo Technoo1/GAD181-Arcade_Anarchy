@@ -12,6 +12,8 @@ public class BallScript : MonoBehaviour
 
     private Rigidbody2D myBody;
 
+    public GameObject ballToSpawn;
+
     [SerializeField]
     private bool moveLeft, moveRight;
 
@@ -21,9 +23,12 @@ public class BallScript : MonoBehaviour
     private GameObject ball1, ball2;
     private BallScript ball1Script, ball2Script;
 
-    AudioSource bulletSource; 
+    AudioSource bulletSource;
 
-    // Start is called before the first frame update
+    private void OnDisable()
+    {
+        Destroy(gameObject);
+    }
     private void Awake()
     {
         SetBallSpeed();
@@ -31,13 +36,14 @@ public class BallScript : MonoBehaviour
     }
 
      void Update()
-    {
+     {
         MoveBall();
-    }
+     }
 
      void Start()
     {
-        bulletSource = GetComponent<AudioSource>(); 
+        bulletSource = GetComponent<AudioSource>();
+        
     }
 
     void InstantiateBalls()
@@ -161,11 +167,16 @@ public class BallScript : MonoBehaviour
             if(gameObject.tag != "Smallest Ball")
             {
                 InitializeBallsAndTurnOffCurrentBall();
-                Destroy(gameObject);
+                Destroy(gameObject); 
             }
             else
             {
                 gameObject.SetActive(false);
+                Destroy(gameObject);
+            }
+
+            if (target.tag == "Potion")
+            {
                 Destroy(gameObject);
             }
         }

@@ -20,7 +20,7 @@ public class Microgame : MonoBehaviour
         {
             GameObject enemy = Instantiate(enemyPrefab);
             Color c = enemyGradient.Evaluate(Random.Range(0f, 1f));
-            enemy.GetComponent<EnemyScript>().ChangeColor(c);
+            
             yield return new WaitForSeconds(timeBetweenSpawns);
 
         }

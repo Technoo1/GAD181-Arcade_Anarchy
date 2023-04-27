@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseShooting : MonoBehaviour
 {
 
-    private Camera mainCam;
+    public Camera mainCam;
     private Vector3 mousePos;
     public Transform bulletTransform;
     public Transform crouchFirePoint;
@@ -22,7 +22,7 @@ public class MouseShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+       
     }
 
     // Update is called once per frame

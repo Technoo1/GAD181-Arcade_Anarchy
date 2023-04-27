@@ -13,15 +13,25 @@ public class MainMenu : MonoBehaviour
         clickSource = GetComponent<AudioSource>();
         clickSource.PlayOneShot(clickSound);
         PlayerManager.instance.twoPlayer = false;
-        SceneManager.LoadScene("Reverse Space Invaders", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Reverse Space Invaders", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("Player Selection");
+        SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
+        SaveSystem.loadedScene = ("Reverse Space Invaders");
+        Debug.Log("Code is being triggered.");
     }
     public void PlayGame2Player()
     {
         clickSource = GetComponent<AudioSource>();
         clickSource.PlayOneShot(clickSound);
         PlayerManager.instance.twoPlayer = true;
-        SceneManager.LoadScene("Reverse Space Invaders", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Reverse Space Invaders", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("Player Selection");
+        SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
+        SaveSystem.loadedScene = ("Reverse Space Invaders");
+    }
+
+    public void DebugFunc()
+    {
+        Debug.Log("uhhhh");
     }
 }

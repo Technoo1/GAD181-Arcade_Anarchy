@@ -3,16 +3,71 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int playerHearts = 4;
-    public List<GameObject> hearts;
-    public bool isPaused = false;
+    public int currentHealth;
+    public int maxHealth = 100;
+    public int potionRestore = 20;
 
+    private BP_Timer timer;
+    private GameObject timerGameObject;
+    public HealthBar healthbar;
+    
+    public bool isPaused = false;
     public bool isDead = false;
 
     public SpriteRenderer sprite;
+
+    void RestoreHealth()
+    {
+        healthbar.SetHealth(currentHealth + potionRestore);
+        currentHealth += potionRestore;
+    }
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+        healthbar.SetMaxHealth(maxHealth);
+        timerGameObject = GameObject.Find("Timer");
+        timer = timerGameObject.GetComponent<BP_Timer>();
+        
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        healthbar.SetHealth(currentHealth);
+
+        if(currentHealth <= 0 && timer.timerCount > 0 && timer.timerCount <=30f)
+        {
+            Time.timeScale = 0f;
+            isPaused = true;
+            TicketTier earned = TicketTier.One;
+            EventManager.instance.TriggerGameOver(earned); //triggers game over event and changes scenes 
+            Destroy(gameObject);
+        }
+
+        if (currentHealth <= 0 && timer.timerCount >=31f && timer.timerCount <= 120f)
+        {
+            Time.timeScale = 0f;
+            isPaused = true;
+            TicketTier earned = TicketTier.Two;
+            EventManager.instance.TriggerGameOver(earned); //triggers game over event and changes scenes 
+            Destroy(gameObject);
+        }
+
+        if (currentHealth <= 0 && timer.timerCount >= 121f)
+        {
+            Time.timeScale = 0f;
+            isPaused = true;
+            TicketTier earned = TicketTier.Three;
+            EventManager.instance.TriggerGameOver(earned); //triggers game over event and changes scenes 
+            Destroy(gameObject);
+        }
+    }
 
     // Makes the character flash red when hit.
     public IEnumerator FlashRed()
@@ -29,39 +84,10 @@ public class PlayerHealth : MonoBehaviour
         sprite.color = Color.white;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-   
-
-    void Update()
-    {
-        if (playerHearts == 3)
+        void Update()
         {
-            hearts[2].SetActive(false);
-        }
-        else if (playerHearts == 2)
-        {
-            hearts[1].SetActive(false);
-            StartCoroutine(FlashRedHeart());
-        }
-        else if (playerHearts <= 1 && !isDead)
-        {
-            hearts[0].SetActive(false);
-            Time.timeScale = 0f;
-            isPaused = true;
-            TicketTier earned = TicketTier.Two;
-            EventManager.instance.TriggerGameOver(earned);
-            isDead = true;
-            Debug.Log("Loaded gameOver from " + name);
-            
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
+        
+        if (Input.GetKeyDown(KeyCode.P)) // Pauses & Unpauses the game if P is pressed
         {
             if (isPaused)
             {
@@ -73,6 +99,7 @@ public class PlayerHealth : MonoBehaviour
                 Time.timeScale = 0f;
                 isPaused = true;
             }
+
         } 
     }
 
@@ -81,32 +108,37 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.tag == "Largest Ball")
         {
-            playerHearts -= 1;
+            TakeDamage(25);
             StartCoroutine(FlashRed());
         }
 
         if (collision.tag == "Large Ball")
         {
-            playerHearts -= 1;
+            TakeDamage(20);
             StartCoroutine(FlashRed());
         }
 
         if (collision.tag == "Medium Ball")
         {
-            playerHearts -= 1;
+            TakeDamage(15);
             StartCoroutine(FlashRed());
         }
 
         if (collision.tag == "Small Ball")
         {
-            playerHearts -= 1;
+            TakeDamage(10);
             StartCoroutine(FlashRed());
         }
 
         if (collision.tag == "Smallest Ball")
         {
-            playerHearts -= 1;
+            TakeDamage(5);
             StartCoroutine(FlashRed());
+        }
+
+        if (collision.tag == "Potion")   
+        {
+            RestoreHealth();
         }
     } 
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using ArcadeAnarchy;
 
 public class AlienManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class AlienManager : MonoBehaviour
     public int rows = 3;
     public int columns = 9;
     public int deadAliens;
-    // public AnimationCurve speed;
+    private bool isDead;
 
     public int amountkilled {get; private set;}
     public int totalAliens => this.rows * this.columns;
@@ -73,9 +74,13 @@ public class AlienManager : MonoBehaviour
                 AdvanceRow();
             }
         }
-        if (deadAliens >= totalAliens)
+        if (deadAliens >= totalAliens && !isDead)
         {
-            SceneManager.LoadScene("MenuScreen"); // Goes to Main Menu if all aliens are dead.
+            isDead = true;
+            TicketTier earned = TicketTier.None;
+            EventManager.instance.TriggerGameOver(earned);
+
+            //SceneManager.LoadScene("MenuScreen"); // Goes to Main Menu if all aliens are dead.
         }
     }
 

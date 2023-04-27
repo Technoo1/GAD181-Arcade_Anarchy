@@ -78,37 +78,48 @@ public class ScoreManager : MonoBehaviour
         switch (tier)
         {
             case TicketTier.None:
+                UIAudioManager.instance.PlaySound("GameOver");
+                TierNone();
                 break;
             case TicketTier.One:
+                UIAudioManager.instance.PlaySound("GameOver");
                 TierOne();
                 break;
             case TicketTier.Two:
+                UIAudioManager.instance.PlaySound("GameOver");
                 TierTwo();
                 break;
             case TicketTier.Three:
+                UIAudioManager.instance.PlaySound("GameOver");
                 TierThree();
                 break;
         }
     }
 
-
+    private void TierNone()
+    {
+        ticketsEarned = 0;
+        Tickets += ticketsEarned;
+        addedTicketScoreText.SetText(ticketsEarned.ToString());
+        Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);
+    }
     private void TierOne() 
     {
-        ticketsEarned = 50;
+        ticketsEarned = 5;
         Tickets += ticketsEarned;
         addedTicketScoreText.SetText(ticketsEarned.ToString());
         Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);
     }
     private void TierTwo()
     {
-        ticketsEarned = 75;
+        ticketsEarned = 10;
         Tickets += ticketsEarned;
         addedTicketScoreText.SetText(ticketsEarned.ToString());
         Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);
     }
     private void TierThree()
     {
-        ticketsEarned = 100;
+        ticketsEarned = 25;
         Tickets += ticketsEarned;
         addedTicketScoreText.SetText(ticketsEarned.ToString());
         Debug.Log("tickets changed: " + Tickets + " save game tickets: " + SaveSystem.currentTickets);

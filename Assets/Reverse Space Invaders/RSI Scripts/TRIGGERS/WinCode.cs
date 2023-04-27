@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using ArcadeAnarchy;
 
 public class WinCode : MonoBehaviour
 {
+    private bool isDead;
     private void OnTriggerEnter2D(Collider2D Object)
     {
-        if (Object.CompareTag("Alien"))
+        if (Object.CompareTag("Alien") && !isDead)
         {
-            SceneManager.LoadScene("MenuScreen");
+            isDead = true;
+            TicketTier earned = TicketTier.Two;
+            EventManager.instance.TriggerGameOver(earned);
         }
     }
 }

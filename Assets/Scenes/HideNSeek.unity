@@ -709,7 +709,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
-  m_sharedMaterial: {fileID: -7735338623210356931, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
+  m_sharedMaterial: {fileID: 4225862716910594172, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -772,7 +772,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &154778957
@@ -1891,7 +1891,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
-  m_sharedMaterial: {fileID: -7735338623210356931, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
+  m_sharedMaterial: {fileID: 4225862716910594172, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &387059322
@@ -3004,7 +3004,7 @@ MonoBehaviour:
   m_text: Mission Complete
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
-  m_sharedMaterial: {fileID: -7735338623210356931, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
+  m_sharedMaterial: {fileID: 4225862716910594172, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3067,7 +3067,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &635134820
@@ -3885,7 +3885,7 @@ MonoBehaviour:
   m_text: Hide 'n' Seek
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
-  m_sharedMaterial: {fileID: -7735338623210356931, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
+  m_sharedMaterial: {fileID: 4225862716910594172, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6984,7 +6984,7 @@ MonoBehaviour:
   m_text: Hide 'n' Seek
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
-  m_sharedMaterial: {fileID: -7735338623210356931, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
+  m_sharedMaterial: {fileID: 4225862716910594172, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7047,7 +7047,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1566802465
@@ -7793,7 +7793,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
-  m_sharedMaterial: {fileID: -7735338623210356931, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
+  m_sharedMaterial: {fileID: 4225862716910594172, guid: 92abcaba2edda4140a4c0f75fa26ec4b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7856,7 +7856,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1708923124

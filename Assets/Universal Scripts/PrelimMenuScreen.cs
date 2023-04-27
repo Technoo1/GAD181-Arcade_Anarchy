@@ -26,8 +26,19 @@ public class PrelimMenuScreen : MonoBehaviour
         }
         uiSceneLoaded = true;
     }
-
+    private void Update()
+    {
+        if (SceneManager.GetSceneByName("MenuScreen").isLoaded)
+        {
+            SaveSystem.loadedScene = "MenuScreen";
+        }
+    }
     public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        SaveSystem.loadedScene = "MainMenu";
+    }
+    public void GameMenu()
     {
         SceneManager.LoadSceneAsync("MenuScreen", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
@@ -66,10 +77,11 @@ public class PrelimMenuScreen : MonoBehaviour
     public void RevSpaceInvaders()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync("Reverse Space Invaders", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Player Selection", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync("MenuScreen");
-        SaveSystem.loadedScene = "Reverse Space Invaders";
+        SaveSystem.loadedScene = "Player Selection";
     }
+
 
 
     public void QuitGameSave()

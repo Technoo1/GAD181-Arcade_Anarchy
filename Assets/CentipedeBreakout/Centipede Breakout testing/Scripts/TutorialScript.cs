@@ -19,7 +19,7 @@ public class TutorialScript : MonoBehaviour
     public GameObject TutorialParent;
     public GameObject GameUI;
 
-    private bool walkActive, shootActive, swordActive;
+    private bool walkActive = false, shootActive = false, swordActive = false;
 
     void Start()
     {
@@ -45,37 +45,50 @@ public class TutorialScript : MonoBehaviour
             //}
         }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            TutorialComponents[1].SetActive(false);
-            walkActive = true;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            TutorialComponents[1].SetActive(false);
-            walkActive = true;
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            TutorialComponents[1].SetActive(false);
-            walkActive = true;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            TutorialComponents[1].SetActive(false);
-            walkActive = true;
+        if (walkActive == false) {
+            if (Input.GetKey(KeyCode.D))
+            {
+                CBAudioManager.instance.PlaySound("Bloop");
+                TutorialComponents[1].SetActive(false);
+                walkActive = true;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                CBAudioManager.instance.PlaySound("Bloop");
+                TutorialComponents[1].SetActive(false);
+                walkActive = true;
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                CBAudioManager.instance.PlaySound("Bloop");
+                TutorialComponents[1].SetActive(false);
+                walkActive = true;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                CBAudioManager.instance.PlaySound("Bloop");
+                TutorialComponents[1].SetActive(false);
+                walkActive = true;
+            }
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (shootActive == false)
         {
-            TutorialComponents[2].SetActive(false);
-            shootActive = true;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                CBAudioManager.instance.PlaySound("Bloop");
+                TutorialComponents[2].SetActive(false);
+                shootActive = true;
+            }
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            TutorialComponents[0].SetActive(false);
-            swordActive = true;
+        if (swordActive == false) {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                CBAudioManager.instance.PlaySound("Bloop");
+                TutorialComponents[0].SetActive(false);
+                swordActive = true;
+            }
         }
 
     }
