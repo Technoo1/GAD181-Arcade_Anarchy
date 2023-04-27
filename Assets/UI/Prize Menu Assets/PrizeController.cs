@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PrizeController : MonoBehaviour
 {
+    public int Tickets { get { return SaveSystem.currentTickets; } set { SaveSystem.currentTickets = value; } }
     public Image image;
 
     public string itemName;
@@ -57,7 +58,7 @@ public class PrizeController : MonoBehaviour
     }
     public void OnItemClicked()
     {
-        if (!isPurchased)
+        if (!isPurchased && cost <= Tickets)
         {
             Debug.Log("pressed");
             image.color = Color.white;
