@@ -10,7 +10,7 @@ public class MainMenuScript : MonoBehaviour
     public void MainMenuScene()
     {
         SceneManager.LoadScene("MenuScreen");
-        //SceneManager.UnloadSceneAsync("MainMenu");
+        SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
         SaveSystem.loadedScene = "MenuScreen";
         Time.timeScale = 1f;
     }
