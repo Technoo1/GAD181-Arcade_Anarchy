@@ -33,4 +33,10 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("quit game (Deleted Data)");
         SaveSystem.DeleteData();
     }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+        SaveSystem.loadedScene = "Credits";
+    }
 }
