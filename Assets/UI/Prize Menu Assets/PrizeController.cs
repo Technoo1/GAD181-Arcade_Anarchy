@@ -15,6 +15,8 @@ public class PrizeController : MonoBehaviour
     private GameObject canvas;
     private ScoreManager scoreManager;
 
+    private UIAudioManager uiAudio;
+    private GameObject uiAudioGameObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,9 @@ public class PrizeController : MonoBehaviour
         }
 
         Debug.Log("Item: " + itemName + ", isPurchased: " + isPurchased);
+
+        uiAudioGameObject = GameObject.Find("UIAudioManager");
+        uiAudio = uiAudioGameObject.GetComponent<UIAudioManager>();
     }
 
     // Update is called once per frame
@@ -49,7 +54,10 @@ public class PrizeController : MonoBehaviour
         }
 
         UpdateUI();
-        
+        //if (Input.GetKeyDown(KeyCode.K))     this is just for testing purposes
+        //{
+        //    SaveSystem.currentTickets += 450;
+        //}
     }
     public void ResetPrizeItem()
     {
@@ -66,6 +74,15 @@ public class PrizeController : MonoBehaviour
             isPurchased = true;
 
             SaveSystem.currentTickets -= cost;
+            if (GameObject.Find("EpicSalmon"))
+            {
+                uiAudio.PlaySound("EpicSalmon");
+            }
+            else
+            {
+                uiAudio.PlaySound("ItemBought");
+            }
+
         }
 
     }
