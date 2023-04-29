@@ -74,15 +74,21 @@ public class PrizeController : MonoBehaviour
             isPurchased = true;
 
             SaveSystem.currentTickets -= cost;
-            if (GameObject.Find("EpicSalmon"))
-            {
-                uiAudio.PlaySound("EpicSalmon");
-            }
-            else
-            {
-                uiAudio.PlaySound("ItemBought");
-            }
+            uiAudio.PlaySound("ItemBought");
+        }
 
+    }
+    public void OnItemClickedSalmon()
+    {
+        if (!isPurchased && cost <= Tickets)
+        {
+            Debug.Log("pressed");
+            image.color = Color.white;
+            PlayerPrefs.SetInt(itemName, 1);
+            isPurchased = true;
+
+            SaveSystem.currentTickets -= cost;
+            uiAudio.PlaySound("EpicSalmon");
         }
 
     }
