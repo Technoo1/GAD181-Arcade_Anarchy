@@ -24,6 +24,7 @@ public class UIAudioManager : MonoBehaviour
     //Invoke using UIAudioManager.instance.PlaySound("file name")
     public void PlaySound(string name)
     {
+        
         AudioClip audio = Resources.Load<AudioClip>(name);                     //file full of potential audio to play
 
         //play the sound attached to an object (speaker) in 3D space
