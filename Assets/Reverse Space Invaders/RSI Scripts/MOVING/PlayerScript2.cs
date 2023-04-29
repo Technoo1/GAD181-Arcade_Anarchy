@@ -30,13 +30,11 @@ public class PlayerScript2 : MonoBehaviour
             movement.x = 0f;
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                movement.x--;
-                //movement.x = Input.GetAxisRaw("Horizontal");
+                movement.x = Input.GetAxisRaw("Horizontal");
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                movement.x++;
-                //movement.x = Input.GetAxisRaw("Horizontal");
+                movement.x = Input.GetAxisRaw("Horizontal");
             }
 
             // Tank Shooting code
