@@ -10,15 +10,12 @@ namespace ArcadeAnarchy
         public float moveSpeed = 5f; // Public float to determine speed.
         Vector2 movement; 
 
-
-
         void Update()
         {
-            
             movement.x = 0f;
 
             // TWO PLAYERS
-            if (PlayerManager.instance.twoPlayer == true) // If Two player selected then player can control tank.
+            if (PlayerManager.instance.twoPlayer == true) // If Two players only WASD controls for Aliens.
             { 
                 if (Input.GetKey(KeyCode.A))
                 {
@@ -33,8 +30,9 @@ namespace ArcadeAnarchy
                     //Debug.Log("I'm still being pressed");
                 }
             }
+            
             // SINGLE PLAYER
-            else if (PlayerManager.instance.twoPlayer == false) // If One player selected then ai controls tank.
+            else if (PlayerManager.instance.twoPlayer == false) // If single player then WASD controls and arrows for Aliens.
             {
                 movement.x = 0f;
                 if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
