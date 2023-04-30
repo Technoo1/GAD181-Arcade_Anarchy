@@ -2,7 +2,6 @@ using CentipedeBreakout;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CentipedeBreakout;
 
 namespace CentipedeBreakout
 {

@@ -12,8 +12,12 @@ public class PrelimMenuScreen : MonoBehaviour
     {
         if (!uiSceneLoaded)
         {
-            StartCoroutine(LoadUISceneAsync());
+            //StartCoroutine(LoadUISceneAsync());
             SaveSystem.loadedScene = "MenuScene";
+        }
+        if (!SceneManager.GetSceneByName("UI Scene").isLoaded)
+        {
+            SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
         }
     }
 
@@ -26,8 +30,19 @@ public class PrelimMenuScreen : MonoBehaviour
         }
         uiSceneLoaded = true;
     }
-
+    private void Update()
+    {
+        if (SceneManager.GetSceneByName("MenuScreen").isLoaded)
+        {
+            SaveSystem.loadedScene = "MenuScreen";
+        }
+    }
     public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        SaveSystem.loadedScene = "MainMenu";
+    }
+    public void GameMenu()
     {
         SceneManager.LoadSceneAsync("MenuScreen", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
@@ -70,6 +85,7 @@ public class PrelimMenuScreen : MonoBehaviour
         SceneManager.UnloadSceneAsync("MenuScreen");
         SaveSystem.loadedScene = "Player Selection";
     }
+
 
 
     public void QuitGameSave()

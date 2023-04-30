@@ -1,6 +1,8 @@
 using ArcadeAnarchy;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,6 +19,11 @@ public class HSCountdown : MonoBehaviour
     public GameObject ingameScr;
     public GameObject missionCompleteScr;
 
+    public bool isGameOver;
+
+    public GameObject Player;
+    public GameObject missionFailScr;
+
     void Start()
     {
         timerIsRunning = true; //run countdown once active
@@ -29,21 +36,41 @@ public class HSCountdown : MonoBehaviour
             if (timerCount > 0)
             {
                 timerCount -= Time.deltaTime; //run down the numbers
-                if (timerCount < 5)
+                if (timerCount < 6)
                 {
+                    GetComponent<Animator>().enabled = true; //plays the animation that flashes from yellow to red. this somehow breaks audio playback without a boolean to support it
+                    //fiveSecsRemain.Play();
                     PlayAudio();
+                }
+                else
+                {
+                    GetComponent<Animator>().enabled = false; //disable the flashing effect
+                    GetComponent<TextMeshProUGUI>().color = new Color(255,221,0); //resets the timer colour if beyond 5 seconds on the timer
+                    alreadyPlayed = false;
                 }
             }
             else
             {
-                timerCount = 0; //once the timer reaches zero...
-                timerIsRunning = false; //... stop the timer
-                //ingameScr.SetActive(false); //disable the ingame UI (this breaks the coroutine in here obviously, find a solution?)
-                missionCompleteScr.SetActive(true); //show the "mission complete" UI
-                //ingameScr.GetComponent<AudioSource>().volume = 0.1f; //drop the ingame music to 50% volume
-                ingameScr.GetComponent<AudioSource>().pitch = 1.0f;
-                Time.timeScale = 0; //effectively pauses the game, minus audio
-                StartCoroutine(GameOverScreen());
+                if (HSIntelScore.playerIntel > 0)
+                {
+                    timerCount = 0; //once the timer reaches zero...
+                    timerIsRunning = false; //... stop the timer
+                    missionCompleteScr.SetActive(true); //show the "mission complete" UI
+                    ingameScr.GetComponent<AudioSource>().pitch = 1.0f;
+                    Time.timeScale = 0; //effectively pauses the game, minus audio
+                    StartCoroutine(GameOverScreen());
+                    Player.GetComponent<HSPlayerControls>().enabled = false; //disables the player controller, preventing move spam during mission completion screen
+                }
+                else
+                {
+                    timerCount = 0; //once the timer reaches zero...
+                    timerIsRunning = false; //... stop the timer
+                    missionFailScr.SetActive(true); //show the "mission complete" UI
+                    ingameScr.GetComponent<AudioSource>().pitch = 0.5f;
+                    Time.timeScale = 0; //effectively pauses the game, minus audio
+                    StartCoroutine(GameOverScreen());
+                    Player.GetComponent<HSPlayerControls>().enabled = false; //disables the player controller, preventing move spam during mission completion screen
+                }
             }
         }
         DisplayTime(timerCount);
@@ -73,12 +100,41 @@ public class HSCountdown : MonoBehaviour
     }
 
     IEnumerator GameOverScreen()
-    {
-        TicketTier earned = TicketTier.Two;
-
-        Debug.Log("time's up! great living color song btw ;)");
-        yield return new WaitForSecondsRealtime(5f); //delay before displaying the game over scene
-        EventManager.instance.TriggerGameOver(earned); //game over screen
+    {                
+        if (!isGameOver)
+        {
+            if (HSIntelScore.playerIntel > 0)
+            {
+                if (HSIntelScore.playerIntel >= 1 && HSIntelScore.playerIntel <= 5)
+                {
+                    isGameOver = true;
+                    Debug.Log("time's up! player got x tickets. great living color song btw ;)"); //should be a simple reward, like 1 ticket
+                    yield return new WaitForSecondsRealtime(5f); //delay before displaying the game over scene
+                    EventManager.instance.TriggerGameOver(TicketTier.One); //game over screen
+                }
+                else if (HSIntelScore.playerIntel >= 6 && HSIntelScore.playerIntel <= 20)
+                {
+                    isGameOver = true;
+                    Debug.Log("time's up! player got double tickets. great living color song btw ;)"); //should be exponentially more than tier 1 payout
+                    yield return new WaitForSecondsRealtime(5f); //delay before displaying the game over scene
+                    EventManager.instance.TriggerGameOver(TicketTier.Two); //game over screen
+                }
+                else if (HSIntelScore.playerIntel >= 21)
+                {
+                    isGameOver = true;
+                    Debug.Log("time's up! player got quadruple tickets. great living color song btw ;)"); //should be exponentially more than tier 2 payout
+                    yield return new WaitForSecondsRealtime(5f); //delay before displaying the game over scene
+                    EventManager.instance.TriggerGameOver(TicketTier.Three); //game over screen
+                }
+            }
+            else
+            {
+                isGameOver = true;
+                Debug.Log("time's up! player got NO tickets. great living color song btw ;)");
+                yield return new WaitForSecondsRealtime(5f); //delay before displaying the game over scene
+                EventManager.instance.TriggerGameOver(TicketTier.None); //game over screen
+            }
+        }
 
         //either delete timer and assign a keypress to if statement, to return to start game UI menu...
         //or return to start menu INSTEAD of the main menu scene

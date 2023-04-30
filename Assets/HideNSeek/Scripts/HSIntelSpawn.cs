@@ -1,8 +1,4 @@
-using ArcadeAnarchy;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using Unity.VisualScripting;
 using UnityEngine;
 
 //wait x seconds to spawn Intel in scene
@@ -38,15 +34,4 @@ public class HSIntelSpawn : MonoBehaviour
             yield return new WaitForSeconds(timeBeforeSpawn);
         }
     }
-
-    //event trigger relating to game start (scene change?) which starts SpawnGuard coroutine
-    //test trigger with a key press, use g for guard lol
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.G))
-    //    {
-    //        StartCoroutine(SpawnGuard());
-    //        Debug.Log("SpawnGuard coroutine has started");
-    //    }
-    //}
 }

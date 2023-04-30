@@ -43,11 +43,13 @@ public class UIManager : MonoBehaviour
         {
             if (pauseMenu.activeSelf)
             {
+                UIAudioManager.instance.PlaySound("Pause");
                 Resume();
                 optionsMenu.SetActive(false);
             }
             else
             {
+                UIAudioManager.instance.PlaySound("Pause");
                 Pause();
             }
         }
@@ -69,7 +71,7 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(true);
     }
 
-    public void MainMenu()
+    public void GameMenu()
     {
         SceneManager.LoadSceneAsync("MenuScreen", LoadSceneMode.Additive);
         SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
@@ -93,5 +95,15 @@ public class UIManager : MonoBehaviour
         ScoreManager.instance.TriggerTicketTier(tier);
 
     }
+
+    public void RestartButton()
+    {
+        SceneManager.UnloadSceneAsync(SaveSystem.loadedScene);
+        SceneManager.LoadSceneAsync(SaveSystem.loadedScene, LoadSceneMode.Additive);
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+
 }
 

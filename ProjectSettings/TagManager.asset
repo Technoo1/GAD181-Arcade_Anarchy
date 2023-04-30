@@ -28,6 +28,8 @@ TagManager:
   - Alien
   - Health Pickup
   - HSTimer
+  - Boundary
+  - Potion
   layers:
   - Default
   - TransparentFX

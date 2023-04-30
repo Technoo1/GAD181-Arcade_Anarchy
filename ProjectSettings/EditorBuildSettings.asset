@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: fe91d7418c2136246bff7e99a15b1d0c
+  - enabled: 1
     path: Assets/Scenes/MenuScreen.unity
     guid: 57e030ca44ee3334f8401a5e68bdede1
   - enabled: 1
-    path: Assets/Reverse Space Invaders/RSI Scenes/Player Selection.unity
-    guid: 72f1f0b493ed86f48b70bd4ef73de0a0
-  - enabled: 1
     path: Assets/Scenes/Reverse Space Invaders.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Reverse Space Invaders/RSI Scenes/Player Selection.unity
+    guid: 72f1f0b493ed86f48b70bd4ef73de0a0
   - enabled: 1
     path: Assets/Scenes/UI Scene.unity
     guid: a9a2d383899bb9c48b916225039d78fb
@@ -36,6 +39,6 @@ EditorBuildSettings:
     path: Assets/Scenes/PrizeMenu.unity
     guid: 5ae1c7f560a93ff478adbb2e104cb667
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: fe91d7418c2136246bff7e99a15b1d0c
+    path: Assets/Scenes/Credits.unity
+    guid: 4cc43a412eb6b08499f7a1077344d237
   m_configObjects: {}

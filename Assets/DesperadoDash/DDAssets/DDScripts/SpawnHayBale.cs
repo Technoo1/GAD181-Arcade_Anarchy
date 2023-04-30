@@ -22,7 +22,7 @@ public class SpawnHayBale : MonoBehaviour
     public IEnumerator HayBaleSpawn()
     {
         isSpawn = true;                                                             //makes sure another doesnt spawn at the same time
-        spawnTime = Random.Range(5f, 7f);                                           //sets random spawn time
+        spawnTime = Random.Range(15f, 25f);                                           //sets random spawn time
         Transform randomTransform = spawnLanes[Random.Range(0, spawnLanes.Count)];  //picks a random lane
         yield return new WaitForSeconds(spawnTime);                                 //waits for the spawn time that was set
         Instantiate(hayBale, randomTransform.position, randomTransform.rotation);   //instantiates a hay bale in the position and rotation of the lane
