@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 591aef2e876a84649ab075a4422f1787
+guid: e083d97eb9a7c8c42a84fbc9d404b8d7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,64 +105,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Alien 01_0
+      name: Tank sprite 1_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 40
-        width: 130
-        height: 160
+        x: 84
+        y: 14
+        width: 210
+        height: 196
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 459bdc5839076af4ab2a27afadce4c71
-      internalID: -1565508921
+      spriteID: cab1451c5b36b9045a98eb90f6029046
+      internalID: 511470207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alien 01_1
+      name: Tank sprite 1_1
       rect:
         serializedVersion: 2
-        x: 170
-        y: 40
-        width: 130
-        height: 160
+        x: 336
+        y: 14
+        width: 210
+        height: 196
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e21a9f1fe5d4b064c92d008867c703f3
-      internalID: 1974123794
+      spriteID: e43413e6ebf3c3c47a204c110e4a1dbb
+      internalID: 1961632931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alien 01_2
+      name: Tank sprite 1_2
       rect:
         serializedVersion: 2
-        x: 330
-        y: 40
-        width: 150
-        height: 140
-      alignment: 9
-      pivot: {x: 0.5, y: 0.58}
+        x: 588
+        y: 14
+        width: 210
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e34b695b254b8a4eb9adcfb1f1360b5
-      internalID: 861743361
+      spriteID: 3fc61027f68f24f4dbf87888ff36365b
+      internalID: -1485225250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tank sprite 1_3
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 14
+        width: 210
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766658eea2788b84a81408582f22f259
+      internalID: 18460441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tank sprite 1_4
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 14
+        width: 210
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24fb7bab1c67474d8b4330d32eb3c1b
+      internalID: 1232423915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tank sprite 1_5
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 14
+        width: 210
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21d183cd6d28a7499404f7d8707e98e
+      internalID: -1592850134
       vertices: []
       indices: 
       edges: []
@@ -178,9 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Alien 01_1: 1974123794
-      Alien 01_0: -1565508921
-      Alien 01_2: 861743361
+      Tank sprite 1_0: 511470207
+      Tank sprite 1_2: -1485225250
+      Tank sprite 1_1: 1961632931
+      Tank sprite 1_5: -1592850134
+      Tank sprite 1_3: 18460441
+      Tank sprite 1_4: 1232423915
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
