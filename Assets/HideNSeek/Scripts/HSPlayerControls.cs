@@ -1,12 +1,7 @@
 using ArcadeAnarchy;
-using JetBrains.Annotations;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 //key press to peek DONE
 //different key press to hide DONE
@@ -17,12 +12,12 @@ using UnityEngine.SceneManagement;
 
 public class HSPlayerControls : MonoBehaviour
 {
-    public Sprite playerPeek; //variable to place the peeking char sprite
-    public Sprite playerHide; //variable to place the hiding char sprite
+    //public Sprite playerPeek; //variable to place the peeking char sprite. DEPRECTED. Used when I didn't have animations set up
+    //public Sprite playerHide; //variable to place the hiding char sprite. DEPRECTED. Used when I didn't have animations set up
 
     public GameObject intelSpawner1; //define parent(s) of intel that spawns in, so that we can trigger more spawns
-    public GameObject intelSpawner2;
-    public GameObject intelSpawner3;
+    //public GameObject intelSpawner2;
+    //public GameObject intelSpawner3;
 
     public GameObject Spawns; //spawn point parent object
     public GameObject ingameScreen; //ingame ui object(s)
@@ -41,6 +36,10 @@ public class HSPlayerControls : MonoBehaviour
     public GameObject ingameScr;
 
     private bool isDead = false;
+
+    public Animator playerAnim; //reference to player animator
+    public bool isPeeking = false; //determines whether a player can get caught and/or collect intel
+
     void Awake()
     {
         HSIntelScore.playerIntel = 0; //resets intel score to 0 each new game
@@ -51,24 +50,28 @@ public class HSPlayerControls : MonoBehaviour
         GameObject guardFacing;
         guardFacing = GameObject.FindWithTag("GuardFront"); //search for any guards facing the player
 
-        bool playerIsPeeking = gameObject.GetComponent<SpriteRenderer>().sprite == playerPeek; //playerPeek Sprite must be active
+        //bool playerIsPeeking = gameObject.GetComponent<SpriteRenderer>().sprite == playerPeek; //playerPeek Sprite must be active
 
         GameObject intelIsHere;
         intelIsHere = GameObject.FindWithTag("Intel"); //search Intel present in the scene
 
         if (Input.GetKeyDown(KeyCode.W)) //if W is pressed...
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = playerPeek; //swap to peeking player sprite
+            //gameObject.GetComponent<SpriteRenderer>().sprite = playerPeek; //swap to peeking player sprite.
+            playerAnim.SetBool("isPeekingAnim", true);
+            isPeeking = true;
             audioIfPeeking.Play();
             //Debug.Log("up/peek was pressed");
         }
         if (Input.GetKeyDown(KeyCode.S)) //if S is pressed...
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = playerHide; //swap to hiding player sprite
+            //gameObject.GetComponent<SpriteRenderer>().sprite = playerHide; //swap to hiding player sprite
+            playerAnim.SetBool("isPeekingAnim", false);
+            isPeeking = false;
             audioIfHiding.Play();
             //Debug.Log("down/hide was pressed");
         }
-        if (guardFacing == true && playerIsPeeking == true) //if there are guards facing a peeking player...
+        if (guardFacing == true && /*playerIsPeeking == true*/ isPeeking == true) //if there are guards facing a peeking player...
         {
             Countdown.GetComponent<HSCountdown>().timerIsRunning = false; //stops the mission timer
             PlayAudio();
@@ -87,7 +90,7 @@ public class HSPlayerControls : MonoBehaviour
             //ingameScreen.SetActive(false); //disable ingame ui
             //Destroy(gameObject); //TEST. "kill" player for now, if seen
         }
-        if (Input.GetKeyDown(KeyCode.Space) && playerIsPeeking == true && intelIsHere == true) //if the player presses Space while peeking...
+        if (Input.GetKeyDown(KeyCode.Space) && /*playerIsPeeking == true*/ isPeeking == true && intelIsHere == true) //if the player presses Space while peeking...
         {
             intelIsHere.SetActive(false); //disable Intel sprite
             //Debug.Log("intel collected!");
