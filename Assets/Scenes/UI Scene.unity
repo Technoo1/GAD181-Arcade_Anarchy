@@ -2920,7 +2920,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1336520597}
           m_TargetAssemblyTypeName: PrizeController, Assembly-CSharp
-          m_MethodName: OnItemClicked
+          m_MethodName: OnItemClickedSalmon
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

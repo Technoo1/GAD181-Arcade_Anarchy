@@ -14,15 +14,35 @@ namespace ArcadeAnarchy
         {
             movement.x = 0f;
 
-            if (Input.GetKey(KeyCode.A))
-            {
-                movement.x = Input.GetAxisRaw("Horizontal");
-                //Debug.Log("I'm still being pressed");
+            // TWO PLAYERS
+            if (PlayerManager.instance.twoPlayer == true) // If Two players only WASD controls for Aliens.
+            { 
+                if (Input.GetKey(KeyCode.A))
+                {
+                    movement.x--;
+                    //movement.x = Input.GetAxisRaw("Horizontal");
+                    //Debug.Log("I'm still being pressed");
+                }
+                else if (Input.GetKey(KeyCode.D))
+                {
+                    movement.x++;
+                    //movement.x = Input.GetAxisRaw("Horizontal");
+                    //Debug.Log("I'm still being pressed");
+                }
             }
-            else if (Input.GetKey(KeyCode.D))
+            
+            // SINGLE PLAYER
+            else if (PlayerManager.instance.twoPlayer == false) // If single player then WASD controls and arrows for Aliens.
             {
-                movement.x = Input.GetAxisRaw("Horizontal");
-                //Debug.Log("I'm still being pressed");
+                movement.x = 0f;
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                {
+                    movement.x--;
+                }
+                else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                {   
+                    movement.x++;
+                }
             }
         }
 

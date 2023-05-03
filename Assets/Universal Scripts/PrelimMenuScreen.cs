@@ -12,8 +12,12 @@ public class PrelimMenuScreen : MonoBehaviour
     {
         if (!uiSceneLoaded)
         {
-            StartCoroutine(LoadUISceneAsync());
+            //StartCoroutine(LoadUISceneAsync());
             SaveSystem.loadedScene = "MenuScene";
+        }
+        if (!SceneManager.GetSceneByName("UI Scene").isLoaded)
+        {
+            SceneManager.LoadSceneAsync("UI Scene", LoadSceneMode.Additive);
         }
     }
 
