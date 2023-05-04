@@ -12,6 +12,8 @@ public class PlayerScript2 : MonoBehaviour
     private bool _laserActive;
     Vector2 movement; // Uses a Vector based movement system. Placeholder, change to rigid body based later
 
+    Sprite idleSprite;
+
     // SOUNDS
     public AudioSource bulletSource;
     public AudioClip shotSound;
@@ -20,6 +22,11 @@ public class PlayerScript2 : MonoBehaviour
     public GameObject bullet;
     public Transform bulletPos;
     private float timer;
+
+    void Awake() 
+    {
+        idleSprite = this.gameObject.transform.GetComponent<SpriteRenderer>().sprite;
+    }
 
     void Update()
     {
@@ -30,11 +37,22 @@ public class PlayerScript2 : MonoBehaviour
             movement.x = 0f;
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                movement.x = Input.GetAxisRaw("Horizontal");
+                movement.x--;
+                this.gameObject.transform.GetComponent<SpriteRenderer>().flipX = true;
+                this.gameObject.transform.GetComponent<Animator>().enabled = true;
+                //movement.x = Input.GetAxisRaw("Horizontal");
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                movement.x = Input.GetAxisRaw("Horizontal");
+                movement.x++;
+                this.gameObject.transform.GetComponent<SpriteRenderer>().flipX = false;
+                this.gameObject.transform.GetComponent<Animator>().enabled = true;
+                //movement.x = Input.GetAxisRaw("Horizontal");
+            }
+            else if (movement.x == 0f)
+            {
+                this.gameObject.transform.GetComponent<Animator>().enabled = false;
+                this.gameObject.transform.GetComponent<SpriteRenderer>().sprite = idleSprite;
             }
 
             // Tank Shooting code
@@ -46,7 +64,18 @@ public class PlayerScript2 : MonoBehaviour
         // SINGLE PLAYER
         else if (PlayerManager.instance.twoPlayer == false) // If One player selected then ai controls tank.
         {
+            float oldPosX = transform.position.x;
+
             RandomMoveGoToPoint();
+
+            if(oldPosX < transform.position.x)
+            {
+                this.gameObject.transform.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else if(oldPosX > transform.position.x)
+            {
+                this.gameObject.transform.GetComponent<SpriteRenderer>().flipX = false;
+            }
 
             timer += Time.deltaTime;
 
