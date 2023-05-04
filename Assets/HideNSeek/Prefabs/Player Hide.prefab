@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPeek: {fileID: 21300000, guid: 5a3dc4c3dc1964941a40f0e7cdfe3787, type: 3}
-  playerHide: {fileID: 21300000, guid: b0a6726c86130084ba9646258b890581, type: 3}
+  playerHide: {fileID: -1097099181, guid: 213e8df293f265146aed7e2b069abbb5, type: 3}
   intelSpawner1: {fileID: 0}
   intelSpawner2: {fileID: 0}
   intelSpawner3: {fileID: 0}
@@ -112,6 +112,8 @@ MonoBehaviour:
   alreadyPlayed: 0
   audioIfPeeking: {fileID: 5645118676749985444}
   audioIfHiding: {fileID: -3978024159851482792}
+  missionFailScr: {fileID: 0}
+  ingameScr: {fileID: 0}
 --- !u!82 &5645118676749985444
 AudioSource:
   m_ObjectHideFlags: 0

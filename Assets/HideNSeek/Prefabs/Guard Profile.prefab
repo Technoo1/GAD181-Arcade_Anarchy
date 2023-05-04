@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -1845316151024598290}
   - component: {fileID: -838676765833608818}
   - component: {fileID: 5861094104723064912}
+  - component: {fileID: 8876535733759610913}
   m_Layer: 0
   m_Name: Guard Profile
   m_TagString: GuardProfile
@@ -108,18 +109,13 @@ MonoBehaviour:
   guardMoveLChance: 75
   guardMoveLCheck: 0
   waitForCheck: 2
-  waitTillTurn: 1
-  waitBeforeSwapBack: 1
+  waitTillTurn: 0.75
+  waitBeforeSwapBack: 0.9
   waitForLoop: 2
-  guardTurn: {fileID: 21300000, guid: 07cf9bb33d2e9a5479187e928f678d20, type: 3}
-  guardTurnL: {fileID: 21300000, guid: b3ec1061335d1564991ab5bd5e9e6e37, type: 3}
-  guardFront: {fileID: 21300000, guid: f378dfc777c713945a707c1978754012, type: 3}
-  guardProfile: {fileID: 21300000, guid: 12d8abd750008824486b860101490cf2, type: 3}
-  guardProfileL: {fileID: 21300000, guid: 3db9990e37cbd57488664282fe225816, type: 3}
-  guardAlert: {fileID: 21300000, guid: d0e25189549aed445ab053bf83bac7ef, type: 3}
   guardTurningAudio: {fileID: -1845316151024598290}
   moveRight: 0
   moveLeft: 0
+  guardAnim: {fileID: 8876535733759610913}
 --- !u!82 &5419237154796518602
 AudioSource:
   m_ObjectHideFlags: 0
@@ -359,3 +355,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!95 &8876535733759610913
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955733725309639875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ee3e5b25692554e4d8a28ab012cdee4b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
